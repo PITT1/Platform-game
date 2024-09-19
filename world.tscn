@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b83a6tf2x1e8d"]
+[gd_scene load_steps=13 format=3 uid="uid://b83a6tf2x1e8d"]
 
 [ext_resource type="PackedScene" uid="uid://o8autm5pdnbr" path="res://player.tscn" id="1_ybwx4"]
 [ext_resource type="Texture2D" uid="uid://cqy4dbwtshnub" path="res://tilemap/main_lev_build_1.png" id="2_0mp7t"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dif3oo4oug8ma" path="res://tilemap/background02.png" id="5_6dui5"]
 [ext_resource type="Texture2D" uid="uid://ctq35u0qbhvc" path="res://tilemap/background03.png" id="6_a0rl7"]
 [ext_resource type="Script" path="res://checkPoint1.gd" id="7_223ip"]
+[ext_resource type="PackedScene" uid="uid://cjxh1x6q0snhs" path="res://skeleton.tscn" id="8_svjr1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_be2u3"]
 texture = ExtResource("2_0mp7t")
@@ -1325,12 +1326,15 @@ texture = ExtResource("6_a0rl7")
 centered = false
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(584, 149)
+position = Vector2(594, 147)
 script = ExtResource("7_223ip")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-9, -28)
+position = Vector2(-1, -2)
 shape = SubResource("RectangleShape2D_sg1jg")
 debug_color = Color(0.0196078, 0.894118, 0, 0.6)
+
+[node name="skeleton" parent="." instance=ExtResource("8_svjr1")]
+position = Vector2(471, 116)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
