@@ -1,10 +1,11 @@
-[gd_scene load_steps=34 format=3 uid="uid://cjxh1x6q0snhs"]
+[gd_scene load_steps=35 format=3 uid="uid://cjxh1x6q0snhs"]
 
 [ext_resource type="Texture2D" uid="uid://8trj5w4xv2bq" path="res://Monsters_Creatures_Fantasy/Skeleton/Attack.png" id="1_7tqhq"]
 [ext_resource type="Texture2D" uid="uid://cpiuno5ill17m" path="res://Monsters_Creatures_Fantasy/Skeleton/Death.png" id="2_vyncx"]
 [ext_resource type="Texture2D" uid="uid://b1o3vnb2xhl41" path="res://Monsters_Creatures_Fantasy/Skeleton/Idle.png" id="3_fqb0r"]
 [ext_resource type="Texture2D" uid="uid://djc1lq6ch43dk" path="res://Monsters_Creatures_Fantasy/Skeleton/Take Hit.png" id="4_20gl6"]
 [ext_resource type="Texture2D" uid="uid://bh5vn81dl6g" path="res://Monsters_Creatures_Fantasy/Skeleton/Walk.png" id="5_i5x6j"]
+[ext_resource type="Script" path="res://visionArea.gd" id="6_s3071"]
 
 [sub_resource type="GDScript" id="GDScript_cln5h"]
 script/source = "extends CharacterBody2D
@@ -16,6 +17,7 @@ script/source = "extends CharacterBody2D
 @export var inmove: bool = true
 
 func _physics_process(delta: float) -> void:
+	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		
@@ -169,7 +171,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_d2sfx")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 13.0
 }, {
@@ -186,7 +188,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fc74e")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 13.0
 }, {
@@ -220,7 +222,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ep2g4")
 }],
-"loop": true,
+"loop": false,
 "name": &"takeHit",
 "speed": 12.0
 }, {
@@ -245,21 +247,33 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e3fhh"]
 height = 40.0
 
-[sub_resource type="GDScript" id="GDScript_oo4tg"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jr2sk"]
+size = Vector2(193.375, 329.5)
 
 [node name="skeleton" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = SubResource("GDScript_cln5h")
 speed = 40.0
+isRight = false
 inmove = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_1ddne")
-animation = &"attack"
+animation = &"walk"
+frame_progress = 0.0803202
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(3, 1)
 shape = SubResource("CapsuleShape2D_e3fhh")
-script = SubResource("GDScript_oo4tg")
+
+[node name="visionArea" type="Area2D" parent="CharacterBody2D"]
+script = ExtResource("6_s3071")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/visionArea"]
+position = Vector2(2, 0)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_jr2sk")
+
+[connection signal="body_entered" from="CharacterBody2D/visionArea" to="CharacterBody2D/visionArea" method="_on_body_entered"]
