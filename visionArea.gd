@@ -2,7 +2,7 @@ extends Area2D
 
 @onready var skeleton = $".."
 
-func _on_body_entered(body: CharacterBody2D) -> void:
+func _on_body_entered(body) -> void:
 	if body.get_position_delta().x > 0:
 		print("player a la izquierda")
 		skeleton.inmove = true

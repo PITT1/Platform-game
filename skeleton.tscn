@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cjxh1x6q0snhs"]
+[gd_scene load_steps=37 format=3 uid="uid://cjxh1x6q0snhs"]
 
 [ext_resource type="Texture2D" uid="uid://8trj5w4xv2bq" path="res://Monsters_Creatures_Fantasy/Skeleton/Attack.png" id="1_7tqhq"]
 [ext_resource type="Texture2D" uid="uid://cpiuno5ill17m" path="res://Monsters_Creatures_Fantasy/Skeleton/Death.png" id="2_vyncx"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://djc1lq6ch43dk" path="res://Monsters_Creatures_Fantasy/Skeleton/Take Hit.png" id="4_20gl6"]
 [ext_resource type="Texture2D" uid="uid://bh5vn81dl6g" path="res://Monsters_Creatures_Fantasy/Skeleton/Walk.png" id="5_i5x6j"]
 [ext_resource type="Script" path="res://visionArea.gd" id="6_s3071"]
+[ext_resource type="Script" path="res://followArea.gd" id="7_mp7s4"]
 
 [sub_resource type="GDScript" id="GDScript_cln5h"]
 script/source = "extends CharacterBody2D
@@ -250,6 +251,9 @@ height = 40.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jr2sk"]
 size = Vector2(219.687, 410)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rda47"]
+size = Vector2(30, 115)
+
 [node name="skeleton" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
@@ -279,4 +283,13 @@ rotation = 1.5708
 shape = SubResource("RectangleShape2D_jr2sk")
 debug_color = Color(0, 0.760784, 0.882353, 0.0352941)
 
+[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+script = ExtResource("7_mp7s4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+position = Vector2(3, -85.5)
+shape = SubResource("RectangleShape2D_rda47")
+debug_color = Color(0, 0.919142, 0.257596, 0.42)
+
 [connection signal="body_entered" from="CharacterBody2D/visionArea" to="CharacterBody2D/visionArea" method="_on_body_entered"]
+[connection signal="body_exited" from="CharacterBody2D/Area2D" to="CharacterBody2D/Area2D" method="_on_body_exited"]
