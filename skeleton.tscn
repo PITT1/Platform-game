@@ -16,9 +16,13 @@ script/source = "extends CharacterBody2D
 @onready var anim = $AnimatedSprite2D
 @export var isRight: bool = true
 @export var inmove: bool = true
+@export var lives: int = 5
 var attack: bool = false
+var gettingHit = false
+var death = false
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var hit_area: Area2D = $hitArea
+@onready var character_body_2d: CharacterBody2D = $\".\"
 
 
 func _physics_process(delta: float) -> void:
@@ -36,6 +40,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = 0
 	animations()
+	set_death()
 		
 	if isRight:
 		anim.flip_h = false
@@ -47,14 +52,28 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func animations():	
-	if attack:
-		anim.play(\"attack\")
-		animation_player.play(\"attack\")
-	elif inmove:
-		anim.play(\"walk\")
-	elif not inmove:
-		anim.play(\"idle\")
-
+	if not death:
+		if attack and not gettingHit:
+			anim.play(\"attack\")
+			animation_player.play(\"attack\")
+		elif inmove and not gettingHit:
+			anim.play(\"walk\")
+		elif not inmove and not gettingHit:
+			anim.play(\"idle\")
+		elif gettingHit:
+			anim.play(\"takeHit\")
+			await get_tree().create_timer(0.2).timeout
+			gettingHit = false
+	else:
+		velocity.x = 0
+		anim.play(\"death\")
+		await get_tree().create_timer(0.31).timeout
+		character_body_2d.queue_free()
+		
+func set_death():
+	if lives == 0:
+		death = true
+		
 
 func _on_atack_area_right_body_entered(body: Node2D) -> void:
 	inmove = false
@@ -85,7 +104,6 @@ func _on_atack_area_left_body_entered(body: Node2D) -> void:
 
 
 func _on_hit_area_body_entered(body: Node2D) -> void:
-	print(\"vidas: \", body.lives)
 	body.lives -= 1
 "
 
@@ -353,12 +371,13 @@ script = SubResource("GDScript_cln5h")
 speed = 40.0
 isRight = false
 inmove = false
+lives = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_1ddne")
-animation = &"attack"
-frame = 7
+animation = &"takeHit"
+frame = 3
 frame_progress = 1.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]

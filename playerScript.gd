@@ -721,3 +721,9 @@ func _endGroundPound():
 
 func _placeHolder():
 	print("")
+
+
+func _on_hit_area_body_entered(body: Node2D) -> void:
+	print(body.lives)
+	body.lives -= 1
+	body.gettingHit = true
