@@ -1300,9 +1300,10 @@ tile_map_data = PackedByteArray("AAAgAAUAAAAkADYAAAAgAAcAAAAkADgAAAAgAAgAAAAkADk
 tile_set = SubResource("TileSet_yei7r")
 
 [node name="player" parent="." instance=ExtResource("1_ybwx4")]
-position = Vector2(153, 115)
+position = Vector2(1764, 106)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.1, 0.1)

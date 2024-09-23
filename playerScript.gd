@@ -184,6 +184,7 @@ var twirlTap
 
 #attack variable
 var attackBuss = 0
+var on_Attack = false
 
 #camara
 @onready var cam = $Camera2D
@@ -274,9 +275,10 @@ func _process(_delta):
 		anim.scale.x = animScaleLock.x * -1
 		
 	#attack
-	if Input.is_action_just_pressed("atack"):
+	if Input.is_action_just_pressed("atack") and is_on_floor() and not on_Attack:
 		jump = false
 		idle = false
+		on_Attack = true
 		velocity.x = 0
 		if attackBuss == 0:
 			anim.play("attack1")
@@ -288,6 +290,7 @@ func _process(_delta):
 			anim.play("attack3")
 			attackBuss = 0
 		await get_tree().create_timer(0.4).timeout
+		on_Attack = false
 		idle = true
 		jump = true
 	
