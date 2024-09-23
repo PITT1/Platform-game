@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://o8autm5pdnbr"]
+[gd_scene load_steps=87 format=3 uid="uid://o8autm5pdnbr"]
 
 [ext_resource type="Script" path="res://playerScript.gd" id="1_jfgvy"]
 [ext_resource type="Texture2D" uid="uid://dkinx5w12ek0u" path="res://player_sprites/DEATH.png" id="1_tsc5q"]
@@ -550,6 +550,47 @@ animations = [{
 "speed": 13.0
 }]
 
+[sub_resource type="Animation" id="Animation_gbdfk"]
+resource_name = "attack_hit"
+length = 0.37
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hitArea/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.07, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_eo4sk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hitArea/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3lrk7"]
+_data = {
+"RESET": SubResource("Animation_eo4sk"),
+"attack_hit": SubResource("Animation_gbdfk")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n0wn8"]
+radius = 8.0
+
 [node name="player" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." node_paths=PackedStringArray("PlayerSprite", "PlayerCollider")]
@@ -574,7 +615,7 @@ shape = SubResource("CapsuleShape2D_f6il3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_qlfpc")
-animation = &"attack1"
+animation = &"attack3"
 frame = 5
 frame_progress = 1.0
 
@@ -584,3 +625,17 @@ limit_top = 0
 limit_bottom = 0
 position_smoothing_enabled = true
 script = ExtResource("12_v3qjr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+libraries = {
+"": SubResource("AnimationLibrary_3lrk7")
+}
+
+[node name="hitArea" type="Area2D" parent="CharacterBody2D"]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/hitArea"]
+position = Vector2(16, 5)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_n0wn8")
+debug_color = Color(0.952941, 0, 0.12549, 0.419608)

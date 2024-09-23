@@ -12,6 +12,9 @@ class_name PlatformerController2D
 @export_category("Necesary Child Nodes")
 @export var PlayerSprite: AnimatedSprite2D
 @export var PlayerCollider: CollisionShape2D
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var collision_shape_2d: CollisionShape2D = $hitArea/CollisionShape2D
+
 
 #INFO HORIZONTAL MOVEMENT 
 @export_category("L/R Movement")
@@ -193,6 +196,7 @@ func _ready():
 	wasMovingR = true
 	anim = PlayerSprite
 	col = PlayerCollider
+	collision_shape_2d.disabled = true
 	
 	_updateData()
 	
@@ -279,17 +283,42 @@ func _process(_delta):
 		jump = false
 		idle = false
 		on_Attack = true
+		animation_player.play("attack_hit")
 		velocity.x = 0
 		if attackBuss == 0:
 			anim.play("attack1")
+			if anim.scale.x > 0:
+				collision_shape_2d.position.x = 16
+				collision_shape_2d.scale = Vector2(1, 1)
+				collision_shape_2d.position.y = 5
+			else:
+				collision_shape_2d.position.x = -16
+				collision_shape_2d.scale = Vector2(1, 1)
+				collision_shape_2d.position.y = 5
 			attackBuss = 1
 		elif attackBuss == 1:
 			anim.play("attack2")
+			if anim.scale.x > 0:
+				collision_shape_2d.position.x = 16
+				collision_shape_2d.scale = Vector2(1, 1)
+				collision_shape_2d.position.y = 5
+			else:
+				collision_shape_2d.position.x = -16
+				collision_shape_2d.scale = Vector2(1, 1)
+				collision_shape_2d.position.y = 5
 			attackBuss = 2
 		elif attackBuss == 2:
 			anim.play("attack3")
+			if anim.scale.x > 0:
+				collision_shape_2d.position.x = 16
+				collision_shape_2d.position.y = 0
+				collision_shape_2d.scale = Vector2(2.5, 1)
+			else:
+				collision_shape_2d.position.x = -16
+				collision_shape_2d.position.y = 0
+				collision_shape_2d.scale = Vector2(2.5, 1)
 			attackBuss = 0
-		await get_tree().create_timer(0.4).timeout
+		await get_tree().create_timer(0.37).timeout
 		on_Attack = false
 		idle = true
 		jump = true
