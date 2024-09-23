@@ -114,6 +114,9 @@ class_name PlatformerController2D
 ##Animations must be named "roll" all lowercase as the check box says
 @export var roll: bool
 
+@export_category("statistics player")
+@export var lives: int = 10
+
 
 
 #Variables determined by the developer set ones.

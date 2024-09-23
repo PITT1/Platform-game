@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cjxh1x6q0snhs"]
+[gd_scene load_steps=43 format=3 uid="uid://cjxh1x6q0snhs"]
 
 [ext_resource type="Texture2D" uid="uid://8trj5w4xv2bq" path="res://Monsters_Creatures_Fantasy/Skeleton/Attack.png" id="1_7tqhq"]
 [ext_resource type="Texture2D" uid="uid://cpiuno5ill17m" path="res://Monsters_Creatures_Fantasy/Skeleton/Death.png" id="2_vyncx"]
@@ -17,6 +17,9 @@ script/source = "extends CharacterBody2D
 @export var isRight: bool = true
 @export var inmove: bool = true
 var attack: bool = false
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var hit_area: Area2D = $hitArea
+
 
 func _physics_process(delta: float) -> void:
 	
@@ -46,6 +49,7 @@ func _physics_process(delta: float) -> void:
 func animations():	
 	if attack:
 		anim.play(\"attack\")
+		animation_player.play(\"attack\")
 	elif inmove:
 		anim.play(\"walk\")
 	elif not inmove:
@@ -54,18 +58,31 @@ func animations():
 
 func _on_atack_area_right_body_entered(body: Node2D) -> void:
 	inmove = false
+	hit_area.position.x = 33
+	hit_area.scale = Vector2(1, 1)
 	attack = true
 	await get_tree().create_timer(0.7).timeout
 	inmove = true
+	hit_area.position.x = 0
+	hit_area.scale = Vector2(0.2, 0.2)
 	attack = false
 
 
 func _on_atack_area_left_body_entered(body: Node2D) -> void:
 	inmove = false
+	hit_area.position.x = -33
+	hit_area.scale = Vector2(1, 1)
 	attack = true
 	await get_tree().create_timer(0.7).timeout
-	inmove = false
+	inmove = true
+	hit_area.position.x = 0
+	hit_area.scale = Vector2(0.2, 0.2)
 	attack = false
+
+
+func _on_hit_area_body_entered(body: Node2D) -> void:
+	print(\"vidas: \", body.lives)
+	body.lives -= 1
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l4w4y"]
@@ -264,6 +281,44 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="Animation" id="Animation_5q5g2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterBody2D/hitArea/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_twd38"]
+resource_name = "attack"
+length = 0.60002
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterBody2D/hitArea/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_355q3"]
+_data = {
+"RESET": SubResource("Animation_5q5g2"),
+"attack": SubResource("Animation_twd38")
+}
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e3fhh"]
 height = 40.0
 
@@ -278,6 +333,10 @@ radius = 16.0
 height = 46.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q4ccs"]
+radius = 16.0
+height = 46.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5quao"]
 radius = 16.0
 height = 46.0
 
@@ -297,6 +356,12 @@ sprite_frames = SubResource("SpriteFrames_1ddne")
 animation = &"attack"
 frame = 7
 frame_progress = 1.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_355q3")
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(3, 1)
@@ -336,7 +401,18 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_q4ccs")
 debug_color = Color(1, 0.478431, 0.411765, 0.419608)
 
+[node name="hitArea" type="Area2D" parent="CharacterBody2D"]
+position = Vector2(2, -1)
+scale = Vector2(0.2, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/hitArea"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_5quao")
+disabled = true
+debug_color = Color(0.984314, 0, 0, 0.419608)
+
 [connection signal="body_entered" from="CharacterBody2D/visionArea" to="CharacterBody2D/visionArea" method="_on_body_entered"]
 [connection signal="body_exited" from="CharacterBody2D/followArea" to="CharacterBody2D/followArea" method="_on_body_exited"]
 [connection signal="body_entered" from="CharacterBody2D/atackAreaRight" to="CharacterBody2D" method="_on_atack_area_right_body_entered"]
 [connection signal="body_entered" from="CharacterBody2D/atackAreaLeft" to="CharacterBody2D" method="_on_atack_area_left_body_entered"]
+[connection signal="body_entered" from="CharacterBody2D/hitArea" to="CharacterBody2D" method="_on_hit_area_body_entered"]
