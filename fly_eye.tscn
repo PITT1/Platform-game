@@ -1,7 +1,7 @@
 [gd_scene load_steps=33 format=3 uid="uid://efyda2cw57qk"]
 
 [ext_resource type="Texture2D" uid="uid://b6yym4v2nihjh" path="res://Monsters_Creatures_Fantasy/Flying eye/Attack.png" id="1_52bx2"]
-[ext_resource type="Script" path="res://fly_eye_script.gd" id="1_hs7kn"]
+[ext_resource type="Script" path="res://fly-eye-script.gd" id="1_ibuif"]
 [ext_resource type="Texture2D" uid="uid://dp56584gu1e4e" path="res://Monsters_Creatures_Fantasy/Flying eye/Death.png" id="2_s2bol"]
 [ext_resource type="Texture2D" uid="uid://diwlvflyufg5c" path="res://Monsters_Creatures_Fantasy/Flying eye/Flight.png" id="3_7knuq"]
 [ext_resource type="Texture2D" uid="uid://ceybyb3yqfjh2" path="res://Monsters_Creatures_Fantasy/Flying eye/Take Hit.png" id="4_4t565"]
@@ -206,8 +206,7 @@ radius = 127.193
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 collision_layer = 8
-collision_mask = 3
-script = ExtResource("1_hs7kn")
+script = ExtResource("1_ibuif")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_1hum0")
@@ -228,3 +227,4 @@ shape = SubResource("CircleShape2D_0bi1x")
 debug_color = Color(0.976471, 0, 0, 0.168627)
 
 [connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_exited"]
