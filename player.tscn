@@ -632,7 +632,7 @@ libraries = {
 }
 
 [node name="hitArea" type="Area2D" parent="CharacterBody2D"]
-collision_mask = 4
+collision_mask = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/hitArea"]
 position = Vector2(16, 5)
