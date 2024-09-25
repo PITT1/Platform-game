@@ -200,19 +200,19 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_dp4lu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0bi1x"]
-radius = 127.193
+radius = 241.008
 
 [node name="flyEye" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-collision_layer = 8
+collision_layer = 4
 script = ExtResource("1_ibuif")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_1hum0")
-animation = &"flight"
-frame = 7
-frame_progress = 0.328393
+animation = &"death"
+frame = 3
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(5, 2)
