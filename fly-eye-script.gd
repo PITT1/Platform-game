@@ -3,10 +3,10 @@ extends CharacterBody2D
 @onready var flyEye: CharacterBody2D = $"."
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 var player: CharacterBody2D = null
-var playerLocationX
-var playerLocationY
-var flyEyeLocationX
-var flyEyeLocationY
+var playerLocationX: float
+var playerLocationY: float
+var flyEyeLocationX: float
+var flyEyeLocationY: float
 @export var speed: float = 60
 @export var lives: int = 1
 var gettingHit = false
@@ -14,7 +14,6 @@ var death = false
 
 func _ready() -> void:
 	anim.play("flight")
-
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

@@ -5,6 +5,7 @@ extends CharacterBody2D
 var player: CharacterBody2D = null
 @onready var mushroom: CharacterBody2D = $"."
 @export var speed: float = 100
+@export var aceleration: float = 5
 
 
 
@@ -18,9 +19,17 @@ func _process(delta: float) -> void:
 	
 	if player != null:
 		if mushroom.global_position.x < player.global_position.x:
-			velocity.x = speed
+			if velocity.x < speed:
+				velocity.x += aceleration
+			elif velocity.x == speed:
+				velocity.x = speed
 		else:
-			velocity.x = -speed
+			if velocity.x > -speed:
+				velocity.x -= aceleration
+			elif velocity.x == -speed:
+				velocity.x = -speed
+	else:
+		velocity.x = 0
 	animations()
 
 	move_and_slide()

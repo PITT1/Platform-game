@@ -724,6 +724,6 @@ func _placeHolder():
 
 
 func _on_hit_area_body_entered(body: Node2D) -> void:
-	print(body.lixves)
+	print(body.lives)
 	body.lives -= 1
 	body.gettingHit = true

@@ -1303,7 +1303,7 @@ tile_map_data = PackedByteArray("AAAgAAUAAAAkADYAAAAgAAcAAAAkADgAAAAgAAgAAAAkADk
 tile_set = SubResource("TileSet_yei7r")
 
 [node name="player" parent="." instance=ExtResource("1_ybwx4")]
-position = Vector2(1551, 66)
+position = Vector2(1130, 158)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 visible = false
@@ -1349,9 +1349,9 @@ position = Vector2(882, 29)
 [node name="skeletons" type="Node" parent="."]
 
 [node name="skeleton" parent="skeletons" instance=ExtResource("8_svjr1")]
-position = Vector2(451, 144)
+position = Vector2(475, 142)
 
 [node name="mutantMushrooms" type="Node" parent="."]
 
 [node name="mutant mushrom" parent="mutantMushrooms" instance=ExtResource("9_s5kpt")]
-position = Vector2(1873, 87)
+position = Vector2(1760, 124)
