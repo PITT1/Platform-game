@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bsg8qjsqu632m"]
+[gd_scene load_steps=34 format=3 uid="uid://bsg8qjsqu632m"]
 
 [ext_resource type="Texture2D" uid="uid://btbax2x7a8x66" path="res://Monsters_Creatures_Fantasy/Mushroom/Death.png" id="1_mye8o"]
 [ext_resource type="Script" path="res://mutantMushrom.gd" id="1_n5b0x"]
@@ -262,6 +262,9 @@ _data = {
 "attack": SubResource("Animation_x4160")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_no5hv"]
+size = Vector2(374, 212.5)
+
 [node name="mutant mushrom" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
@@ -271,7 +274,9 @@ script = ExtResource("1_n5b0x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_by68s")
-animation = &"takeHit"
+animation = &"run"
+frame = 3
+frame_progress = 0.658238
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(1, 8)
@@ -292,3 +297,12 @@ debug_color = Color(0.952941, 0, 0, 0.329412)
 libraries = {
 "": SubResource("AnimationLibrary_mh6m7")
 }
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_no5hv")
+
+[connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_exited"]
