@@ -206,13 +206,13 @@ radius = 182.003
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 collision_layer = 8
-collision_mask = 0
+collision_mask = 8
 script = ExtResource("1_ibuif")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_1hum0")
 animation = &"flight"
-frame_progress = 0.567683
+frame_progress = 0.673692
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(5, 2)

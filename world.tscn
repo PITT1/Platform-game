@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://b83a6tf2x1e8d"]
+[gd_scene load_steps=13 format=4 uid="uid://b83a6tf2x1e8d"]
 
 [ext_resource type="PackedScene" uid="uid://o8autm5pdnbr" path="res://player.tscn" id="1_ybwx4"]
 [ext_resource type="Texture2D" uid="uid://cqy4dbwtshnub" path="res://tilemap/main_lev_build_1.png" id="2_0mp7t"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ctq35u0qbhvc" path="res://tilemap/background03.png" id="6_a0rl7"]
 [ext_resource type="PackedScene" uid="uid://cjxh1x6q0snhs" path="res://skeleton.tscn" id="8_svjr1"]
 [ext_resource type="PackedScene" uid="uid://efyda2cw57qk" path="res://fly_eye.tscn" id="8_w402h"]
+[ext_resource type="PackedScene" uid="uid://bsg8qjsqu632m" path="res://mutant_mushrom.tscn" id="9_s5kpt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_be2u3"]
 texture = ExtResource("2_0mp7t")
@@ -1302,9 +1303,10 @@ tile_map_data = PackedByteArray("AAAgAAUAAAAkADYAAAAgAAcAAAAkADgAAAAgAAgAAAAkADk
 tile_set = SubResource("TileSet_yei7r")
 
 [node name="player" parent="." instance=ExtResource("1_ybwx4")]
-position = Vector2(188, 101)
+position = Vector2(1759, 126)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.1, 0.1)
@@ -1348,3 +1350,8 @@ position = Vector2(882, 29)
 
 [node name="skeleton" parent="skeletons" instance=ExtResource("8_svjr1")]
 position = Vector2(451, 144)
+
+[node name="mutantMushrooms" type="Node" parent="."]
+
+[node name="mutant mushrom" parent="mutantMushrooms" instance=ExtResource("9_s5kpt")]
+position = Vector2(1873, 87)
