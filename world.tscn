@@ -1306,7 +1306,6 @@ tile_set = SubResource("TileSet_yei7r")
 position = Vector2(1130, 158)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.1, 0.1)
@@ -1354,4 +1353,4 @@ position = Vector2(475, 142)
 [node name="mutantMushrooms" type="Node" parent="."]
 
 [node name="mutant mushrom" parent="mutantMushrooms" instance=ExtResource("9_s5kpt")]
-position = Vector2(1760, 124)
+position = Vector2(1899, 85)
