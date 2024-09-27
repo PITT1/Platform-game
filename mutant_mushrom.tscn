@@ -345,7 +345,7 @@ script = ExtResource("1_n5b0x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_by68s")
-animation = &"idle"
+animation = &"death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(1, 10)
@@ -388,6 +388,8 @@ debug_color = Color(0, 0.554292, 0.908465, 0.42)
 position = Vector2(0, 13)
 shape = SubResource("RectangleShape2D_c4vb2")
 
+[connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="CharacterBody2D/hitArea" to="CharacterBody2D" method="_on_hit_area_body_entered"]
 [connection signal="animation_finished" from="CharacterBody2D/AnimationPlayer" to="CharacterBody2D" method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_exited"]

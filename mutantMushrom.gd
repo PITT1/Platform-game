@@ -7,19 +7,24 @@ var player: CharacterBody2D = null
 @export var speed: float = 100
 @export var aceleration: float = 5
 var onAttack = false
+@export var lives = 5
+var gettingHit = false
+var death = false
 @onready var hitArea: CollisionShape2D = $hitArea/CollisionShape2D
+@onready var attack_area: Area2D = $attackArea
 
 
 
 func _ready() -> void:
 	attackSprite.visible = false
 	anim.play("idle")
+	hitArea.disabled = true
 
 func _process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
-	if player != null:
+	if player != null and not death:
 		if mushroom.global_position.x < player.global_position.x:
 			if velocity.x < speed:
 				velocity.x += aceleration
@@ -33,6 +38,10 @@ func _process(delta: float) -> void:
 	else:
 		velocity.x = 0
 	animations()
+	
+	if lives < 1:
+		death = true
+		
 
 	move_and_slide()
 
@@ -45,10 +54,13 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 	player = null
 
 func animations():
-	if velocity.x == 0 and not onAttack:
+	if velocity.x == 0 and not onAttack and not death:
 		anim.play("idle")
-	else:
+	elif velocity.x and not onAttack and  not death:
 		anim.play("run")
+	elif death:
+		attack_area.monitoring = false
+		anim.play("death")
 		
 	if  velocity.x > 0:
 		anim.flip_h = false
@@ -71,5 +83,18 @@ func _on_attack_area_body_exited(body: Node2D) -> void:
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	onAttack = false
-	anim.visible = true
+	if anim_name == "attack" or anim_name == "attackLeft":
+		onAttack = false
+		anim.visible = true
+
+
+func _on_hit_area_body_entered(body: Node2D) -> void:
+	if anim.flip_h == false:
+		body.velocity = Vector2(400, -400)
+	else:
+		body.velocity = Vector2(-400, -400)
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if anim.animation == "death":
+		mushroom.queue_free()
