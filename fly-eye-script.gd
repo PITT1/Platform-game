@@ -9,6 +9,7 @@ var flyEyeLocationX: float
 var flyEyeLocationY: float
 @export var speed: float = 60
 @export var lives: int = 1
+@export var aceleration: float = 1
 var gettingHit = false
 var death = false
 
@@ -34,16 +35,24 @@ func _process(delta: float) -> void:
 		flyEyeLocationY = flyEye.global_position.y
 		
 		if playerLocationX > flyEyeLocationX:
-			velocity.x = speed
+			velocity.x += aceleration
 			anim.flip_h = false
+			if velocity.x > speed:
+				velocity.x = speed
 		else:
-			velocity.x = -speed
+			velocity.x -= aceleration
 			anim.flip_h = true
+			if velocity.x < -speed:
+				velocity.x = -speed
 			
 		if playerLocationY > flyEyeLocationY:
-			velocity.y = speed
+			velocity.y += aceleration
+			if velocity.y > speed:
+				velocity.y = speed
 		else:
-			velocity.y = -speed
+			velocity.y -= aceleration
+			if velocity.y < -speed:
+				velocity.y = -speed
 			
 		if lives == 0:
 			death = true
