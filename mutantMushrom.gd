@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 		velocity += get_gravity() * delta
 	
 	if player != null:
-		if mushroom.global_position.x < player.global_position.x and not onAttack:
+		if mushroom.global_position.x < player.global_position.x:
 			if velocity.x < speed:
 				velocity.x += aceleration
 			elif velocity.x == speed:
@@ -58,7 +58,6 @@ func animations():
 
 func _on_attack_area_body_entered(body: Node2D) -> void:
 	onAttack = true
-	velocity.x = 0
 	anim.visible = false
 	if player.global_position.x > mushroom.global_position.x:
 		hitArea.position.x = 24
@@ -66,8 +65,11 @@ func _on_attack_area_body_entered(body: Node2D) -> void:
 	else:
 		hitArea.position.x = -24
 		animation_player.play("attackLeft")
-	await get_tree().create_timer(0.8).timeout
-	anim.visible = true
 
 func _on_attack_area_body_exited(body: Node2D) -> void:
+	pass
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	onAttack = false
+	anim.visible = true
