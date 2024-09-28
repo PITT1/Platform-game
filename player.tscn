@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dkinx5w12ek0u" path="res://player_sprites/DEATH.png" id="1_tsc5q"]
 [ext_resource type="Texture2D" uid="uid://bun08e6hsuv5e" path="res://player_sprites/ATTACK 1.png" id="2_1avdu"]
 [ext_resource type="Texture2D" uid="uid://d3m4mnw345uq1" path="res://player_sprites/JUMP.png" id="2_87p7r"]
-[ext_resource type="PackedScene" uid="uid://cy782hski8pw6" path="res://jump_particles.tscn" id="2_lxma3"]
+[ext_resource type="PackedScene" uid="uid://cy782hski8pw6" path="res://particles/jump_particles.tscn" id="2_lxma3"]
 [ext_resource type="Texture2D" uid="uid://7b3atre2r4ng" path="res://player_sprites/ATTACK 2.png" id="3_0gmvs"]
 [ext_resource type="Texture2D" uid="uid://b3pwxwccnac1a" path="res://player_sprites/IDLE.png" id="3_mymbs"]
 [ext_resource type="Texture2D" uid="uid://dkydu8aj71h8l" path="res://player_sprites/RUN.png" id="4_lpi8c"]

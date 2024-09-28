@@ -680,6 +680,10 @@ func _wallJump():
 	if inputPauseAfterWallJump != 0:
 		movementInputMonitoring = Vector2(false, false)
 		_inputPauseReset(inputPauseAfterWallJump)
+		
+	var instance = jump_particles.instantiate()
+	add_sibling(instance)
+	instance.global_position = global_position + Vector2(0, 10)
 			
 func _setLatch(delay, setBool):
 	await get_tree().create_timer(delay).timeout

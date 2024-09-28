@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://cjxh1x6q0snhs"]
+[gd_scene load_steps=44 format=3 uid="uid://cjxh1x6q0snhs"]
 
 [ext_resource type="Texture2D" uid="uid://8trj5w4xv2bq" path="res://Monsters_Creatures_Fantasy/Skeleton/Attack.png" id="1_7tqhq"]
 [ext_resource type="Texture2D" uid="uid://cpiuno5ill17m" path="res://Monsters_Creatures_Fantasy/Skeleton/Death.png" id="2_vyncx"]
@@ -366,6 +366,8 @@ height = 46.0
 radius = 16.0
 height = 46.0
 
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ndx6l"]
+
 [node name="skeleton" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
@@ -438,6 +440,11 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5quao")
 disabled = true
 debug_color = Color(0.984314, 0, 0, 0.419608)
+
+[node name="AnimationTree" type="AnimationTree" parent="CharacterBody2D"]
+root_node = NodePath("../..")
+tree_root = SubResource("AnimationNodeStateMachine_ndx6l")
+anim_player = NodePath("../AnimationPlayer")
 
 [connection signal="body_entered" from="CharacterBody2D/visionArea" to="CharacterBody2D/visionArea" method="_on_body_entered"]
 [connection signal="body_exited" from="CharacterBody2D/followArea" to="CharacterBody2D/followArea" method="_on_body_exited"]
