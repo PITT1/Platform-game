@@ -119,6 +119,8 @@ class_name PlatformerController2D
 
 @export_category("statistics player")
 @export var lives: int = 10
+@export_category("particles")
+@export var jump_particles: PackedScene
 
 
 
@@ -660,6 +662,9 @@ func _jump():
 		velocity.y = -jumpMagnitude
 		jumpCount += -1
 		jumpWasPressed = false
+		var instance = jump_particles.instantiate()
+		add_sibling(instance)
+		instance.global_position = global_position + Vector2(0, 10)
 		
 func _wallJump():
 	var horizontalWallKick = abs(jumpMagnitude * cos(wallKickAngle * (PI / 180)))

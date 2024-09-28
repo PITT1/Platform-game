@@ -24,7 +24,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	player = null
+	pass
 
 
 func _process(delta: float) -> void:
