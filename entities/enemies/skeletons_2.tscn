@@ -395,6 +395,7 @@ size = Vector2(535, 235)
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_1hvrq")
+lives = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_h7yvb")
@@ -434,6 +435,7 @@ position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_w3367")
 debug_color = Color(0, 0.694118, 0.811765, 0.0509804)
 
+[connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="CharacterBody2D/attackArea" to="CharacterBody2D" method="_on_attack_area_body_entered"]
 [connection signal="body_entered" from="CharacterBody2D/hitArea" to="CharacterBody2D" method="_on_hit_area_body_entered"]
 [connection signal="body_entered" from="CharacterBody2D/visionArea" to="CharacterBody2D" method="_on_vision_area_body_entered"]
