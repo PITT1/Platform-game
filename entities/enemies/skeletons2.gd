@@ -84,6 +84,7 @@ func _on_attack_area_body_entered(body: Node2D) -> void:
 
 func _on_hit_area_body_entered(body: Node2D) -> void:
 	body.lives -= 1
+	body.gettingHit = true
 	if player.global_position.x > skeleton.global_position.x:
 		body.velocity = Vector2(400, -200)
 	else:

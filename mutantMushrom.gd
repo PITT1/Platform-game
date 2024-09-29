@@ -38,6 +38,7 @@ func _process(delta: float) -> void:
 	else:
 		velocity.x = 0
 	animations()
+	gettingHitAnimation()
 	
 	if lives < 1:
 		death = true
@@ -89,6 +90,8 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 
 
 func _on_hit_area_body_entered(body: Node2D) -> void:
+	body.lives -= 1
+	body.gettingHit = true
 	if anim.flip_h == false:
 		body.velocity = Vector2(400, -400)
 	else:
@@ -98,3 +101,11 @@ func _on_hit_area_body_entered(body: Node2D) -> void:
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if anim.animation == "death":
 		mushroom.queue_free()
+		
+
+func gettingHitAnimation():
+	if gettingHit:
+		set_modulate(Color(100, 100, 100))
+		await get_tree().create_timer(0.1).timeout
+		set_modulate(Color(1, 1, 1))
+		gettingHit = false

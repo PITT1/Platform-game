@@ -121,6 +121,7 @@ class_name PlatformerController2D
 @export var lives: int = 10
 @export_category("particles")
 @export var jump_particles: PackedScene
+var gettingHit = false
 
 
 
@@ -266,6 +267,7 @@ func _updateData():
 	
 
 func _process(_delta):
+	gettingHitAnimation()
 	#INFO animations
 	#directions
 	if is_on_wall() and !is_on_floor() and latch and wallLatching and ((wallLatchingModifer and latchHold) or !wallLatchingModifer):
@@ -736,3 +738,10 @@ func _on_hit_area_body_entered(body: Node2D) -> void:
 	print(body.lives)
 	body.lives -= 1
 	body.gettingHit = true
+	
+func gettingHitAnimation():
+	if gettingHit:
+		set_modulate(Color(100, 100, 100))
+		await get_tree().create_timer(0.1).timeout
+		set_modulate(Color(1, 1, 1))
+		gettingHit = false
