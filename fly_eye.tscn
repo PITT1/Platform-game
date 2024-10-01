@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://efyda2cw57qk"]
+[gd_scene load_steps=34 format=3 uid="uid://efyda2cw57qk"]
 
 [ext_resource type="Texture2D" uid="uid://b6yym4v2nihjh" path="res://Monsters_Creatures_Fantasy/Flying eye/Attack.png" id="1_52bx2"]
 [ext_resource type="Script" path="res://fly-eye-script.gd" id="1_ibuif"]
@@ -202,6 +202,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_0bi1x"]
 radius = 182.003
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ubn80"]
+radius = 12.0
+
 [node name="flyEye" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
@@ -219,12 +222,19 @@ position = Vector2(5, 2)
 shape = SubResource("CircleShape2D_dp4lu")
 
 [node name="Area2D" type="Area2D" parent="CharacterBody2D"]
-collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
 position = Vector2(3, 2)
 shape = SubResource("CircleShape2D_0bi1x")
 debug_color = Color(0.976471, 0, 0, 0.168627)
 
+[node name="Area2D2" type="Area2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D2"]
+position = Vector2(5, 2)
+shape = SubResource("CircleShape2D_ubn80")
+debug_color = Color(0.976471, 0, 0.419608, 0.0705882)
+
 [connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="CharacterBody2D/Area2D2" to="CharacterBody2D" method="_on_area_2d_2_body_entered"]
