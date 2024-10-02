@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=3 uid="uid://o8autm5pdnbr"]
+[gd_scene load_steps=87 format=3 uid="uid://o8autm5pdnbr"]
 
 [ext_resource type="Script" path="res://playerScript.gd" id="1_jfgvy"]
 [ext_resource type="Texture2D" uid="uid://dkinx5w12ek0u" path="res://player_sprites/DEATH.png" id="1_tsc5q"]
@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://e7wkcesrf48g" path="res://player_sprites/DEFEND.png" id="6_7jrbu"]
 [ext_resource type="Texture2D" uid="uid://pjk41w8j0ujp" path="res://player_sprites/HURT.png" id="8_4shsl"]
 [ext_resource type="Texture2D" uid="uid://b3rnq2b2mwjcj" path="res://player_sprites/WALK.png" id="11_pgmug"]
-[ext_resource type="Script" path="res://camera_2d.gd" id="12_v3qjr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f6il3"]
 height = 33.0
@@ -609,6 +608,7 @@ jump = true
 idle = true
 walk = true
 falling = true
+lives = 3
 jump_particles = ExtResource("2_lxma3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
@@ -626,7 +626,6 @@ limit_left = 100
 limit_top = 0
 limit_bottom = 0
 position_smoothing_enabled = true
-script = ExtResource("12_v3qjr")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
 libraries = {
