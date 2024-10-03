@@ -1311,7 +1311,6 @@ tile_set = SubResource("TileSet_yei7r")
 position = Vector2(156, 118)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.1, 0.1)

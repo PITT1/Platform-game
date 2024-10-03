@@ -608,7 +608,7 @@ jump = true
 idle = true
 walk = true
 falling = true
-lives = 3
+lives = 5
 jump_particles = ExtResource("2_lxma3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
@@ -617,9 +617,9 @@ shape = SubResource("CapsuleShape2D_f6il3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_qlfpc")
-animation = &"attack3"
-frame = 5
-frame_progress = 1.0
+animation = &"walk"
+frame = 6
+frame_progress = 0.68515
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 limit_left = 100
