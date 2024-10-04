@@ -609,7 +609,7 @@ jump = true
 idle = true
 walk = true
 falling = true
-lives = 5
+lives = 3
 jump_particles = ExtResource("2_lxma3")
 broken_heart_particles = ExtResource("3_4l27k")
 

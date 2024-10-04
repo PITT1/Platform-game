@@ -749,5 +749,3 @@ func gettingHitAnimation():
 		await get_tree().create_timer(0.1).timeout
 		set_modulate(Color(1, 1, 1))
 		gettingHit = false
-		
-		

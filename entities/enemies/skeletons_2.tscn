@@ -421,6 +421,7 @@ position = Vector2(1, -6)
 shape = SubResource("RectangleShape2D_lj8r1")
 
 [node name="hitArea" type="Area2D" parent="CharacterBody2D"]
+collision_mask = 13
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/hitArea"]
 position = Vector2(-41, -5)

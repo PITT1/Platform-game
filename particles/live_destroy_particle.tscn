@@ -4,17 +4,18 @@
 [ext_resource type="Script" path="res://particles/live_destroy_particle.gd" id="2_mndaf"]
 
 [sub_resource type="Curve" id="Curve_mppyq"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0534979, 1), 0.0, 0.0, 0, 0, Vector2(0.55144, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0740741, 0.516483), 0.0, 0.0, 0, 0, Vector2(0.292181, 0.505494), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 4
 
 [node name="live_destroy_particle" type="CPUParticles2D"]
 texture_filter = 1
 emitting = false
 amount = 1
-lifetime = 1.5
 one_shot = true
 speed_scale = 0.3
 explosiveness = 1.0
+randomness = 1.0
+fract_delta = false
 texture = ExtResource("1_jajwa")
 direction = Vector2(0, 1)
 spread = 17.51

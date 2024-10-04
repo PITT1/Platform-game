@@ -23,6 +23,5 @@ func _process(delta: float) -> void:
 		heartsNum = heartChange
 		var childrens = heartContainer.get_children()
 		heartContainer.remove_child(childrens[heartsNum])
-		print(childrens)
 	
 	
