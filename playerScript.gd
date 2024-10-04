@@ -121,6 +121,7 @@ class_name PlatformerController2D
 @export var lives: int = 10
 @export_category("particles")
 @export var jump_particles: PackedScene
+@export var broken_heart_particles: PackedScene
 var gettingHit = false
 
 
@@ -741,7 +742,12 @@ func _on_hit_area_body_entered(body: Node2D) -> void:
 	
 func gettingHitAnimation():
 	if gettingHit:
+		var brokenHeartsInstantiated = broken_heart_particles.instantiate()
+		add_sibling(brokenHeartsInstantiated)
+		brokenHeartsInstantiated.global_position = global_position + Vector2(0, 0)
 		set_modulate(Color(100, 100, 100))
 		await get_tree().create_timer(0.1).timeout
 		set_modulate(Color(1, 1, 1))
 		gettingHit = false
+		
+		

@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://c36pnjfbed1xx"]
+
+[ext_resource type="Texture2D" uid="uid://dmfnpcw017uxl" path="res://images/livebroken.png" id="1_jajwa"]
+[ext_resource type="Script" path="res://particles/live_destroy_particle.gd" id="2_mndaf"]
+
+[sub_resource type="Curve" id="Curve_mppyq"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0534979, 1), 0.0, 0.0, 0, 0, Vector2(0.55144, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[node name="live_destroy_particle" type="CPUParticles2D"]
+texture_filter = 1
+emitting = false
+amount = 1
+lifetime = 1.5
+one_shot = true
+speed_scale = 0.3
+explosiveness = 1.0
+texture = ExtResource("1_jajwa")
+direction = Vector2(0, 1)
+spread = 17.51
+gravity = Vector2(0, -300)
+initial_velocity_min = 53.44
+initial_velocity_max = 114.5
+angular_velocity_min = -395.72
+angular_velocity_max = 241.83
+orbit_velocity_min = 0.5
+orbit_velocity_max = 0.6
+scale_amount_curve = SubResource("Curve_mppyq")
+script = ExtResource("2_mndaf")
