@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=3 uid="uid://o8autm5pdnbr"]
+[gd_scene load_steps=89 format=3 uid="uid://o8autm5pdnbr"]
 
 [ext_resource type="Script" path="res://playerScript.gd" id="1_jfgvy"]
 [ext_resource type="Texture2D" uid="uid://dkinx5w12ek0u" path="res://player_sprites/DEATH.png" id="1_tsc5q"]
@@ -224,6 +224,10 @@ region = Rect2(288, 0, 96, 84)
 [sub_resource type="AtlasTexture" id="AtlasTexture_pm8q4"]
 atlas = ExtResource("2_87p7r")
 region = Rect2(384, 0, 96, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvnmd"]
+atlas = ExtResource("1_tsc5q")
+region = Rect2(1056, 0, 96, 84)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_44vhp"]
 atlas = ExtResource("4_lpi8c")
@@ -494,6 +498,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_kvnmd")
+}],
+"loop": true,
+"name": &"on_death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_44vhp")
 }, {
 "duration": 1.0,
@@ -619,9 +631,8 @@ shape = SubResource("CapsuleShape2D_f6il3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_qlfpc")
-animation = &"death"
-frame = 11
-frame_progress = 1.0
+animation = &"on_death"
+frame_progress = 0.640826
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 limit_left = 100

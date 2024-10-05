@@ -333,10 +333,16 @@ func _process(_delta):
 		jump = true
 		
 	#death
-	if death:
+	if death and is_on_floor():
+		var deathCount = 0
+		movementInputMonitoring = Vector2(false, false)
 		jump = false
 		idle = false
-		anim.play("death")
+		if deathCount == 0:
+			anim.play("death")
+			deathCount = 1
+		elif deathCount == 1:
+			anim.play("on_death")
 	
 	#run
 	if run and idle and !dashing and !crouching and not death:
@@ -768,4 +774,4 @@ func deathFunction():
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if anim.animation == "death":
-		queue_free()
+		anim.play("on_death")

@@ -23,7 +23,10 @@ func _process(delta: float) -> void:
 		else:
 			heartsNum = heartChange
 			var childrens = heartContainer.get_children()
-			heartContainer.remove_child(childrens[heartsNum])
+			if heartContainer.get_child_count() == 0:
+				pass
+			else:
+				heartContainer.remove_child(childrens[heartsNum])
 	else:
 		pass
 	

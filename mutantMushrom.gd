@@ -90,12 +90,13 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 
 
 func _on_hit_area_body_entered(body: Node2D) -> void:
-	body.lives -= 1
-	body.gettingHit = true
-	if anim.flip_h == false:
-		body.velocity = Vector2(400, -400)
-	else:
-		body.velocity = Vector2(-400, -400)
+	if body.lives != 0:
+		body.lives -= 1
+		body.gettingHit = true
+		if anim.flip_h == false:
+			body.velocity = Vector2(400, -400)
+		else:
+			body.velocity = Vector2(-400, -400)
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:

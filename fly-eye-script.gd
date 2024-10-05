@@ -67,6 +67,7 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_2_body_entered(body: Node2D) -> void:
-	body.lives -= 1
-	body.gettingHit = true
-	flyEye.velocity.y = -200
+	if body.lives != 0:
+		body.lives -= 1
+		body.gettingHit = true
+		flyEye.velocity.y = -200
