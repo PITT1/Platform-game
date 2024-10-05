@@ -70,14 +70,17 @@ func animations():
 
 
 func _on_attack_area_body_entered(body: Node2D) -> void:
-	onAttack = true
-	anim.visible = false
-	if player.global_position.x > mushroom.global_position.x:
-		hitArea.position.x = 24
-		animation_player.play("attack")
+	if not player.death:
+		onAttack = true
+		anim.visible = false
+		if player.global_position.x > mushroom.global_position.x:
+			hitArea.position.x = 24
+			animation_player.play("attack")
+		else:
+			hitArea.position.x = -24
+			animation_player.play("attackLeft")
 	else:
-		hitArea.position.x = -24
-		animation_player.play("attackLeft")
+		player = null
 
 func _on_attack_area_body_exited(body: Node2D) -> void:
 	pass

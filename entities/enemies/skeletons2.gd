@@ -41,7 +41,7 @@ func _on_vision_area_body_exited(body: Node2D) -> void:
 	player = null
 	
 func movement():
-	if player and not animationPlayer.current_animation == "attackRight" and not animationPlayer.current_animation == "attackLeft" and not death:
+	if player and not animationPlayer.current_animation == "attackRight" and not animationPlayer.current_animation == "attackLeft" and not death and not player.death:
 		if player.global_position.x > skeleton.global_position.x:
 			velocity.x += aceleration
 			if velocity.x > speed:
@@ -66,14 +66,14 @@ func animations():
 
 
 func _on_attack_area_body_entered(body: Node2D) -> void:
-	if player.global_position.x > skeleton.global_position.x and not animationPlayer.current_animation == "attackLeft" and not death:
+	if player.global_position.x > skeleton.global_position.x and not animationPlayer.current_animation == "attackLeft" and not death and not player.death:
 		velocity.x = 0
 		anim.visible = false
 		anim.flip_h = false
 		animationPlayer.play("attackRight")
 		await get_tree().create_timer(0.78).timeout
 		anim.visible = true
-	elif player.global_position.x < skeleton.global_position.x and not animationPlayer.current_animation == "attackRight" and not death:
+	elif player.global_position.x < skeleton.global_position.x and not animationPlayer.current_animation == "attackRight" and not death and not player.death:
 		velocity.x = 0
 		anim.visible = false
 		anim.flip_h = true

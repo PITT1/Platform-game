@@ -678,7 +678,7 @@ func _coyoteTime():
 
 	
 func _jump():
-	if jumpCount > 0:
+	if jumpCount > 0 and not death:
 		velocity.y = -jumpMagnitude
 		jumpCount += -1
 		jumpWasPressed = false

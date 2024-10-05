@@ -28,7 +28,7 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 
 
 func _process(delta: float) -> void:
-	if player != null and not death:
+	if player != null and not death and not player.death:
 		playerLocationX = player.global_position.x
 		playerLocationY = player.global_position.y
 		flyEyeLocationX = flyEye.global_position.x
