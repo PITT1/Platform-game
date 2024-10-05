@@ -288,13 +288,12 @@ func _process(_delta):
 		anim.scale.x = animScaleLock.x * -1
 		
 	#attack
-	if Input.is_action_just_pressed("atack") and is_on_floor() and not on_Attack:
+	if Input.is_action_just_pressed("atack") and not on_Attack:
 		jump = false
 		idle = false
 		on_Attack = true
 		animation_player.play("attack_hit")
-		velocity.x = 0
-		if attackBuss == 0:
+		if attackBuss == 0 and is_on_floor():
 			anim.play("attack1")
 			if anim.scale.x > 0:
 				collision_shape_2d.position.x = 16
@@ -304,8 +303,9 @@ func _process(_delta):
 				collision_shape_2d.position.x = -16
 				collision_shape_2d.scale = Vector2(1, 1)
 				collision_shape_2d.position.y = 5
+			await get_tree().create_timer(0.3).timeout
 			attackBuss = 1
-		elif attackBuss == 1:
+		elif attackBuss == 1 and is_on_floor():
 			anim.play("attack2")
 			if anim.scale.x > 0:
 				collision_shape_2d.position.x = 16
@@ -315,8 +315,10 @@ func _process(_delta):
 				collision_shape_2d.position.x = -16
 				collision_shape_2d.scale = Vector2(1, 1)
 				collision_shape_2d.position.y = 5
-			attackBuss = 2
-		elif attackBuss == 2:
+			await get_tree().create_timer(0.3).timeout
+			attackBuss = 0
+			
+		if not is_on_floor():
 			anim.play("attack3")
 			if anim.scale.x > 0:
 				collision_shape_2d.position.x = 16
@@ -326,8 +328,8 @@ func _process(_delta):
 				collision_shape_2d.position.x = -16
 				collision_shape_2d.position.y = 0
 				collision_shape_2d.scale = Vector2(2.5, 1)
+			await get_tree().create_timer(0.3).timeout
 			attackBuss = 0
-		await get_tree().create_timer(0.37).timeout
 		on_Attack = false
 		idle = true
 		jump = true
@@ -340,12 +342,14 @@ func _process(_delta):
 		idle = false
 		if deathCount == 0:
 			anim.play("death")
+			await get_tree().create_timer(1).timeout
 			deathCount = 1
-		elif deathCount == 1:
+			
+		if deathCount == 1:
 			anim.play("on_death")
 	
 	#run
-	if run and idle and !dashing and !crouching and not death:
+	if run and idle and !dashing and !crouching and not death and not on_Attack:
 		if abs(velocity.x) > 0.1 and is_on_floor() and !is_on_wall():
 			anim.speed_scale = abs(velocity.x / 150)
 			anim.play("run")
@@ -364,11 +368,11 @@ func _process(_delta):
 			anim.play("idle")
 		
 	#jump
-	if velocity.y < 0 and jump and !dashing and not death:
+	if velocity.y < 0 and jump and !dashing and not death and not on_Attack:
 		anim.speed_scale = 1
 		anim.play("jump")
 		
-	if velocity.y > 40 and falling and !dashing and !crouching and not death:
+	if velocity.y > 40 and falling and !dashing and !crouching and not death and not on_Attack:
 		anim.speed_scale = 1
 		anim.play("falling")
 		
