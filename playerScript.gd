@@ -193,6 +193,8 @@ var twirlTap
 var attackBuss = 0
 var on_Attack = false
 
+var death = false
+
 #camara
 @onready var cam = $Camera2D
 
@@ -269,6 +271,8 @@ func _updateData():
 
 func _process(_delta):
 	gettingHitAnimation()
+	
+	deathFunction()
 	#INFO animations
 	#directions
 	if is_on_wall() and !is_on_floor() and latch and wallLatching and ((wallLatchingModifer and latchHold) or !wallLatchingModifer):
@@ -327,9 +331,15 @@ func _process(_delta):
 		on_Attack = false
 		idle = true
 		jump = true
+		
+	#death
+	if death:
+		jump = false
+		idle = false
+		anim.play("death")
 	
 	#run
-	if run and idle and !dashing and !crouching:
+	if run and idle and !dashing and !crouching and not death:
 		if abs(velocity.x) > 0.1 and is_on_floor() and !is_on_wall():
 			anim.speed_scale = abs(velocity.x / 150)
 			anim.play("run")
@@ -348,13 +358,14 @@ func _process(_delta):
 			anim.play("idle")
 		
 	#jump
-	if velocity.y < 0 and jump and !dashing:
+	if velocity.y < 0 and jump and !dashing and not death:
 		anim.speed_scale = 1
 		anim.play("jump")
 		
-	if velocity.y > 40 and falling and !dashing and !crouching:
+	if velocity.y > 40 and falling and !dashing and !crouching and not death:
 		anim.speed_scale = 1
 		anim.play("falling")
+		
 		
 	if latch and slide:
 		#wall slide and latch
@@ -411,7 +422,7 @@ func _physics_process(delta):
 	
 	#INFO Left and Right Movement
 	
-	if rightHold and leftHold and movementInputMonitoring:
+	if rightHold and leftHold and movementInputMonitoring and not death:
 		if !instantStop:
 			_decelerate(delta, false)
 		else:
@@ -749,3 +760,12 @@ func gettingHitAnimation():
 		await get_tree().create_timer(0.1).timeout
 		set_modulate(Color(1, 1, 1))
 		gettingHit = false
+
+func deathFunction():
+	if lives == 0:
+		death = true
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if anim.animation == "death":
+		queue_free()

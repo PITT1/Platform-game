@@ -619,9 +619,9 @@ shape = SubResource("CapsuleShape2D_f6il3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_qlfpc")
-animation = &"walk"
-frame = 6
-frame_progress = 0.68515
+animation = &"death"
+frame = 11
+frame_progress = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 limit_left = 100
@@ -643,4 +643,5 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_n0wn8")
 debug_color = Color(0.952941, 0, 0.12549, 0.419608)
 
+[connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="CharacterBody2D/hitArea" to="CharacterBody2D" method="_on_hit_area_body_entered"]
