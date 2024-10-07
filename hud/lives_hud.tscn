@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxftx0pehgckf"]
+
+[ext_resource type="Texture2D" uid="uid://b4trce0xijr7d" path="res://images/live.png" id="1_3fu7o"]
+[ext_resource type="Script" path="res://hud/lives_hud.gd" id="1_fr78x"]
+
+[node name="lives-HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+pivot_offset = Vector2(4, 12)
+size_flags_horizontal = 8
+script = ExtResource("1_fr78x")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 229.0
+offset_bottom = 18.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("1_3fu7o")

@@ -1,12 +1,12 @@
 [gd_scene load_steps=37 format=3 uid="uid://dsbr2hrptjhy7"]
 
 [ext_resource type="Script" path="res://entities/enemies/skeletons2.gd" id="1_1hvrq"]
-[ext_resource type="Texture2D" uid="uid://cpiuno5ill17m" path="res://Monsters_Creatures_Fantasy/Skeleton/Death.png" id="1_oruq3"]
-[ext_resource type="Texture2D" uid="uid://b1o3vnb2xhl41" path="res://Monsters_Creatures_Fantasy/Skeleton/Idle.png" id="2_8nkmr"]
-[ext_resource type="Texture2D" uid="uid://bwpabldh1dsr8" path="res://Monsters_Creatures_Fantasy/Skeleton/Shield.png" id="3_1vun8"]
-[ext_resource type="Texture2D" uid="uid://djc1lq6ch43dk" path="res://Monsters_Creatures_Fantasy/Skeleton/Take Hit.png" id="4_raft1"]
-[ext_resource type="Texture2D" uid="uid://bh5vn81dl6g" path="res://Monsters_Creatures_Fantasy/Skeleton/Walk.png" id="5_b8jp4"]
-[ext_resource type="Texture2D" uid="uid://8trj5w4xv2bq" path="res://Monsters_Creatures_Fantasy/Skeleton/Attack.png" id="6_ew148"]
+[ext_resource type="Texture2D" uid="uid://cpiuno5ill17m" path="res://images/Monsters_Creatures_Fantasy/Skeleton/Death.png" id="1_oruq3"]
+[ext_resource type="Texture2D" uid="uid://b1o3vnb2xhl41" path="res://images/Monsters_Creatures_Fantasy/Skeleton/Idle.png" id="2_8nkmr"]
+[ext_resource type="Texture2D" uid="uid://bwpabldh1dsr8" path="res://images/Monsters_Creatures_Fantasy/Skeleton/Shield.png" id="3_1vun8"]
+[ext_resource type="Texture2D" uid="uid://djc1lq6ch43dk" path="res://images/Monsters_Creatures_Fantasy/Skeleton/Take Hit.png" id="4_raft1"]
+[ext_resource type="Texture2D" uid="uid://bh5vn81dl6g" path="res://images/Monsters_Creatures_Fantasy/Skeleton/Walk.png" id="5_b8jp4"]
+[ext_resource type="Texture2D" uid="uid://8trj5w4xv2bq" path="res://images/Monsters_Creatures_Fantasy/Skeleton/Attack.png" id="6_ew148"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2qqic"]
 atlas = ExtResource("1_oruq3")
