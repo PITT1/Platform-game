@@ -580,7 +580,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_gbdfk"]
 resource_name = "attack_hit"
-length = 0.37
+length = 0.28
 step = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -636,8 +636,6 @@ frame_progress = 0.640826
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 limit_left = 100
-limit_top = 0
-limit_bottom = 0
 position_smoothing_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
