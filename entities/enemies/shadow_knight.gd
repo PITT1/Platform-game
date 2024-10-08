@@ -28,7 +28,8 @@ func _process(delta: float) -> void:
 
 func _on_vision_area_body_entered(body: CharacterBody2D) -> void:
 	player = body
-	attackMode()
+	if not player.death: 
+		attackMode()
 	
 	
 
@@ -114,3 +115,8 @@ func activateHitShape():
 	hitCollisionShape.set_disabled(false)
 	await get_tree().create_timer(0.1).timeout
 	hitCollisionShape.set_disabled(true)
+
+
+func _on_hit_area_body_entered(body: Node2D) -> void:
+	body.lives -= 1
+	body.gettingHit = true

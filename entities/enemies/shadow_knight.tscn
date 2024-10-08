@@ -241,3 +241,4 @@ debug_color = Color(0.984314, 0, 0, 0.52549)
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="body_entered" from="visionArea" to="." method="_on_vision_area_body_entered"]
 [connection signal="body_exited" from="visionArea" to="." method="_on_vision_area_body_exited"]
+[connection signal="body_entered" from="hitArea" to="." method="_on_hit_area_body_entered"]
