@@ -10,7 +10,8 @@ var death = false
 @onready var collision_box: CollisionShape2D = $CollisionShape2D
 @onready var vision_box: CollisionShape2D = $visionArea/CollisionShape2D
 @onready var hitCollisionShape: CollisionShape2D = $hitArea/CollisionShape2D
-
+@export var lives: float = 5
+var gettingHit = false
 func _ready() -> void:
 	anim.play("idle")
 	set_modulate(Color(1, 1, 1, 0.7))
@@ -24,11 +25,21 @@ func _process(delta: float) -> void:
 	
 	if death:
 		anim.play("death")
+	
+	gettingHitAnimation()
+	
+	if death and anim.get_animation() == "death" and anim.get_frame() == 6:
+		await  get_tree().create_timer(0.05).timeout
+		queue_free()
+		
+	
+	if lives < 1:
+		onDeath()
 
 
 func _on_vision_area_body_entered(body: CharacterBody2D) -> void:
 	player = body
-	if not player.death: 
+	if not player.death and not death: 
 		attackMode()
 	
 	
@@ -77,7 +88,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		onIdle()
 		vision_area.set_monitoring(false)
 		vision_box.scale.x = 1
-		vision_area.set_monitoring(true)
+		vision_area.set_monitoring(true)	
 
 func attackMode():
 	vision_box.scale.x = 8
@@ -120,3 +131,10 @@ func activateHitShape():
 func _on_hit_area_body_entered(body: Node2D) -> void:
 	body.lives -= 1
 	body.gettingHit = true
+	
+func gettingHitAnimation():
+	if gettingHit:
+		set_modulate(Color(100, 100, 100))
+		await get_tree().create_timer(0.1).timeout
+		set_modulate(Color(1, 1, 1))
+		gettingHit = false

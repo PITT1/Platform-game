@@ -214,8 +214,9 @@ script = ExtResource("1_oyayd")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i6krq")
-animation = &"attack"
-frame = 9
+animation = &"death"
+frame = 4
+frame_progress = 0.778555
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-7, 7)
