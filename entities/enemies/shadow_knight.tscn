@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dimbgqtdp63fu"]
+[gd_scene load_steps=32 format=3 uid="uid://dimbgqtdp63fu"]
 
 [ext_resource type="Script" path="res://entities/enemies/shadow_knight.gd" id="1_oyayd"]
 [ext_resource type="Texture2D" uid="uid://bghic2ojmy85w" path="res://images/shadow_Knight/knight.png" id="1_we3ad"]
@@ -202,6 +202,9 @@ radius = 8.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ynm11"]
 size = Vector2(352, 161.333)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4dr7o"]
+height = 66.6667
+
 [node name="ShadowKnight" type="CharacterBody2D"]
 scale = Vector2(1.5, 1.5)
 collision_layer = 16
@@ -211,8 +214,8 @@ script = ExtResource("1_oyayd")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i6krq")
-animation = &"idle"
-frame_progress = 0.0812816
+animation = &"attack"
+frame = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-7, 7)
@@ -225,6 +228,16 @@ collision_layer = 0
 position = Vector2(-6.66667, 3.33333)
 shape = SubResource("RectangleShape2D_ynm11")
 
+[node name="hitArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitArea"]
+position = Vector2(-4, 9.333)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_4dr7o")
+disabled = true
+debug_color = Color(0.984314, 0, 0, 0.52549)
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="body_entered" from="visionArea" to="." method="_on_vision_area_body_entered"]
 [connection signal="body_exited" from="visionArea" to="." method="_on_vision_area_body_exited"]

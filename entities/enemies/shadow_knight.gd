@@ -9,6 +9,7 @@ var death = false
 @onready var vision_area: Area2D = $visionArea
 @onready var collision_box: CollisionShape2D = $CollisionShape2D
 @onready var vision_box: CollisionShape2D = $visionArea/CollisionShape2D
+@onready var hitCollisionShape: CollisionShape2D = $hitArea/CollisionShape2D
 
 func _ready() -> void:
 	anim.play("idle")
@@ -92,3 +93,24 @@ func attackMode():
 
 func _on_vision_area_body_exited(body: Node2D) -> void:
 	pass
+
+
+func _on_animated_sprite_2d_frame_changed() -> void:
+	if anim.get_animation() == "attack" and anim.get_frame() == 2:
+		activateHitShape()
+		hitCollisionShape.position = Vector2(-4, 9.333)
+		hitCollisionShape.scale = Vector2(1, 1)
+	if anim.get_animation() == "attack" and anim.get_frame() == 5:
+		activateHitShape()
+		hitCollisionShape.position = Vector2(0, 7.333)
+		hitCollisionShape.scale = Vector2(1.5, 1)
+		
+	if anim.get_animation() == "attack" and anim.get_frame() == 9:
+		activateHitShape()
+		hitCollisionShape.position = Vector2(0.667, 2.667)
+		hitCollisionShape.scale = Vector2(2, 1.1)
+		
+func activateHitShape():
+	hitCollisionShape.set_disabled(false)
+	await get_tree().create_timer(0.1).timeout
+	hitCollisionShape.set_disabled(true)
