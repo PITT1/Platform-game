@@ -8,6 +8,7 @@ var idle = true
 var death = false
 @onready var vision_area: Area2D = $visionArea
 @onready var collision_box: CollisionShape2D = $CollisionShape2D
+@onready var vision_box: CollisionShape2D = $visionArea/CollisionShape2D
 
 func _ready() -> void:
 	anim.play("idle")
@@ -73,10 +74,11 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	if anim.animation == "attack":
 		onIdle()
 		vision_area.set_monitoring(false)
-		await get_tree().create_timer(0.1).timeout
+		vision_box.scale.x = 1
 		vision_area.set_monitoring(true)
 
 func attackMode():
+	vision_box.scale.x = 8
 	disappear()
 	await get_tree().create_timer(2).timeout
 	if aleatoryBool():
