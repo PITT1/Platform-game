@@ -12,7 +12,6 @@ class_name PlatformerController2D
 @export_category("Necesary Child Nodes")
 @export var PlayerSprite: AnimatedSprite2D
 @export var PlayerCollider: CollisionShape2D
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var collision_shape_2d: CollisionShape2D = $hitArea/CollisionShape2D
 
 
@@ -292,7 +291,6 @@ func _process(_delta):
 		jump = false
 		idle = false
 		on_Attack = true
-		animation_player.play("attack_hit")
 		if attackBuss == 0 and is_on_floor():
 			anim.play("attack1")
 			if anim.scale.x > 0:
@@ -778,3 +776,20 @@ func deathFunction():
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if anim.animation == "death":
 		anim.play("on_death")
+
+
+func _on_animated_sprite_2d_frame_changed() -> void:
+	if anim.get_animation() == "attack1" and anim.get_frame() == 3:
+		collision_shape_2d.set_disabled(false)
+		await get_tree().create_timer(0.1).timeout
+		collision_shape_2d.set_disabled(true)
+		
+	if anim.get_animation() == "attack2" and anim.get_frame() == 1:
+		collision_shape_2d.set_disabled(false)
+		await get_tree().create_timer(0.1).timeout
+		collision_shape_2d.set_disabled(true)
+		
+	if anim.get_animation() == "attack3" and anim.get_frame() == 2:
+		collision_shape_2d.set_disabled(false)
+		await get_tree().create_timer(0.1).timeout
+		collision_shape_2d.set_disabled(true)

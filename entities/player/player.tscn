@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://o8autm5pdnbr"]
+[gd_scene load_steps=86 format=3 uid="uid://o8autm5pdnbr"]
 
 [ext_resource type="Script" path="res://entities/player/playerScript.gd" id="1_jfgvy"]
 [ext_resource type="Texture2D" uid="uid://dkinx5w12ek0u" path="res://images/player_sprites/DEATH.png" id="1_tsc5q"]
@@ -563,44 +563,6 @@ animations = [{
 "speed": 13.0
 }]
 
-[sub_resource type="Animation" id="Animation_eo4sk"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("hitArea/CollisionShape2D:disabled")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_gbdfk"]
-resource_name = "attack_hit"
-length = 0.28
-step = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("hitArea/CollisionShape2D:disabled")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.07, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_3lrk7"]
-_data = {
-"RESET": SubResource("Animation_eo4sk"),
-"attack_hit": SubResource("Animation_gbdfk")
-}
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n0wn8"]
 radius = 8.0
 
@@ -631,17 +593,11 @@ shape = SubResource("CapsuleShape2D_f6il3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_qlfpc")
-animation = &"on_death"
-frame_progress = 0.640826
+animation = &"attack3"
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 limit_left = 100
 position_smoothing_enabled = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
-libraries = {
-"": SubResource("AnimationLibrary_3lrk7")
-}
 
 [node name="hitArea" type="Area2D" parent="CharacterBody2D"]
 collision_mask = 28
@@ -653,4 +609,5 @@ shape = SubResource("CapsuleShape2D_n0wn8")
 debug_color = Color(0.952941, 0, 0.12549, 0.419608)
 
 [connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="frame_changed" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="body_entered" from="CharacterBody2D/hitArea" to="CharacterBody2D" method="_on_hit_area_body_entered"]

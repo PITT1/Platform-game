@@ -1,7 +1,8 @@
-[gd_scene load_steps=32 format=3 uid="uid://dimbgqtdp63fu"]
+[gd_scene load_steps=33 format=3 uid="uid://dimbgqtdp63fu"]
 
 [ext_resource type="Script" path="res://entities/enemies/shadow_knight.gd" id="1_oyayd"]
 [ext_resource type="Texture2D" uid="uid://bghic2ojmy85w" path="res://images/shadow_Knight/knight.png" id="1_we3ad"]
+[ext_resource type="PackedScene" uid="uid://dmwqd0ntbk8b4" path="res://particles/shadow_knight_kill.tscn" id="2_nj25e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u0g23"]
 atlas = ExtResource("1_we3ad")
@@ -210,6 +211,8 @@ scale = Vector2(1.5, 1.5)
 collision_layer = 16
 collision_mask = 2
 script = ExtResource("1_oyayd")
+lives = 10.0
+death_particles = ExtResource("2_nj25e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

@@ -12,6 +12,9 @@ var death = false
 @onready var hitCollisionShape: CollisionShape2D = $hitArea/CollisionShape2D
 @export var lives: float = 5
 var gettingHit = false
+@export var death_particles: PackedScene
+
+
 func _ready() -> void:
 	anim.play("idle")
 	set_modulate(Color(1, 1, 1, 0.7))
@@ -30,6 +33,7 @@ func _process(delta: float) -> void:
 	
 	if death and anim.get_animation() == "death" and anim.get_frame() == 6:
 		await  get_tree().create_timer(0.05).timeout
+		deathParticles()
 		queue_free()
 		
 	
@@ -138,3 +142,9 @@ func gettingHitAnimation():
 		await get_tree().create_timer(0.1).timeout
 		set_modulate(Color(1, 1, 1))
 		gettingHit = false
+
+
+func deathParticles():
+	var instantiatedParticles = death_particles.instantiate()
+	instantiatedParticles.global_position = global_position
+	add_sibling(instantiatedParticles)
