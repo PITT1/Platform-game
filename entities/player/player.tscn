@@ -575,6 +575,7 @@ script = ExtResource("1_jfgvy")
 PlayerSprite = NodePath("AnimatedSprite2D")
 PlayerCollider = NodePath("CollisionShape2D")
 runningModifier = true
+coyoteTime = 0.1
 wallJump = true
 inputPauseAfterWallJump = 0.5
 wallSliding = 2.298
