@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://dov1o15cl0suk"]
+
+[node name="ForrestMageProyectil" type="RigidBody2D"]
