@@ -16,6 +16,7 @@ var player: CharacterBody2D
 
 func _ready() -> void:
 	on_idle()
+	hit_collision_shape.set_disabled(true)
 	
 
 func _process(delta: float) -> void:
@@ -46,6 +47,45 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
+
+
+func _on_vision_area_body_entered(body: CharacterBody2D) -> void:
+	player = body
+	vision_area.scale = Vector2(5, 5)
+	on_seePlayer()
+	on_spell()
+	await get_tree().create_timer(1).timeout
+	on_teleport_out()
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if anim.get_animation() == "teleport_out":
+		set_modulate(Color(1, 1, 1, 0))
+		if aleatoryBool():
+			global_position.x = player.global_position.x + 40
+		else:
+			global_position.x = player.global_position.x - 40
+	on_teleport_in()
+	set_modulate(Color(1, 1, 1, 1))
+	on_seePlayer()
+	
+	if anim.get_animation() == "teleport_in":
+		on_idle()
+		await get_tree().create_timer(0.3).timeout
+		on_thorns()
+		
+	if anim.get_animation() == "thorns":
+		on_idle()
+		
+func _on_animated_sprite_2d_frame_changed() -> void:
+	if anim.get_animation() == "thorns" and anim.get_frame() == 4:
+		hit_collision_shape.set_disabled(false)
+		await get_tree().create_timer(0.2).timeout
+		hit_collision_shape.set_disabled(true)
+		await get_tree().create_timer(1).timeout
+		vision_area.set_monitoring(false)
+		vision_area.set_monitoring(true)
+
 func on_idle():
 	death = false
 	idle = true
@@ -100,28 +140,9 @@ func aleatoryBool():
 		return true
 	else:
 		return false
-
-
-func _on_vision_area_body_entered(body: CharacterBody2D) -> void:
-	player = body
-	vision_area.scale = Vector2(5, 5)
+		
+func on_seePlayer():
 	if player.global_position > global_position:
 		anim.flip_h = false
 	else:
 		anim.flip_h = true
-	on_spell()
-	await get_tree().create_timer(1).timeout
-	on_teleport_out()
-
-
-func _on_animated_sprite_2d_animation_finished() -> void:
-	if anim.get_animation() == "teleport_out":
-		visible = false
-	
-	if aleatoryBool():
-		global_position.x = player.global_position.x + 20
-	else:
-		global_position.x = player.global_position.x - 20
-	
-	visible = true
-	on_teleport_in()
