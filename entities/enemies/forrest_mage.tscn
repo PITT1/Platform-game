@@ -1,8 +1,9 @@
-[gd_scene load_steps=48 format=3 uid="uid://bb75lpghpiuue"]
+[gd_scene load_steps=49 format=3 uid="uid://bb75lpghpiuue"]
 
 [ext_resource type="Texture2D" uid="uid://bopc2n3a6pqcm" path="res://images/forrest_mage/forrest_mage_death.png" id="1_16m7u"]
 [ext_resource type="Script" path="res://entities/enemies/forrest_mage.gd" id="1_jfsio"]
 [ext_resource type="Texture2D" uid="uid://cnxsc2ywekhsc" path="res://images/forrest_mage/forrest_mage_walkl.png" id="2_1kuxc"]
+[ext_resource type="PackedScene" uid="uid://dov1o15cl0suk" path="res://entities/proyectiles/forrest_mage_proyectil.tscn" id="2_ep2rj"]
 [ext_resource type="Texture2D" uid="uid://bmm054ouvr45v" path="res://images/forrest_mage/forrest_mage_spell.png" id="3_2xmrc"]
 [ext_resource type="Texture2D" uid="uid://byx42t15kqkge" path="res://images/forrest_mage/forrest_mage_teleport2.png" id="4_6oagq"]
 [ext_resource type="Texture2D" uid="uid://dn0fq6rpcjxk" path="res://images/forrest_mage/forrest_mage_teleport1.png" id="5_dka5v"]
@@ -309,12 +310,11 @@ scale = Vector2(1.5, 1.5)
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_jfsio")
+proyectil = ExtResource("2_ep2rj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_m4mvr")
-animation = &"thorns"
-frame = 6
-frame_progress = 1.0
+animation = &"spell"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3, 18)

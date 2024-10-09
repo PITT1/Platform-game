@@ -11,9 +11,10 @@ var spell = false
 var teleport_in = false
 var teleport_out = false
 var thorns = false
-var attack_type = 0
+var attack_type = 1
 
 var player: CharacterBody2D
+@export var proyectil: PackedScene
 
 func _ready() -> void:
 	on_idle()
@@ -54,7 +55,7 @@ func _on_vision_area_body_entered(body: CharacterBody2D) -> void:
 	player = body
 	vision_area.scale = Vector2(5, 5)
 	on_seePlayer()
-	on_spell()
+	on_idle()
 	await get_tree().create_timer(0.5).timeout
 	on_teleport_out()
 
@@ -66,6 +67,12 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 			global_position.x = player.global_position.x + 40
 		else:
 			global_position.x = player.global_position.x - 40
+	elif anim.get_animation() == "teleport_out" and attack_type == 1:
+		set_modulate(Color(1, 1, 1, 0))
+		if aleatoryBool():
+			global_position.x = player.global_position.x + 80
+		else:
+			global_position.x = player.global_position.x - 80
 	on_teleport_in()
 	set_modulate(Color(1, 1, 1, 1))
 	on_seePlayer()
@@ -74,9 +81,15 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		on_idle()
 		await get_tree().create_timer(0.1).timeout
 		on_thorns()
+	elif anim.get_animation() == "teleport_in" and attack_type == 1:
+		on_idle()
+		await get_tree().create_timer(0.1).timeout
+		on_spell()
 		
 	if anim.get_animation() == "thorns":
 		on_idle()
+		
+	
 		
 func _on_animated_sprite_2d_frame_changed() -> void:
 	if anim.get_animation() == "thorns" and anim.get_frame() == 4:
@@ -84,6 +97,15 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 		await get_tree().create_timer(0.2).timeout
 		hit_collision_shape.set_disabled(true)
 		await get_tree().create_timer(0.5).timeout
+		vision_area.set_monitoring(false)
+		vision_area.set_monitoring(true)
+		
+	if anim.get_animation() == "spell" and anim.get_frame() == 5:
+		on_idle()
+		var instant_proyectil = proyectil.instantiate()
+		instant_proyectil.global_position = global_position + Vector2(0, -20)
+		add_sibling(instant_proyectil)
+		await get_tree().create_timer(1).timeout
 		vision_area.set_monitoring(false)
 		vision_area.set_monitoring(true)
 
