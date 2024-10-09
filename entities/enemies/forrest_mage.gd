@@ -11,7 +11,7 @@ var spell = false
 var teleport_in = false
 var teleport_out = false
 var thorns = false
-var attack_type = 1
+var attack_type = 0
 
 var player: CharacterBody2D
 @export var proyectil: PackedScene
@@ -53,6 +53,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_vision_area_body_entered(body: CharacterBody2D) -> void:
 	player = body
+	attack_type = aleatoryBool()
 	vision_area.scale = Vector2(5, 5)
 	on_seePlayer()
 	on_idle()
@@ -105,6 +106,8 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 		var instant_proyectil = proyectil.instantiate()
 		instant_proyectil.global_position = global_position + Vector2(0, -20)
 		add_sibling(instant_proyectil)
+		var direction_to_player = global_position.direction_to(player.global_position)
+		instant_proyectil.velocity = direction_to_player * 150
 		await get_tree().create_timer(1).timeout
 		vision_area.set_monitoring(false)
 		vision_area.set_monitoring(true)
