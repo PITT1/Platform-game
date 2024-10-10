@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgt7q2a8bimo2"]
+[gd_scene load_steps=4 format=3 uid="uid://dgt7q2a8bimo2"]
 
 [ext_resource type="Texture2D" uid="uid://bocax5gco2e4m" path="res://images/leaf.png" id="1_bfxo5"]
 
@@ -8,17 +8,22 @@ max_value = 360.0
 _data = [Vector2(0, 19.7802), 0.0, 0.0, 0, 0, Vector2(0.432099, 59.3406), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 3
 
+[sub_resource type="Curve" id="Curve_53ote"]
+_data = [Vector2(0.00411522, 0), 0.0, 0.0, 0, 0, Vector2(0.292181, 0.351064), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [node name="leaf_particles" type="CPUParticles2D"]
 position = Vector2(-1, -1)
-amount = 16
+amount = 30
 speed_scale = 0.1
-randomness = 1.0
 texture = ExtResource("1_bfxo5")
 emission_shape = 3
-emission_rect_extents = Vector2(400, 1)
+emission_rect_extents = Vector2(300, 1)
 gravity = Vector2(-500, 980)
 angular_velocity_min = -43.97
 angular_velocity_max = 76.94
 angular_velocity_curve = SubResource("Curve_gw3r8")
-orbit_velocity_min = -0.5
-orbit_velocity_max = -0.5
+orbit_velocity_min = -0.1
+orbit_velocity_max = -0.1
+scale_amount_curve = SubResource("Curve_53ote")
+color = Color(1, 1, 1, 0.364706)

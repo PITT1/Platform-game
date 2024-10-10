@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://o01kysyplujt"]
+[gd_scene load_steps=18 format=4 uid="uid://o01kysyplujt"]
 
 [ext_resource type="Texture2D" uid="uid://didcklr78knar" path="res://images/tilemap/main_lev_build_2.png" id="1_brmwm"]
 [ext_resource type="Texture2D" uid="uid://bg8weivuatkhu" path="res://images/forestBackground/Layer_0011_0.png" id="2_6cri1"]
@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://dimbgqtdp63fu" path="res://entities/enemies/shadow_knight.tscn" id="13_fibvo"]
 [ext_resource type="PackedScene" uid="uid://dxftx0pehgckf" path="res://hud/lives_hud.tscn" id="14_i5l6s"]
 [ext_resource type="PackedScene" uid="uid://bb75lpghpiuue" path="res://entities/enemies/forrest_mage.tscn" id="15_rrfoq"]
-[ext_resource type="PackedScene" uid="uid://dgt7q2a8bimo2" path="res://particles/leaf_particles.tscn" id="16_lj6y6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gyl6a"]
 texture = ExtResource("1_brmwm")
@@ -1289,10 +1288,6 @@ texture = ExtResource("1_brmwm")
 physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_gyl6a")
 
-[sub_resource type="Curve" id="Curve_865rr"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.292181, 0.32967), 0.0, 0.0, 0, 0]
-point_count = 2
-
 [node name="World2" type="Node2D"]
 
 [node name="TileMap" type="Node" parent="."]
@@ -1394,24 +1389,6 @@ position = Vector2(1925, 315)
 
 [node name="player" parent="." instance=ExtResource("2_arqvn")]
 position = Vector2(193, 366)
-
-[node name="leaf_particles" parent="." instance=ExtResource("16_lj6y6")]
-position = Vector2(696, 142)
-amount = 20
-lifetime = 0.8
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
-scale_amount_curve = SubResource("Curve_865rr")
-color = Color(1, 1, 1, 0.517647)
-
-[node name="leaf_particles2" parent="." instance=ExtResource("16_lj6y6")]
-position = Vector2(1942, 137)
-amount = 20
-lifetime = 0.8
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
-scale_amount_curve = SubResource("Curve_865rr")
-color = Color(1, 1, 1, 0.517647)
 
 [node name="ShadowKnight2" parent="." instance=ExtResource("13_fibvo")]
 position = Vector2(1160, 366)
