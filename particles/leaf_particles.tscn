@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgt7q2a8bimo2"]
+
+[ext_resource type="Texture2D" uid="uid://bocax5gco2e4m" path="res://images/leaf.png" id="1_bfxo5"]
+
+[sub_resource type="Curve" id="Curve_gw3r8"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, 19.7802), 0.0, 0.0, 0, 0, Vector2(0.432099, 59.3406), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="leaf_particles" type="CPUParticles2D"]
+position = Vector2(-1, -1)
+amount = 16
+speed_scale = 0.1
+randomness = 1.0
+texture = ExtResource("1_bfxo5")
+emission_shape = 3
+emission_rect_extents = Vector2(400, 1)
+gravity = Vector2(-500, 980)
+angular_velocity_min = -43.97
+angular_velocity_max = 76.94
+angular_velocity_curve = SubResource("Curve_gw3r8")
+orbit_velocity_min = -0.5
+orbit_velocity_max = -0.5
