@@ -17,6 +17,7 @@ var gettingHit = false
 
 var player: CharacterBody2D
 @export var proyectil: PackedScene
+@export var death_particles: PackedScene
 
 func _ready() -> void:
 	on_idle()
@@ -73,13 +74,13 @@ func _on_vision_area_body_entered(body: CharacterBody2D) -> void:
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:
-	if anim.get_animation() == "teleport_out" and attack_type == 0 and not death:
+	if anim.get_animation() == "teleport_out" and attack_type == 0 and not death and not player.death:
 		set_modulate(Color(1, 1, 1, 0))
 		if aleatoryBool():
 			global_position.x = player.global_position.x + 40
 		else:
 			global_position.x = player.global_position.x - 40
-	elif anim.get_animation() == "teleport_out" and attack_type == 1 and not death:
+	elif anim.get_animation() == "teleport_out" and attack_type == 1 and not death and not player.death:
 		set_modulate(Color(1, 1, 1, 0))
 		if aleatoryBool():
 			global_position.x = player.global_position.x + 80
@@ -125,6 +126,9 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 		
 	if anim.get_animation() == "death" and anim.get_frame() == 5:
 		queue_free()
+		var instantParticles = death_particles.instantiate()
+		instantParticles.global_position = global_position
+		add_sibling(instantParticles)
 
 func on_idle():
 	death = false
