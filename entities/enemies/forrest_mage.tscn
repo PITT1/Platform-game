@@ -314,7 +314,7 @@ proyectil = ExtResource("2_ep2rj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_m4mvr")
-animation = &"spell"
+animation = &"death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3, 18)
@@ -340,3 +340,4 @@ debug_color = Color(0.980392, 0, 0, 0.2)
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="body_entered" from="visionArea" to="." method="_on_vision_area_body_entered"]
+[connection signal="body_entered" from="hitArea" to="." method="_on_hit_area_body_entered"]

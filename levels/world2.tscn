@@ -1386,8 +1386,8 @@ lives = 1.0
 
 [node name="lives-HUD" parent="." instance=ExtResource("14_i5l6s")]
 
-[node name="player" parent="." instance=ExtResource("2_arqvn")]
-position = Vector2(193, 366)
-
 [node name="forrest_mage" parent="." instance=ExtResource("15_rrfoq")]
 position = Vector2(1190, 362)
+
+[node name="player" parent="." instance=ExtResource("2_arqvn")]
+position = Vector2(193, 366)

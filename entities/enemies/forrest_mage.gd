@@ -12,6 +12,8 @@ var teleport_in = false
 var teleport_out = false
 var thorns = false
 var attack_type = 0
+@export var lives : float = 5
+var gettingHit = false
 
 var player: CharacterBody2D
 @export var proyectil: PackedScene
@@ -39,6 +41,12 @@ func _process(delta: float) -> void:
 		
 	if thorns:
 		anim.play("thorns")
+		
+	if gettingHit:
+		gettingHitAnimation()
+		
+	if lives < 1:
+		on_death()
 
 
 func _physics_process(delta: float) -> void:
@@ -53,7 +61,10 @@ func _physics_process(delta: float) -> void:
 
 func _on_vision_area_body_entered(body: CharacterBody2D) -> void:
 	player = body
-	attack_type = aleatoryBool()
+	if aleatoryBool():
+		attack_type = 1
+	else:
+		attack_type = 0
 	vision_area.scale = Vector2(5, 5)
 	on_seePlayer()
 	on_idle()
@@ -62,13 +73,13 @@ func _on_vision_area_body_entered(body: CharacterBody2D) -> void:
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:
-	if anim.get_animation() == "teleport_out" and attack_type == 0:
+	if anim.get_animation() == "teleport_out" and attack_type == 0 and not death:
 		set_modulate(Color(1, 1, 1, 0))
 		if aleatoryBool():
 			global_position.x = player.global_position.x + 40
 		else:
 			global_position.x = player.global_position.x - 40
-	elif anim.get_animation() == "teleport_out" and attack_type == 1:
+	elif anim.get_animation() == "teleport_out" and attack_type == 1 and not death:
 		set_modulate(Color(1, 1, 1, 0))
 		if aleatoryBool():
 			global_position.x = player.global_position.x + 80
@@ -78,11 +89,11 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	set_modulate(Color(1, 1, 1, 1))
 	on_seePlayer()
 	
-	if anim.get_animation() == "teleport_in" and attack_type == 0:
+	if anim.get_animation() == "teleport_in" and attack_type == 0 and not death:
 		on_idle()
 		await get_tree().create_timer(0.1).timeout
 		on_thorns()
-	elif anim.get_animation() == "teleport_in" and attack_type == 1:
+	elif anim.get_animation() == "teleport_in" and attack_type == 1 and not death:
 		on_idle()
 		await get_tree().create_timer(0.1).timeout
 		on_spell()
@@ -93,7 +104,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	
 		
 func _on_animated_sprite_2d_frame_changed() -> void:
-	if anim.get_animation() == "thorns" and anim.get_frame() == 4:
+	if anim.get_animation() == "thorns" and anim.get_frame() == 4 and not death:
 		hit_collision_shape.set_disabled(false)
 		await get_tree().create_timer(0.2).timeout
 		hit_collision_shape.set_disabled(true)
@@ -101,7 +112,7 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 		vision_area.set_monitoring(false)
 		vision_area.set_monitoring(true)
 		
-	if anim.get_animation() == "spell" and anim.get_frame() == 5:
+	if anim.get_animation() == "spell" and anim.get_frame() == 5 and not death:
 		on_idle()
 		var instant_proyectil = proyectil.instantiate()
 		instant_proyectil.global_position = global_position + Vector2(0, -20)
@@ -111,6 +122,9 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 		await get_tree().create_timer(1).timeout
 		vision_area.set_monitoring(false)
 		vision_area.set_monitoring(true)
+		
+	if anim.get_animation() == "death" and anim.get_frame() == 5:
+		queue_free()
 
 func on_idle():
 	death = false
@@ -172,3 +186,15 @@ func on_seePlayer():
 		anim.flip_h = false
 	else:
 		anim.flip_h = true
+
+
+func _on_hit_area_body_entered(body: CharacterBody2D) -> void:
+	body.lives -= 1
+	body.velocity.y = -200
+	body.gettingHit = true
+
+func gettingHitAnimation():
+	set_modulate(Color(100, 100, 100))
+	await get_tree().create_timer(0.1).timeout
+	set_modulate(Color(1, 1, 1))
+	gettingHit = false
