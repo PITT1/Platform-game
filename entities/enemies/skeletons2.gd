@@ -46,7 +46,7 @@ func _process(delta: float) -> void:
 	
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
-		velocity = get_gravity() * delta
+		velocity += get_gravity() * delta
 		
 	if player != null and attack == false:
 		on_walk()
@@ -63,6 +63,11 @@ func _physics_process(delta: float) -> void:
 			velocity.x -= acceleration * delta
 			if velocity.x < -speed:
 				velocity.x = -speed
+				
+	if attack:
+		vision_area.scale = Vector2(5, 5)
+	else:
+		vision_area.scale = Vector2(1, 1)
 	
 	move_and_slide()
 
