@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var vision_area: Area2D = $visionArea
 @onready var hit_area_collision_shape: CollisionShape2D = $hitArea/hitArea_collisionShape
 @onready var attack_area: Area2D = $attackArea
+@onready var character_collision: CollisionShape2D = $character_collision
 
 var attack = false
 var death = false
@@ -14,7 +15,7 @@ var walk = false
 
 @export var lives: int = 5
 @export var speed: float = 50
-@export var acceleration = 80
+@export var acceleration = 120
 var gettingHit = false
 var player: CharacterBody2D
 
@@ -51,18 +52,66 @@ func _physics_process(delta: float) -> void:
 		on_walk()
 		if player.global_position.x > global_position.x:
 			anim.flip_h = false
+			character_collision.position = Vector2(2, 4)
 			velocity.x += acceleration * delta
 			if velocity.x > speed:
 				velocity.x = speed
 				
 		if player.global_position.x < global_position.x:
 			anim.flip_h = true
+			character_collision.position = Vector2(-2, 4)
 			velocity.x -= acceleration * delta
 			if velocity.x < -speed:
 				velocity.x = -speed
 	
 	move_and_slide()
 
+
+func _on_vision_area_body_entered(body: CharacterBody2D) -> void:
+	player = body
+
+
+func _on_vision_area_body_exited(body: Node2D) -> void:
+	player = null
+
+
+func _on_attack_area_body_entered(body: CharacterBody2D) -> void:
+	if player:
+		if player.global_position.x > global_position.x:
+			anim.flip_h = false 
+		else:
+			anim.flip_h = true
+	velocity.x = 0
+	on_attack()
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if anim.get_animation() == "attack":
+		attack = false
+		attack_area.set_monitoring(false)
+		vision_area.set_monitoring(false)
+		attack_area.set_monitoring(true)
+		vision_area.set_monitoring(true)
+
+
+func _on_animated_sprite_2d_frame_changed() -> void:
+	if anim.get_animation() == "attack" and anim.get_frame() == 6:
+		if anim.flip_h == false:
+			hit_area_collision_shape.position = Vector2(35.833, -4.167)
+			hit_area_collision_shape.set_disabled(false)
+		else:
+			hit_area_collision_shape.position = Vector2(-35.833, -4.167)
+			hit_area_collision_shape.set_disabled(false)
+		await get_tree().create_timer(0.2).timeout
+		hit_area_collision_shape.set_disabled(true)
+
+
+func _on_hit_area_body_entered(body: CharacterBody2D) -> void:
+	body.lives -= 1
+	body.gettingHit = true
+	if body.global_position > global_position:
+		body.velocity = Vector2(400, -300)
+	else:
+		body.velocity = Vector2(-400, -300)
 
 func on_attack():
 	attack = true
@@ -111,31 +160,3 @@ func on_walk():
 	shield = false
 	takeHit = false
 	walk = true
-
-
-func _on_vision_area_body_entered(body: CharacterBody2D) -> void:
-	player = body
-
-
-func _on_vision_area_body_exited(body: Node2D) -> void:
-	player = null
-
-
-func _on_attack_area_body_entered(body: CharacterBody2D) -> void:
-	if player:
-		if player.global_position.x > global_position.x:
-			anim.flip_h = false 
-		else:
-			anim.flip_h = true
-	velocity.x = 0
-	on_attack()
-	await get_tree().create_timer(0.5).timeout
-
-
-func _on_animated_sprite_2d_animation_finished() -> void:
-	if anim.get_animation() == "attack":
-		attack = false
-		attack_area.set_monitoring(false)
-		vision_area.set_monitoring(false)
-		attack_area.set_monitoring(true)
-		vision_area.set_monitoring(true)
