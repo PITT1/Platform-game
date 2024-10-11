@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dsbr2hrptjhy7"]
+[gd_scene load_steps=41 format=3 uid="uid://dsbr2hrptjhy7"]
 
 [ext_resource type="Script" path="res://entities/enemies/skeletons2.gd" id="1_1hvrq"]
 [ext_resource type="Texture2D" uid="uid://cpiuno5ill17m" path="res://images/Monsters_Creatures_Fantasy/Skeleton/Death.png" id="1_oruq3"]
@@ -245,19 +245,21 @@ size = Vector2(363.75, 276.75)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ogx1u"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sw6ra"]
+size = Vector2(140, 40)
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 collision_layer = 4
-collision_mask = 3
+collision_mask = 7
 script = ExtResource("1_1hvrq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_70asj")
-animation = &"walk"
-frame = 2
-frame_progress = 0.106048
+animation = &"attack"
+frame = 6
 
 [node name="character_collision" type="CollisionShape2D" parent="."]
-position = Vector2(6, 3)
+position = Vector2(2, 4)
 shape = SubResource("CapsuleShape2D_n7owu")
 
 [node name="visionArea" type="Area2D" parent="."]
@@ -276,3 +278,16 @@ position = Vector2(29, 0)
 shape = SubResource("CapsuleShape2D_ogx1u")
 disabled = true
 debug_color = Color(0.968627, 0, 0, 0.309804)
+
+[node name="attackArea" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attackArea"]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_sw6ra")
+debug_color = Color(0.988235, 0, 0, 0.117647)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="visionArea" to="." method="_on_vision_area_body_entered"]
+[connection signal="body_exited" from="visionArea" to="." method="_on_vision_area_body_exited"]
+[connection signal="body_entered" from="attackArea" to="." method="_on_attack_area_body_entered"]
