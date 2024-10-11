@@ -139,7 +139,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"in",
-"speed": 10.0
+"speed": 25.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -165,7 +165,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"out",
-"speed": 10.0
+"speed": 15.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ng5xb"]
@@ -178,8 +178,8 @@ script = ExtResource("1_86fxq")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_wuyd3")
-animation = &"in"
-frame = 12
+animation = &"out"
+frame = 6
 frame_progress = 1.0
 
 [node name="Area2D" type="Area2D" parent="."]

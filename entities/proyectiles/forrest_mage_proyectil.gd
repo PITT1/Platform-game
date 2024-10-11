@@ -3,6 +3,7 @@ extends Node2D
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 var velocity = Vector2(0, 0)
 var flyin = false
+@onready var collision_area: CollisionShape2D = $Area2D/CollisionShape2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,9 +26,11 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "CharacterBody2D":
 		anim.play("out")
+		collision_area.set_disabled(true)
 		body.lives -= 1
 		body.gettingHit = true
 	else:
 		anim.play("out")
+		collision_area.set_disabled(true)
 	
 	velocity = Vector2(0, 0)

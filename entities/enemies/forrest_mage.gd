@@ -119,7 +119,7 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 		instant_proyectil.global_position = global_position + Vector2(0, -20)
 		add_sibling(instant_proyectil)
 		var direction_to_player = global_position.direction_to(player.global_position)
-		instant_proyectil.velocity = direction_to_player * 150
+		instant_proyectil.velocity = direction_to_player * 250
 		await get_tree().create_timer(1).timeout
 		vision_area.set_monitoring(false)
 		vision_area.set_monitoring(true)
