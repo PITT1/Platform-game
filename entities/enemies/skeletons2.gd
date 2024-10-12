@@ -48,7 +48,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		
-	if player != null and attack == false:
+	if player != null and not attack and not gettingHit and not death:
 		on_walk()
 		if player.global_position.x > global_position.x:
 			anim.flip_h = false
@@ -64,10 +64,18 @@ func _physics_process(delta: float) -> void:
 			if velocity.x < -speed:
 				velocity.x = -speed
 				
-	if attack:
+	if attack and not gettingHit and not death:
 		vision_area.scale = Vector2(5, 5)
 	else:
 		vision_area.scale = Vector2(1, 1)
+		
+	if gettingHit and not death:
+		velocity.x = 0
+		on_takeHit()
+		
+	if lives < 1:
+		on_death()
+	
 	
 	move_and_slide()
 
@@ -96,6 +104,16 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		vision_area.set_monitoring(false)
 		attack_area.set_monitoring(true)
 		vision_area.set_monitoring(true)
+		
+	if anim.get_animation() == "takeHit":
+		gettingHit = false
+		attack_area.set_monitoring(false)
+		vision_area.set_monitoring(false)
+		attack_area.set_monitoring(true)
+		vision_area.set_monitoring(true)
+		
+	if anim.get_animation() == "death":
+		queue_free()
 
 
 func _on_animated_sprite_2d_frame_changed() -> void:

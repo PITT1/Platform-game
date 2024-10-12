@@ -770,7 +770,12 @@ func _placeHolder():
 
 
 func _on_hit_area_body_entered(body: Node2D) -> void:
-	body.lives -= 1
+	if anim.get_animation() == "attack1" or anim.get_animation() == "attack2":
+		body.lives -= 1
+		
+	if anim.get_animation() == "attack3":
+		body.lives -= 2
+		
 	body.gettingHit = true
 	
 func gettingHitAnimation():
@@ -784,7 +789,7 @@ func gettingHitAnimation():
 		gettingHit = false
 
 func deathFunction():
-	if lives == 0:
+	if lives < 1:
 		death = true
 
 

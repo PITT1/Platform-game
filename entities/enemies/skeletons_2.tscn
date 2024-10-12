@@ -217,7 +217,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"takeHit",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -254,13 +254,14 @@ size = Vector2(140, 40)
 scale = Vector2(1.2, 1.2)
 collision_layer = 4
 collision_mask = 7
+platform_floor_layers = 4294967294
 script = ExtResource("1_1hvrq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_70asj")
-animation = &"idle"
+animation = &"takeHit"
 frame = 3
-frame_progress = 0.490977
+frame_progress = 1.0
 
 [node name="character_collision" type="CollisionShape2D" parent="."]
 position = Vector2(2, 4)

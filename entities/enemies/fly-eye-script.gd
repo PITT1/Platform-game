@@ -55,7 +55,7 @@ func _process(delta: float) -> void:
 			if velocity.y < -speed:
 				velocity.y = -speed
 			
-		if lives == 0:
+		if lives < 1:
 			hit_area_collisionShape.set_disabled(true)
 			death = true
 			anim.play("death")
