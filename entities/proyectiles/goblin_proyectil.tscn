@@ -107,6 +107,8 @@ flip_h = true
 flip_v = true
 
 [node name="collisionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="collisionArea"]
 shape = SubResource("CircleShape2D_yq8ab")
@@ -116,4 +118,5 @@ debug_color = Color(0.956863, 0.0784314, 0, 0.231373)
 libraries = {
 "": SubResource("AnimationLibrary_g6j6n")
 }
-autoplay = "rotate_Left"
+
+[connection signal="body_entered" from="collisionArea" to="." method="_on_collision_area_body_entered"]

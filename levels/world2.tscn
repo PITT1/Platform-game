@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://o01kysyplujt"]
+[gd_scene load_steps=21 format=4 uid="uid://o01kysyplujt"]
 
 [ext_resource type="Texture2D" uid="uid://didcklr78knar" path="res://images/tilemap/main_lev_build_2.png" id="1_brmwm"]
 [ext_resource type="Texture2D" uid="uid://bg8weivuatkhu" path="res://images/forestBackground/Layer_0011_0.png" id="2_6cri1"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dxftx0pehgckf" path="res://hud/lives_hud.tscn" id="14_i5l6s"]
 [ext_resource type="PackedScene" uid="uid://bb75lpghpiuue" path="res://entities/enemies/forrest_mage.tscn" id="15_rrfoq"]
 [ext_resource type="PackedScene" uid="uid://dsbr2hrptjhy7" path="res://entities/enemies/skeletons_2.tscn" id="17_lxcyv"]
+[ext_resource type="PackedScene" uid="uid://bgjihptpibjv8" path="res://entities/enemies/goblin.tscn" id="18_22qif"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gyl6a"]
 texture = ExtResource("1_brmwm")
@@ -1405,9 +1406,6 @@ position = Vector2(1925, 315)
 [node name="ShadowKnight2" parent="." instance=ExtResource("13_fibvo")]
 position = Vector2(1160, 366)
 
-[node name="ShadowKnight3" parent="." instance=ExtResource("13_fibvo")]
-position = Vector2(2959, 362)
-
 [node name="skeletons" type="Node" parent="."]
 
 [node name="skeletons2" parent="skeletons" instance=ExtResource("17_lxcyv")]
@@ -1426,7 +1424,12 @@ position = Vector2(1017, 358)
 position = Vector2(2653, 7)
 
 [node name="player" parent="." instance=ExtResource("2_arqvn")]
-position = Vector2(193, 366)
+position = Vector2(2650, 371)
 
 [node name="ShadowKnight4" parent="." instance=ExtResource("13_fibvo")]
 position = Vector2(2330, 361)
+
+[node name="goblins" type="Node" parent="."]
+
+[node name="Goblin" parent="goblins" instance=ExtResource("18_22qif")]
+position = Vector2(2981, 364)
