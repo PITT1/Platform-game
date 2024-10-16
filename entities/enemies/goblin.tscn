@@ -252,8 +252,7 @@ proyectile = ExtResource("2_75o8m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_o4i0n")
-animation = &"attack"
-frame = 1
+animation = &"death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -294,6 +293,7 @@ debug_color = Color(0, 0.639216, 0.0313726, 0.541176)
 
 [node name="Timer" type="Timer" parent="."]
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="body_entered" from="visionArea" to="." method="_on_vision_area_body_entered"]
 [connection signal="body_entered" from="fleeArea" to="." method="_on_flee_area_body_entered"]

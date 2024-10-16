@@ -1424,7 +1424,7 @@ position = Vector2(1017, 358)
 position = Vector2(2653, 7)
 
 [node name="player" parent="." instance=ExtResource("2_arqvn")]
-position = Vector2(2650, 371)
+position = Vector2(2648, 371)
 
 [node name="ShadowKnight4" parent="." instance=ExtResource("13_fibvo")]
 position = Vector2(2330, 361)

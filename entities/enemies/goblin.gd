@@ -13,12 +13,15 @@ var player = null
 
 var flee = false
 
+
 var isFallRight = false
 var isFallLeft = false 
 @export var speed: float = 80
 @export var acceleration: float = 300
 
 @export var proyectile: PackedScene
+@export var lives: float = 1
+var gettingHit = false
 
 
 func _ready() -> void:
@@ -45,7 +48,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		
-	if flee:
+	if flee and not death:
 		if player.global_position > global_position and not isFallLeft:
 			velocity.x -= acceleration * delta
 			if velocity.x < -speed:
@@ -54,7 +57,7 @@ func _physics_process(delta: float) -> void:
 			velocity.x += acceleration * delta
 			if velocity.x > speed:
 				velocity.x = speed
-	elif not flee:
+	elif not flee and not death:
 		if velocity.x > 1:
 			velocity.x -= acceleration * delta
 			if velocity.x < 1:
@@ -64,10 +67,10 @@ func _physics_process(delta: float) -> void:
 			if velocity.x > -1:
 				velocity.x = 0
 				
-	if velocity.x > 1 and not attack:
+	if velocity.x > 1 and not attack and not death:
 		anim.flip_h = false
 		on_run()
-	elif velocity.x < -1 and not attack:
+	elif velocity.x < -1 and not attack and not death:
 		anim.flip_h = true
 		on_run()
 		
@@ -75,6 +78,9 @@ func _physics_process(delta: float) -> void:
 		flee_area.set_monitoring(false)
 	else:
 		flee_area.set_monitoring(true)
+		
+	if lives < 1:
+		on_death()
 	move_and_slide()
 
 
@@ -158,3 +164,8 @@ func _on_sensor_right_body_exited(body: Node2D) -> void:
 func _on_sensor_left_body_exited(body: Node2D) -> void:
 	if body.name == "TileMapLayer":
 		isFallLeft = true 
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if anim.get_animation() == "death":
+		queue_free()
