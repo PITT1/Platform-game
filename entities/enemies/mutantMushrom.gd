@@ -35,10 +35,20 @@ func _process(delta: float) -> void:
 	
 
 func _physics_process(delta: float) -> void:
+	if not is_on_floor():
+		velocity += get_gravity() * delta
 	
-	velocity += get_gravity() * delta
-	
-
+	if player != null:
+		if player.global_position > global_position:
+			velocity.x += aceleration * delta
+			if velocity.x > speed:
+				velocity.x = speed
+		elif player.global_position < global_position:
+			velocity.x -= aceleration * delta
+			if velocity.x < -speed:
+				velocity.x = -speed
+				
+	move_and_slide()
 func on_attack():
 	attack = true
 	death = false

@@ -1380,7 +1380,7 @@ position = Vector2(1226, 134)
 [node name="mutantMushrooms" type="Node" parent="."]
 
 [node name="mutant mushrom" parent="mutantMushrooms" instance=ExtResource("9_i7mba")]
-position = Vector2(1892, 55)
+position = Vector2(1813, 59)
 
 [node name="mutant mushrom2" parent="mutantMushrooms" instance=ExtResource("9_i7mba")]
 position = Vector2(2509, 140)
