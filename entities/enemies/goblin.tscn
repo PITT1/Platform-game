@@ -252,7 +252,7 @@ proyectile = ExtResource("2_75o8m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_o4i0n")
-animation = &"death"
+animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -278,7 +278,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sensorLeft"]
-position = Vector2(-43, 29)
+position = Vector2(-63, 29)
 shape = SubResource("RectangleShape2D_bmhc5")
 debug_color = Color(0, 0.639216, 0.0313726, 0.541176)
 
@@ -287,7 +287,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sensorRight"]
-position = Vector2(43, 29)
+position = Vector2(63, 29)
 shape = SubResource("RectangleShape2D_bmhc5")
 debug_color = Color(0, 0.639216, 0.0313726, 0.541176)
 

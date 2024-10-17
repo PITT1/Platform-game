@@ -16,7 +16,7 @@ var flee = false
 
 var isFallRight = false
 var isFallLeft = false 
-@export var speed: float = 80
+@export var speed: float = 120
 @export var acceleration: float = 300
 
 @export var proyectile: PackedScene
