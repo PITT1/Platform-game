@@ -238,13 +238,13 @@ height = 28.3333
 size = Vector2(323.021, 150.417)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4pkjq"]
-size = Vector2(87.0833, 20)
+size = Vector2(87.0833, 33.333)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3g8gk"]
 radius = 16.6667
 
 [node name="mutant mushrom" type="CharacterBody2D"]
-scale = Vector2(1.2, 1.2)
+scale = Vector2(1.6, 1.6)
 collision_layer = 4
 collision_mask = 7
 platform_floor_layers = 4294967294
@@ -252,7 +252,7 @@ script = ExtResource("1_n5b0x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_h1k7e")
-animation = &"idle"
+animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 11.6667)
@@ -270,7 +270,7 @@ debug_color = Color(0, 0.6, 0.701961, 0.121569)
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="attackArea"]
-position = Vector2(0, 11.667)
+position = Vector2(0, 18.3335)
 shape = SubResource("RectangleShape2D_4pkjq")
 debug_color = Color(1, 0, 0, 0.215686)
 
@@ -282,5 +282,9 @@ position = Vector2(28.3333, 10.8333)
 shape = SubResource("CircleShape2D_3g8gk")
 disabled = true
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="body_entered" from="visionArea" to="." method="_on_vision_area_body_entered"]
 [connection signal="body_exited" from="visionArea" to="." method="_on_vision_area_body_exited"]
+[connection signal="body_entered" from="attackArea" to="." method="_on_attack_area_body_entered"]
+[connection signal="body_entered" from="hitArea" to="." method="_on_hit_area_body_entered"]
