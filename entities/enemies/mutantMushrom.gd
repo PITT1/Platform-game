@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
-@onready var attack_area: Area2D = $attackArea
 @onready var hit_area_collision: CollisionShape2D = $hitArea/hitArea_collision
+@onready var collision_shape_2d: CollisionShape2D = $attackArea/CollisionShape2D
 
 var attack = false
 var death = false
@@ -15,6 +15,7 @@ var player: CharacterBody2D = null
 @export var speed: float = 100
 @export var aceleration : float = 400
 @export var lives: float = 5
+@export var death_particles: PackedScene
 var gettingHit = false
 
 func _ready() -> void:
@@ -63,14 +64,14 @@ func _physics_process(delta: float) -> void:
 	elif velocity.x == 0 and not death and not takeHit and not attack:
 		on_idle()
 		
-	if lives < 1 and not takeHit and not attack:
+	if lives < 1:
 		velocity.x = 0
 		on_death()
 	
-	if gettingHit:
+	if gettingHit and not death:
 		on_takeHit()
 	
-	if attack:
+	if attack and not death:
 		velocity.x = 0
 		
 
@@ -122,17 +123,22 @@ func _on_vision_area_body_exited() -> void:
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if anim.get_animation() == "death":
+		var instantia = death_particles.instantiate()
+		instantia.global_position = global_position
+		add_sibling(instantia)
 		queue_free()
 		
 	if anim.get_animation() == "takeHit":
 		on_idle()
+		collision_shape_2d.set_disabled(true)
+		collision_shape_2d.set_disabled(false)
 		gettingHit = false
 		
 	if anim.get_animation() == "attack":
 		on_idle()
-		attack_area.monitoring = false
+		collision_shape_2d.set_disabled(true)
 		await get_tree().create_timer(0.3).timeout
-		attack_area.monitoring = true
+		collision_shape_2d.set_disabled(false)
 
 
 func _on_attack_area_body_entered(body: CharacterBody2D) -> void:

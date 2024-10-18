@@ -1375,7 +1375,7 @@ position = Vector2(509, 141)
 position = Vector2(2777, 44)
 
 [node name="skeletons4" parent="skeletons" instance=ExtResource("8_led2h")]
-position = Vector2(1226, 134)
+position = Vector2(1244, 132)
 
 [node name="mutantMushrooms" type="Node" parent="."]
 
@@ -1407,7 +1407,7 @@ shape = SubResource("RectangleShape2D_wnnr2")
 debug_color = Color(0.901714, 0.12666, 0.599443, 0.419608)
 
 [node name="player" parent="." instance=ExtResource("3_aej4a")]
-position = Vector2(1650, 66)
+position = Vector2(171, 114)
 
 [node name="lives-HUD" parent="." instance=ExtResource("12_7egg4")]
 offset_top = -1.0

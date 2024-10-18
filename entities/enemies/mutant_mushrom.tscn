@@ -1,7 +1,8 @@
-[gd_scene load_steps=40 format=3 uid="uid://bsg8qjsqu632m"]
+[gd_scene load_steps=41 format=3 uid="uid://bsg8qjsqu632m"]
 
 [ext_resource type="Texture2D" uid="uid://btbax2x7a8x66" path="res://images/Monsters_Creatures_Fantasy/Mushroom/Death.png" id="1_mye8o"]
 [ext_resource type="Script" path="res://entities/enemies/mutantMushrom.gd" id="1_n5b0x"]
+[ext_resource type="PackedScene" uid="uid://dmwqd0ntbk8b4" path="res://particles/shadow_knight_kill.tscn" id="2_0lw5l"]
 [ext_resource type="Texture2D" uid="uid://cbcexll35avvu" path="res://images/Monsters_Creatures_Fantasy/Mushroom/Idle.png" id="2_nweku"]
 [ext_resource type="Texture2D" uid="uid://dpk86a2d0d6uq" path="res://images/Monsters_Creatures_Fantasy/Mushroom/Run.png" id="3_e0f02"]
 [ext_resource type="Texture2D" uid="uid://dijaikd4cnks0" path="res://images/Monsters_Creatures_Fantasy/Mushroom/Take Hit.png" id="4_2gblg"]
@@ -238,7 +239,7 @@ height = 28.3333
 size = Vector2(323.021, 150.417)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4pkjq"]
-size = Vector2(87.0833, 33.333)
+size = Vector2(87.0833, 10)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3g8gk"]
 radius = 16.6667
@@ -249,6 +250,7 @@ collision_layer = 4
 collision_mask = 7
 platform_floor_layers = 4294967294
 script = ExtResource("1_n5b0x")
+death_particles = ExtResource("2_0lw5l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_h1k7e")
@@ -270,7 +272,7 @@ debug_color = Color(0, 0.6, 0.701961, 0.121569)
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="attackArea"]
-position = Vector2(0, 18.3335)
+position = Vector2(0, 12.5)
 shape = SubResource("RectangleShape2D_4pkjq")
 debug_color = Color(1, 0, 0, 0.215686)
 
