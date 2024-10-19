@@ -579,7 +579,6 @@ runningModifier = true
 coyoteTime = 0.1
 wallJump = true
 inputPauseAfterWallJump = 0.5
-wallSliding = 2.298
 run = true
 jump = true
 idle = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bsg8qjsqu632m"]
+[gd_scene load_steps=42 format=3 uid="uid://bsg8qjsqu632m"]
 
 [ext_resource type="Texture2D" uid="uid://btbax2x7a8x66" path="res://images/Monsters_Creatures_Fantasy/Mushroom/Death.png" id="1_mye8o"]
 [ext_resource type="Script" path="res://entities/enemies/mutantMushrom.gd" id="1_n5b0x"]
@@ -244,6 +244,9 @@ size = Vector2(87.0833, 10)
 [sub_resource type="CircleShape2D" id="CircleShape2D_3g8gk"]
 radius = 16.6667
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qugua"]
+size = Vector2(20, 4.0625)
+
 [node name="mutant mushrom" type="CharacterBody2D"]
 scale = Vector2(1.6, 1.6)
 collision_layer = 4
@@ -283,6 +286,12 @@ collision_layer = 0
 position = Vector2(28.3333, 10.8333)
 shape = SubResource("CircleShape2D_3g8gk")
 disabled = true
+
+[node name="platform" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5.625)
+shape = SubResource("RectangleShape2D_qugua")
+one_way_collision = true
+one_way_collision_margin = 10.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

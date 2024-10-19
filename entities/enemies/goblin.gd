@@ -156,7 +156,7 @@ func launchingProyectile():
 	vision_area.set_monitoring(true)
 
 
-func _on_sensor_right_body_exited(body: Node2D) -> void:
+func _on_sensor_right_body_exited(body: TileMapLayer) -> void:
 	if body.name == "TileMapLayer":
 		isFallRight = true 
 
