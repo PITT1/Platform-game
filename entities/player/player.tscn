@@ -604,7 +604,8 @@ limit_left = 100
 position_smoothing_enabled = true
 
 [node name="hitArea" type="Area2D" parent="CharacterBody2D"]
-collision_mask = 28
+collision_layer = 0
+collision_mask = 60
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/hitArea"]
 position = Vector2(16, 5)
