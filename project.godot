@@ -88,6 +88,7 @@ atack={
 2d_physics/layer_3="enemigo terrestre"
 2d_physics/layer_4="enemigo volador"
 2d_physics/layer_5="enemigo fantasma"
+2d_physics/layer_6="slime"
 
 [rendering]
 
