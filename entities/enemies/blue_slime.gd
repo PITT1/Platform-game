@@ -8,6 +8,7 @@ var player = null
 var on_air = false
 
 @export var lives: float = 3
+@export var death_particles: PackedScene
 var gettingHit = false 
 
 func _physics_process(delta: float) -> void:
@@ -31,12 +32,15 @@ func _physics_process(delta: float) -> void:
 		on_air = false
 		
 	if lives < 1:
+		var instantiated_particles = death_particles.instantiate()
+		add_sibling(instantiated_particles)
+		instantiated_particles.global_position = global_position
 		queue_free()
 		
 	if gettingHit:
 		timer.start(1)
 		set_modulate(Color(100, 100, 100))
-		await get_tree().create_timer(0.1).timeout
+		await get_tree().create_timer(0.2).timeout
 		set_modulate(Color(1, 1, 1))
 		gettingHit = false
 

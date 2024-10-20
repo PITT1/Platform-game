@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6c4vbpxml1xx"]
+
+[ext_resource type="Texture2D" uid="uid://digx2lqqdsqy0" path="res://particles/smoke-particle3.png" id="1_gsu0l"]
+[ext_resource type="Script" path="res://particles/slime_death.gd" id="2_du5k4"]
+
+[sub_resource type="Curve" id="Curve_cnq4e"]
+_data = [Vector2(0.0114504, 0.260377), 0.0, 0.0, 0, 0, Vector2(0.209924, 0.864151), 1.78904, 0.0, 0, 0, Vector2(0.744275, 0.471698), 0.0, 0.0, 0, 0, Vector2(1, 0.00377357), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[node name="SlimeDeath" type="CPUParticles2D"]
+emitting = false
+amount = 14
+lifetime = 0.8
+one_shot = true
+speed_scale = 0.4
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+texture = ExtResource("1_gsu0l")
+emission_shape = 1
+emission_sphere_radius = 13.9
+direction = Vector2(-500, 1000)
+spread = 8.51
+gravity = Vector2(0, -980)
+initial_velocity_min = 81.08
+initial_velocity_max = 81.08
+angular_velocity_min = -467.02
+angular_velocity_max = 311.36
+scale_amount_curve = SubResource("Curve_cnq4e")
+script = ExtResource("2_du5k4")
