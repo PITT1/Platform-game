@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://dsbr2hrptjhy7"]
+[gd_scene load_steps=51 format=3 uid="uid://dsbr2hrptjhy7"]
 
 [ext_resource type="Script" path="res://entities/enemies/skeletons2.gd" id="1_1hvrq"]
 [ext_resource type="Texture2D" uid="uid://cpiuno5ill17m" path="res://images/Monsters_Creatures_Fantasy/Skeleton/Death.png" id="1_oruq3"]
@@ -37,6 +37,46 @@ atlas = ExtResource("6_ew148")
 region = Rect2(900, 0, 150, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gn16p"]
+atlas = ExtResource("6_ew148")
+region = Rect2(1050, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqbn6"]
+atlas = ExtResource("3_1vun8")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kc4j2"]
+atlas = ExtResource("3_1vun8")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ascsc"]
+atlas = ExtResource("3_1vun8")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1l4r"]
+atlas = ExtResource("3_1vun8")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmnfn"]
+atlas = ExtResource("6_ew148")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t613s"]
+atlas = ExtResource("6_ew148")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbqe8"]
+atlas = ExtResource("6_ew148")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnc5g"]
+atlas = ExtResource("6_ew148")
+region = Rect2(750, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alm7d"]
+atlas = ExtResource("6_ew148")
+region = Rect2(900, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ag0tk"]
 atlas = ExtResource("6_ew148")
 region = Rect2(1050, 0, 150, 150)
 
@@ -153,6 +193,41 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_rqbn6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kc4j2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ascsc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1l4r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmnfn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t613s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbqe8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rnc5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_alm7d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ag0tk")
+}],
+"loop": false,
+"name": &"contra_attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_k8fft")
 }, {
 "duration": 1.0,
@@ -259,9 +334,7 @@ script = ExtResource("1_1hvrq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_70asj")
-animation = &"takeHit"
-frame = 3
-frame_progress = 1.0
+animation = &"contra_attack"
 
 [node name="character_collision" type="CollisionShape2D" parent="."]
 position = Vector2(2, 4)

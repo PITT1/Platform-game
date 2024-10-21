@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://o01kysyplujt"]
+[gd_scene load_steps=21 format=4 uid="uid://o01kysyplujt"]
 
 [ext_resource type="Texture2D" uid="uid://didcklr78knar" path="res://images/tilemap/main_lev_build_2.png" id="1_brmwm"]
 [ext_resource type="Texture2D" uid="uid://bg8weivuatkhu" path="res://images/forestBackground/Layer_0011_0.png" id="2_6cri1"]
@@ -18,7 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://bb75lpghpiuue" path="res://entities/enemies/forrest_mage.tscn" id="15_rrfoq"]
 [ext_resource type="PackedScene" uid="uid://dsbr2hrptjhy7" path="res://entities/enemies/skeletons_2.tscn" id="17_lxcyv"]
 [ext_resource type="PackedScene" uid="uid://bgjihptpibjv8" path="res://entities/enemies/goblin.tscn" id="18_22qif"]
-[ext_resource type="PackedScene" uid="uid://bar58vx48kjox" path="res://entities/enemies/blueSlime.tscn" id="19_5inip"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gyl6a"]
 texture = ExtResource("1_brmwm")
@@ -1461,6 +1460,3 @@ position = Vector2(2911, 46)
 
 [node name="forrest_mage2" parent="." instance=ExtResource("15_rrfoq")]
 position = Vector2(3489, 351)
-
-[node name="BlueSlime" parent="." instance=ExtResource("19_5inip")]
-position = Vector2(313, 246)

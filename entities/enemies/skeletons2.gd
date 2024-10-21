@@ -12,12 +12,16 @@ var idle = false
 var shield = false
 var takeHit = false
 var walk = false
+var contra_attack = false
 
-@export var lives: int = 5
+@export var lives: float = 5
+@export var lives_limit: float = 5 
 @export var speed: float = 50
 @export var acceleration = 120
+@export_range(0.0, 1.0, 0.01) var attack_block_probability: float = 0.60
 var gettingHit = false
 var player: CharacterBody2D
+var proces_attack = false
 
 func _ready() -> void:
 	on_idle()
@@ -42,13 +46,16 @@ func _process(delta: float) -> void:
 		
 	if walk:
 		anim.play("walk")
+	
+	if contra_attack:
+		anim.play("contra_attack")
 		
 	
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		
-	if player != null and not attack and not gettingHit and not death:
+	if player != null and not attack and not gettingHit and not death and not contra_attack:
 		on_walk()
 		if player.global_position.x > global_position.x:
 			anim.flip_h = false
@@ -64,14 +71,19 @@ func _physics_process(delta: float) -> void:
 			if velocity.x < -speed:
 				velocity.x = -speed
 				
-	if attack and not gettingHit and not death:
+	if attack and not gettingHit and not death and not contra_attack:
 		vision_area.scale = Vector2(5, 5)
 	else:
 		vision_area.scale = Vector2(1, 1)
 		
 	if gettingHit and not death:
 		velocity.x = 0
-		on_takeHit()
+		if attack_block() == 1:
+			on_contra_attack()
+			if lives < lives_limit:
+				lives += 1
+		elif attack_block() == 2:
+			on_takeHit()
 		
 	if lives < 1:
 		on_death()
@@ -114,6 +126,14 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		
 	if anim.get_animation() == "death":
 		queue_free()
+	
+	if anim.get_animation() == "contra_attack":
+		on_idle()
+		gettingHit = false
+		attack_area.set_monitoring(false)
+		vision_area.set_monitoring(false)
+		attack_area.set_monitoring(true)
+		vision_area.set_monitoring(true)
 
 
 func _on_animated_sprite_2d_frame_changed() -> void:
@@ -136,6 +156,16 @@ func _on_hit_area_body_entered(body: CharacterBody2D) -> void:
 	else:
 		body.velocity = Vector2(-400, -300)
 
+func attack_block():
+	if not proces_attack:
+		var num = randf()
+		print(num)
+		proces_attack = true
+		if num < attack_block_probability:
+			return 1
+		elif num > attack_block_probability:
+			return 2
+
 func on_attack():
 	attack = true
 	death = false
@@ -143,6 +173,7 @@ func on_attack():
 	shield = false
 	takeHit = false
 	walk = false
+	contra_attack = false
 	
 func on_death():
 	attack = false
@@ -151,6 +182,7 @@ func on_death():
 	shield = false
 	takeHit = false
 	walk = false
+	contra_attack = false
 	
 func on_idle():
 	attack = false
@@ -159,6 +191,7 @@ func on_idle():
 	shield = false
 	takeHit = false
 	walk = false
+	contra_attack = false
 	
 func on_shield():
 	attack = false
@@ -167,6 +200,7 @@ func on_shield():
 	shield = true
 	takeHit = false
 	walk = false
+	contra_attack = false
 	
 func on_takeHit():
 	attack = false
@@ -175,6 +209,7 @@ func on_takeHit():
 	shield = false
 	takeHit = true
 	walk = false
+	contra_attack = false
 	
 func on_walk():
 	attack = false
@@ -183,3 +218,13 @@ func on_walk():
 	shield = false
 	takeHit = false
 	walk = true
+	contra_attack = false
+
+func on_contra_attack():
+	attack = false
+	death = false
+	idle = false
+	shield = false
+	takeHit = false
+	walk = false
+	contra_attack = true
