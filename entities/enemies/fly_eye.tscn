@@ -197,14 +197,14 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dp4lu"]
-radius = 17.0294
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uhb58"]
+size = Vector2(15, 17)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0bi1x"]
 radius = 182.003
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ubn80"]
-radius = 12.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wdtns"]
+size = Vector2(15, 5)
 
 [node name="flyEye" type="Node2D"]
 
@@ -219,23 +219,26 @@ animation = &"flight"
 frame_progress = 0.673692
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(5, 2)
-shape = SubResource("CircleShape2D_dp4lu")
+position = Vector2(5.5, 1.5)
+shape = SubResource("RectangleShape2D_uhb58")
 
 [node name="Area2D" type="Area2D" parent="CharacterBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
-position = Vector2(3, 2)
+position = Vector2(3, 1)
 shape = SubResource("CircleShape2D_0bi1x")
 debug_color = Color(0.976471, 0, 0, 0.168627)
 
-[node name="Area2D2" type="Area2D" parent="CharacterBody2D"]
+[node name="platform" type="StaticBody2D" parent="CharacterBody2D"]
+disable_mode = 2
+collision_layer = 64
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D2"]
-position = Vector2(5, 2)
-shape = SubResource("CircleShape2D_ubn80")
-debug_color = Color(0.976471, 0, 0.419608, 0.0705882)
+[node name="platform_collision" type="CollisionShape2D" parent="CharacterBody2D/platform"]
+position = Vector2(5.5, -3.5)
+shape = SubResource("RectangleShape2D_wdtns")
+one_way_collision = true
+one_way_collision_margin = 10.0
+debug_color = Color(0, 0.0156863, 0.85098, 0.764706)
 
 [connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_exited"]
-[connection signal="body_entered" from="CharacterBody2D/Area2D2" to="CharacterBody2D" method="_on_area_2d_2_body_entered"]

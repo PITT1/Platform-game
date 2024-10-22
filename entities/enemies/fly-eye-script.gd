@@ -12,7 +12,8 @@ var flyEyeLocationY: float
 @export var aceleration: float = 1
 var gettingHit = false
 var death = false
-@onready var hit_area_collisionShape: CollisionShape2D = $Area2D2/CollisionShape2D
+@onready var collision_shape: CollisionShape2D = $CollisionShape2D
+@onready var platform_collision: CollisionShape2D = $platform/platform_collision
 
 func _ready() -> void:
 	anim.play("flight")
@@ -38,11 +39,15 @@ func _process(delta: float) -> void:
 		if playerLocationX > flyEyeLocationX:
 			velocity.x += aceleration
 			anim.flip_h = false
+			collision_shape.set_position(Vector2(5.5, 1.5))
+			platform_collision.set_position(Vector2(5.5, -3.5))
 			if velocity.x > speed:
 				velocity.x = speed
 		else:
 			velocity.x -= aceleration
 			anim.flip_h = true
+			collision_shape.set_position(Vector2(-5.5, 1.5))
+			platform_collision.set_position(Vector2(-5.5, -3.5))
 			if velocity.x < -speed:
 				velocity.x = -speed
 			
@@ -56,7 +61,6 @@ func _process(delta: float) -> void:
 				velocity.y = -speed
 			
 		if lives < 1:
-			hit_area_collisionShape.set_disabled(true)
 			death = true
 			anim.play("death")
 			await get_tree().create_timer(0.5).timeout
@@ -66,9 +70,3 @@ func _process(delta: float) -> void:
 		velocity.x = 0
 		velocity.y = 0
 	move_and_slide()
-
-
-func _on_area_2d_2_body_entered(body: Node2D) -> void:
-	if body.lives != 0:
-		body.lives -= 1
-		body.gettingHit = true
