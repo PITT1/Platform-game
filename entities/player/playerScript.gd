@@ -783,9 +783,6 @@ func gettingHitAnimation():
 		var brokenHeartsInstantiated = broken_heart_particles.instantiate()
 		add_sibling(brokenHeartsInstantiated)
 		brokenHeartsInstantiated.global_position = global_position + Vector2(0, 0)
-		set_modulate(Color(100, 100, 100))
-		await get_tree().create_timer(0.1).timeout
-		set_modulate(Color(1, 1, 1))
 		gettingHit = false
 
 func deathFunction():

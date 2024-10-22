@@ -422,7 +422,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_03vnu")
 }],
-"loop": true,
+"loop": false,
 "name": &"defend",
 "speed": 15.0
 }, {
@@ -578,13 +578,13 @@ PlayerCollider = NodePath("CollisionShape2D")
 runningModifier = true
 coyoteTime = 0.1
 wallJump = true
-inputPauseAfterWallJump = 0.5
+inputPauseAfterWallJump = 0.2
 run = true
 jump = true
 idle = true
 walk = true
 falling = true
-lives = 3
+lives = 7
 jump_particles = ExtResource("2_lxma3")
 broken_heart_particles = ExtResource("3_4l27k")
 rain_particles = ExtResource("4_2wxr6")
@@ -595,9 +595,9 @@ shape = SubResource("CapsuleShape2D_f6il3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_qlfpc")
-animation = &"walk"
-frame = 6
-frame_progress = 0.31482
+animation = &"attack1"
+frame = 5
+frame_progress = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 limit_left = 100

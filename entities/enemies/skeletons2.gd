@@ -16,10 +16,8 @@ var walk = false
 @export var lives_limit: float = 5 
 @export var speed: float = 50
 @export var acceleration = 120
-@export_range(0.0, 1.0, 0.01) var attack_block_probability: float = 0.60
 var gettingHit = false
 var player: CharacterBody2D
-var proces_attack = false
 
 func _ready() -> void:
 	on_idle()
@@ -145,16 +143,6 @@ func _on_hit_area_body_entered(body: CharacterBody2D) -> void:
 		body.velocity = Vector2(400, -300)
 	else:
 		body.velocity = Vector2(-400, -300)
-
-func attack_block():
-	if not proces_attack:
-		var num = randf()
-		print(num)
-		proces_attack = true
-		if num < attack_block_probability:
-			return 1
-		elif num > attack_block_probability:
-			return 2
 
 func on_attack():
 	attack = true
