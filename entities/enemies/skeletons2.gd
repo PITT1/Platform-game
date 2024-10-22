@@ -10,9 +10,7 @@ var attack = false
 var death = false
 var idle = false
 var shield = false
-var takeHit = false
 var walk = false
-var contra_attack = false
 
 @export var lives: float = 5
 @export var lives_limit: float = 5 
@@ -41,21 +39,15 @@ func _process(delta: float) -> void:
 	if shield:
 		anim.play("shield")
 		
-	if takeHit:
-		anim.play("takeHit")
-		
 	if walk:
 		anim.play("walk")
-	
-	if contra_attack:
-		anim.play("contra_attack")
 		
 	
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		
-	if player != null and not attack and not gettingHit and not death and not contra_attack:
+	if player != null and not attack and not gettingHit and not death:
 		on_walk()
 		if player.global_position.x > global_position.x:
 			anim.flip_h = false
@@ -71,19 +63,17 @@ func _physics_process(delta: float) -> void:
 			if velocity.x < -speed:
 				velocity.x = -speed
 				
-	if attack and not gettingHit and not death and not contra_attack:
+	if attack and not gettingHit and not death:
 		vision_area.scale = Vector2(5, 5)
 	else:
 		vision_area.scale = Vector2(1, 1)
 		
 	if gettingHit and not death:
 		velocity.x = 0
-		if attack_block() == 1:
-			on_contra_attack()
-			if lives < lives_limit:
-				lives += 1
-		elif attack_block() == 2:
-			on_takeHit()
+		set_modulate(Color(100, 100, 100))
+		await get_tree().create_timer(0.1).timeout
+		set_modulate(Color(1, 1, 1))
+		gettingHit = false
 		
 	if lives < 1:
 		on_death()
@@ -171,60 +161,32 @@ func on_attack():
 	death = false
 	idle = false
 	shield = false
-	takeHit = false
 	walk = false
-	contra_attack = false
 	
 func on_death():
 	attack = false
 	death = true
 	idle = false
 	shield = false
-	takeHit = false
 	walk = false
-	contra_attack = false
 	
 func on_idle():
 	attack = false
 	death = false
 	idle = true
 	shield = false
-	takeHit = false
 	walk = false
-	contra_attack = false
 	
 func on_shield():
 	attack = false
 	death = false
 	idle = false
 	shield = true
-	takeHit = false
 	walk = false
-	contra_attack = false
-	
-func on_takeHit():
-	attack = false
-	death = false
-	idle = false
-	shield = false
-	takeHit = true
-	walk = false
-	contra_attack = false
 	
 func on_walk():
 	attack = false
 	death = false
 	idle = false
 	shield = false
-	takeHit = false
 	walk = true
-	contra_attack = false
-
-func on_contra_attack():
-	attack = false
-	death = false
-	idle = false
-	shield = false
-	takeHit = false
-	walk = false
-	contra_attack = true
