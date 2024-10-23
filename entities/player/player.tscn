@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://o8autm5pdnbr"]
+[gd_scene load_steps=95 format=3 uid="uid://o8autm5pdnbr"]
 
 [ext_resource type="Script" path="res://entities/player/playerScript.gd" id="1_jfgvy"]
 [ext_resource type="Texture2D" uid="uid://dkinx5w12ek0u" path="res://images/player_sprites/DEATH.png" id="1_tsc5q"]
@@ -13,7 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://ddx5euquruxyh" path="res://images/player_sprites/ATTACK 3.png" id="4_o2w5e"]
 [ext_resource type="Texture2D" uid="uid://e7wkcesrf48g" path="res://images/player_sprites/DEFEND.png" id="6_7jrbu"]
 [ext_resource type="Texture2D" uid="uid://pjk41w8j0ujp" path="res://images/player_sprites/HURT.png" id="8_4shsl"]
+[ext_resource type="Texture2D" uid="uid://e6l4jnvvj0c3" path="res://images/player_sprites/DASH.png" id="8_vf3r3"]
 [ext_resource type="Texture2D" uid="uid://b3rnq2b2mwjcj" path="res://images/player_sprites/WALK.png" id="11_pgmug"]
+[ext_resource type="Texture2D" uid="uid://dye7pmxlqr05t" path="res://images/player_sprites/SLIDE.png" id="14_x2mgy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f6il3"]
 height = 33.0
@@ -85,6 +87,26 @@ region = Rect2(384, 0, 96, 84)
 [sub_resource type="AtlasTexture" id="AtlasTexture_2853b"]
 atlas = ExtResource("4_o2w5e")
 region = Rect2(480, 0, 96, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wvkk"]
+atlas = ExtResource("8_vf3r3")
+region = Rect2(0, 0, 96, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oejhq"]
+atlas = ExtResource("8_vf3r3")
+region = Rect2(96, 0, 96, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqaed"]
+atlas = ExtResource("8_vf3r3")
+region = Rect2(192, 0, 96, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yd1a"]
+atlas = ExtResource("8_vf3r3")
+region = Rect2(288, 0, 96, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tca37"]
+atlas = ExtResource("8_vf3r3")
+region = Rect2(384, 0, 96, 84)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bknbu"]
 atlas = ExtResource("1_tsc5q")
@@ -262,6 +284,10 @@ region = Rect2(576, 0, 96, 84)
 atlas = ExtResource("4_lpi8c")
 region = Rect2(672, 0, 96, 84)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ggp3"]
+atlas = ExtResource("14_x2mgy")
+region = Rect2(0, 0, 96, 84)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_iffum"]
 atlas = ExtResource("11_pgmug")
 region = Rect2(0, 0, 96, 84)
@@ -361,6 +387,26 @@ animations = [{
 "loop": false,
 "name": &"attack3",
 "speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wvkk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oejhq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqaed")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0yd1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tca37")
+}],
+"loop": true,
+"name": &"dash",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -536,6 +582,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_0ggp3")
+}],
+"loop": true,
+"name": &"slide",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_iffum")
 }, {
 "duration": 1.0,
@@ -580,11 +634,13 @@ coyoteTime = 0.1
 wallJump = true
 inputPauseAfterWallJump = 0.2
 wallSliding = 2.0
+dashType = 1
 dashLength = 2.0
 run = true
 jump = true
 idle = true
 walk = true
+slide = true
 falling = true
 lives = 7
 jump_particles = ExtResource("2_lxma3")
@@ -597,9 +653,7 @@ shape = SubResource("CapsuleShape2D_f6il3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_qlfpc")
-animation = &"attack1"
-frame = 5
-frame_progress = 1.0
+animation = &"dash"
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 limit_left = 100
