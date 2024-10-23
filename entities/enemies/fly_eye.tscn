@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://efyda2cw57qk"]
+[gd_scene load_steps=37 format=3 uid="uid://efyda2cw57qk"]
 
 [ext_resource type="Texture2D" uid="uid://b6yym4v2nihjh" path="res://images/Monsters_Creatures_Fantasy/Flying eye/Attack.png" id="1_52bx2"]
 [ext_resource type="Script" path="res://entities/enemies/fly-eye-script.gd" id="1_ibuif"]
@@ -210,6 +210,9 @@ size = Vector2(15, 5)
 [sub_resource type="CircleShape2D" id="CircleShape2D_fy2cg"]
 radius = 21.0238
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_a4ggf"]
+radius = 22.0227
+
 [node name="flyEye" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
@@ -221,8 +224,7 @@ death_particles = ExtResource("2_4orom")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_1hum0")
 animation = &"attack"
-frame = 7
-frame_progress = 1.0
+frame = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(5.5, 1.5)
@@ -254,7 +256,18 @@ position = Vector2(5, 2)
 shape = SubResource("CircleShape2D_fy2cg")
 debug_color = Color(0.968627, 0, 0, 0.2)
 
+[node name="hitArea" type="Area2D" parent="CharacterBody2D"]
+collision_layer = 0
+
+[node name="hitArea_CollisionShape" type="CollisionShape2D" parent="CharacterBody2D/hitArea"]
+position = Vector2(5, 2)
+shape = SubResource("CircleShape2D_a4ggf")
+disabled = true
+debug_color = Color(0.933333, 0, 0, 0.192157)
+
+[connection signal="frame_changed" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="CharacterBody2D/attackArea" to="CharacterBody2D" method="_on_attack_area_body_entered"]
 [connection signal="body_exited" from="CharacterBody2D/attackArea" to="CharacterBody2D" method="_on_attack_area_body_exited"]
+[connection signal="body_entered" from="CharacterBody2D/hitArea" to="CharacterBody2D" method="_on_hit_area_body_entered"]

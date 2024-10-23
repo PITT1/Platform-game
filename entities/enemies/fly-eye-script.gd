@@ -15,6 +15,8 @@ var death = false
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 @onready var platform_collision: CollisionShape2D = $platform/platform_collision
 @export var death_particles: PackedScene
+@onready var hit_area_collision_shape: CollisionShape2D = $hitArea/hitArea_CollisionShape
+@onready var attack_area_collision_shape: CollisionShape2D = $attackArea/attackArea_CollisionShape
 
 var fly = false
 var attack = false
@@ -54,6 +56,7 @@ func _physics_process(delta: float) -> void:
 			anim.flip_h = false
 			collision_shape.set_position(Vector2(5.5, 1.5))
 			platform_collision.set_position(Vector2(5.5, -3.5))
+			attack_area_collision_shape.set_position(Vector2(5, 2))
 			if velocity.x > speed:
 				velocity.x = speed
 		else:
@@ -61,6 +64,7 @@ func _physics_process(delta: float) -> void:
 			anim.flip_h = true
 			collision_shape.set_position(Vector2(-5.5, 1.5))
 			platform_collision.set_position(Vector2(-5.5, -3.5))
+			attack_area_collision_shape.set_position(Vector2(-5, 2))
 			if velocity.x < -speed:
 				velocity.x = -speed
 			
@@ -110,3 +114,23 @@ func on_attack():
 func on_fly():
 	attack = false
 	fly = true
+
+
+func _on_hit_area_body_entered(body: CharacterBody2D) -> void:
+	body.lives -= 1
+	body.gettingHit = true
+	if body.global_position > global_position:
+		body.velocity = Vector2(300, -300)
+	else:
+		body.velocity = Vector2(-300, -300)
+
+
+func _on_animated_sprite_2d_frame_changed() -> void:
+	if anim.get_animation() == "attack" and anim.get_frame() == 6:
+		hit_area_collision_shape.set_disabled(false)
+		if anim.is_flipped_h():
+			hit_area_collision_shape.set_position(Vector2(-5, 2))
+		else:
+			hit_area_collision_shape.set_position(Vector2(5, 2))
+		await get_tree().create_timer(0.1).timeout
+		hit_area_collision_shape.set_disabled(true)
