@@ -624,8 +624,10 @@ radius = 8.0
 [node name="player" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." node_paths=PackedStringArray("PlayerSprite", "PlayerCollider")]
+collision_layer = 129
 collision_mask = 71
-platform_wall_layers = 255
+platform_on_leave = 2
+platform_wall_layers = 2
 script = ExtResource("1_jfgvy")
 PlayerSprite = NodePath("AnimatedSprite2D")
 PlayerCollider = NodePath("CollisionShape2D")
@@ -642,7 +644,7 @@ idle = true
 walk = true
 slide = true
 falling = true
-lives = 7
+lives = 5
 jump_particles = ExtResource("2_lxma3")
 broken_heart_particles = ExtResource("3_4l27k")
 rain_particles = ExtResource("4_2wxr6")

@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://dsbr2hrptjhy7" path="res://entities/enemies/skeletons_2.tscn" id="17_lxcyv"]
 [ext_resource type="PackedScene" uid="uid://bgjihptpibjv8" path="res://entities/enemies/goblin.tscn" id="18_22qif"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gyl6a"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f6eew"]
 texture = ExtResource("1_brmwm")
 9:1/0 = 0
 10:1/0 = 0
@@ -1289,7 +1289,7 @@ texture = ExtResource("1_brmwm")
 
 [sub_resource type="TileSet" id="TileSet_vy2nm"]
 physics_layer_0/collision_layer = 2
-sources/0 = SubResource("TileSetAtlasSource_gyl6a")
+sources/0 = SubResource("TileSetAtlasSource_f6eew")
 
 [node name="World2" type="Node2D"]
 

@@ -390,7 +390,7 @@ func _process(_delta):
 		anim.play("falling")
 		
 		
-	if slide:
+	if slide and not on_Attack:
 		#wall slide and latch
 		if latched and !wasLatched:
 			anim.speed_scale = 1
