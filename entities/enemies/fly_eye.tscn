@@ -1,7 +1,8 @@
-[gd_scene load_steps=34 format=3 uid="uid://efyda2cw57qk"]
+[gd_scene load_steps=36 format=3 uid="uid://efyda2cw57qk"]
 
 [ext_resource type="Texture2D" uid="uid://b6yym4v2nihjh" path="res://images/Monsters_Creatures_Fantasy/Flying eye/Attack.png" id="1_52bx2"]
 [ext_resource type="Script" path="res://entities/enemies/fly-eye-script.gd" id="1_ibuif"]
+[ext_resource type="PackedScene" uid="uid://c6c4vbpxml1xx" path="res://particles/slime_death.tscn" id="2_4orom"]
 [ext_resource type="Texture2D" uid="uid://dp56584gu1e4e" path="res://images/Monsters_Creatures_Fantasy/Flying eye/Death.png" id="2_s2bol"]
 [ext_resource type="Texture2D" uid="uid://diwlvflyufg5c" path="res://images/Monsters_Creatures_Fantasy/Flying eye/Flight.png" id="3_7knuq"]
 [ext_resource type="Texture2D" uid="uid://ceybyb3yqfjh2" path="res://images/Monsters_Creatures_Fantasy/Flying eye/Take Hit.png" id="4_4t565"]
@@ -206,17 +207,22 @@ radius = 182.003
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wdtns"]
 size = Vector2(15, 5)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_fy2cg"]
+radius = 21.0238
+
 [node name="flyEye" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 collision_layer = 8
 collision_mask = 8
 script = ExtResource("1_ibuif")
+death_particles = ExtResource("2_4orom")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_1hum0")
-animation = &"flight"
-frame_progress = 0.673692
+animation = &"attack"
+frame = 7
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(5.5, 1.5)
@@ -227,7 +233,7 @@ shape = SubResource("RectangleShape2D_uhb58")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
 position = Vector2(3, 1)
 shape = SubResource("CircleShape2D_0bi1x")
-debug_color = Color(0.976471, 0, 0, 0.168627)
+debug_color = Color(0.0975601, 0.529034, 0.910796, 0.168627)
 
 [node name="platform" type="StaticBody2D" parent="CharacterBody2D"]
 disable_mode = 2
@@ -240,5 +246,15 @@ one_way_collision = true
 one_way_collision_margin = 10.0
 debug_color = Color(0, 0.0156863, 0.85098, 0.764706)
 
+[node name="attackArea" type="Area2D" parent="CharacterBody2D"]
+collision_layer = 0
+
+[node name="attackArea_CollisionShape" type="CollisionShape2D" parent="CharacterBody2D/attackArea"]
+position = Vector2(5, 2)
+shape = SubResource("CircleShape2D_fy2cg")
+debug_color = Color(0.968627, 0, 0, 0.2)
+
 [connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="CharacterBody2D/attackArea" to="CharacterBody2D" method="_on_attack_area_body_entered"]
+[connection signal="body_exited" from="CharacterBody2D/attackArea" to="CharacterBody2D" method="_on_attack_area_body_exited"]
