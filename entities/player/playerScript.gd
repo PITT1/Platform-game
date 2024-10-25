@@ -334,13 +334,13 @@ func _process(_delta):
 		if not is_on_floor():
 			anim.play("attack3")
 			if anim.scale.x > 0:
-				collision_shape_2d.position.x = 16
-				collision_shape_2d.position.y = 0
-				collision_shape_2d.scale = Vector2(2.5, 1)
+				collision_shape_2d.position.x = 20
+				collision_shape_2d.position.y = -10
+				collision_shape_2d.scale = Vector2(3.5, 1.6)
 			else:
-				collision_shape_2d.position.x = -16
-				collision_shape_2d.position.y = 0
-				collision_shape_2d.scale = Vector2(2.5, 1)
+				collision_shape_2d.position.x = -20
+				collision_shape_2d.position.y = -10
+				collision_shape_2d.scale = Vector2(3.5, 1.6)
 			await get_tree().create_timer(0.3).timeout
 			attackBuss = 0
 		on_Attack = false
