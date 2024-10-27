@@ -625,8 +625,7 @@ radius = 8.0
 [node name="player" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." node_paths=PackedStringArray("PlayerSprite", "PlayerCollider")]
-collision_layer = 129
-collision_mask = 71
+collision_mask = 67
 platform_on_leave = 2
 platform_wall_layers = 2
 script = ExtResource("1_jfgvy")

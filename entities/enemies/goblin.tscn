@@ -245,7 +245,7 @@ size = Vector2(244.625, 92)
 
 [node name="Goblin" type="CharacterBody2D"]
 collision_layer = 4
-collision_mask = 7
+collision_mask = 2
 platform_floor_layers = 4294967294
 script = ExtResource("1_87mtr")
 proyectile = ExtResource("2_75o8m")
