@@ -123,6 +123,7 @@ class_name PlatformerController2D
 @export var broken_heart_particles: PackedScene
 @export var rain_particles: PackedScene
 @export var rain_type: int = 1
+@export var run_particles: PackedScene
 var gettingHit = false
 var instantiated_rain
 
@@ -443,6 +444,14 @@ func _physics_process(delta):
 	twirlTap = Input.is_action_just_pressed("twirl")
 	
 	
+	#INFO run particles
+	var instantiated_run_particles = run_particles.instantiate()
+	if is_on_floor() and velocity.x != 0:
+		add_child(instantiated_run_particles)
+		instantiated_run_particles.global_position = global_position
+		instantiated_run_particles.emitting = true
+	else:
+		instantiated_run_particles.emitting = false
 	#INFO Left and Right Movement
 	
 	if rightHold and leftHold and movementInputMonitoring and not death:

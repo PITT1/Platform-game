@@ -1,3 +1,22 @@
-[gd_scene format=3 uid="uid://cyofqjywx8a6c"]
+[gd_scene load_steps=3 format=3 uid="uid://cyofqjywx8a6c"]
+
+[ext_resource type="Texture2D" uid="uid://d3uutqg1g0tgj" path="res://images/leaf2.png" id="1_unwkg"]
+
+[sub_resource type="Curve" id="Curve_sl7xj"]
+_data = [Vector2(0, 0.154717), 0.0, 0.0, 0, 0, Vector2(0.838235, 0.0339622), -0.615849, -0.615849, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [node name="LeafParticlesRunPlayer" type="CPUParticles2D"]
+emitting = false
+amount = 1
+speed_scale = 0.7
+randomness = 1.0
+texture = ExtResource("1_unwkg")
+direction = Vector2(0, -1000)
+spread = 10.0
+gravity = Vector2(0, 400)
+initial_velocity_min = 236.56
+initial_velocity_max = 236.56
+angular_velocity_min = -294.18
+angular_velocity_max = 303.88
+scale_amount_curve = SubResource("Curve_sl7xj")
