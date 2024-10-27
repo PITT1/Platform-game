@@ -36,3 +36,5 @@ split_scale = true
 scale_curve_x = SubResource("Curve_21sc1")
 scale_curve_y = SubResource("Curve_5gtav")
 script = ExtResource("2_w3gt4")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

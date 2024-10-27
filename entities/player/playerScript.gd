@@ -448,7 +448,6 @@ func _physics_process(delta):
 	#INFO run particles
 	var instantiated_run_particles = run_particles.instantiate()
 	count_leaf += 1 * delta
-	print(get_child_count())
 	if is_on_floor() and velocity.x != 0 and count_leaf > 0.1:
 		add_child(instantiated_run_particles)
 		instantiated_run_particles.global_position = global_position + Vector2(0, 30)

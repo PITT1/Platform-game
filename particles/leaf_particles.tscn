@@ -14,7 +14,7 @@ point_count = 2
 
 [node name="leaf_particles" type="CPUParticles2D"]
 position = Vector2(-1, -1)
-amount = 30
+amount = 50
 speed_scale = 0.1
 texture = ExtResource("1_bfxo5")
 emission_shape = 3

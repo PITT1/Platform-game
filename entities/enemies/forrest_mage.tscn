@@ -308,7 +308,7 @@ size = Vector2(121, 26)
 [node name="forrest_mage" type="CharacterBody2D"]
 texture_filter = 1
 scale = Vector2(1.5, 1.5)
-collision_layer = 0
+collision_layer = 16
 collision_mask = 2
 script = ExtResource("1_jfsio")
 proyectil = ExtResource("2_ep2rj")
