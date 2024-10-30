@@ -96,10 +96,11 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_attack_area_body_entered(body: CharacterBody2D) -> void:
-	on_attack()
-	player_on_ceil = true
-	await get_tree().create_timer(0.6).timeout
-	on_fly()
+	if not death:
+		on_attack()
+		player_on_ceil = true
+		await get_tree().create_timer(0.6).timeout
+		on_fly()
 	
 
 func _on_attack_area_body_exited(body: CharacterBody2D) -> void:
