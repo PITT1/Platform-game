@@ -124,6 +124,7 @@ class_name PlatformerController2D
 @export var rain_particles: PackedScene
 @export var rain_type: int = 1
 @export var run_particles: PackedScene
+@export var hit1_enemy_particles: PackedScene
 var count_leaf: float = 0
 var gettingHit = false
 var instantiated_rain
@@ -789,6 +790,10 @@ func _on_hit_area_body_entered(body: Node2D) -> void:
 		body.lives -= 2
 		
 	body.gettingHit = true
+	
+	var instantiated_particles1 = hit1_enemy_particles.instantiate()
+	add_sibling(instantiated_particles1)
+	instantiated_particles1.global_position = body.global_position
 	
 func gettingHitAnimation():
 	if gettingHit:

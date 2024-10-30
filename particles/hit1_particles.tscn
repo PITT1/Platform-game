@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://boaagtl0ppqqh"]
+
+[ext_resource type="Texture2D" uid="uid://d1jkpi1jsuk03" path="res://images/hit_particles.png" id="1_sipqb"]
+[ext_resource type="Script" path="res://particles/hit_1_particles.gd" id="2_dwtey"]
+
+[sub_resource type="Gradient" id="Gradient_jd2qe"]
+offsets = PackedFloat32Array(0, 0.337748, 0.649007, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="Hit1Particles" type="CPUParticles2D"]
+z_index = 100
+scale = Vector2(0.5, 0.5)
+emitting = false
+amount = 1
+lifetime = 0.1
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+texture = ExtResource("1_sipqb")
+gravity = Vector2(0, 0)
+angle_min = -402.6
+angle_max = 294.2
+scale_amount_min = 0.2
+scale_amount_max = 0.3
+color_ramp = SubResource("Gradient_jd2qe")
+script = ExtResource("2_dwtey")
+
+[connection signal="finished" from="." to="." method="_on_finished"]
