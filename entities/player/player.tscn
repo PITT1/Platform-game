@@ -638,6 +638,7 @@ wallJump = true
 inputPauseAfterWallJump = 0.2
 wallSliding = 2.0
 dashType = 1
+dashCancel = false
 dashLength = 2.2
 run = true
 jump = true
@@ -659,7 +660,7 @@ shape = SubResource("CapsuleShape2D_f6il3")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_qlfpc")
 animation = &"dash"
-frame_progress = 0.114036
+frame_progress = 0.180886
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 limit_left = 100

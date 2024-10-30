@@ -145,15 +145,16 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 
 
 func launchingProyectile():
-	vision_area.scale = Vector2(5, 5)
-	var instantiated = proyectile.instantiate()
-	add_sibling(instantiated)
-	instantiated.global_position = global_position + Vector2(0, -10)
-	instantiated.direction = global_position.direction_to(player.global_position)
-	await get_tree().create_timer(2).timeout
-	vision_area.set_monitoring(false)
-	vision_area.scale = Vector2(1, 1)
-	vision_area.set_monitoring(true)
+	if is_on_floor_only():
+		vision_area.scale = Vector2(5, 5)
+		var instantiated = proyectile.instantiate()
+		add_sibling(instantiated)
+		instantiated.global_position = global_position + Vector2(0, -10)
+		instantiated.direction = global_position.direction_to(player.global_position)
+		await get_tree().create_timer(2).timeout
+		vision_area.set_monitoring(false)
+		vision_area.scale = Vector2(1, 1)
+		vision_area.set_monitoring(true)
 
 
 func _on_sensor_right_body_exited(body: TileMapLayer) -> void:
