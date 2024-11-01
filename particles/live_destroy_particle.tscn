@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://particles/live_destroy_particle.gd" id="2_mndaf"]
 
 [sub_resource type="Curve" id="Curve_mppyq"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0740741, 0.516483), 0.0, 0.0, 0, 0, Vector2(0.292181, 0.505494), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.114035, 0.818868), 0.0, 0.0, 0, 0, Vector2(0.289474, 0.758491), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 4
 
 [node name="live_destroy_particle" type="CPUParticles2D"]
@@ -28,3 +28,5 @@ orbit_velocity_min = 0.5
 orbit_velocity_max = 0.6
 scale_amount_curve = SubResource("Curve_mppyq")
 script = ExtResource("2_mndaf")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

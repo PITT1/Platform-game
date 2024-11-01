@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dxftx0pehgckf" path="res://hud/lives_hud.tscn" id="15_2nmcq"]
 [ext_resource type="PackedScene" uid="uid://bar58vx48kjox" path="res://entities/enemies/blueSlime.tscn" id="16_eng6h"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ut44t"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ahmk"]
 texture = ExtResource("11_76exv")
 9:1/0 = 0
 10:1/0 = 0
@@ -1481,7 +1481,7 @@ texture = ExtResource("11_76exv")
 59:62/0 = 0
 60:62/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n25ao"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fu1y1"]
 texture = ExtResource("12_1npuy")
 4:1/0 = 0
 5:1/0 = 0
@@ -2107,10 +2107,10 @@ texture = ExtResource("12_1npuy")
 
 [sub_resource type="TileSet" id="TileSet_thc2p"]
 physics_layer_0/collision_layer = 2
-sources/0 = SubResource("TileSetAtlasSource_ut44t")
-sources/1 = SubResource("TileSetAtlasSource_n25ao")
+sources/0 = SubResource("TileSetAtlasSource_1ahmk")
+sources/1 = SubResource("TileSetAtlasSource_fu1y1")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_flhck"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_va6rw"]
 texture = ExtResource("11_76exv")
 9:1/0 = 0
 9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -3524,7 +3524,7 @@ texture = ExtResource("11_76exv")
 
 [sub_resource type="TileSet" id="TileSet_7atai"]
 physics_layer_0/collision_layer = 128
-sources/0 = SubResource("TileSetAtlasSource_flhck")
+sources/0 = SubResource("TileSetAtlasSource_va6rw")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yclpb"]
 size = Vector2(94, 11)

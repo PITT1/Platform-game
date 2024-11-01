@@ -1438,9 +1438,6 @@ position = Vector2(2966, 202)
 [node name="CharacterBody2D8" parent="skeletons" instance=ExtResource("17_lxcyv")]
 position = Vector2(3085, 195)
 
-[node name="player" parent="." instance=ExtResource("2_arqvn")]
-position = Vector2(181, 355)
-
 [node name="ShadowKnight4" parent="." instance=ExtResource("13_fibvo")]
 position = Vector2(2330, 361)
 
@@ -1460,3 +1457,6 @@ position = Vector2(2911, 46)
 
 [node name="forrest_mage2" parent="." instance=ExtResource("15_rrfoq")]
 position = Vector2(3489, 351)
+
+[node name="player" parent="." instance=ExtResource("2_arqvn")]
+position = Vector2(186, 335)
