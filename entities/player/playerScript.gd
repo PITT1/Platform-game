@@ -319,7 +319,7 @@ func _process(_delta):
 				collision_shape_2d.position.x = -16
 				collision_shape_2d.scale = Vector2(1.5, 2)
 				collision_shape_2d.position.y = 5
-			await get_tree().create_timer(0.3).timeout
+			await get_tree().create_timer(0.2).timeout
 			attackBuss = 1
 		elif attackBuss == 1 and is_on_floor():
 			anim.play("attack2")
@@ -331,7 +331,7 @@ func _process(_delta):
 				collision_shape_2d.position.x = -12
 				collision_shape_2d.scale = Vector2(2.4, 2)
 				collision_shape_2d.position.y = 5
-			await get_tree().create_timer(0.3).timeout
+			await get_tree().create_timer(0.2).timeout
 			attackBuss = 0
 			
 		if not is_on_floor():
@@ -447,18 +447,22 @@ func _physics_process(delta):
 	
 	
 	#INFO run particles
-	var instantiated_run_particles = run_particles.instantiate()
-	count_leaf += 1 * delta
-	if is_on_floor() and velocity.x != 0 and count_leaf > 0.05:
-		add_child(instantiated_run_particles)
-		instantiated_run_particles.global_position = global_position + Vector2(0, 30)
-		instantiated_run_particles.emitting = true
-		count_leaf = 0
+	if run_particles:
+		
+		count_leaf += 1 * delta
+		if is_on_floor() and velocity.x != 0 and count_leaf > 0.05:
+			var instantiated_run_particles = run_particles.instantiate()
+			add_child(instantiated_run_particles)
+			instantiated_run_particles.global_position = global_position + Vector2(0, 30)
+			instantiated_run_particles.emitting = true
+			count_leaf = 0
+		else:
+			pass
 	else:
-		instantiated_run_particles.emitting = false
+		pass
 	#INFO Left and Right Movement
 	
-	if rightHold and leftHold and movementInputMonitoring and not death:
+	if rightHold and leftHold and movementInputMonitoring and not death and not on_Attack:
 		if !instantStop:
 			_decelerate(delta, false)
 		else:
@@ -712,9 +716,12 @@ func _jump():
 		velocity.y = -jumpMagnitude
 		jumpCount += -1
 		jumpWasPressed = false
-		var instance = jump_particles.instantiate()
-		add_sibling(instance)
-		instance.global_position = global_position + Vector2(0, 10)
+		if jump_particles:
+			var instance = jump_particles.instantiate()
+			add_sibling(instance)
+			instance.global_position = global_position + Vector2(0, 10)
+		else:
+			pass
 		
 func _wallJump():
 	var horizontalWallKick = abs(jumpMagnitude * cos(wallKickAngle * (PI / 180)))
@@ -730,11 +737,12 @@ func _wallJump():
 	if inputPauseAfterWallJump != 0:
 		movementInputMonitoring = Vector2(false, false)
 		_inputPauseReset(inputPauseAfterWallJump)
-		
-	var instance = jump_particles.instantiate()
-	add_sibling(instance)
-	instance.global_position = global_position + Vector2(0, 10)
-			
+	if jump_particles:
+		var instance = jump_particles.instantiate()
+		add_sibling(instance)
+		instance.global_position = global_position + Vector2(0, 10)
+	else:
+		pass
 func _setLatch(delay, setBool):
 	await get_tree().create_timer(delay).timeout
 	wasLatched = setBool
@@ -790,10 +798,12 @@ func _on_hit_area_body_entered(body: Node2D) -> void:
 		body.lives -= 2
 		
 	body.gettingHit = true
-	
-	var instantiated_particles1 = hit1_enemy_particles.instantiate()
-	add_sibling(instantiated_particles1)
-	instantiated_particles1.global_position = body.global_position
+	if hit1_enemy_particles:
+		var instantiated_particles1 = hit1_enemy_particles.instantiate()
+		add_sibling(instantiated_particles1)
+		instantiated_particles1.global_position = body.global_position
+	else:
+		pass
 	
 func gettingHitAnimation():
 	if gettingHit:

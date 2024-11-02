@@ -10,10 +10,10 @@ point_count = 3
 [node name="LeafParticlesRunPlayer" type="CPUParticles2D"]
 z_index = -1
 emitting = false
-amount = 1
+amount = 2
 lifetime = 0.7
 one_shot = true
-speed_scale = 0.7
+speed_scale = 0.4
 explosiveness = 1.0
 randomness = 1.0
 lifetime_randomness = 0.38
