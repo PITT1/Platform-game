@@ -681,6 +681,11 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_n0wn8")
 debug_color = Color(0.952941, 0, 0.12549, 0.419608)
 
+[node name="time_between_dash" type="Timer" parent="CharacterBody2D"]
+wait_time = 0.6
+one_shot = true
+
 [connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="frame_changed" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="body_entered" from="CharacterBody2D/hitArea" to="CharacterBody2D" method="_on_hit_area_body_entered"]
+[connection signal="timeout" from="CharacterBody2D/time_between_dash" to="CharacterBody2D" method="_on_time_between_dash_timeout"]

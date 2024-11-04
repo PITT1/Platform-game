@@ -118,6 +118,8 @@ class_name PlatformerController2D
 
 @export_category("statistics player")
 @export var lives: int = 10
+@onready var time_between_dash_object: Timer = $time_between_dash
+var dash_available = true
 @export_category("particles")
 @export var jump_particles: PackedScene
 @export var broken_heart_particles: PackedScene
@@ -582,7 +584,7 @@ func _physics_process(delta):
 			
 			
 	#INFO dashing
-	if is_on_floor():
+	if is_on_floor() or is_on_wall():
 		dashCount = dashes
 	if eightWayDash and dashTap and dashCount > 0 and !rolling:
 		var input_direction = Input.get_vector("left", "right", "up", "down")
@@ -593,7 +595,7 @@ func _physics_process(delta):
 		dashCount += -1
 		movementInputMonitoring = Vector2(false, false)
 		_inputPauseReset(dTime)
-	
+		
 	if twoWayDashVertical and dashTap and dashCount > 0 and !rolling:
 		var dTime = 0.0625 * dashLength
 		if upHold and downHold:
@@ -615,7 +617,7 @@ func _physics_process(delta):
 			movementInputMonitoring = Vector2(false, false)
 			_inputPauseReset(dTime)
 	
-	if twoWayDashHorizontal and dashTap and dashCount > 0 and !rolling:
+	if twoWayDashHorizontal and dashTap and dashCount > 0 and !rolling and dash_available and not death:
 		var dTime = 0.0625 * dashLength
 		if wasPressingR and !(upHold or downHold):
 			velocity.y = 0
@@ -633,6 +635,8 @@ func _physics_process(delta):
 			dashCount += -1
 			movementInputMonitoring = Vector2(false, false)
 			_inputPauseReset(dTime)
+		dash_available = false
+		time_between_dash_object.start()
 			
 	if dashing and velocity.x > 0 and leftTap and dashCancel:
 		velocity.x = 0
@@ -849,3 +853,7 @@ func attack_procesor():
 		on_Attack = false
 		idle = true
 		jump = true
+
+
+func _on_time_between_dash_timeout() -> void:
+	dash_available = true
