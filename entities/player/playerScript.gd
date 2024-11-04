@@ -126,6 +126,7 @@ class_name PlatformerController2D
 @export var run_particles: PackedScene
 @export var hit1_enemy_particles: PackedScene
 var count_leaf: float = 0
+@export var getting_hit_particles: PackedScene
 var gettingHit = false
 var instantiated_rain
 
@@ -448,7 +449,6 @@ func _physics_process(delta):
 	
 	#INFO run particles
 	if run_particles:
-		
 		count_leaf += 1 * delta
 		if is_on_floor() and velocity.x != 0 and count_leaf > 0.05:
 			var instantiated_run_particles = run_particles.instantiate()
@@ -811,6 +811,10 @@ func gettingHitAnimation():
 		add_sibling(brokenHeartsInstantiated)
 		brokenHeartsInstantiated.global_position = global_position + Vector2(0, 0)
 		gettingHit = false
+		if getting_hit_particles and not death:
+			var getting_hit_Instantiated = getting_hit_particles.instantiate()
+			add_child(getting_hit_Instantiated)
+			getting_hit_Instantiated.global_position = global_position
 
 func deathFunction():
 	if lives < 1:

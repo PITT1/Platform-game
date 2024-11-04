@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://o8autm5pdnbr"]
+[gd_scene load_steps=98 format=3 uid="uid://o8autm5pdnbr"]
 
 [ext_resource type="Script" path="res://entities/player/playerScript.gd" id="1_jfgvy"]
 [ext_resource type="Texture2D" uid="uid://dkinx5w12ek0u" path="res://images/player_sprites/DEATH.png" id="1_tsc5q"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cyofqjywx8a6c" path="res://particles/leaf_particles_run_player.tscn" id="5_wqnb3"]
 [ext_resource type="Texture2D" uid="uid://e7wkcesrf48g" path="res://images/player_sprites/DEFEND.png" id="6_7jrbu"]
 [ext_resource type="PackedScene" uid="uid://boaagtl0ppqqh" path="res://particles/hit1_particles.tscn" id="6_xyeun"]
+[ext_resource type="PackedScene" uid="uid://cg2eng63kdi36" path="res://particles/getting_hit_player_particles.tscn" id="7_v0exb"]
 [ext_resource type="Texture2D" uid="uid://pjk41w8j0ujp" path="res://images/player_sprites/HURT.png" id="8_4shsl"]
 [ext_resource type="Texture2D" uid="uid://e6l4jnvvj0c3" path="res://images/player_sprites/DASH.png" id="8_vf3r3"]
 [ext_resource type="Texture2D" uid="uid://b3rnq2b2mwjcj" path="res://images/player_sprites/WALK.png" id="11_pgmug"]
@@ -652,6 +653,7 @@ broken_heart_particles = ExtResource("3_4l27k")
 rain_particles = ExtResource("4_2wxr6")
 run_particles = ExtResource("5_wqnb3")
 hit1_enemy_particles = ExtResource("6_xyeun")
+getting_hit_particles = ExtResource("7_v0exb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(1, 2.5)

@@ -23,8 +23,8 @@ spread = 20.0
 gravity = Vector2(0, 800)
 initial_velocity_min = 236.56
 initial_velocity_max = 236.56
-angular_velocity_min = -294.18
-angular_velocity_max = 303.88
+angular_velocity_min = -539.29
+angular_velocity_max = 426.43
 scale_amount_curve = SubResource("Curve_sl7xj")
 script = ExtResource("2_sad7q")
 
