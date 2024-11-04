@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://particles/getting_hit_player_particles.gd" id="2_gk6sr"]
 
 [sub_resource type="Curve" id="Curve_ppjib"]
-_data = [Vector2(0.149123, 0.335849), 0.0, 0.0, 0, 0]
+_data = [Vector2(0.108187, 0.622642), 0.0, 0.0, 0, 0]
 point_count = 1
 
 [sub_resource type="Gradient" id="Gradient_8twec"]

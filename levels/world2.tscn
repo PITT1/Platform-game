@@ -1414,9 +1414,6 @@ position = Vector2(1160, 366)
 [node name="skeletons2" parent="skeletons" instance=ExtResource("17_lxcyv")]
 position = Vector2(1164, 169)
 
-[node name="CharacterBody2D" parent="skeletons" instance=ExtResource("17_lxcyv")]
-position = Vector2(973, 183)
-
 [node name="CharacterBody2D2" parent="skeletons" instance=ExtResource("17_lxcyv")]
 position = Vector2(1323, 177)
 

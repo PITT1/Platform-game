@@ -127,6 +127,7 @@ class_name PlatformerController2D
 @export var hit1_enemy_particles: PackedScene
 var count_leaf: float = 0
 @export var getting_hit_particles: PackedScene
+@export var hit_explode_particles: PackedScene
 var gettingHit = false
 var instantiated_rain
 
@@ -306,50 +307,8 @@ func _process(_delta):
 		anim.scale.x = animScaleLock.x * -1
 		
 	#attack
-	if Input.is_action_just_pressed("atack") and not on_Attack:
-		jump = false
-		idle = false
-		on_Attack = true
-		if attackBuss == 0 and is_on_floor():
-			anim.play("attack1")
-			if anim.scale.x > 0:
-				collision_shape_2d.position.x = 16
-				collision_shape_2d.scale = Vector2(1.5, 2)
-				collision_shape_2d.position.y = 5
-			else:
-				collision_shape_2d.position.x = -16
-				collision_shape_2d.scale = Vector2(1.5, 2)
-				collision_shape_2d.position.y = 5
-			await get_tree().create_timer(0.2).timeout
-			attackBuss = 1
-		elif attackBuss == 1 and is_on_floor():
-			anim.play("attack2")
-			if anim.scale.x > 0:
-				collision_shape_2d.position.x = 12
-				collision_shape_2d.scale = Vector2(2.4, 2)
-				collision_shape_2d.position.y = 5
-			else:
-				collision_shape_2d.position.x = -12
-				collision_shape_2d.scale = Vector2(2.4, 2)
-				collision_shape_2d.position.y = 5
-			await get_tree().create_timer(0.2).timeout
-			attackBuss = 0
-			
-		if not is_on_floor():
-			anim.play("attack3")
-			if anim.scale.x > 0:
-				collision_shape_2d.position.x = 20
-				collision_shape_2d.position.y = -10
-				collision_shape_2d.scale = Vector2(3.5, 1.6)
-			else:
-				collision_shape_2d.position.x = -20
-				collision_shape_2d.position.y = -10
-				collision_shape_2d.scale = Vector2(3.5, 1.6)
-			await get_tree().create_timer(0.3).timeout
-			attackBuss = 0
-		on_Attack = false
-		idle = true
-		jump = true
+	attack_procesor()
+	
 		
 	#death
 	if death and is_on_floor():
@@ -802,8 +761,11 @@ func _on_hit_area_body_entered(body: Node2D) -> void:
 		var instantiated_particles1 = hit1_enemy_particles.instantiate()
 		add_sibling(instantiated_particles1)
 		instantiated_particles1.global_position = body.global_position
-	else:
-		pass
+	
+	if hit_explode_particles:
+		var instantiated_hit_explode_particles = hit_explode_particles.instantiate()
+		add_sibling(instantiated_hit_explode_particles)
+		instantiated_hit_explode_particles.global_position = body.global_position
 	
 func gettingHitAnimation():
 	if gettingHit:
@@ -841,3 +803,49 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 		collision_shape_2d.set_disabled(false)
 		await get_tree().create_timer(0.1).timeout
 		collision_shape_2d.set_disabled(true)
+
+func attack_procesor():
+	if Input.is_action_just_pressed("atack") and not on_Attack and not death:
+		jump = false
+		idle = false
+		on_Attack = true
+		if attackBuss == 0 and is_on_floor():
+			anim.play("attack1")
+			if anim.scale.x > 0:
+				collision_shape_2d.position.x = 16
+				collision_shape_2d.scale = Vector2(1.5, 2)
+				collision_shape_2d.position.y = 5
+			else:
+				collision_shape_2d.position.x = -16
+				collision_shape_2d.scale = Vector2(1.5, 2)
+				collision_shape_2d.position.y = 5
+			await get_tree().create_timer(0.2).timeout
+			attackBuss = 1
+		elif attackBuss == 1 and is_on_floor():
+			anim.play("attack2")
+			if anim.scale.x > 0:
+				collision_shape_2d.position.x = 12
+				collision_shape_2d.scale = Vector2(2.4, 2)
+				collision_shape_2d.position.y = 5
+			else:
+				collision_shape_2d.position.x = -12
+				collision_shape_2d.scale = Vector2(2.4, 2)
+				collision_shape_2d.position.y = 5
+			await get_tree().create_timer(0.2).timeout
+			attackBuss = 0
+			
+		if not is_on_floor():
+			anim.play("attack3")
+			if anim.scale.x > 0:
+				collision_shape_2d.position.x = 20
+				collision_shape_2d.position.y = -10
+				collision_shape_2d.scale = Vector2(3.5, 1.6)
+			else:
+				collision_shape_2d.position.x = -20
+				collision_shape_2d.position.y = -10
+				collision_shape_2d.scale = Vector2(3.5, 1.6)
+			await get_tree().create_timer(0.3).timeout
+			attackBuss = 0
+		on_Attack = false
+		idle = true
+		jump = true
