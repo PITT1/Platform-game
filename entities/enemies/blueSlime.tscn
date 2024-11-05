@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bar58vx48kjox"]
+[gd_scene load_steps=18 format=3 uid="uid://bar58vx48kjox"]
 
 [ext_resource type="Script" path="res://entities/enemies/blue_slime.gd" id="1_802oi"]
 [ext_resource type="PackedScene" uid="uid://c6c4vbpxml1xx" path="res://particles/slime_death.tscn" id="2_csfn6"]
@@ -21,29 +21,29 @@ region = Rect2(64, 0, 32, 32)
 atlas = ExtResource("2_cwhck")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fwry5"]
-atlas = ExtResource("3_j7pk1")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mvijs"]
-atlas = ExtResource("3_j7pk1")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6otj1"]
-atlas = ExtResource("3_j7pk1")
-region = Rect2(160, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_klhi2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjuom"]
 atlas = ExtResource("3_j7pk1")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0cho7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_apckq"]
 atlas = ExtResource("3_j7pk1")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bgo3b"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ira80"]
 atlas = ExtResource("3_j7pk1")
 region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6stv2"]
+atlas = ExtResource("3_j7pk1")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kocdn"]
+atlas = ExtResource("3_j7pk1")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkp5w"]
+atlas = ExtResource("3_j7pk1")
+region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ceu2m"]
 animations = [{
@@ -66,22 +66,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fwry5")
+"texture": SubResource("AtlasTexture_xjuom")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mvijs")
+"texture": SubResource("AtlasTexture_apckq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6otj1")
+"texture": SubResource("AtlasTexture_ira80")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_klhi2")
+"texture": SubResource("AtlasTexture_6stv2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0cho7")
+"texture": SubResource("AtlasTexture_kocdn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bgo3b")
+"texture": SubResource("AtlasTexture_nkp5w")
 }],
 "loop": false,
 "name": &"run",
@@ -91,46 +91,31 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_0bml4"]
 radius = 8.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_eac8n"]
-radius = 199.251
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_6tb4h"]
-radius = 4.0
+radius = 7.33333
 
 [node name="BlueSlime" type="CharacterBody2D"]
 scale = Vector2(1.5, 1.5)
 collision_layer = 32
-collision_mask = 2
+collision_mask = 34
 script = ExtResource("1_802oi")
 death_particles = ExtResource("2_csfn6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ceu2m")
-animation = &"run"
-frame = 5
-frame_progress = 1.0
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.33333)
 shape = SubResource("CircleShape2D_0bml4")
 debug_color = Color(0, 0.223529, 0.701961, 0.537255)
-
-[node name="visionArea" type="Area2D" parent="."]
-collision_layer = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="visionArea"]
-shape = SubResource("CircleShape2D_eac8n")
-debug_color = Color(0.00849161, 0.578065, 0.818579, 0.12549)
 
 [node name="hitArea" type="Area2D" parent="."]
 collision_layer = 0
 
 [node name="hitArea_CollisionShape" type="CollisionShape2D" parent="hitArea"]
+position = Vector2(0, 1.33333)
 shape = SubResource("CircleShape2D_6tb4h")
 debug_color = Color(0.984314, 0.0117647, 0.0392157, 0.0313726)
 
-[node name="Timer" type="Timer" parent="."]
-
-[connection signal="body_entered" from="visionArea" to="." method="_on_vision_area_body_entered"]
-[connection signal="body_exited" from="visionArea" to="." method="_on_vision_area_body_exited"]
 [connection signal="body_entered" from="hitArea" to="." method="_on_hit_area_body_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
