@@ -761,6 +761,7 @@ func _on_hit_area_body_entered(body: Node2D) -> void:
 		body.lives -= 2
 		
 	body.gettingHit = true
+	body.velocity = global_position.direction_to(body.global_position) * Vector2(100, 100)
 	if hit1_enemy_particles:
 		var instantiated_particles1 = hit1_enemy_particles.instantiate()
 		add_sibling(instantiated_particles1)

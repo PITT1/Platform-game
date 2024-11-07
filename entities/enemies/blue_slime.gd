@@ -5,7 +5,7 @@ extends CharacterBody2D
 
 @export var lives: float = 3
 @export var move_to_the_right = true
-@export var aceleration: float = 100
+@export var aceleration: float = 300
 @export var speed: float = 60
 @export var death_particles: PackedScene
 var gettingHit = false 
@@ -48,6 +48,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_hit_area_body_entered(body: CharacterBody2D) -> void:
-	body.lives -= 1
-	body.gettingHit = true
-	body.velocity = global_position.direction_to(body.global_position) * 500
+	if not body.death:
+		body.lives -= 1
+		body.gettingHit = true
+		body.velocity = global_position.direction_to(body.global_position) * 500
