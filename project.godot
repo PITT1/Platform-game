@@ -90,6 +90,7 @@ atack={
 2d_physics/layer_5="enemigo fantasma"
 2d_physics/layer_6="slime"
 2d_physics/layer_8="terreno punsante"
+2d_physics/layer_9="invisible_enemy_wall"
 
 [rendering]
 

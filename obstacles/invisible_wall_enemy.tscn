@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtq4ilw7ldcce"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pqxkm"]
+size = Vector2(7, 20)
+
+[node name="InvisibleWallEnemy" type="StaticBody2D"]
+collision_layer = 256
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pqxkm")
