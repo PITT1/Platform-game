@@ -331,7 +331,7 @@ func _process(_delta):
 		if abs(velocity.x) > 0.1 and is_on_floor() and !is_on_wall():
 			anim.speed_scale = abs(velocity.x / 150)
 			anim.play("run")
-		elif abs(velocity.x) < 0.1 and is_on_floor():
+		elif abs(velocity.x) < 0.1 and is_on_floor() and not on_Attack:
 			anim.speed_scale = 1
 			anim.play("idle")
 	elif run and idle and walk and !dashing and !crouching:
