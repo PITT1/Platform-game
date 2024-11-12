@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://o01kysyplujt"]
+[gd_scene load_steps=23 format=4 uid="uid://o01kysyplujt"]
 
 [ext_resource type="Texture2D" uid="uid://didcklr78knar" path="res://images/tilemap/main_lev_build_2.png" id="1_brmwm"]
 [ext_resource type="Texture2D" uid="uid://bg8weivuatkhu" path="res://images/forestBackground/Layer_0011_0.png" id="2_6cri1"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://dsbr2hrptjhy7" path="res://entities/enemies/skeletons_2.tscn" id="17_lxcyv"]
 [ext_resource type="PackedScene" uid="uid://bgjihptpibjv8" path="res://entities/enemies/goblin.tscn" id="18_22qif"]
 [ext_resource type="PackedScene" uid="uid://bar58vx48kjox" path="res://entities/enemies/blueSlime.tscn" id="18_leg05"]
+[ext_resource type="PackedScene" uid="uid://bgurafal77rsb" path="res://particles/ambient_particles.tscn" id="20_jshjv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f6eew"]
 texture = ExtResource("1_brmwm")
@@ -1490,3 +1491,23 @@ position = Vector2(1793, 354)
 
 [node name="player" parent="." instance=ExtResource("2_arqvn")]
 position = Vector2(186, 335)
+
+[node name="ambient_particles" type="Node" parent="."]
+
+[node name="AmbientParticles" parent="ambient_particles" instance=ExtResource("20_jshjv")]
+position = Vector2(394, 326)
+
+[node name="AmbientParticles2" parent="ambient_particles" instance=ExtResource("20_jshjv")]
+position = Vector2(1053, 289)
+
+[node name="AmbientParticles3" parent="ambient_particles" instance=ExtResource("20_jshjv")]
+position = Vector2(1649, 246)
+
+[node name="AmbientParticles4" parent="ambient_particles" instance=ExtResource("20_jshjv")]
+position = Vector2(2183, 220)
+
+[node name="AmbientParticles5" parent="ambient_particles" instance=ExtResource("20_jshjv")]
+position = Vector2(2745.41, 221.119)
+
+[node name="AmbientParticles6" parent="ambient_particles" instance=ExtResource("20_jshjv")]
+position = Vector2(3450.07, 212.009)

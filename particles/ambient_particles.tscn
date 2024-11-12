@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgurafal77rsb"]
+
+[ext_resource type="Texture2D" uid="uid://b47x5xwbtewuk" path="res://images/ambient_effect.png" id="1_jgj71"]
+
+[sub_resource type="Curve" id="Curve_k3uov"]
+max_value = 0.1
+_data = [Vector2(0.0497076, 0), 0.0, 0.0, 0, 0, Vector2(0.21345, 0.0154717), 0.0, 0.0, 0, 0, Vector2(0.517544, 0.0169811), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[node name="AmbientParticles" type="CPUParticles2D"]
+amount = 10
+speed_scale = 0.2
+randomness = 1.0
+lifetime_randomness = 1.0
+texture = ExtResource("1_jgj71")
+emission_shape = 3
+emission_rect_extents = Vector2(400, 200)
+direction = Vector2(1, 1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 10.0
+linear_accel_min = -4.26
+linear_accel_max = 8.51
+radial_accel_min = 1.0
+radial_accel_max = 1.0
+tangential_accel_min = -19.15
+tangential_accel_max = 10.64
+scale_amount_curve = SubResource("Curve_k3uov")
+color = Color(1, 1, 1, 0.552941)
