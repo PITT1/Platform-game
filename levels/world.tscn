@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://b83a6tf2x1e8d"]
+[gd_scene load_steps=20 format=4 uid="uid://b83a6tf2x1e8d"]
 
 [ext_resource type="Texture2D" uid="uid://cqy4dbwtshnub" path="res://images/tilemap/main_lev_build_1.png" id="1_x4f6d"]
 [ext_resource type="Texture2D" uid="uid://ca70ef0w8ha0j" path="res://images/tilemap/rocks.png" id="2_gqmac"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://obstacles/poizon_ivi2.gd" id="11_erqeb"]
 [ext_resource type="PackedScene" uid="uid://dxftx0pehgckf" path="res://hud/lives_hud.tscn" id="12_7egg4"]
 [ext_resource type="PackedScene" uid="uid://bgjihptpibjv8" path="res://entities/enemies/goblin.tscn" id="13_eau1x"]
+[ext_resource type="PackedScene" uid="uid://bgurafal77rsb" path="res://particles/ambient_particles.tscn" id="14_scdfk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_be2u3"]
 texture = ExtResource("1_x4f6d")
@@ -1427,6 +1428,35 @@ position = Vector2(3679, 159)
 
 [node name="Goblin2" parent="goblins" instance=ExtResource("13_eau1x")]
 position = Vector2(4055, 222)
+
+[node name="particles" type="Node" parent="."]
+
+[node name="AmbientParticles" parent="particles" instance=ExtResource("14_scdfk")]
+position = Vector2(490, 129)
+
+[node name="AmbientParticles2" parent="particles" instance=ExtResource("14_scdfk")]
+position = Vector2(1068, 117)
+color = Color(1, 1, 1, 0.552941)
+
+[node name="AmbientParticles3" parent="particles" instance=ExtResource("14_scdfk")]
+position = Vector2(1485, 137)
+color = Color(1, 1, 1, 0.552941)
+
+[node name="AmbientParticles4" parent="particles" instance=ExtResource("14_scdfk")]
+position = Vector2(2303, 157)
+color = Color(1, 1, 1, 0.552941)
+
+[node name="AmbientParticles5" parent="particles" instance=ExtResource("14_scdfk")]
+position = Vector2(3306, 151)
+color = Color(1, 1, 1, 0.552941)
+
+[node name="AmbientParticles6" parent="particles" instance=ExtResource("14_scdfk")]
+position = Vector2(4085, 152)
+color = Color(1, 1, 1, 0.552941)
+
+[node name="AmbientParticles7" parent="particles" instance=ExtResource("14_scdfk")]
+position = Vector2(4758, 168)
+color = Color(1, 1, 1, 0.552941)
 
 [connection signal="body_entered" from="poison ivy/Area2D" to="poison ivy/Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="poison ivy/Area2D2" to="poison ivy/Area2D2" method="_on_body_entered"]

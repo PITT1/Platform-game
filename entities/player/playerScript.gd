@@ -778,6 +778,10 @@ func gettingHitAnimation():
 		add_sibling(brokenHeartsInstantiated)
 		brokenHeartsInstantiated.global_position = global_position + Vector2(0, 0)
 		gettingHit = false
+		if not death:
+			get_tree().paused = true
+			await get_tree().create_timer(0.1).timeout
+			get_tree().paused = false
 		if getting_hit_particles and not death:
 			var getting_hit_Instantiated = getting_hit_particles.instantiate()
 			add_child(getting_hit_Instantiated)
