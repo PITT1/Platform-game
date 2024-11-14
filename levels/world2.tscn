@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://o01kysyplujt"]
+[gd_scene load_steps=24 format=4 uid="uid://o01kysyplujt"]
 
 [ext_resource type="Texture2D" uid="uid://didcklr78knar" path="res://images/tilemap/main_lev_build_2.png" id="1_brmwm"]
 [ext_resource type="Texture2D" uid="uid://bg8weivuatkhu" path="res://images/forestBackground/Layer_0011_0.png" id="2_6cri1"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://bgjihptpibjv8" path="res://entities/enemies/goblin.tscn" id="18_22qif"]
 [ext_resource type="PackedScene" uid="uid://bar58vx48kjox" path="res://entities/enemies/blueSlime.tscn" id="18_leg05"]
 [ext_resource type="PackedScene" uid="uid://bgurafal77rsb" path="res://particles/ambient_particles.tscn" id="20_jshjv"]
+[ext_resource type="PackedScene" uid="uid://54u88oswgal8" path="res://obstacles/trap1.tscn" id="21_l6r0o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f6eew"]
 texture = ExtResource("1_brmwm")
@@ -1511,3 +1512,21 @@ position = Vector2(2745.41, 221.119)
 
 [node name="AmbientParticles6" parent="ambient_particles" instance=ExtResource("20_jshjv")]
 position = Vector2(3450.07, 212.009)
+
+[node name="traps" type="Node2D" parent="."]
+
+[node name="Trap1" parent="traps" instance=ExtResource("21_l6r0o")]
+position = Vector2(782, -10)
+scale = Vector2(0.34, 0.4)
+
+[node name="Trap2" parent="traps" instance=ExtResource("21_l6r0o")]
+position = Vector2(2185, 372)
+
+[node name="Trap3" parent="traps" instance=ExtResource("21_l6r0o")]
+position = Vector2(2447, 376)
+
+[node name="Trap4" parent="traps" instance=ExtResource("21_l6r0o")]
+position = Vector2(3044, 53)
+
+[node name="Trap5" parent="traps" instance=ExtResource("21_l6r0o")]
+position = Vector2(2598, 52)
