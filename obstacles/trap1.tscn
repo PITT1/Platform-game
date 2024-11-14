@@ -1,3 +1,146 @@
-[gd_scene format=3 uid="uid://54u88oswgal8"]
+[gd_scene load_steps=18 format=3 uid="uid://54u88oswgal8"]
+
+[ext_resource type="Texture2D" uid="uid://cy6eowsxjnake" path="res://images/pinchos.png" id="1_31vo5"]
+[ext_resource type="Script" path="res://obstacles/trap_1.gd" id="1_fetoh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bd0ps"]
+atlas = ExtResource("1_31vo5")
+region = Rect2(2800, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37xqh"]
+atlas = ExtResource("1_31vo5")
+region = Rect2(2000, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aufy8"]
+atlas = ExtResource("1_31vo5")
+region = Rect2(1200, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqsat"]
+atlas = ExtResource("1_31vo5")
+region = Rect2(400, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jm1ts"]
+atlas = ExtResource("1_31vo5")
+region = Rect2(0, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1st4u"]
+atlas = ExtResource("1_31vo5")
+region = Rect2(2800, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1pcbt"]
+atlas = ExtResource("1_31vo5")
+region = Rect2(0, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1b0t7"]
+atlas = ExtResource("1_31vo5")
+region = Rect2(400, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5wka"]
+atlas = ExtResource("1_31vo5")
+region = Rect2(1200, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckqd5"]
+atlas = ExtResource("1_31vo5")
+region = Rect2(2000, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50ifm"]
+atlas = ExtResource("1_31vo5")
+region = Rect2(2800, 0, 400, 400)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vl1x8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bd0ps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37xqh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aufy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aqsat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jm1ts")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1st4u")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1pcbt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1b0t7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5wka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckqd5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50ifm")
+}],
+"loop": false,
+"name": &"retract",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ubwc"]
+size = Vector2(173, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mp3qf"]
+size = Vector2(172, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r4pg6"]
+size = Vector2(170, 54)
 
 [node name="Trap1" type="StaticBody2D"]
+scale = Vector2(0.5, 0.4)
+collision_layer = 128
+collision_mask = 0
+script = ExtResource("1_fetoh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 30.75)
+scale = Vector2(1.1525, 0.49375)
+sprite_frames = SubResource("SpriteFrames_vl1x8")
+animation = &"retract"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5.5, 47)
+shape = SubResource("RectangleShape2D_0ubwc")
+debug_color = Color(0, 0.564706, 0.819608, 0.305882)
+
+[node name="sensor" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="Collision_sensor" type="CollisionShape2D" parent="sensor"]
+position = Vector2(5, 31)
+shape = SubResource("RectangleShape2D_mp3qf")
+
+[node name="hit_area" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="Collision_hit_area" type="CollisionShape2D" parent="hit_area"]
+position = Vector2(6, 37)
+shape = SubResource("RectangleShape2D_r4pg6")
+disabled = true
+debug_color = Color(0.992157, 0, 0, 0.419608)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
+[connection signal="body_entered" from="sensor" to="." method="_on_sensor_body_entered"]
+[connection signal="body_entered" from="hit_area" to="." method="_on_hit_area_body_entered"]

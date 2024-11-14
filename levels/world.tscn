@@ -1436,27 +1436,21 @@ position = Vector2(490, 129)
 
 [node name="AmbientParticles2" parent="particles" instance=ExtResource("14_scdfk")]
 position = Vector2(1068, 117)
-color = Color(1, 1, 1, 0.552941)
 
 [node name="AmbientParticles3" parent="particles" instance=ExtResource("14_scdfk")]
 position = Vector2(1485, 137)
-color = Color(1, 1, 1, 0.552941)
 
 [node name="AmbientParticles4" parent="particles" instance=ExtResource("14_scdfk")]
 position = Vector2(2303, 157)
-color = Color(1, 1, 1, 0.552941)
 
 [node name="AmbientParticles5" parent="particles" instance=ExtResource("14_scdfk")]
 position = Vector2(3306, 151)
-color = Color(1, 1, 1, 0.552941)
 
 [node name="AmbientParticles6" parent="particles" instance=ExtResource("14_scdfk")]
 position = Vector2(4085, 152)
-color = Color(1, 1, 1, 0.552941)
 
 [node name="AmbientParticles7" parent="particles" instance=ExtResource("14_scdfk")]
 position = Vector2(4758, 168)
-color = Color(1, 1, 1, 0.552941)
 
 [connection signal="body_entered" from="poison ivy/Area2D" to="poison ivy/Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="poison ivy/Area2D2" to="poison ivy/Area2D2" method="_on_body_entered"]

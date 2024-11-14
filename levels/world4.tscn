@@ -3765,27 +3765,21 @@ position = Vector2(490, 295)
 
 [node name="AmbientParticles2" parent="particles" instance=ExtResource("24_2c30c")]
 position = Vector2(1068, 252)
-color = Color(1, 1, 1, 0.552941)
 
 [node name="AmbientParticles3" parent="particles" instance=ExtResource("24_2c30c")]
 position = Vector2(1485, 246)
-color = Color(1, 1, 1, 0.552941)
 
 [node name="AmbientParticles4" parent="particles" instance=ExtResource("24_2c30c")]
 position = Vector2(2303, 238)
-color = Color(1, 1, 1, 0.552941)
 
 [node name="AmbientParticles5" parent="particles" instance=ExtResource("24_2c30c")]
 position = Vector2(3306, 153)
-color = Color(1, 1, 1, 0.552941)
 
 [node name="AmbientParticles6" parent="particles" instance=ExtResource("24_2c30c")]
 position = Vector2(4085, 152)
-color = Color(1, 1, 1, 0.552941)
 
 [node name="AmbientParticles7" parent="particles" instance=ExtResource("24_2c30c")]
 position = Vector2(4758, 168)
-color = Color(1, 1, 1, 0.552941)
 
 [connection signal="body_entered" from="espinas/Area2D2" to="espinas/Area2D2" method="_on_body_entered"]
 [connection signal="body_entered" from="espinas/Area2D3" to="espinas/Area2D3" method="_on_body_entered"]

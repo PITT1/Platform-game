@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://dw07e2nhkt8p4"]
+[gd_scene load_steps=25 format=4 uid="uid://dw07e2nhkt8p4"]
 
 [ext_resource type="Texture2D" uid="uid://bg8weivuatkhu" path="res://images/forestBackground/Layer_0011_0.png" id="1_by0ej"]
 [ext_resource type="Texture2D" uid="uid://cmboo27ugv0n" path="res://images/forestBackground/Layer_0010_1.png" id="2_ex2mw"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dxftx0pehgckf" path="res://hud/lives_hud.tscn" id="15_2nmcq"]
 [ext_resource type="PackedScene" uid="uid://bar58vx48kjox" path="res://entities/enemies/blueSlime.tscn" id="16_eng6h"]
 [ext_resource type="PackedScene" uid="uid://bgurafal77rsb" path="res://particles/ambient_particles.tscn" id="17_ciy52"]
+[ext_resource type="PackedScene" uid="uid://54u88oswgal8" path="res://obstacles/trap1.tscn" id="18_b1qid"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ahmk"]
 texture = ExtResource("11_76exv")
@@ -3669,6 +3670,9 @@ position = Vector2(2183, 220)
 
 [node name="AmbientParticles5" parent="ambient_particles" instance=ExtResource("17_ciy52")]
 position = Vector2(2754, 200)
+
+[node name="Trap1" parent="." instance=ExtResource("18_b1qid")]
+position = Vector2(364, 372)
 
 [connection signal="body_entered" from="pinchos/Area2D2" to="pinchos/Area2D2" method="_on_body_entered"]
 [connection signal="body_entered" from="pinchos/Area2D3" to="pinchos/Area2D3" method="_on_body_entered"]
