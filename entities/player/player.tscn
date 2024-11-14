@@ -663,9 +663,9 @@ shape = SubResource("CapsuleShape2D_f6il3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_qlfpc")
-animation = &"defend"
-frame = 5
-frame_progress = 1.0
+animation = &"run"
+frame = 6
+frame_progress = 0.0426847
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 limit_left = 100
