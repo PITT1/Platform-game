@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://laeucpl41508"]
+
+[ext_resource type="Script" path="res://particles/hit_enemy_particles_2.gd" id="1_i4q07"]
+
+[sub_resource type="Gradient" id="Gradient_arfc5"]
+offsets = PackedFloat32Array(0, 0.256579, 0.769737, 0.980263)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="HitEnemyParticles2" type="CPUParticles2D"]
+emitting = false
+amount = 30
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+direction = Vector2(0, -1)
+spread = 60.0
+gravity = Vector2(0, 200)
+initial_velocity_min = 20.0
+initial_velocity_max = 265.96
+angular_velocity_min = -260.43
+angular_velocity_max = 291.06
+color_ramp = SubResource("Gradient_arfc5")
+hue_variation_max = 0.21
+script = ExtResource("1_i4q07")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

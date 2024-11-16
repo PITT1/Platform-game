@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=3 uid="uid://o8autm5pdnbr"]
+[gd_scene load_steps=100 format=3 uid="uid://o8autm5pdnbr"]
 
 [ext_resource type="Script" path="res://entities/player/playerScript.gd" id="1_jfgvy"]
 [ext_resource type="Texture2D" uid="uid://dkinx5w12ek0u" path="res://images/player_sprites/DEATH.png" id="1_tsc5q"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://pjk41w8j0ujp" path="res://images/player_sprites/HURT.png" id="8_4shsl"]
 [ext_resource type="Texture2D" uid="uid://e6l4jnvvj0c3" path="res://images/player_sprites/DASH.png" id="8_vf3r3"]
 [ext_resource type="PackedScene" uid="uid://dcyfdlub0dsta" path="res://particles/explode_hit_enemy_particles.tscn" id="8_wi63o"]
+[ext_resource type="PackedScene" uid="uid://laeucpl41508" path="res://particles/hit_enemy_particles2.tscn" id="9_hv5ha"]
 [ext_resource type="Texture2D" uid="uid://b3rnq2b2mwjcj" path="res://images/player_sprites/WALK.png" id="11_pgmug"]
 [ext_resource type="Texture2D" uid="uid://dye7pmxlqr05t" path="res://images/player_sprites/SLIDE.png" id="14_x2mgy"]
 
@@ -656,6 +657,7 @@ run_particles = ExtResource("5_wqnb3")
 hit1_enemy_particles = ExtResource("6_xyeun")
 getting_hit_particles = ExtResource("7_v0exb")
 hit_explode_particles = ExtResource("8_wi63o")
+hit_enemy_explode2 = ExtResource("9_hv5ha")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(1, 2.5)

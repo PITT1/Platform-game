@@ -130,6 +130,7 @@ var dash_available = true
 var count_leaf: float = 0
 @export var getting_hit_particles: PackedScene
 @export var hit_explode_particles: PackedScene
+@export var hit_enemy_explode2: PackedScene
 var gettingHit = false
 var instantiated_rain
 
@@ -771,6 +772,12 @@ func _on_hit_area_body_entered(body: Node2D) -> void:
 		var instantiated_hit_explode_particles = hit_explode_particles.instantiate()
 		add_sibling(instantiated_hit_explode_particles)
 		instantiated_hit_explode_particles.global_position = body.global_position
+	
+	if hit_enemy_explode2:
+		var instantiated_particles_explode2 = hit_enemy_explode2.instantiate()
+		add_sibling(instantiated_particles_explode2)
+		instantiated_particles_explode2.direction = global_position.direction_to(body.global_position)
+		instantiated_particles_explode2.global_position = body.global_position
 	
 func gettingHitAnimation():
 	if gettingHit:
