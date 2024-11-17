@@ -1,0 +1,178 @@
+[gd_scene load_steps=10 format=3 uid="uid://d2g0fw6xmbt60"]
+
+[ext_resource type="Texture2D" uid="uid://u3o3iwmlmrfc" path="res://images/sign.png" id="1_5psab"]
+[ext_resource type="Script" path="res://signs/sign_1.gd" id="1_ctmyl"]
+[ext_resource type="FontFile" uid="uid://bl1to454pytpt" path="res://fonts/Raleway-Regular.ttf" id="2_6f80o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7r8k8"]
+size = Vector2(35, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cfhww"]
+size = Vector2(98, 102)
+
+[sub_resource type="Animation" id="Animation_32a75"]
+resource_name = "show_message"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.1, 0.1), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-14, -9.00002), Vector2(-149, -221)]
+}
+
+[sub_resource type="Animation" id="Animation_f223r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.1, 0.1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-14, -9.00002)]
+}
+
+[sub_resource type="Animation" id="Animation_ucs8b"]
+resource_name = "hide_message"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.1, 0.1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-149, -221), Vector2(-14, -9.00002)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_64s6d"]
+_data = {
+"RESET": SubResource("Animation_f223r"),
+"hide_message": SubResource("Animation_ucs8b"),
+"show_message": SubResource("Animation_32a75")
+}
+
+[node name="Sign1" type="StaticBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_ctmyl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.11125, 0.14)
+texture = ExtResource("1_5psab")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_7r8k8")
+debug_color = Color(0.815686, 0.505882, 0, 0.113725)
+
+[node name="letter_area" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="letter_area_collisionShape" type="CollisionShape2D" parent="letter_area"]
+position = Vector2(0, -26)
+shape = SubResource("RectangleShape2D_cfhww")
+
+[node name="Label" type="Label" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -14.0
+offset_top = -9.00002
+offset_right = 284.0
+offset_bottom = 184.0
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("2_6f80o")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_64s6d")
+}
+
+[connection signal="body_entered" from="letter_area" to="." method="_on_letter_area_body_entered"]
+[connection signal="body_exited" from="letter_area" to="." method="_on_letter_area_body_exited"]
