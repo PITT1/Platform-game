@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://cwovlghwi0grr"]
+[gd_scene load_steps=3 format=3 uid="uid://cwovlghwi0grr"]
+
+[ext_resource type="FontFile" uid="uid://bl1to454pytpt" path="res://fonts/Raleway-Regular.ttf" id="1_dpu2b"]
+[ext_resource type="Script" path="res://hud/principal_menu.gd" id="1_q8ljf"]
 
 [node name="PrincipalMenu" type="Control"]
 layout_mode = 3
@@ -7,13 +10,49 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_q8ljf")
 
-[node name="Label" type="Label" parent="."]
-texture_filter = 1
-layout_mode = 0
-offset_left = 202.0
-offset_top = 64.0
-offset_right = 368.0
-offset_bottom = 110.0
-theme_override_font_sizes/font_size = 33
-text = "Tiny brave"
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.147639, 0.145245, 0.13875, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = 3.0
+offset_right = 99.0
+offset_bottom = 136.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Button_jugar" type="Button" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_dpu2b")
+theme_override_font_sizes/font_size = 25
+text = "Jugar"
+
+[node name="Button_options" type="Button" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_dpu2b")
+theme_override_font_sizes/font_size = 25
+text = "Opciones"
+
+[node name="Button_salir" type="Button" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_dpu2b")
+theme_override_font_sizes/font_size = 24
+text = "Salir"
+
+[connection signal="button_up" from="ColorRect/VBoxContainer/Button_jugar" to="." method="_on_button_jugar_button_up"]
+[connection signal="button_up" from="ColorRect/VBoxContainer/Button_salir" to="." method="_on_button_salir_button_up"]
