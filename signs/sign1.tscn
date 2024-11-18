@@ -154,11 +154,13 @@ debug_color = Color(0.815686, 0.505882, 0, 0.113725)
 collision_layer = 0
 
 [node name="letter_area_collisionShape" type="CollisionShape2D" parent="letter_area"]
+z_index = 300
 position = Vector2(0, -26)
 shape = SubResource("RectangleShape2D_cfhww")
 
 [node name="Label" type="Label" parent="."]
 self_modulate = Color(1, 1, 1, 0)
+z_index = 300
 offset_left = -14.0
 offset_top = -9.00002
 offset_right = 284.0
