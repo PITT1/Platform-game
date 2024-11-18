@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=3 uid="uid://o8autm5pdnbr"]
+[gd_scene load_steps=104 format=3 uid="uid://o8autm5pdnbr"]
 
 [ext_resource type="Script" path="res://entities/player/playerScript.gd" id="1_jfgvy"]
 [ext_resource type="Texture2D" uid="uid://dkinx5w12ek0u" path="res://images/player_sprites/DEATH.png" id="1_tsc5q"]
@@ -21,6 +21,9 @@
 [ext_resource type="PackedScene" uid="uid://laeucpl41508" path="res://particles/hit_enemy_particles2.tscn" id="9_hv5ha"]
 [ext_resource type="Texture2D" uid="uid://b3rnq2b2mwjcj" path="res://images/player_sprites/WALK.png" id="11_pgmug"]
 [ext_resource type="Texture2D" uid="uid://dye7pmxlqr05t" path="res://images/player_sprites/SLIDE.png" id="14_x2mgy"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="22_wfewf"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="23_axxb4"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="24_ejkey"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f6il3"]
 height = 33.0
@@ -626,6 +629,12 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n0wn8"]
 radius = 8.0
 
+[sub_resource type="Resource" id="Resource_gwk34"]
+script = ExtResource("24_ejkey")
+duration = 1.0
+transition = 0
+ease = 2
+
 [node name="player" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." node_paths=PackedStringArray("PlayerSprite", "PlayerCollider")]
@@ -670,8 +679,16 @@ frame = 6
 frame_progress = 0.0426847
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+physics_interpolation_mode = 1
+position = Vector2(388, -5.60519e-45)
 limit_left = 100
-position_smoothing_enabled = true
+limit_smoothed = true
+editor_draw_limits = true
+
+[node name="PhantomCameraHost" type="Node" parent="CharacterBody2D/Camera2D"]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("22_wfewf")
 
 [node name="hitArea" type="Area2D" parent="CharacterBody2D"]
 collision_layer = 0
@@ -685,6 +702,17 @@ debug_color = Color(0.952941, 0, 0.12549, 0.419608)
 
 [node name="time_between_dash" type="Timer" parent="CharacterBody2D"]
 one_shot = true
+
+[node name="PhantomCamera2D" type="Node2D" parent="CharacterBody2D" node_paths=PackedStringArray("follow_target")]
+position = Vector2(388, 0)
+script = ExtResource("23_axxb4")
+follow_mode = 1
+follow_target = NodePath("..")
+tween_resource = SubResource("Resource_gwk34")
+follow_damping = true
+follow_damping_value = Vector2(0.2, 0.4)
+draw_limits = true
+limit_left = 100
 
 [connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="frame_changed" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_frame_changed"]

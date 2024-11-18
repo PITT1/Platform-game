@@ -15,6 +15,10 @@ run/main_scene="res://hud/principalMenu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
+
 [display]
 
 window/size/viewport_width=576
@@ -22,6 +26,10 @@ window/size/viewport_height=324
 window/size/window_width_override=1000
 window/size/window_height_override=700
 window/stretch/mode="viewport"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg")
 
 [input]
 

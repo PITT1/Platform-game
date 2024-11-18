@@ -454,9 +454,9 @@ func _physics_process(delta):
 		wasMovingR = true
 	elif velocity.x < 0:
 		wasMovingR = false
-	if rightTap:
+	if rightTap and not death:
 		wasPressingR = true
-	if leftTap:
+	if leftTap and not death:
 		wasPressingR = false
 	
 	if runningModifier and !runHold:
