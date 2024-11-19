@@ -13,6 +13,8 @@ class_name PlatformerController2D
 @export var PlayerSprite: AnimatedSprite2D
 @export var PlayerCollider: CollisionShape2D
 @onready var collision_shape_2d: CollisionShape2D = $hitArea/CollisionShape2D
+@onready var pcam: PhantomCamera2D = $cameras/pcam
+
 
 
 #INFO HORIZONTAL MOVEMENT 
@@ -449,14 +451,15 @@ func _physics_process(delta):
 				_decelerate(delta, false)
 			else:
 				velocity.x = 0.1
-				
+	
+	moving_pcam()
 	if velocity.x > 0:
 		wasMovingR = true
 	elif velocity.x < 0:
 		wasMovingR = false
-	if rightTap and not death:
+	if rightTap:
 		wasPressingR = true
-	if leftTap and not death:
+	if leftTap:
 		wasPressingR = false
 	
 	if runningModifier and !runHold:
@@ -869,3 +872,9 @@ func attack_procesor():
 
 func _on_time_between_dash_timeout() -> void:
 	dash_available = true
+
+func moving_pcam():
+	if velocity.x > 100:
+		pcam.set_follow_offset(Vector2(20, 0))
+	elif velocity.x < -100:
+		pcam.set_follow_offset(Vector2(-20, 0))

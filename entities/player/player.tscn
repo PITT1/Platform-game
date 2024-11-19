@@ -633,7 +633,7 @@ radius = 8.0
 script = ExtResource("24_ejkey")
 duration = 1.0
 transition = 0
-ease = 2
+ease = 0
 
 [node name="player" type="Node2D"]
 
@@ -703,11 +703,13 @@ debug_color = Color(0.952941, 0, 0.12549, 0.419608)
 [node name="time_between_dash" type="Timer" parent="CharacterBody2D"]
 one_shot = true
 
-[node name="PhantomCamera2D" type="Node2D" parent="CharacterBody2D" node_paths=PackedStringArray("follow_target")]
+[node name="cameras" type="Node2D" parent="CharacterBody2D"]
+
+[node name="pcam" type="Node2D" parent="CharacterBody2D/cameras" node_paths=PackedStringArray("follow_target")]
 position = Vector2(388, 0)
 script = ExtResource("23_axxb4")
-follow_mode = 1
-follow_target = NodePath("..")
+follow_mode = 2
+follow_target = NodePath("../..")
 tween_resource = SubResource("Resource_gwk34")
 follow_damping = true
 follow_damping_value = Vector2(0.2, 0.4)
