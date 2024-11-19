@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crksupygj1b2s"
-path="res://.godot/imported/All Characters.png-d10043966d9b7721bb0f227b5588772b.ctex"
+uid="uid://bgma0jolicitb"
+path="res://.godot/imported/proyectil_fly_eye_corrupted.png-4c668e11ff6458bdcb63c5899bad548e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/Monsters_Creatures_Fantasy/All Characters.png"
-dest_files=["res://.godot/imported/All Characters.png-d10043966d9b7721bb0f227b5588772b.ctex"]
+source_file="res://images/Monsters_Creatures_Fantasy/Flying eye/proyectil_fly_eye_corrupted.png"
+dest_files=["res://.godot/imported/proyectil_fly_eye_corrupted.png-4c668e11ff6458bdcb63c5899bad548e.ctex"]
 
 [params]
 
