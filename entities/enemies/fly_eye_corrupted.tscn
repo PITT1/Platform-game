@@ -1,5 +1,6 @@
-[gd_scene load_steps=28 format=3 uid="uid://cfh5y5myhh4r"]
+[gd_scene load_steps=29 format=3 uid="uid://cfh5y5myhh4r"]
 
+[ext_resource type="Script" path="res://entities/enemies/fly_eye_corrupted.gd" id="1_fs0av"]
 [ext_resource type="Texture2D" uid="uid://b6yym4v2nihjh" path="res://images/Monsters_Creatures_Fantasy/Flying eye/Attack.png" id="1_t0603"]
 [ext_resource type="Texture2D" uid="uid://diwlvflyufg5c" path="res://images/Monsters_Creatures_Fantasy/Flying eye/Flight.png" id="2_hmjl2"]
 [ext_resource type="Texture2D" uid="uid://ceybyb3yqfjh2" path="res://images/Monsters_Creatures_Fantasy/Flying eye/Take Hit.png" id="3_agl4r"]
@@ -166,13 +167,16 @@ animations = [{
 radius = 9.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_imphy"]
-radius = 155.052
+radius = 487.001
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p5yua"]
 radius = 101.316
 
 [node name="FlyEyeCorrupted" type="CharacterBody2D"]
 texture_filter = 1
+collision_layer = 8
+collision_mask = 11
+script = ExtResource("1_fs0av")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.819796, 0.0175115, 3.85046e-07, 1)
@@ -184,12 +188,14 @@ position = Vector2(6, 2)
 shape = SubResource("CircleShape2D_kk4gs")
 
 [node name="visionArea" type="Area2D" parent="."]
+collision_layer = 0
 
 [node name="visionArea_CollisionShape" type="CollisionShape2D" parent="visionArea"]
 position = Vector2(4, 1)
 shape = SubResource("CircleShape2D_imphy")
 
 [node name="marginArea" type="Area2D" parent="."]
+collision_layer = 0
 
 [node name="marginArea_CollisionShape" type="CollisionShape2D" parent="marginArea"]
 position = Vector2(5, 1)
@@ -199,3 +205,8 @@ debug_color = Color(0.592157, 0.372549, 1, 0.231373)
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
+
+[connection signal="body_entered" from="visionArea" to="." method="_on_vision_area_body_entered"]
+[connection signal="body_exited" from="visionArea" to="." method="_on_vision_area_body_exited"]
+[connection signal="body_entered" from="marginArea" to="." method="_on_margin_area_body_entered"]
+[connection signal="body_exited" from="marginArea" to="." method="_on_margin_area_body_exited"]
