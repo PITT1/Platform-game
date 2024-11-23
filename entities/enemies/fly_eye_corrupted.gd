@@ -20,6 +20,8 @@ func _physics_process(delta: float) -> void:
 		movement_to_player(delta)
 	elif player and on_margin_area:
 		run_away_to_player(delta)
+	
+	
 	move_and_slide()
 	
 	if lives < 1:

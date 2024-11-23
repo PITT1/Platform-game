@@ -193,6 +193,7 @@ collision_layer = 0
 [node name="visionArea_CollisionShape" type="CollisionShape2D" parent="visionArea"]
 position = Vector2(4, 1)
 shape = SubResource("CircleShape2D_imphy")
+debug_color = Color(0, 0.6, 0.701961, 0.152941)
 
 [node name="marginArea" type="Area2D" parent="."]
 collision_layer = 0
