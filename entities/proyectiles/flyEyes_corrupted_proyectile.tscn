@@ -143,17 +143,19 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_0ffih"]
 radius = 32.0156
 
-[node name="RigidBody2D" type="RigidBody2D"]
-collision_layer = 0
-collision_mask = 3
-gravity_scale = 0.0
+[node name="flyEyes_corrupted_proyectile" type="Node2D"]
+scale = Vector2(0.3, 0.3)
 script = ExtResource("1_8gvjm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_eanfy")
 animation = &"fly"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_0ffih")
 debug_color = Color(0.964706, 0, 0, 0.184314)
 
@@ -161,6 +163,6 @@ debug_color = Color(0.964706, 0, 0, 0.184314)
 wait_time = 5.0
 one_shot = true
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

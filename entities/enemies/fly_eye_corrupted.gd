@@ -3,13 +3,14 @@ extends CharacterBody2D
 var player : CharacterBody2D = null
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var timer: Timer = $Timer
+@onready var collision: CollisionShape2D = $CollisionShape2D
 
 @export var speed: float = 60
 @export var acceleration: float = 300
 @export var lives: float = 5
 @export var death_particles: PackedScene
 @export var proyectile: PackedScene
-@export var proyectile_velocity = 100
+@export var proyectile_velocity = 200
 var gettingHit = false
 
 var on_margin_area = false
@@ -23,6 +24,14 @@ func _physics_process(delta: float) -> void:
 		movement_to_player(delta)
 	elif player and on_margin_area:
 		run_away_to_player(delta)
+	
+	if player:
+		if player.global_position.x > global_position.x:
+			anim.flip_h = false
+			collision.set_position(Vector2(6, 2))
+		else:
+			anim.flip_h = true
+			collision.set_position(Vector2(-6, 2))
 	
 	
 	move_and_slide()
@@ -99,5 +108,5 @@ func shot_to_player():
 	add_sibling(proyectile_instantia)
 	if player:
 		dir_to_player = global_position.direction_to(player.global_position)
-		proyectile_instantia.global_position = proyectile_instantia.global_position() * dir_to_player + Vector2(10, 10)
+		proyectile_instantia.position = global_position
 		proyectile_instantia.velocity = dir_to_player * proyectile_velocity
