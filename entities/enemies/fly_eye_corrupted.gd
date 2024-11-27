@@ -37,6 +37,9 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	if lives < 1:
+		var instantiated_particles = death_particles.instantiate()
+		add_sibling(instantiated_particles)
+		instantiated_particles.global_position = global_position
 		queue_free()
 	
 	

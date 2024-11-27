@@ -680,7 +680,7 @@ frame_progress = 0.0426847
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 physics_interpolation_mode = 1
-position = Vector2(388, -5.60519e-45)
+position = Vector2(388, 0)
 limit_left = 100
 limit_smoothed = true
 editor_draw_limits = true
