@@ -14,6 +14,7 @@ class_name PlatformerController2D
 @export var PlayerCollider: CollisionShape2D
 @onready var collision_shape_2d: CollisionShape2D = $hitArea/CollisionShape2D
 @onready var pcam: PhantomCamera2D = $cameras/pcam
+@onready var game_over_hud: Control = $"../GameOver"
 
 
 
@@ -800,6 +801,8 @@ func gettingHitAnimation():
 func deathFunction():
 	if lives < 1:
 		death = true
+		if game_over_hud.is_show == false:
+			game_over_hud.showHud(true)
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:
