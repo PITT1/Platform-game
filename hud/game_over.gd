@@ -29,4 +29,6 @@ func _on_btn_to_init_menu_button_up() -> void:
 
 
 func _on_btn_try_again_button_up() -> void:
-	print(get_parent())
+	var levelName = get_parent().get_parent().name
+	var scene_path = "res://levels/" +levelName+ ".tscn"
+	get_tree().change_scene_to_file(scene_path)
