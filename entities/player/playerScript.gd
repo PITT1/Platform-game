@@ -801,8 +801,6 @@ func gettingHitAnimation():
 func deathFunction():
 	if lives < 1:
 		death = true
-		if game_over_hud.is_show == false:
-			game_over_hud.showHud(true)
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:

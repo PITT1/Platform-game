@@ -1,4 +1,96 @@
-[gd_scene format=3 uid="uid://g8654f4q3e3u"]
+[gd_scene load_steps=6 format=3 uid="uid://g8654f4q3e3u"]
+
+[ext_resource type="Script" path="res://hud/you_win_hud.gd" id="1_2y7qc"]
+
+[sub_resource type="Animation" id="Animation_bpao6"]
+resource_name = "victory_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ColorRect:process_mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 0]
+}
+
+[sub_resource type="Animation" id="Animation_g08ck"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ColorRect:process_mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_ym7w8"]
+resource_name = "victory_out"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ColorRect:process_mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t4k5w"]
+_data = {
+"RESET": SubResource("Animation_g08ck"),
+"victory_in": SubResource("Animation_bpao6"),
+"victory_out": SubResource("Animation_ym7w8")
+}
 
 [node name="YouWinHud" type="Control"]
 layout_mode = 3
@@ -7,10 +99,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_2y7qc")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+process_mode = 4
+modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -40,22 +135,31 @@ theme_override_font_sizes/font_size = 37
 text = "¡VICTORIA!"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
+[node name="next_level_btn" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
 text = "Siguiente nivel"
 
-[node name="Button2" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
+[node name="try_again_btn" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
 text = "Reiniciar"
 
-[node name="Button3" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
+[node name="go_to_menu_levels_btn" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
 text = "menu de niveles"
 
-[node name="Button4" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
+[node name="quit_btn" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
 text = "salir"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_t4k5w")
+}
+
+[connection signal="button_up" from="CanvasLayer/ColorRect/VBoxContainer/try_again_btn" to="." method="_on_try_again_btn_button_up"]
+[connection signal="button_up" from="CanvasLayer/ColorRect/VBoxContainer/go_to_menu_levels_btn" to="." method="_on_go_to_menu_levels_btn_button_up"]
+[connection signal="button_up" from="CanvasLayer/ColorRect/VBoxContainer/quit_btn" to="." method="_on_quit_btn_button_up"]
