@@ -1,6 +1,5 @@
 extends Node2D
 @export var is_level_pass: bool = false 
-@onready var you_win_hud: Control = $YouWinHud
 @onready var player: Node2D = $player
 var scene_game_over = preload("res://hud/game_over.tscn")
 var scene_you_win = preload("res://hud/you_win_hud.tscn")

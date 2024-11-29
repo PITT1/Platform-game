@@ -1496,7 +1496,7 @@ move_to_the_right = false
 position = Vector2(1793, 354)
 
 [node name="player" parent="." instance=ExtResource("2_arqvn")]
-position = Vector2(3833.14, 248)
+position = Vector2(153, 373)
 
 [node name="ambient_particles" type="Node" parent="."]
 

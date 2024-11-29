@@ -27,9 +27,10 @@ func _on_quit_btn_button_up() -> void:
 
 
 func _on_go_to_menu_levels_btn_button_up() -> void:
-	pass # para mas adelante
+	get_tree().change_scene_to_file("res://hud/menu_levels.tscn")
 
 
 func _on_try_again_btn_button_up() -> void:
-	var levelName = get_parent()
-	get_tree().reload_current_scene()
+	var levelName = get_parent().name
+	var scene_path = "res://levels/" +levelName+ ".tscn"
+	get_tree().change_scene_to_file(scene_path)

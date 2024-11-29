@@ -14,7 +14,6 @@ class_name PlatformerController2D
 @export var PlayerCollider: CollisionShape2D
 @onready var collision_shape_2d: CollisionShape2D = $hitArea/CollisionShape2D
 @onready var pcam: PhantomCamera2D = $cameras/pcam
-@onready var game_over_hud: Control = $"../GameOver"
 
 
 

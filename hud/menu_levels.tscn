@@ -1,0 +1,82 @@
+[gd_scene load_steps=2 format=3 uid="uid://lecjcny2coda"]
+
+[ext_resource type="Script" path="res://hud/menu_levels.gd" id="1_aouwd"]
+
+[node name="MenuLevels" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aouwd")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.104669, 0.279751, 0.470112, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -28.5
+offset_right = 28.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+text = "Niveles"
+horizontal_alignment = 1
+
+[node name="tutorial_btn" type="Button" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "Tutorial"
+
+[node name="nivel_1_btn" type="Button" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "Nivel 1"
+
+[node name="nivel_2_btn" type="Button" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "Nivel 2"
+
+[node name="nivel_3_btn" type="Button" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "nivel 3"
+
+[node name="nivel_4_btn" type="Button" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "Nivel 4"
+
+[node name="nivel_5_btn" type="Button" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "nivel 5"
+
+[node name="nivel_6_btn" type="Button" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "nivel 6"
+
+[node name="back" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -38.0
+offset_bottom = 43.0
+grow_horizontal = 0
+text = "Atras"
+
+[connection signal="button_up" from="ColorRect/VBoxContainer/tutorial_btn" to="." method="_on_tutorial_btn_button_up"]
+[connection signal="button_up" from="ColorRect/VBoxContainer/nivel_1_btn" to="." method="_on_nivel_1_btn_button_up"]
+[connection signal="button_up" from="ColorRect/VBoxContainer/nivel_2_btn" to="." method="_on_nivel_2_btn_button_up"]
+[connection signal="button_up" from="ColorRect/VBoxContainer/nivel_3_btn" to="." method="_on_nivel_3_btn_button_up"]
+[connection signal="button_up" from="ColorRect/back" to="." method="_on_back_button_up"]
