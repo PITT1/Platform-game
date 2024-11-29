@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://o01kysyplujt"]
+[gd_scene load_steps=27 format=4 uid="uid://o01kysyplujt"]
 
 [ext_resource type="Texture2D" uid="uid://didcklr78knar" path="res://images/tilemap/main_lev_build_2.png" id="1_brmwm"]
 [ext_resource type="Script" path="res://levels/world_2.gd" id="1_rwupv"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://bar58vx48kjox" path="res://entities/enemies/blueSlime.tscn" id="18_leg05"]
 [ext_resource type="PackedScene" uid="uid://bgurafal77rsb" path="res://particles/ambient_particles.tscn" id="20_jshjv"]
 [ext_resource type="PackedScene" uid="uid://54u88oswgal8" path="res://obstacles/trap1.tscn" id="21_l6r0o"]
+[ext_resource type="PackedScene" uid="uid://vaeiu1j1eq7t" path="res://hud/pause_button.tscn" id="23_nlaul"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f6eew"]
 texture = ExtResource("1_brmwm")
@@ -1544,5 +1545,7 @@ collision_layer = 0
 position = Vector2(-1.37109, -49.2775)
 shape = SubResource("RectangleShape2D_4k1ai")
 debug_color = Color(5.53504e-07, 0.648218, 0.18792, 0.42)
+
+[node name="PauseButton" parent="." instance=ExtResource("23_nlaul")]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

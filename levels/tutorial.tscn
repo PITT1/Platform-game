@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://dw07e2nhkt8p4"]
+[gd_scene load_steps=29 format=4 uid="uid://dw07e2nhkt8p4"]
 
 [ext_resource type="Script" path="res://levels/tutorial.gd" id="1_pnmuv"]
 [ext_resource type="Texture2D" uid="uid://bg8weivuatkhu" path="res://images/forestBackground/Layer_0011_0.png" id="1_qwo5n"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://bgurafal77rsb" path="res://particles/ambient_particles.tscn" id="17_mmrjp"]
 [ext_resource type="PackedScene" uid="uid://d2g0fw6xmbt60" path="res://signs/sign1.tscn" id="18_55dre"]
 [ext_resource type="PackedScene" uid="uid://dtq4ilw7ldcce" path="res://obstacles/invisible_wall_enemy.tscn" id="19_sw2a5"]
+[ext_resource type="PackedScene" uid="uid://vaeiu1j1eq7t" path="res://hud/pause_button.tscn" id="21_58w7v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ahmk"]
 texture = ExtResource("11_bwms1")
@@ -3713,6 +3714,8 @@ collision_layer = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="win_area"]
 position = Vector2(16.4436, 3.43872)
 shape = SubResource("RectangleShape2D_8atx2")
+
+[node name="PauseButton" parent="." instance=ExtResource("21_58w7v")]
 
 [connection signal="body_entered" from="pinchos/Area2D2" to="pinchos/Area2D2" method="_on_body_entered"]
 [connection signal="body_entered" from="pinchos/Area2D3" to="pinchos/Area2D3" method="_on_body_entered"]

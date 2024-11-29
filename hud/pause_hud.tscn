@@ -110,7 +110,7 @@ text = "Opciones"
 [node name="main_menu" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
-text = "Menu Principal"
+text = "Menu de Niveles"
 
 [node name="quit" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
 layout_mode = 2
@@ -123,4 +123,6 @@ libraries = {
 }
 
 [connection signal="button_up" from="CanvasLayer/ColorRect/VBoxContainer/resume_btn" to="." method="_on_resume_btn_button_up"]
+[connection signal="button_up" from="CanvasLayer/ColorRect/VBoxContainer/main_menu" to="." method="_on_main_menu_button_up"]
+[connection signal="button_up" from="CanvasLayer/ColorRect/VBoxContainer/quit" to="." method="_on_quit_button_up"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

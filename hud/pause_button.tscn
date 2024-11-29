@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://vaeiu1j1eq7t"]
+
+[ext_resource type="Script" path="res://hud/pause_button.gd" id="1_ro2fc"]
+
+[node name="PauseButton" type="Control"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+script = ExtResource("1_ro2fc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -62.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "pausar"
+
+[connection signal="button_up" from="CanvasLayer/Button" to="." method="_on_button_button_up"]
