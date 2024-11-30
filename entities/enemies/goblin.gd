@@ -29,6 +29,9 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	
+	if delta:
+		pass
+	
 	if attack:
 		anim.play("attack")
 		
@@ -130,12 +133,14 @@ func _on_vision_area_body_entered(body: CharacterBody2D) -> void:
 	
 
 func _on_flee_area_body_entered(body: Node2D) -> void:
-	flee = true
+	if body:
+		flee = true
 
 func _on_flee_area_body_exited(body: Node2D) -> void:
-	flee = false
-	vision_area.set_monitoring(false)
-	vision_area.set_monitoring(true)
+	if body:
+		flee = false
+		vision_area.set_monitoring(false)
+		vision_area.set_monitoring(true)
 
 
 func _on_animated_sprite_2d_frame_changed() -> void:

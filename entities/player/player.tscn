@@ -708,11 +708,15 @@ one_shot = true
 [node name="pcam" type="Node2D" parent="CharacterBody2D/cameras" node_paths=PackedStringArray("follow_target")]
 position = Vector2(388, 0)
 script = ExtResource("23_axxb4")
-follow_mode = 2
+follow_mode = 5
 follow_target = NodePath("../..")
+snap_to_pixel = true
 tween_resource = SubResource("Resource_gwk34")
+tween_on_load = false
 follow_damping = true
 follow_damping_value = Vector2(0.2, 0.4)
+dead_zone_width = 0.079
+dead_zone_height = 0.206
 draw_limits = true
 limit_left = 100
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://b83a6tf2x1e8d"]
+[gd_scene load_steps=31 format=4 uid="uid://b83a6tf2x1e8d"]
 
 [ext_resource type="Script" path="res://levels/world.gd" id="1_1yrse"]
 [ext_resource type="Texture2D" uid="uid://cqy4dbwtshnub" path="res://images/tilemap/main_lev_build_1.png" id="1_x4f6d"]
@@ -1297,6 +1297,9 @@ size = Vector2(94, 11)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s3g6j"]
 size = Vector2(121, 104)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5x84y"]
+size = Vector2(81, 145)
+
 [node name="world" type="Node2D"]
 script = ExtResource("1_1yrse")
 metadata/_edit_vertical_guides_ = [823.0]
@@ -1400,71 +1403,81 @@ motion_mirroring = Vector2(928, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer10"]
 texture = ExtResource("13_x4wsm")
 
-[node name="flyEyes" type="Node" parent="."]
+[node name="enemies" type="Node2D" parent="."]
 
-[node name="flyEye" parent="flyEyes" instance=ExtResource("7_pu52v")]
+[node name="flyEyes" type="Node" parent="enemies"]
+
+[node name="flyEye" parent="enemies/flyEyes" instance=ExtResource("7_pu52v")]
 position = Vector2(813, 66)
 
-[node name="flyEye2" parent="flyEyes" instance=ExtResource("7_pu52v")]
+[node name="flyEye2" parent="enemies/flyEyes" instance=ExtResource("7_pu52v")]
 position = Vector2(769, 25)
 
-[node name="flyEye3" parent="flyEyes" instance=ExtResource("7_pu52v")]
+[node name="flyEye3" parent="enemies/flyEyes" instance=ExtResource("7_pu52v")]
 position = Vector2(882, 29)
 
-[node name="flyEye4" parent="flyEyes" instance=ExtResource("7_pu52v")]
+[node name="flyEye4" parent="enemies/flyEyes" instance=ExtResource("7_pu52v")]
 position = Vector2(1476, 297)
 
-[node name="flyEye5" parent="flyEyes" instance=ExtResource("7_pu52v")]
+[node name="flyEye5" parent="enemies/flyEyes" instance=ExtResource("7_pu52v")]
 position = Vector2(1342, 297)
 
-[node name="flyEye7" parent="flyEyes" instance=ExtResource("7_pu52v")]
+[node name="flyEye7" parent="enemies/flyEyes" instance=ExtResource("7_pu52v")]
 position = Vector2(3363, -54)
 
-[node name="skeletons" type="Node" parent="."]
+[node name="skeletons" type="Node" parent="enemies"]
 
-[node name="skeletons2" parent="skeletons" instance=ExtResource("8_led2h")]
-position = Vector2(509, 141)
+[node name="skeletons2" parent="enemies/skeletons" instance=ExtResource("8_led2h")]
+position = Vector2(511, 119)
 
-[node name="skeletons3" parent="skeletons" instance=ExtResource("8_led2h")]
+[node name="skeletons3" parent="enemies/skeletons" instance=ExtResource("8_led2h")]
 position = Vector2(2777, 44)
 
-[node name="skeletons4" parent="skeletons" instance=ExtResource("8_led2h")]
+[node name="skeletons4" parent="enemies/skeletons" instance=ExtResource("8_led2h")]
 position = Vector2(1244, 132)
 
-[node name="CharacterBody2D" parent="skeletons" instance=ExtResource("8_led2h")]
+[node name="CharacterBody2D" parent="enemies/skeletons" instance=ExtResource("8_led2h")]
 position = Vector2(4421.47, 135.092)
 
-[node name="mutantMushrooms" type="Node" parent="."]
+[node name="mutantMushrooms" type="Node" parent="enemies"]
 
-[node name="mutant mushrom" parent="mutantMushrooms" instance=ExtResource("9_i7mba")]
+[node name="mutant mushrom" parent="enemies/mutantMushrooms" instance=ExtResource("9_i7mba")]
 position = Vector2(1939, 80)
 
-[node name="mutant mushrom2" parent="mutantMushrooms" instance=ExtResource("9_i7mba")]
+[node name="mutant mushrom2" parent="enemies/mutantMushrooms" instance=ExtResource("9_i7mba")]
 position = Vector2(2509, 140)
 
-[node name="mutant mushrom3" parent="mutantMushrooms" instance=ExtResource("9_i7mba")]
+[node name="mutant mushrom3" parent="enemies/mutantMushrooms" instance=ExtResource("9_i7mba")]
 position = Vector2(4310, 127)
 
-[node name="poison ivy" type="Node" parent="."]
+[node name="poison ivy" type="Node" parent="enemies"]
 
-[node name="Area2D" type="Area2D" parent="poison ivy"]
+[node name="Area2D" type="Area2D" parent="enemies/poison ivy"]
 collision_layer = 0
 script = ExtResource("10_vqg2f")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="poison ivy/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/poison ivy/Area2D"]
 position = Vector2(2494.5, 189.5)
 shape = SubResource("RectangleShape2D_rvm38")
 debug_color = Color(0.890022, 0.0524677, 0.777374, 0.42)
 
-[node name="Area2D2" type="Area2D" parent="poison ivy"]
+[node name="Area2D2" type="Area2D" parent="enemies/poison ivy"]
 position = Vector2(3374, 165)
 collision_layer = 0
 script = ExtResource("11_erqeb")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="poison ivy/Area2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/poison ivy/Area2D2"]
 position = Vector2(1, 19.5)
 shape = SubResource("RectangleShape2D_wnnr2")
 debug_color = Color(0.901714, 0.12666, 0.599443, 0.419608)
+
+[node name="goblins" type="Node" parent="enemies"]
+
+[node name="Goblin" parent="enemies/goblins" instance=ExtResource("13_eau1x")]
+position = Vector2(3679, 159)
+
+[node name="Goblin2" parent="enemies/goblins" instance=ExtResource("13_eau1x")]
+position = Vector2(4055, 222)
 
 [node name="player" parent="." instance=ExtResource("3_aej4a")]
 position = Vector2(171, 114)
@@ -1473,14 +1486,6 @@ position = Vector2(171, 114)
 offset_top = -1.0
 offset_right = 111.0
 offset_bottom = 36.0
-
-[node name="goblins" type="Node" parent="."]
-
-[node name="Goblin" parent="goblins" instance=ExtResource("13_eau1x")]
-position = Vector2(3679, 159)
-
-[node name="Goblin2" parent="goblins" instance=ExtResource("13_eau1x")]
-position = Vector2(4055, 222)
 
 [node name="particles" type="Node" parent="."]
 
@@ -1515,6 +1520,16 @@ shape = SubResource("RectangleShape2D_s3g6j")
 
 [node name="PauseButton" parent="." instance=ExtResource("23_8nbue")]
 
-[connection signal="body_entered" from="poison ivy/Area2D" to="poison ivy/Area2D" method="_on_body_entered"]
-[connection signal="body_entered" from="poison ivy/Area2D2" to="poison ivy/Area2D2" method="_on_body_entered"]
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(288.522, 100.391)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3.02213, -32.8912)
+shape = SubResource("RectangleShape2D_5x84y")
+debug_color = Color(0.819608, 0, 0.964706, 0.309804)
+
+[connection signal="body_entered" from="enemies/poison ivy/Area2D" to="enemies/poison ivy/Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="enemies/poison ivy/Area2D2" to="enemies/poison ivy/Area2D2" method="_on_body_entered"]
 [connection signal="body_entered" from="win_area" to="." method="_on_win_area_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
