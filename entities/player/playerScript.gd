@@ -22,6 +22,7 @@ class_name PlatformerController2D
 @onready var run_sound: AudioStreamPlayer = $"../sounds_effect/run_sound"
 @onready var wall_jump_sound: AudioStreamPlayer = $"../sounds_effect/wallJump_sound"
 @onready var land_sound: AudioStreamPlayer = $"../sounds_effect/land_sound"
+@onready var getting_hit_sound: AudioStreamPlayer = $"../sounds_effect/gettingHit_sound"
 
 
 
@@ -793,6 +794,7 @@ func _on_hit_area_body_entered(body: Node2D) -> void:
 	
 func gettingHitAnimation():
 	if gettingHit:
+		getting_hit_sound.play()
 		var brokenHeartsInstantiated = broken_heart_particles.instantiate()
 		add_sibling(brokenHeartsInstantiated)
 		brokenHeartsInstantiated.global_position = global_position + Vector2(0, 0)

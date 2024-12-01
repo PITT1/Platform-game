@@ -1,4 +1,4 @@
-[gd_scene load_steps=130 format=3 uid="uid://o8autm5pdnbr"]
+[gd_scene load_steps=134 format=3 uid="uid://o8autm5pdnbr"]
 
 [ext_resource type="Script" path="res://entities/player/playerScript.gd" id="1_jfgvy"]
 [ext_resource type="Texture2D" uid="uid://dkinx5w12ek0u" path="res://images/player_sprites/DEATH.png" id="1_tsc5q"]
@@ -45,6 +45,9 @@
 [ext_resource type="AudioStream" uid="uid://cg141k2igplpt" path="res://sounds/sfx/player/wallJump3.ogg" id="43_sft8k"]
 [ext_resource type="AudioStream" uid="uid://d2moixu402bcs" path="res://sounds/sfx/player/wallJump4.ogg" id="44_tyabf"]
 [ext_resource type="AudioStream" uid="uid://t3xb1rl6wnt6" path="res://sounds/sfx/player/wallJump5.ogg" id="45_8dowe"]
+[ext_resource type="AudioStream" uid="uid://d3qh4srvm307y" path="res://sounds/sfx/player/impact_player1.mp3" id="46_8at4o"]
+[ext_resource type="AudioStream" uid="uid://bj4t0py5mehni" path="res://sounds/sfx/player/impact_player2.mp3" id="47_n6fpr"]
+[ext_resource type="AudioStream" uid="uid://tk7p485wcjmy" path="res://sounds/sfx/player/impact_player3.mp3" id="48_5bamw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f6il3"]
 height = 33.0
@@ -690,6 +693,12 @@ stream_2/stream = ExtResource("43_sft8k")
 stream_3/stream = ExtResource("44_tyabf")
 stream_4/stream = ExtResource("45_8dowe")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_wb56j"]
+streams_count = 3
+stream_0/stream = ExtResource("46_8at4o")
+stream_1/stream = ExtResource("47_n6fpr")
+stream_2/stream = ExtResource("48_5bamw")
+
 [node name="player" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." node_paths=PackedStringArray("PlayerSprite", "PlayerCollider")]
@@ -809,6 +818,10 @@ volume_db = -5.0
 
 [node name="wallJump_sound" type="AudioStreamPlayer" parent="sounds_effect"]
 stream = SubResource("AudioStreamRandomizer_jeooy")
+
+[node name="gettingHit_sound" type="AudioStreamPlayer" parent="sounds_effect"]
+stream = SubResource("AudioStreamRandomizer_wb56j")
+volume_db = 5.0
 
 [connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="frame_changed" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_frame_changed"]

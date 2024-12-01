@@ -1,5 +1,6 @@
 extends Control
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var resume_sound: AudioStreamPlayer = $resume_sound
 
 
 func _ready() -> void:
@@ -9,6 +10,7 @@ func _ready() -> void:
 
 func _on_resume_btn_button_up() -> void:
 	animation_player.play("pause_out")
+	resume_sound.play()
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:

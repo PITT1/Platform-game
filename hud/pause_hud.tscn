@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://d37iqxkanf2a3"]
+[gd_scene load_steps=8 format=3 uid="uid://d37iqxkanf2a3"]
 
 [ext_resource type="Script" path="res://hud/pause_hud.gd" id="1_g725i"]
+[ext_resource type="AudioStream" uid="uid://dybnnv8v3v78l" path="res://sounds/ambient/Sword Unsheath 1.ogg" id="2_bodm0"]
+[ext_resource type="AudioStream" uid="uid://de0k4bvwhst0w" path="res://sounds/ambient/Sword Unsheath 2.ogg" id="3_cm3tq"]
 
 [sub_resource type="Animation" id="Animation_3xhud"]
 length = 0.001
@@ -121,6 +123,15 @@ text = "Salir"
 libraries = {
 "": SubResource("AnimationLibrary_xwy8r")
 }
+
+[node name="pause_sound" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("2_bodm0")
+autoplay = true
+
+[node name="resume_sound" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("3_cm3tq")
 
 [connection signal="button_up" from="CanvasLayer/ColorRect/VBoxContainer/resume_btn" to="." method="_on_resume_btn_button_up"]
 [connection signal="button_up" from="CanvasLayer/ColorRect/VBoxContainer/main_menu" to="." method="_on_main_menu_button_up"]
