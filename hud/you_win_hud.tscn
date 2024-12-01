@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://g8654f4q3e3u"]
+[gd_scene load_steps=7 format=3 uid="uid://g8654f4q3e3u"]
 
 [ext_resource type="Script" path="res://hud/you_win_hud.gd" id="1_2y7qc"]
+[ext_resource type="AudioStream" uid="uid://cj5bi8lixsdn1" path="res://sounds/ambient/Victory.ogg" id="2_uqrgv"]
 
 [sub_resource type="Animation" id="Animation_g08ck"]
 length = 0.001
@@ -159,6 +160,11 @@ text = "salir"
 libraries = {
 "": SubResource("AnimationLibrary_t4k5w")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("2_uqrgv")
+autoplay = true
 
 [connection signal="button_up" from="CanvasLayer/ColorRect/VBoxContainer/try_again_btn" to="." method="_on_try_again_btn_button_up"]
 [connection signal="button_up" from="CanvasLayer/ColorRect/VBoxContainer/go_to_menu_levels_btn" to="." method="_on_go_to_menu_levels_btn_button_up"]

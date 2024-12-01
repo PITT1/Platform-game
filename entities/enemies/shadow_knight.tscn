@@ -1,8 +1,11 @@
-[gd_scene load_steps=33 format=3 uid="uid://dimbgqtdp63fu"]
+[gd_scene load_steps=37 format=3 uid="uid://dimbgqtdp63fu"]
 
 [ext_resource type="Script" path="res://entities/enemies/shadow_knight.gd" id="1_oyayd"]
 [ext_resource type="Texture2D" uid="uid://bghic2ojmy85w" path="res://images/shadow_Knight/knight.png" id="1_we3ad"]
 [ext_resource type="PackedScene" uid="uid://dmwqd0ntbk8b4" path="res://particles/shadow_knight_kill.tscn" id="2_nj25e"]
+[ext_resource type="AudioStream" uid="uid://cig6cjhupo1xv" path="res://sounds/sfx/shadow_knight/shadow_knight_sword1.mp3" id="4_whq4s"]
+[ext_resource type="AudioStream" uid="uid://bcoabfbgsy7mt" path="res://sounds/sfx/shadow_knight/shadow_knight_sword2.mp3" id="5_fuyeu"]
+[ext_resource type="AudioStream" uid="uid://xykgghkl00qf" path="res://sounds/sfx/shadow_knight/shadow_knight_sword3.mp3" id="6_1ppt0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u0g23"]
 atlas = ExtResource("1_we3ad")
@@ -206,6 +209,12 @@ size = Vector2(352, 161.333)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4dr7o"]
 height = 66.6667
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2inji"]
+streams_count = 3
+stream_0/stream = ExtResource("4_whq4s")
+stream_1/stream = ExtResource("5_fuyeu")
+stream_2/stream = ExtResource("6_1ppt0")
+
 [node name="ShadowKnight" type="CharacterBody2D"]
 scale = Vector2(1.5, 1.5)
 collision_layer = 16
@@ -240,6 +249,13 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_4dr7o")
 disabled = true
 debug_color = Color(0.984314, 0, 0, 0.52549)
+
+[node name="sounds" type="Node2D" parent="."]
+
+[node name="attack_sound" type="AudioStreamPlayer2D" parent="sounds"]
+stream = SubResource("AudioStreamRandomizer_2inji")
+volume_db = 5.0
+max_distance = 800.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

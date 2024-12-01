@@ -13,6 +13,7 @@ var death = false
 @export var lives: float = 5
 var gettingHit = false
 @export var death_particles: PackedScene
+@onready var attack_sound: AudioStreamPlayer2D = $sounds/attack_sound
 
 
 func _ready() -> void:
@@ -116,15 +117,19 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 		activateHitShape()
 		hitCollisionShape.position = Vector2(-4, 9.333)
 		hitCollisionShape.scale = Vector2(1, 1)
+		attack_sound.play()
+		
 	if anim.get_animation() == "attack" and anim.get_frame() == 5:
 		activateHitShape()
 		hitCollisionShape.position = Vector2(0, 7.333)
 		hitCollisionShape.scale = Vector2(1.5, 1)
+		attack_sound.play()
 		
 	if anim.get_animation() == "attack" and anim.get_frame() == 9:
 		activateHitShape()
 		hitCollisionShape.position = Vector2(0.667, 2.667)
 		hitCollisionShape.scale = Vector2(2, 1.1)
+		attack_sound.play()
 		
 func activateHitShape():
 	hitCollisionShape.set_disabled(false)

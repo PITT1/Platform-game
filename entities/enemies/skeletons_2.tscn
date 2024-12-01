@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://dsbr2hrptjhy7"]
+[gd_scene load_steps=65 format=3 uid="uid://dsbr2hrptjhy7"]
 
 [ext_resource type="Script" path="res://entities/enemies/skeletons2.gd" id="1_1hvrq"]
 [ext_resource type="Texture2D" uid="uid://cpiuno5ill17m" path="res://images/Monsters_Creatures_Fantasy/Skeleton/Death.png" id="1_oruq3"]
@@ -15,6 +15,9 @@
 [ext_resource type="AudioStream" uid="uid://db7srqvpb6vbj" path="res://sounds/sfx/skeletons/skeleton_sound1.mp3" id="13_qfatk"]
 [ext_resource type="AudioStream" uid="uid://dw40h2jhv8ftk" path="res://sounds/sfx/skeletons/skeleton_sound2.mp3" id="14_nuugu"]
 [ext_resource type="AudioStream" uid="uid://8sgies3hmuco" path="res://sounds/sfx/skeletons/skeleton_sound4.mp3" id="16_cah0o"]
+[ext_resource type="AudioStream" uid="uid://gx1xca8x067f" path="res://sounds/sfx/skeletons/skeleton_attack1.mp3" id="16_st82o"]
+[ext_resource type="AudioStream" uid="uid://cef8u473ol6k8" path="res://sounds/sfx/skeletons/skeleton_attack2.mp3" id="17_o82ls"]
+[ext_resource type="AudioStream" uid="uid://d0t20sg3sh43x" path="res://sounds/sfx/skeletons/skeleton_attack3.mp3" id="18_fqg47"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_un4hw"]
 atlas = ExtResource("6_ew148")
@@ -347,6 +350,12 @@ stream_0/stream = ExtResource("13_qfatk")
 stream_1/stream = ExtResource("14_nuugu")
 stream_2/stream = ExtResource("16_cah0o")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_7x2uf"]
+streams_count = 3
+stream_0/stream = ExtResource("16_st82o")
+stream_1/stream = ExtResource("17_o82ls")
+stream_2/stream = ExtResource("18_fqg47")
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 scale = Vector2(1.2, 1.2)
 collision_layer = 4
@@ -399,6 +408,11 @@ max_distance = 600.0
 stream = SubResource("AudioStreamRandomizer_uwon3")
 volume_db = -2.0
 max_distance = 600.0
+
+[node name="attack_sound" type="AudioStreamPlayer2D" parent="sounds"]
+stream = SubResource("AudioStreamRandomizer_7x2uf")
+volume_db = 5.0
+max_distance = 800.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

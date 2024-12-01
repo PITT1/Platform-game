@@ -7,6 +7,7 @@ extends CharacterBody2D
 @onready var character_collision: CollisionShape2D = $character_collision
 @onready var walk_sound: AudioStreamPlayer2D = $sounds/walk_sound
 @onready var sombie_sound: AudioStreamPlayer2D = $sounds/sombie_sound
+@onready var attack_sound: AudioStreamPlayer2D = $sounds/attack_sound
 
 var attack = false
 var death = false
@@ -94,7 +95,8 @@ func _on_vision_area_body_entered(body: CharacterBody2D) -> void:
 func _on_vision_area_body_exited(body: Node2D) -> void:
 	if body:
 		player = null
-		sombie_sound.play()
+		if not sombie_sound.is_playing():
+			sombie_sound.play()
 
 
 func _on_attack_area_body_entered(body: CharacterBody2D) -> void:
@@ -105,7 +107,8 @@ func _on_attack_area_body_entered(body: CharacterBody2D) -> void:
 			anim.flip_h = true
 	velocity.x = 0
 	on_attack()
-	sombie_sound.play()
+	if not sombie_sound.is_playing():
+		sombie_sound.play()
 	if body:
 		pass
 
@@ -138,6 +141,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 
 func _on_animated_sprite_2d_frame_changed() -> void:
 	if anim.get_animation() == "attack" and anim.get_frame() == 6:
+		attack_sound.play()
 		if anim.flip_h == false:
 			hit_area_collision_shape.position = Vector2(35.833, -4.167)
 			hit_area_collision_shape.set_disabled(false)
