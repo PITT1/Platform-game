@@ -7,6 +7,9 @@ var scene_you_win = preload("res://hud/you_win_hud.tscn")
 var has_executed_once = false
 
 func _process(delta: float) -> void:
+	if delta:
+		pass
+		
 	var playerChild = player.get_children()
 	if not has_executed_once:
 		if playerChild[0].lives < 1:
@@ -24,3 +27,13 @@ func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 		var instantia = scene_you_win.instantiate()
 		add_child(instantia)
 		instantia.showHud(true)
+
+
+func _on_area_2d_2_body_entered(body: CharacterBody2D) -> void:
+	var pcamPlayer = body.get_child(5).get_child(0)
+	pcamPlayer.set_follow_offset(Vector2(0, -80))
+
+
+func _on_area_2d_2_body_exited(body: CharacterBody2D) -> void:
+	var pcamPlayer = body.get_child(5).get_child(0)
+	pcamPlayer.set_follow_offset(Vector2(0, 0))

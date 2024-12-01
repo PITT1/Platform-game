@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cwovlghwi0grr"]
+[gd_scene load_steps=4 format=3 uid="uid://cwovlghwi0grr"]
 
 [ext_resource type="FontFile" uid="uid://bl1to454pytpt" path="res://fonts/Raleway-Regular.ttf" id="1_dpu2b"]
 [ext_resource type="Script" path="res://hud/principal_menu.gd" id="1_q8ljf"]
+[ext_resource type="Texture2D" uid="uid://btqyjpkfm2sd" path="res://images/wallpapers/wallpaper1.png" id="2_jo2de"]
 
 [node name="PrincipalMenu" type="Control"]
 layout_mode = 3
@@ -12,14 +13,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_q8ljf")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.147639, 0.145245, 0.13875, 1)
+texture = ExtResource("2_jo2de")
+expand_mode = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
 layout_mode = 1
