@@ -24,27 +24,27 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="22_wfewf"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="23_axxb4"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="24_ejkey"]
-[ext_resource type="AudioStream" uid="uid://pjvuehwldr4a" path="res://sounds/sfx/Dirt Run 1.ogg" id="25_qwm4a"]
-[ext_resource type="AudioStream" uid="uid://dwh17c3po0lip" path="res://sounds/sfx/Dirt Run 2.ogg" id="26_xuc5u"]
-[ext_resource type="AudioStream" uid="uid://ctgoscmruw85r" path="res://sounds/sfx/Dirt Run 3.ogg" id="27_gyg0q"]
-[ext_resource type="AudioStream" uid="uid://bidiqlc6yei7k" path="res://sounds/sfx/Dirt Run 4.ogg" id="28_ephck"]
-[ext_resource type="AudioStream" uid="uid://d1fji0rct8ggp" path="res://sounds/sfx/Dirt Run 5.ogg" id="29_jqf8s"]
-[ext_resource type="AudioStream" uid="uid://5v5lirobafpl" path="res://sounds/sfx/attack1.mp3" id="30_oyhje"]
-[ext_resource type="AudioStream" uid="uid://d1anvyc8potf7" path="res://sounds/sfx/attack2.mp3" id="31_3h656"]
-[ext_resource type="AudioStream" uid="uid://3jpag7mej6s7" path="res://sounds/sfx/attack3.mp3" id="32_xatmy"]
-[ext_resource type="AudioStream" uid="uid://c501sc7am23of" path="res://sounds/sfx/Sword Impact Hit 1.ogg" id="33_6l24h"]
-[ext_resource type="AudioStream" uid="uid://cqeer1ta64ui1" path="res://sounds/sfx/attack4.mp3" id="33_qgm7k"]
-[ext_resource type="AudioStream" uid="uid://rdse0gpclgdr" path="res://sounds/sfx/attack5.mp3" id="34_ed5h5"]
-[ext_resource type="AudioStream" uid="uid://tygglf6blo4y" path="res://sounds/sfx/Sword Impact Hit 2.ogg" id="34_qq5ue"]
-[ext_resource type="AudioStream" uid="uid://utkueswk5bjq" path="res://sounds/sfx/Sword Impact Hit 3.ogg" id="35_um3fb"]
-[ext_resource type="AudioStream" uid="uid://dxnbvll5qyv3x" path="res://sounds/sfx/Dirt Jump.ogg" id="36_ev86f"]
-[ext_resource type="AudioStream" uid="uid://kq4uk5msxy0w" path="res://sounds/sfx/Dirt Land.ogg" id="37_jv6kg"]
-[ext_resource type="AudioStream" uid="uid://01ke2srsr7rv" path="res://sounds/sfx/Dash (3).mp3" id="38_l0ris"]
-[ext_resource type="AudioStream" uid="uid://bnndkur5viaed" path="res://sounds/sfx/wallJump1.ogg" id="41_w7c2m"]
-[ext_resource type="AudioStream" uid="uid://cc466ir3orfg8" path="res://sounds/sfx/wallJump2.ogg" id="42_b6hgu"]
-[ext_resource type="AudioStream" uid="uid://cg141k2igplpt" path="res://sounds/sfx/wallJump3.ogg" id="43_sft8k"]
-[ext_resource type="AudioStream" uid="uid://d2moixu402bcs" path="res://sounds/sfx/wallJump4.ogg" id="44_tyabf"]
-[ext_resource type="AudioStream" uid="uid://t3xb1rl6wnt6" path="res://sounds/sfx/wallJump5.ogg" id="45_8dowe"]
+[ext_resource type="AudioStream" uid="uid://pjvuehwldr4a" path="res://sounds/sfx/player/Dirt Run 1.ogg" id="25_qwm4a"]
+[ext_resource type="AudioStream" uid="uid://dwh17c3po0lip" path="res://sounds/sfx/player/Dirt Run 2.ogg" id="26_xuc5u"]
+[ext_resource type="AudioStream" uid="uid://ctgoscmruw85r" path="res://sounds/sfx/player/Dirt Run 3.ogg" id="27_gyg0q"]
+[ext_resource type="AudioStream" uid="uid://bidiqlc6yei7k" path="res://sounds/sfx/player/Dirt Run 4.ogg" id="28_ephck"]
+[ext_resource type="AudioStream" uid="uid://d1fji0rct8ggp" path="res://sounds/sfx/player/Dirt Run 5.ogg" id="29_jqf8s"]
+[ext_resource type="AudioStream" uid="uid://5v5lirobafpl" path="res://sounds/sfx/player/attack1.mp3" id="30_oyhje"]
+[ext_resource type="AudioStream" uid="uid://d1anvyc8potf7" path="res://sounds/sfx/player/attack2.mp3" id="31_3h656"]
+[ext_resource type="AudioStream" uid="uid://3jpag7mej6s7" path="res://sounds/sfx/player/attack3.mp3" id="32_xatmy"]
+[ext_resource type="AudioStream" uid="uid://c501sc7am23of" path="res://sounds/sfx/player/Sword Impact Hit 1.ogg" id="33_6l24h"]
+[ext_resource type="AudioStream" uid="uid://cqeer1ta64ui1" path="res://sounds/sfx/player/attack4.mp3" id="33_qgm7k"]
+[ext_resource type="AudioStream" uid="uid://rdse0gpclgdr" path="res://sounds/sfx/player/attack5.mp3" id="34_ed5h5"]
+[ext_resource type="AudioStream" uid="uid://tygglf6blo4y" path="res://sounds/sfx/player/Sword Impact Hit 2.ogg" id="34_qq5ue"]
+[ext_resource type="AudioStream" uid="uid://utkueswk5bjq" path="res://sounds/sfx/player/Sword Impact Hit 3.ogg" id="35_um3fb"]
+[ext_resource type="AudioStream" uid="uid://dxnbvll5qyv3x" path="res://sounds/sfx/player/Dirt Jump.ogg" id="36_ev86f"]
+[ext_resource type="AudioStream" uid="uid://kq4uk5msxy0w" path="res://sounds/sfx/player/Dirt Land.ogg" id="37_jv6kg"]
+[ext_resource type="AudioStream" uid="uid://01ke2srsr7rv" path="res://sounds/sfx/player/Dash (3).mp3" id="38_l0ris"]
+[ext_resource type="AudioStream" uid="uid://bnndkur5viaed" path="res://sounds/sfx/player/wallJump1.ogg" id="41_w7c2m"]
+[ext_resource type="AudioStream" uid="uid://cc466ir3orfg8" path="res://sounds/sfx/player/wallJump2.ogg" id="42_b6hgu"]
+[ext_resource type="AudioStream" uid="uid://cg141k2igplpt" path="res://sounds/sfx/player/wallJump3.ogg" id="43_sft8k"]
+[ext_resource type="AudioStream" uid="uid://d2moixu402bcs" path="res://sounds/sfx/player/wallJump4.ogg" id="44_tyabf"]
+[ext_resource type="AudioStream" uid="uid://t3xb1rl6wnt6" path="res://sounds/sfx/player/wallJump5.ogg" id="45_8dowe"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f6il3"]
 height = 33.0
@@ -790,9 +790,11 @@ stream = SubResource("AudioStreamRandomizer_c7ogc")
 
 [node name="attack_sound" type="AudioStreamPlayer" parent="sounds_effect"]
 stream = SubResource("AudioStreamRandomizer_bibnv")
+volume_db = -5.0
 
 [node name="impact_attack" type="AudioStreamPlayer" parent="sounds_effect"]
 stream = SubResource("AudioStreamRandomizer_o6rbd")
+volume_db = 5.0
 
 [node name="jump_sound" type="AudioStreamPlayer" parent="sounds_effect"]
 stream = ExtResource("36_ev86f")

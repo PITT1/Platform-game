@@ -9,6 +9,7 @@ extends CharacterBody2D
 @export var speed: float = 60
 @export var death_particles: PackedScene
 var gettingHit = false 
+@onready var run_sound: AudioStreamPlayer2D = $run_sound
 
 func _ready() -> void:
 	anim.play("idle")
@@ -52,3 +53,8 @@ func _on_hit_area_body_entered(body: CharacterBody2D) -> void:
 		body.lives -= 1
 		body.gettingHit = true
 		body.velocity = global_position.direction_to(body.global_position) * 500
+
+
+func _on_animated_sprite_2d_frame_changed() -> void:
+	if anim.get_animation() == "run" and anim.get_frame() == 5:
+		run_sound.play()

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://01ke2srsr7rv"
+path="res://.godot/imported/Dash (3).mp3-467107ec60517adf966cefab441378d6.mp3str"
+
+[deps]
+
+source_file="res://sounds/sfx/player/Dash (3).mp3"
+dest_files=["res://.godot/imported/Dash (3).mp3-467107ec60517adf966cefab441378d6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

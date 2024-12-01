@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://bar58vx48kjox"]
+[gd_scene load_steps=19 format=3 uid="uid://bar58vx48kjox"]
 
 [ext_resource type="Script" path="res://entities/enemies/blue_slime.gd" id="1_802oi"]
 [ext_resource type="PackedScene" uid="uid://c6c4vbpxml1xx" path="res://particles/slime_death.tscn" id="2_csfn6"]
 [ext_resource type="Texture2D" uid="uid://bc4vdmnb6n68y" path="res://images/slime/slime_idle.png" id="2_cwhck"]
 [ext_resource type="Texture2D" uid="uid://cspe33nm0sfe2" path="res://images/slime/slime_run.png" id="3_j7pk1"]
+[ext_resource type="AudioStream" uid="uid://muts7ehwkiy6" path="res://sounds/sfx/slime/slime_sound.mp3" id="5_o71km"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sux6c"]
 atlas = ExtResource("2_cwhck")
@@ -103,7 +104,9 @@ death_particles = ExtResource("2_csfn6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ceu2m")
-animation = &"idle"
+animation = &"run"
+frame = 5
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.33333)
@@ -118,4 +121,9 @@ position = Vector2(0, 1.33333)
 shape = SubResource("CircleShape2D_6tb4h")
 debug_color = Color(0.984314, 0.0117647, 0.0392157, 0.0313726)
 
+[node name="run_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_o71km")
+max_distance = 500.0
+
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="body_entered" from="hitArea" to="." method="_on_hit_area_body_entered"]

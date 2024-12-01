@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://o01kysyplujt"]
+[gd_scene load_steps=30 format=4 uid="uid://o01kysyplujt"]
 
 [ext_resource type="Texture2D" uid="uid://didcklr78knar" path="res://images/tilemap/main_lev_build_2.png" id="1_brmwm"]
 [ext_resource type="Script" path="res://levels/world_2.gd" id="1_rwupv"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://54u88oswgal8" path="res://obstacles/trap1.tscn" id="21_l6r0o"]
 [ext_resource type="PackedScene" uid="uid://vaeiu1j1eq7t" path="res://hud/pause_button.tscn" id="23_nlaul"]
 [ext_resource type="AudioStream" uid="uid://ctrrlmwdh26ww" path="res://sounds/ambient/Forest Day.ogg" id="24_v6crl"]
+[ext_resource type="AudioStream" uid="uid://be56c3p3tn8cy" path="res://sounds/ambient/Action 3 (Loop).ogg" id="25_t4tkq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f6eew"]
 texture = ExtResource("1_brmwm")
@@ -1563,10 +1564,16 @@ position = Vector2(1847.19, -20.9577)
 shape = SubResource("RectangleShape2D_uk2lq")
 debug_color = Color(0.733333, 0.231373, 1, 0.231373)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="ambient_music" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("24_v6crl")
 volume_db = -5.0
+autoplay = true
+parameters/looping = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("25_t4tkq")
 autoplay = true
 parameters/looping = true
 
