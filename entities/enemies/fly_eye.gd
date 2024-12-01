@@ -8,6 +8,7 @@ var player : CharacterBody2D = null
 var gettingHit = false
 @onready var hit_box: CollisionShape2D = $CollisionShape2D
 @onready var hit_area_collision: CollisionShape2D = $hitArea/hitArea_collision
+@onready var flying_sound: AudioStreamPlayer2D = $sound/flying_sound
 
 func _ready() -> void:
 	anim.play("fly")
@@ -77,3 +78,8 @@ func _on_hit_area_body_entered(body: Node2D) -> void:
 	body.gettingHit = true
 	body.lives -= 1
 	velocity = body.global_position.direction_to(global_position) * 200
+
+
+func _on_animated_sprite_2d_frame_changed() -> void:
+	if anim.get_animation() == "fly" and anim.get_frame() == 7:
+		flying_sound.play()
