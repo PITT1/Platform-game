@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://xh710pugk17t"]
+[gd_scene load_steps=37 format=4 uid="uid://xh710pugk17t"]
 
 [ext_resource type="Script" path="res://levels/world_4.gd" id="1_6cow5"]
 [ext_resource type="Texture2D" uid="uid://bg8weivuatkhu" path="res://images/forestBackground/Layer_0011_0.png" id="1_kp0gq"]
@@ -27,6 +27,8 @@
 [ext_resource type="PackedScene" uid="uid://bgurafal77rsb" path="res://particles/ambient_particles.tscn" id="24_2c30c"]
 [ext_resource type="PackedScene" uid="uid://54u88oswgal8" path="res://obstacles/trap1.tscn" id="25_0u4k8"]
 [ext_resource type="PackedScene" uid="uid://vaeiu1j1eq7t" path="res://hud/pause_button.tscn" id="27_hgovo"]
+[ext_resource type="AudioStream" uid="uid://ctrrlmwdh26ww" path="res://sounds/ambient/Forest Day.ogg" id="28_ok4l0"]
+[ext_resource type="AudioStream" uid="uid://be56c3p3tn8cy" path="res://sounds/ambient/Action 3 (Loop).ogg" id="29_2ommn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7yugb"]
 texture = ExtResource("11_vtkv2")
@@ -3889,6 +3891,19 @@ position = Vector2(-0.244141, -19.5356)
 shape = SubResource("RectangleShape2D_57gdn")
 
 [node name="PauseButton" parent="." instance=ExtResource("27_hgovo")]
+
+[node name="ambient_music" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("28_ok4l0")
+volume_db = -5.0
+autoplay = true
+parameters/looping = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("29_2ommn")
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="espinas/Area2D2" to="espinas/Area2D2" method="_on_body_entered"]
 [connection signal="body_entered" from="espinas/Area2D3" to="espinas/Area2D3" method="_on_body_entered"]

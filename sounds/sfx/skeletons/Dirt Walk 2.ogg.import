@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c57oglu76i3xm"
+path="res://.godot/imported/Dirt Walk 2.ogg-88741883e81ec2a7dc23c040b6316543.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/sfx/skeletons/Dirt Walk 2.ogg"
+dest_files=["res://.godot/imported/Dirt Walk 2.ogg-88741883e81ec2a7dc23c040b6316543.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

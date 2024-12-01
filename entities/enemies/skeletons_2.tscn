@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://dsbr2hrptjhy7"]
+[gd_scene load_steps=61 format=3 uid="uid://dsbr2hrptjhy7"]
 
 [ext_resource type="Script" path="res://entities/enemies/skeletons2.gd" id="1_1hvrq"]
 [ext_resource type="Texture2D" uid="uid://cpiuno5ill17m" path="res://images/Monsters_Creatures_Fantasy/Skeleton/Death.png" id="1_oruq3"]
@@ -7,6 +7,14 @@
 [ext_resource type="Texture2D" uid="uid://djc1lq6ch43dk" path="res://images/Monsters_Creatures_Fantasy/Skeleton/Take Hit.png" id="4_raft1"]
 [ext_resource type="Texture2D" uid="uid://bh5vn81dl6g" path="res://images/Monsters_Creatures_Fantasy/Skeleton/Walk.png" id="5_b8jp4"]
 [ext_resource type="Texture2D" uid="uid://8trj5w4xv2bq" path="res://images/Monsters_Creatures_Fantasy/Skeleton/Attack.png" id="6_ew148"]
+[ext_resource type="AudioStream" uid="uid://dcsym2lxvimib" path="res://sounds/sfx/skeletons/Dirt Walk 1.ogg" id="8_8eugs"]
+[ext_resource type="AudioStream" uid="uid://c57oglu76i3xm" path="res://sounds/sfx/skeletons/Dirt Walk 2.ogg" id="9_ludan"]
+[ext_resource type="AudioStream" uid="uid://d1kumjpb3vay8" path="res://sounds/sfx/skeletons/Dirt Walk 3.ogg" id="10_qesjc"]
+[ext_resource type="AudioStream" uid="uid://bv25ybilhogid" path="res://sounds/sfx/skeletons/Dirt Walk 4.ogg" id="11_6k0au"]
+[ext_resource type="AudioStream" uid="uid://m0excijyoxhb" path="res://sounds/sfx/skeletons/Dirt Walk 5.ogg" id="12_n1e4g"]
+[ext_resource type="AudioStream" uid="uid://db7srqvpb6vbj" path="res://sounds/sfx/skeletons/skeleton_sound1.mp3" id="13_qfatk"]
+[ext_resource type="AudioStream" uid="uid://dw40h2jhv8ftk" path="res://sounds/sfx/skeletons/skeleton_sound2.mp3" id="14_nuugu"]
+[ext_resource type="AudioStream" uid="uid://8sgies3hmuco" path="res://sounds/sfx/skeletons/skeleton_sound4.mp3" id="16_cah0o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_un4hw"]
 atlas = ExtResource("6_ew148")
@@ -325,6 +333,20 @@ height = 70.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sw6ra"]
 size = Vector2(140, 40)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_liqxo"]
+streams_count = 5
+stream_0/stream = ExtResource("8_8eugs")
+stream_1/stream = ExtResource("9_ludan")
+stream_2/stream = ExtResource("10_qesjc")
+stream_3/stream = ExtResource("11_6k0au")
+stream_4/stream = ExtResource("12_n1e4g")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_uwon3"]
+streams_count = 3
+stream_0/stream = ExtResource("13_qfatk")
+stream_1/stream = ExtResource("14_nuugu")
+stream_2/stream = ExtResource("16_cah0o")
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 scale = Vector2(1.2, 1.2)
 collision_layer = 4
@@ -334,7 +356,7 @@ script = ExtResource("1_1hvrq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_70asj")
-animation = &"contra_attack"
+animation = &"walk"
 
 [node name="character_collision" type="CollisionShape2D" parent="."]
 position = Vector2(2, 4)
@@ -365,6 +387,18 @@ collision_layer = 0
 position = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_sw6ra")
 debug_color = Color(0.988235, 0, 0, 0.117647)
+
+[node name="sounds" type="Node2D" parent="."]
+
+[node name="walk_sound" type="AudioStreamPlayer2D" parent="sounds"]
+stream = SubResource("AudioStreamRandomizer_liqxo")
+volume_db = 4.0
+max_distance = 600.0
+
+[node name="sombie_sound" type="AudioStreamPlayer2D" parent="sounds"]
+stream = SubResource("AudioStreamRandomizer_uwon3")
+volume_db = -2.0
+max_distance = 600.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

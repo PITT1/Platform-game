@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://b83a6tf2x1e8d"]
+[gd_scene load_steps=33 format=4 uid="uid://b83a6tf2x1e8d"]
 
 [ext_resource type="Script" path="res://levels/world.gd" id="1_1yrse"]
 [ext_resource type="Texture2D" uid="uid://cqy4dbwtshnub" path="res://images/tilemap/main_lev_build_1.png" id="1_x4f6d"]
@@ -23,6 +23,8 @@
 [ext_resource type="Texture2D" uid="uid://cmeod7kijpg53" path="res://images/forestBackground/Layer_0000_9.png" id="13_x4wsm"]
 [ext_resource type="PackedScene" uid="uid://bgurafal77rsb" path="res://particles/ambient_particles.tscn" id="14_scdfk"]
 [ext_resource type="PackedScene" uid="uid://vaeiu1j1eq7t" path="res://hud/pause_button.tscn" id="23_8nbue"]
+[ext_resource type="AudioStream" uid="uid://ctrrlmwdh26ww" path="res://sounds/ambient/Forest Day.ogg" id="24_yi3gg"]
+[ext_resource type="AudioStream" uid="uid://be56c3p3tn8cy" path="res://sounds/ambient/Action 3 (Loop).ogg" id="25_ghwpp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_be2u3"]
 texture = ExtResource("1_x4f6d")
@@ -1528,6 +1530,19 @@ collision_layer = 0
 position = Vector2(-3.02213, -32.8912)
 shape = SubResource("RectangleShape2D_5x84y")
 debug_color = Color(0.819608, 0, 0.964706, 0.309804)
+
+[node name="ambient_music" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("24_yi3gg")
+volume_db = -5.0
+autoplay = true
+parameters/looping = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("25_ghwpp")
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="enemies/poison ivy/Area2D" to="enemies/poison ivy/Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="enemies/poison ivy/Area2D2" to="enemies/poison ivy/Area2D2" method="_on_body_entered"]

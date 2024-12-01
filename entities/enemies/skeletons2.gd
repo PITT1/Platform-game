@@ -5,6 +5,8 @@ extends CharacterBody2D
 @onready var hit_area_collision_shape: CollisionShape2D = $hitArea/hitArea_collisionShape
 @onready var attack_area: Area2D = $attackArea
 @onready var character_collision: CollisionShape2D = $character_collision
+@onready var walk_sound: AudioStreamPlayer2D = $sounds/walk_sound
+@onready var sombie_sound: AudioStreamPlayer2D = $sounds/sombie_sound
 
 var attack = false
 var death = false
@@ -25,6 +27,9 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	if delta:
+		pass
+	
 	if attack:
 		anim.play("attack")
 		
@@ -81,11 +86,15 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_vision_area_body_entered(body: CharacterBody2D) -> void:
-	player = body
+	if body:
+		player = body
+		sombie_sound.play()
 
 
 func _on_vision_area_body_exited(body: Node2D) -> void:
-	player = null
+	if body:
+		player = null
+		sombie_sound.play()
 
 
 func _on_attack_area_body_entered(body: CharacterBody2D) -> void:
@@ -96,6 +105,9 @@ func _on_attack_area_body_entered(body: CharacterBody2D) -> void:
 			anim.flip_h = true
 	velocity.x = 0
 	on_attack()
+	sombie_sound.play()
+	if body:
+		pass
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if anim.get_animation() == "attack":
@@ -134,6 +146,12 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 			hit_area_collision_shape.set_disabled(false)
 		await get_tree().create_timer(0.2).timeout
 		hit_area_collision_shape.set_disabled(true)
+	
+	if anim.get_animation() == "walk" and anim.get_frame() == 0:
+		walk_sound.play()
+	
+	if anim.get_animation() == "walk" and anim.get_frame() == 2:
+		walk_sound.play()
 
 
 func _on_hit_area_body_entered(body: CharacterBody2D) -> void:
