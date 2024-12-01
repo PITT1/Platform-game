@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://o8autm5pdnbr"]
+[gd_scene load_steps=130 format=3 uid="uid://o8autm5pdnbr"]
 
 [ext_resource type="Script" path="res://entities/player/playerScript.gd" id="1_jfgvy"]
 [ext_resource type="Texture2D" uid="uid://dkinx5w12ek0u" path="res://images/player_sprites/DEATH.png" id="1_tsc5q"]
@@ -24,6 +24,27 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="22_wfewf"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="23_axxb4"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="24_ejkey"]
+[ext_resource type="AudioStream" uid="uid://pjvuehwldr4a" path="res://sounds/sfx/Dirt Run 1.ogg" id="25_qwm4a"]
+[ext_resource type="AudioStream" uid="uid://dwh17c3po0lip" path="res://sounds/sfx/Dirt Run 2.ogg" id="26_xuc5u"]
+[ext_resource type="AudioStream" uid="uid://ctgoscmruw85r" path="res://sounds/sfx/Dirt Run 3.ogg" id="27_gyg0q"]
+[ext_resource type="AudioStream" uid="uid://bidiqlc6yei7k" path="res://sounds/sfx/Dirt Run 4.ogg" id="28_ephck"]
+[ext_resource type="AudioStream" uid="uid://d1fji0rct8ggp" path="res://sounds/sfx/Dirt Run 5.ogg" id="29_jqf8s"]
+[ext_resource type="AudioStream" uid="uid://5v5lirobafpl" path="res://sounds/sfx/attack1.mp3" id="30_oyhje"]
+[ext_resource type="AudioStream" uid="uid://d1anvyc8potf7" path="res://sounds/sfx/attack2.mp3" id="31_3h656"]
+[ext_resource type="AudioStream" uid="uid://3jpag7mej6s7" path="res://sounds/sfx/attack3.mp3" id="32_xatmy"]
+[ext_resource type="AudioStream" uid="uid://c501sc7am23of" path="res://sounds/sfx/Sword Impact Hit 1.ogg" id="33_6l24h"]
+[ext_resource type="AudioStream" uid="uid://cqeer1ta64ui1" path="res://sounds/sfx/attack4.mp3" id="33_qgm7k"]
+[ext_resource type="AudioStream" uid="uid://rdse0gpclgdr" path="res://sounds/sfx/attack5.mp3" id="34_ed5h5"]
+[ext_resource type="AudioStream" uid="uid://tygglf6blo4y" path="res://sounds/sfx/Sword Impact Hit 2.ogg" id="34_qq5ue"]
+[ext_resource type="AudioStream" uid="uid://utkueswk5bjq" path="res://sounds/sfx/Sword Impact Hit 3.ogg" id="35_um3fb"]
+[ext_resource type="AudioStream" uid="uid://dxnbvll5qyv3x" path="res://sounds/sfx/Dirt Jump.ogg" id="36_ev86f"]
+[ext_resource type="AudioStream" uid="uid://kq4uk5msxy0w" path="res://sounds/sfx/Dirt Land.ogg" id="37_jv6kg"]
+[ext_resource type="AudioStream" uid="uid://01ke2srsr7rv" path="res://sounds/sfx/Dash (3).mp3" id="38_l0ris"]
+[ext_resource type="AudioStream" uid="uid://bnndkur5viaed" path="res://sounds/sfx/wallJump1.ogg" id="41_w7c2m"]
+[ext_resource type="AudioStream" uid="uid://cc466ir3orfg8" path="res://sounds/sfx/wallJump2.ogg" id="42_b6hgu"]
+[ext_resource type="AudioStream" uid="uid://cg141k2igplpt" path="res://sounds/sfx/wallJump3.ogg" id="43_sft8k"]
+[ext_resource type="AudioStream" uid="uid://d2moixu402bcs" path="res://sounds/sfx/wallJump4.ogg" id="44_tyabf"]
+[ext_resource type="AudioStream" uid="uid://t3xb1rl6wnt6" path="res://sounds/sfx/wallJump5.ogg" id="45_8dowe"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f6il3"]
 height = 33.0
@@ -635,6 +656,40 @@ duration = 1.0
 transition = 0
 ease = 0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vn638"]
+size = Vector2(14, 4.5)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_c7ogc"]
+playback_mode = 1
+streams_count = 5
+stream_0/stream = ExtResource("25_qwm4a")
+stream_1/stream = ExtResource("26_xuc5u")
+stream_2/stream = ExtResource("27_gyg0q")
+stream_3/stream = ExtResource("28_ephck")
+stream_4/stream = ExtResource("29_jqf8s")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_bibnv"]
+streams_count = 5
+stream_0/stream = ExtResource("30_oyhje")
+stream_1/stream = ExtResource("31_3h656")
+stream_2/stream = ExtResource("32_xatmy")
+stream_3/stream = ExtResource("33_qgm7k")
+stream_4/stream = ExtResource("34_ed5h5")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_o6rbd"]
+streams_count = 3
+stream_0/stream = ExtResource("33_6l24h")
+stream_1/stream = ExtResource("34_qq5ue")
+stream_2/stream = ExtResource("35_um3fb")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_jeooy"]
+streams_count = 5
+stream_0/stream = ExtResource("41_w7c2m")
+stream_1/stream = ExtResource("42_b6hgu")
+stream_2/stream = ExtResource("43_sft8k")
+stream_3/stream = ExtResource("44_tyabf")
+stream_4/stream = ExtResource("45_8dowe")
+
 [node name="player" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." node_paths=PackedStringArray("PlayerSprite", "PlayerCollider")]
@@ -675,8 +730,6 @@ shape = SubResource("CapsuleShape2D_f6il3")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_qlfpc")
 animation = &"run"
-frame = 6
-frame_progress = 0.0426847
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 physics_interpolation_mode = 1
@@ -720,7 +773,42 @@ dead_zone_height = 0.206
 draw_limits = true
 limit_left = 100
 
+[node name="ground_sensor" type="Area2D" parent="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/ground_sensor"]
+position = Vector2(1, 19)
+shape = SubResource("RectangleShape2D_vn638")
+debug_color = Color(0.765238, 0.44858, 0, 0.42)
+
+[node name="sounds_effect" type="Node2D" parent="."]
+process_mode = 3
+
+[node name="run_sound" type="AudioStreamPlayer" parent="sounds_effect"]
+stream = SubResource("AudioStreamRandomizer_c7ogc")
+
+[node name="attack_sound" type="AudioStreamPlayer" parent="sounds_effect"]
+stream = SubResource("AudioStreamRandomizer_bibnv")
+
+[node name="impact_attack" type="AudioStreamPlayer" parent="sounds_effect"]
+stream = SubResource("AudioStreamRandomizer_o6rbd")
+
+[node name="jump_sound" type="AudioStreamPlayer" parent="sounds_effect"]
+stream = ExtResource("36_ev86f")
+
+[node name="land_sound" type="AudioStreamPlayer" parent="sounds_effect"]
+stream = ExtResource("37_jv6kg")
+
+[node name="dash_sound" type="AudioStreamPlayer" parent="sounds_effect"]
+stream = ExtResource("38_l0ris")
+volume_db = -5.0
+
+[node name="wallJump_sound" type="AudioStreamPlayer" parent="sounds_effect"]
+stream = SubResource("AudioStreamRandomizer_jeooy")
+
 [connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="frame_changed" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="body_entered" from="CharacterBody2D/hitArea" to="CharacterBody2D" method="_on_hit_area_body_entered"]
 [connection signal="timeout" from="CharacterBody2D/time_between_dash" to="CharacterBody2D" method="_on_time_between_dash_timeout"]
+[connection signal="body_entered" from="CharacterBody2D/ground_sensor" to="CharacterBody2D" method="_on_ground_sensor_body_entered"]

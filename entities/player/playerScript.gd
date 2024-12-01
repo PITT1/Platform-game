@@ -14,6 +14,15 @@ class_name PlatformerController2D
 @export var PlayerCollider: CollisionShape2D
 @onready var collision_shape_2d: CollisionShape2D = $hitArea/CollisionShape2D
 
+#audio effect
+@onready var dash_sound: AudioStreamPlayer = $"../sounds_effect/dash_sound"
+@onready var attack_sound: AudioStreamPlayer = $"../sounds_effect/attack_sound"
+@onready var impact_attack: AudioStreamPlayer = $"../sounds_effect/impact_attack"
+@onready var jump_sound: AudioStreamPlayer = $"../sounds_effect/jump_sound"
+@onready var run_sound: AudioStreamPlayer = $"../sounds_effect/run_sound"
+@onready var wall_jump_sound: AudioStreamPlayer = $"../sounds_effect/wallJump_sound"
+@onready var land_sound: AudioStreamPlayer = $"../sounds_effect/land_sound"
+
 
 
 #INFO HORIZONTAL MOVEMENT 
@@ -678,6 +687,7 @@ func _coyoteTime():
 	
 func _jump():
 	if jumpCount > 0 and not death:
+		jump_sound.play()
 		velocity.y = -jumpMagnitude
 		jumpCount += -1
 		jumpWasPressed = false
@@ -702,12 +712,11 @@ func _wallJump():
 	if inputPauseAfterWallJump != 0:
 		movementInputMonitoring = Vector2(false, false)
 		_inputPauseReset(inputPauseAfterWallJump)
+	wall_jump_sound.play()
 	if jump_particles:
 		var instance = jump_particles.instantiate()
 		add_sibling(instance)
 		instance.global_position = global_position + Vector2(0, 10)
-	else:
-		pass
 func _setLatch(delay, setBool):
 	await get_tree().create_timer(delay).timeout
 	wasLatched = setBool
@@ -734,6 +743,7 @@ func _pauseGravity(time):
 
 func _dashingTime(time):
 	dashing = true
+	dash_sound.play()
 	await get_tree().create_timer(time).timeout
 	dashing = false
 
@@ -762,6 +772,7 @@ func _on_hit_area_body_entered(body: Node2D) -> void:
 	if anim.get_animation() == "attack3":
 		body.lives -= 2
 		
+	impact_attack.play()
 	body.gettingHit = true
 	body.velocity = global_position.direction_to(body.global_position) * Vector2(100, 100)
 	if hit1_enemy_particles:
@@ -808,18 +819,27 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 func _on_animated_sprite_2d_frame_changed() -> void:
 	if anim.get_animation() == "attack1" and anim.get_frame() == 3:
 		collision_shape_2d.set_disabled(false)
+		attack_sound.play()
 		await get_tree().create_timer(0.1).timeout
 		collision_shape_2d.set_disabled(true)
 		
 	if anim.get_animation() == "attack2" and anim.get_frame() == 1:
 		collision_shape_2d.set_disabled(false)
+		attack_sound.play()
 		await get_tree().create_timer(0.1).timeout
 		collision_shape_2d.set_disabled(true)
 		
 	if anim.get_animation() == "attack3" and anim.get_frame() == 2:
 		collision_shape_2d.set_disabled(false)
+		attack_sound.play()
 		await get_tree().create_timer(0.1).timeout
 		collision_shape_2d.set_disabled(true)
+	
+	if anim.get_animation() == "run" and anim.get_frame() == 0:
+		run_sound.play()
+	
+	if anim.get_animation() == "run" and anim.get_frame() == 4:
+		run_sound.play()
 
 func attack_procesor():
 	if Input.is_action_just_pressed("atack") and not on_Attack and not death:
@@ -870,3 +890,7 @@ func attack_procesor():
 
 func _on_time_between_dash_timeout() -> void:
 	dash_available = true
+
+
+func _on_ground_sensor_body_entered(body: Node2D) -> void:
+	land_sound.play()

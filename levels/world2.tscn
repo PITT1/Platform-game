@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://o01kysyplujt"]
+[gd_scene load_steps=29 format=4 uid="uid://o01kysyplujt"]
 
 [ext_resource type="Texture2D" uid="uid://didcklr78knar" path="res://images/tilemap/main_lev_build_2.png" id="1_brmwm"]
 [ext_resource type="Script" path="res://levels/world_2.gd" id="1_rwupv"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://bgurafal77rsb" path="res://particles/ambient_particles.tscn" id="20_jshjv"]
 [ext_resource type="PackedScene" uid="uid://54u88oswgal8" path="res://obstacles/trap1.tscn" id="21_l6r0o"]
 [ext_resource type="PackedScene" uid="uid://vaeiu1j1eq7t" path="res://hud/pause_button.tscn" id="23_nlaul"]
+[ext_resource type="AudioStream" uid="uid://ctrrlmwdh26ww" path="res://sounds/ambient/Forest Day.ogg" id="24_v6crl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f6eew"]
 texture = ExtResource("1_brmwm")
@@ -1561,6 +1562,13 @@ collision_layer = 0
 position = Vector2(1847.19, -20.9577)
 shape = SubResource("RectangleShape2D_uk2lq")
 debug_color = Color(0.733333, 0.231373, 1, 0.231373)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("24_v6crl")
+volume_db = -5.0
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="win_area" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="move_cameras/Area2D2" to="." method="_on_area_2d_2_body_entered"]
