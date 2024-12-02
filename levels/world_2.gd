@@ -37,3 +37,13 @@ func _on_area_2d_2_body_entered(body: CharacterBody2D) -> void:
 func _on_area_2d_2_body_exited(body: CharacterBody2D) -> void:
 	var pcamPlayer = body.get_child(5).get_child(0)
 	pcamPlayer.set_follow_offset(Vector2(0, 0))
+
+
+func _on_move_camera_area_2_body_entered(body: CharacterBody2D) -> void:
+	var pcamPlayer = body.get_child(5).get_child(0)
+	pcamPlayer.set_follow_offset(Vector2(0, 130))
+
+
+func _on_move_camera_area_2_body_exited(body: CharacterBody2D) -> void:
+	var pcamPlayer = body.get_child(5).get_child(0)
+	pcamPlayer.set_follow_offset(Vector2(0, 0))

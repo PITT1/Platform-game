@@ -27,3 +27,19 @@ func _on_win_area_body_entered(body: CharacterBody2D) -> void:
 		var instantia = scene_you_win.instantiate()
 		add_child(instantia)
 		instantia.showHud(true)
+
+
+func _on_move_camera_area_body_entered(body: CharacterBody2D) -> void:
+	var pcamPlayer = body.get_child(5).get_child(0)
+	pcamPlayer.set_follow_offset(Vector2(0, 0))
+	pcamPlayer.set_limit_bottom(450)
+
+
+func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
+	var pcamPlayer = body.get_child(5).get_child(0)
+	pcamPlayer.set_follow_offset(Vector2(0, 100))
+
+
+func _on_area_2d_body_exited(body: CharacterBody2D) -> void:
+	var pcamPlayer = body.get_child(5).get_child(0)
+	pcamPlayer.set_follow_offset(Vector2(0, 0))

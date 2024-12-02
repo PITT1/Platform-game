@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://o01kysyplujt"]
+[gd_scene load_steps=31 format=4 uid="uid://o01kysyplujt"]
 
 [ext_resource type="Texture2D" uid="uid://didcklr78knar" path="res://images/tilemap/main_lev_build_2.png" id="1_brmwm"]
 [ext_resource type="Script" path="res://levels/world_2.gd" id="1_rwupv"]
@@ -1304,6 +1304,9 @@ size = Vector2(107, 211)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uk2lq"]
 size = Vector2(3825, 138)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c2tfc"]
+size = Vector2(94.9999, 198)
+
 [node name="World2" type="Node2D"]
 script = ExtResource("1_rwupv")
 
@@ -1564,6 +1567,15 @@ position = Vector2(1847.19, -20.9577)
 shape = SubResource("RectangleShape2D_uk2lq")
 debug_color = Color(0.733333, 0.231373, 1, 0.231373)
 
+[node name="move_camera_area2" type="Area2D" parent="move_cameras"]
+position = Vector2(1463.97, 118.888)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="move_cameras/move_camera_area2"]
+position = Vector2(2.53162, -45.8882)
+shape = SubResource("RectangleShape2D_c2tfc")
+debug_color = Color(0.65098, 0.32549, 1, 0.321569)
+
 [node name="ambient_music" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("24_v6crl")
@@ -1580,3 +1592,5 @@ parameters/looping = true
 [connection signal="body_entered" from="win_area" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="move_cameras/Area2D2" to="." method="_on_area_2d_2_body_entered"]
 [connection signal="body_exited" from="move_cameras/Area2D2" to="." method="_on_area_2d_2_body_exited"]
+[connection signal="body_entered" from="move_cameras/move_camera_area2" to="." method="_on_move_camera_area_2_body_entered"]
+[connection signal="body_exited" from="move_cameras/move_camera_area2" to="." method="_on_move_camera_area_2_body_exited"]
