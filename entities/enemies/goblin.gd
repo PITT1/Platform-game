@@ -2,6 +2,9 @@ extends CharacterBody2D
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var vision_area: Area2D = $visionArea
 @onready var flee_area: Area2D = $fleeArea
+@onready var roar_sound: AudioStreamPlayer2D = $sounds/roar_sound
+@onready var death_sound: AudioStreamPlayer2D = $sounds/death_sound
+@onready var shot_sound: AudioStreamPlayer2D = $sounds/shot_sound
 
 var attack = false
 var death = false
@@ -83,6 +86,7 @@ func _physics_process(delta: float) -> void:
 		flee_area.set_monitoring(true)
 		
 	if lives < 1:
+		death_sound.play()
 		on_death()
 	move_and_slide()
 
@@ -124,6 +128,7 @@ func on_takeHit():
 
 func _on_vision_area_body_entered(body: CharacterBody2D) -> void:
 	player = body
+	roar_sound.play()
 	if not flee:
 		if player.global_position > global_position:
 			anim.flip_h = false
@@ -134,6 +139,7 @@ func _on_vision_area_body_entered(body: CharacterBody2D) -> void:
 
 func _on_flee_area_body_entered(body: Node2D) -> void:
 	if body:
+		roar_sound.play()
 		flee = true
 
 func _on_flee_area_body_exited(body: Node2D) -> void:
@@ -151,6 +157,7 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 
 func launchingProyectile():
 	if is_on_floor_only():
+		shot_sound.play()
 		vision_area.scale = Vector2(5, 5)
 		var instantiated = proyectile.instantiate()
 		add_sibling(instantiated)
