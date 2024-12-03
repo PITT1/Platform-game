@@ -26,7 +26,7 @@
 [ext_resource type="AudioStream" uid="uid://ctrrlmwdh26ww" path="res://sounds/ambient/Forest Day.ogg" id="24_yi3gg"]
 [ext_resource type="AudioStream" uid="uid://be56c3p3tn8cy" path="res://sounds/ambient/Action 3 (Loop).ogg" id="25_ghwpp"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_be2u3"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nfyan"]
 texture = ExtResource("1_x4f6d")
 14:18/0 = 0
 14:18/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -596,7 +596,7 @@ texture = ExtResource("1_x4f6d")
 10:48/0 = 0
 10:47/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0lbv5"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3xnb5"]
 texture = ExtResource("2_gqmac")
 22:2/0 = 0
 23:2/0 = 0
@@ -1287,8 +1287,8 @@ texture = ExtResource("2_gqmac")
 
 [sub_resource type="TileSet" id="TileSet_yei7r"]
 physics_layer_0/collision_layer = 2
-sources/0 = SubResource("TileSetAtlasSource_be2u3")
-sources/1 = SubResource("TileSetAtlasSource_0lbv5")
+sources/0 = SubResource("TileSetAtlasSource_nfyan")
+sources/1 = SubResource("TileSetAtlasSource_3xnb5")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rvm38"]
 size = Vector2(311, 19)
