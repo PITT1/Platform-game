@@ -763,7 +763,7 @@ shape = SubResource("CapsuleShape2D_n0wn8")
 debug_color = Color(0.952941, 0, 0.12549, 0.419608)
 
 [node name="time_between_dash" type="Timer" parent="CharacterBody2D"]
-wait_time = 0.6
+wait_time = 0.5
 one_shot = true
 
 [node name="cameras" type="Node2D" parent="CharacterBody2D"]
