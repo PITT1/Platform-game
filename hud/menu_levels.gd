@@ -20,3 +20,7 @@ func _on_nivel_3_btn_button_up() -> void:
 
 func _on_back_button_up() -> void:
 	get_tree().change_scene_to_file("res://hud/principalMenu.tscn")
+
+
+func _on_nivel_4_btn_button_up() -> void:
+	get_tree().change_scene_to_file("res://levels/world5.tscn")

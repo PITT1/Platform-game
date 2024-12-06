@@ -4,6 +4,8 @@ var player : CharacterBody2D = null
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var timer: Timer = $Timer
 @onready var collision: CollisionShape2D = $CollisionShape2D
+@onready var roar_sound: AudioStreamPlayer2D = $roar_sound
+@onready var flying_sound: AudioStreamPlayer2D = $flying_sound
 
 @export var speed: float = 60
 @export var acceleration: float = 300
@@ -46,6 +48,7 @@ func _physics_process(delta: float) -> void:
 func _on_vision_area_body_entered(body: CharacterBody2D) -> void:
 	if body:
 		player = body
+		roar_sound.play()
 		timer.start()
 
 func _on_vision_area_body_exited(body: CharacterBody2D) -> void:
@@ -55,11 +58,17 @@ func _on_vision_area_body_exited(body: CharacterBody2D) -> void:
 
 func _on_margin_area_body_entered(body: CharacterBody2D) -> void:
 	on_margin_area = true
+	roar_sound.play()
+	if body:
+		pass
 
 func _on_margin_area_body_exited(body: Node2D) -> void:
 	on_margin_area = false
+	if body:
+		pass
 
 func _on_timer_timeout() -> void:
+	roar_sound.play()
 	shot_to_player()
 
 
@@ -113,3 +122,8 @@ func shot_to_player():
 		dir_to_player = global_position.direction_to(player.global_position)
 		proyectile_instantia.position = global_position
 		proyectile_instantia.velocity = dir_to_player * proyectile_velocity
+
+
+func _on_animated_sprite_2d_frame_changed() -> void:
+	if anim.get_animation() == "fly" and anim.get_frame() == 6:
+		flying_sound.play()

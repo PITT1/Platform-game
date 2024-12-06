@@ -9,6 +9,7 @@ var gettingHit = false
 @onready var hit_box: CollisionShape2D = $CollisionShape2D
 @onready var hit_area_collision: CollisionShape2D = $hitArea/hitArea_collision
 @onready var flying_sound: AudioStreamPlayer2D = $sound/flying_sound
+@onready var roar_sound: AudioStreamPlayer2D = $sound/roar_sound
 
 func _ready() -> void:
 	anim.play("fly")
@@ -45,6 +46,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_vision_area_body_entered(body: CharacterBody2D) -> void:
 	player = body
+	roar_sound.play()
 
 func movement(delta):
 	if player.global_position.x > global_position.x:
@@ -76,6 +78,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 
 func _on_hit_area_body_entered(body: Node2D) -> void:
 	body.gettingHit = true
+	roar_sound.play()
 	body.lives -= 1
 	velocity = body.global_position.direction_to(global_position) * 200
 

@@ -2,6 +2,7 @@ extends Node2D
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var timer: Timer = $Timer
 @onready var collision: CollisionShape2D = $Area2D/CollisionShape2D
+@onready var shot_sound: AudioStreamPlayer2D = $shot_sound
 
 var velocity: Vector2
 
@@ -9,6 +10,7 @@ var velocity: Vector2
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	anim.play("in")
+	shot_sound.play()
 	timer.start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

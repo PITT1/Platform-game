@@ -5765,9 +5765,15 @@ position = Vector2(1680, -36)
 
 [node name="CharacterBody2D5" parent="enemies" instance=ExtResource("18_25qd2")]
 position = Vector2(1987, 352)
+speed = 60.0
+acceleration = 300.0
+lives = 3.0
 
 [node name="CharacterBody2D7" parent="enemies" instance=ExtResource("18_25qd2")]
 position = Vector2(2589, 172)
+speed = 60.0
+acceleration = 300.0
+lives = 3.0
 
 [node name="FlyEyeCorrupted" parent="enemies" instance=ExtResource("19_tqn6j")]
 position = Vector2(3186, 153)
@@ -5796,12 +5802,21 @@ move_to_the_right = false
 
 [node name="CharacterBody2D11" parent="enemies" instance=ExtResource("18_25qd2")]
 position = Vector2(3768, -355)
+speed = 60.0
+acceleration = 300.0
+lives = 3.0
 
 [node name="CharacterBody2D12" parent="enemies" instance=ExtResource("18_25qd2")]
 position = Vector2(3988, -346)
+speed = 60.0
+acceleration = 300.0
+lives = 3.0
 
 [node name="CharacterBody2D13" parent="enemies" instance=ExtResource("18_25qd2")]
 position = Vector2(4254, -348)
+speed = 60.0
+acceleration = 300.0
+lives = 3.0
 
 [node name="CharacterBody2D4" parent="enemies" instance=ExtResource("16_al4d0")]
 position = Vector2(3431, 319)

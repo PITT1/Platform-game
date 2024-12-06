@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cfh5y5myhh4r"]
+[gd_scene load_steps=41 format=3 uid="uid://cfh5y5myhh4r"]
 
 [ext_resource type="Script" path="res://entities/enemies/fly_eye_corrupted.gd" id="1_fs0av"]
 [ext_resource type="Texture2D" uid="uid://b6yym4v2nihjh" path="res://images/Monsters_Creatures_Fantasy/Flying eye/Attack.png" id="1_t0603"]
@@ -6,6 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://f3dbskfgovd2" path="res://entities/proyectiles/flyEyes_corrupted_proyectile.tscn" id="2_5q0jv"]
 [ext_resource type="Texture2D" uid="uid://diwlvflyufg5c" path="res://images/Monsters_Creatures_Fantasy/Flying eye/Flight.png" id="2_hmjl2"]
 [ext_resource type="Texture2D" uid="uid://ceybyb3yqfjh2" path="res://images/Monsters_Creatures_Fantasy/Flying eye/Take Hit.png" id="3_agl4r"]
+[ext_resource type="AudioStream" uid="uid://ciq8kc5rhl8f6" path="res://sounds/sfx/fly_eyes_corrupted/fly_eye__corrupted_roar1.mp3" id="7_u31fb"]
+[ext_resource type="AudioStream" uid="uid://c1h36ekatkifq" path="res://sounds/sfx/fly_eyes_corrupted/fly_eye__corrupted_roar2.mp3" id="8_tkwek"]
+[ext_resource type="AudioStream" uid="uid://bqmm8xvvs7w6q" path="res://sounds/sfx/fly_eyes_corrupted/fly_eye__corrupted_roar3.mp3" id="9_btow3"]
+[ext_resource type="AudioStream" uid="uid://dvht85gwa7qtm" path="res://sounds/sfx/fly_eyes/fly_eye_flying1.mp3" id="10_di0rg"]
+[ext_resource type="AudioStream" uid="uid://dfjuhafib4t2i" path="res://sounds/sfx/fly_eyes/fly_eye_flying2.mp3" id="11_3xsnv"]
+[ext_resource type="AudioStream" uid="uid://bjr61j0fux4o8" path="res://sounds/sfx/fly_eyes/fly_eye_flying3.mp3" id="12_5wtwu"]
+[ext_resource type="AudioStream" uid="uid://dcnd0qhm1upnr" path="res://sounds/sfx/fly_eyes/fly_eye_flying4.mp3" id="13_b8dxw"]
+[ext_resource type="AudioStream" uid="uid://cyw5786cj6xk4" path="res://sounds/sfx/fly_eyes/fly_eye_flying5.mp3" id="14_ollmt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t4q3q"]
 atlas = ExtResource("1_t0603")
@@ -174,6 +182,20 @@ radius = 487.001
 [sub_resource type="CircleShape2D" id="CircleShape2D_p5yua"]
 radius = 101.316
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_18i42"]
+streams_count = 3
+stream_0/stream = ExtResource("7_u31fb")
+stream_1/stream = ExtResource("8_tkwek")
+stream_2/stream = ExtResource("9_btow3")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_sgnxa"]
+streams_count = 5
+stream_0/stream = ExtResource("10_di0rg")
+stream_1/stream = ExtResource("11_3xsnv")
+stream_2/stream = ExtResource("12_5wtwu")
+stream_3/stream = ExtResource("13_b8dxw")
+stream_4/stream = ExtResource("14_ollmt")
+
 [node name="FlyEyeCorrupted" type="CharacterBody2D"]
 texture_filter = 1
 collision_layer = 8
@@ -186,6 +208,7 @@ proyectile = ExtResource("2_5q0jv")
 modulate = Color(0.819796, 0.0175115, 3.85046e-07, 1)
 sprite_frames = SubResource("SpriteFrames_3kpbs")
 animation = &"fly"
+frame = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(6, 2)
@@ -210,6 +233,14 @@ debug_color = Color(0.592157, 0.372549, 1, 0.231373)
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 
+[node name="roar_sound" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_18i42")
+max_distance = 900.0
+
+[node name="flying_sound" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_sgnxa")
+
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="body_entered" from="visionArea" to="." method="_on_vision_area_body_entered"]
 [connection signal="body_exited" from="visionArea" to="." method="_on_vision_area_body_exited"]
 [connection signal="body_entered" from="marginArea" to="." method="_on_margin_area_body_entered"]

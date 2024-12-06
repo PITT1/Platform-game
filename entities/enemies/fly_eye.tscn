@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://efyda2cw57qk"]
+[gd_scene load_steps=31 format=3 uid="uid://efyda2cw57qk"]
 
 [ext_resource type="Script" path="res://entities/enemies/fly_eye.gd" id="1_vwpv2"]
 [ext_resource type="PackedScene" uid="uid://c6c4vbpxml1xx" path="res://particles/slime_death.tscn" id="2_4orom"]
@@ -6,8 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://ceybyb3yqfjh2" path="res://images/Monsters_Creatures_Fantasy/Flying eye/Take Hit.png" id="4_4t565"]
 [ext_resource type="AudioStream" uid="uid://dvht85gwa7qtm" path="res://sounds/sfx/fly_eyes/fly_eye_flying1.mp3" id="8_a08i4"]
 [ext_resource type="AudioStream" uid="uid://dfjuhafib4t2i" path="res://sounds/sfx/fly_eyes/fly_eye_flying2.mp3" id="9_mtr4y"]
+[ext_resource type="AudioStream" uid="uid://txgig67yljho" path="res://sounds/sfx/fly_eyes/fly_eye_roar1.mp3" id="10_5vpsd"]
 [ext_resource type="AudioStream" uid="uid://bjr61j0fux4o8" path="res://sounds/sfx/fly_eyes/fly_eye_flying3.mp3" id="10_48u56"]
+[ext_resource type="AudioStream" uid="uid://cttiwv582wrin" path="res://sounds/sfx/fly_eyes/fly_eye_roar2.mp3" id="11_4rstj"]
 [ext_resource type="AudioStream" uid="uid://dcnd0qhm1upnr" path="res://sounds/sfx/fly_eyes/fly_eye_flying4.mp3" id="11_itcp3"]
+[ext_resource type="AudioStream" uid="uid://b1m4tor0hruwk" path="res://sounds/sfx/fly_eyes/fly_eye_roar3.mp3" id="12_o78mj"]
 [ext_resource type="AudioStream" uid="uid://cyw5786cj6xk4" path="res://sounds/sfx/fly_eyes/fly_eye_flying5.mp3" id="12_oowtj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fxha3"]
@@ -124,6 +127,12 @@ stream_2/stream = ExtResource("10_48u56")
 stream_3/stream = ExtResource("11_itcp3")
 stream_4/stream = ExtResource("12_oowtj")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_p0kkw"]
+streams_count = 3
+stream_0/stream = ExtResource("10_5vpsd")
+stream_1/stream = ExtResource("11_4rstj")
+stream_2/stream = ExtResource("12_o78mj")
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 collision_layer = 8
 collision_mask = 8
@@ -159,6 +168,11 @@ debug_color = Color(0.980392, 0, 0, 0.419608)
 [node name="flying_sound" type="AudioStreamPlayer2D" parent="sound"]
 stream = SubResource("AudioStreamRandomizer_n4lye")
 volume_db = 5.0
+max_distance = 900.0
+
+[node name="roar_sound" type="AudioStreamPlayer2D" parent="sound"]
+stream = SubResource("AudioStreamRandomizer_p0kkw")
+volume_db = 2.0
 max_distance = 900.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
