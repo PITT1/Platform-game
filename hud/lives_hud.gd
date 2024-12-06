@@ -16,18 +16,11 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if get_parent().has_node("player/CharacterBody2D"):
-		heartChange = get_parent().get_node("player/CharacterBody2D").lives
-		if heartsNum == heartChange:
-			pass
-		else:
-			heartsNum = heartChange
-			var childrens = heartContainer.get_children()
-			if heartContainer.get_child_count() == 0:
-				pass
-			else:
-				heartContainer.remove_child(childrens[heartsNum])
-	else:
+	if delta:
 		pass
 	
+	var lives = get_parent().get_node("player/CharacterBody2D").lives
 	
+	if heartChange > lives:
+		heartContainer.remove_child(heartContainer.get_child(lives))
+		heartChange = lives
