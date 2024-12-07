@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://dw07e2nhkt8p4"]
+[gd_scene load_steps=32 format=4 uid="uid://dw07e2nhkt8p4"]
 
 [ext_resource type="Script" path="res://levels/tutorial.gd" id="1_pnmuv"]
 [ext_resource type="Texture2D" uid="uid://bg8weivuatkhu" path="res://images/forestBackground/Layer_0011_0.png" id="1_qwo5n"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://vaeiu1j1eq7t" path="res://hud/pause_button.tscn" id="21_58w7v"]
 [ext_resource type="AudioStream" uid="uid://ctrrlmwdh26ww" path="res://sounds/ambient/Forest Day.ogg" id="22_7q3rk"]
 [ext_resource type="AudioStream" uid="uid://be56c3p3tn8cy" path="res://sounds/ambient/Action 3 (Loop).ogg" id="23_jickv"]
+[ext_resource type="PackedScene" uid="uid://dcsf554wvrgne" path="res://controls/tactil_controls_1.tscn" id="24_phqps"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ahmk"]
 texture = ExtResource("11_bwms1")
@@ -3731,6 +3732,8 @@ process_mode = 3
 stream = ExtResource("23_jickv")
 autoplay = true
 parameters/looping = true
+
+[node name="TactilControls1" parent="." instance=ExtResource("24_phqps")]
 
 [connection signal="body_entered" from="pinchos/Area2D2" to="pinchos/Area2D2" method="_on_body_entered"]
 [connection signal="body_entered" from="pinchos/Area2D3" to="pinchos/Area2D3" method="_on_body_entered"]

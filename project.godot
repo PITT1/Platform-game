@@ -89,6 +89,10 @@ atack={
 ]
 }
 
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
 [layer_names]
 
 2d_physics/layer_1="jugador"
@@ -103,3 +107,4 @@ atack={
 [rendering]
 
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

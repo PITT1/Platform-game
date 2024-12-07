@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://cxn2542y8eo"]
+[gd_scene load_steps=48 format=4 uid="uid://cxn2542y8eo"]
 
 [ext_resource type="Script" path="res://levels/world_5.gd" id="1_kmng5"]
 [ext_resource type="Texture2D" uid="uid://bg8weivuatkhu" path="res://images/forestBackground/Layer_0011_0.png" id="1_u6214"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://bsg8qjsqu632m" path="res://entities/enemies/mutant_mushrom.tscn" id="20_w7ick"]
 [ext_resource type="PackedScene" uid="uid://vaeiu1j1eq7t" path="res://hud/pause_button.tscn" id="21_6tpiq"]
 [ext_resource type="PackedScene" uid="uid://bgurafal77rsb" path="res://particles/ambient_particles.tscn" id="22_s76cy"]
+[ext_resource type="PackedScene" uid="uid://dcsf554wvrgne" path="res://controls/tactil_controls_1.tscn" id="30_r25me"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_36vlk"]
 texture = ExtResource("11_ok7nn")
@@ -5994,6 +5995,8 @@ position = Vector2(4833.36, 171.973)
 position = Vector2(-6.36475, 30.027)
 shape = SubResource("RectangleShape2D_t1p5t")
 debug_color = Color(0.224124, 0.638541, 1.92523e-07, 0.42)
+
+[node name="TactilControls1" parent="." instance=ExtResource("30_r25me")]
 
 [connection signal="body_entered" from="traps/trap_area" to="traps/trap_area" method="_on_body_entered"]
 [connection signal="body_entered" from="traps/trap_area2" to="traps/trap_area2" method="_on_body_entered"]
