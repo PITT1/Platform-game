@@ -22,6 +22,8 @@ func _ready() -> void:
 	on_idle()
 
 func _process(delta: float) -> void:
+	if delta:
+		pass
 	
 	if attack:
 		anim.play("attack")

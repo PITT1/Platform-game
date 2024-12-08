@@ -896,3 +896,6 @@ func _on_time_between_dash_timeout() -> void:
 
 func _on_ground_sensor_body_entered(body: Node2D) -> void:
 	land_sound.play()
+	
+	if body:
+		pass
