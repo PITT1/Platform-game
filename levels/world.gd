@@ -34,3 +34,7 @@ func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 	var pcamPlayer = body.get_child(5).get_child(0)
 	pcamPlayer.set_limit_bottom(300)
 	pcamPlayer.set_follow_offset(Vector2(0, 0))
+
+
+func _on_death_zone_body_entered(body: CharacterBody2D) -> void:
+	body.lives = 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://b83a6tf2x1e8d"]
+[gd_scene load_steps=35 format=4 uid="uid://b83a6tf2x1e8d"]
 
 [ext_resource type="Script" path="res://levels/world.gd" id="1_1yrse"]
 [ext_resource type="Texture2D" uid="uid://cqy4dbwtshnub" path="res://images/tilemap/main_lev_build_1.png" id="1_x4f6d"]
@@ -1303,6 +1303,9 @@ size = Vector2(121, 104)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5x84y"]
 size = Vector2(81, 145)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kini5"]
+size = Vector2(4971, 82)
+
 [node name="world" type="Node2D"]
 script = ExtResource("1_1yrse")
 metadata/_edit_vertical_guides_ = [823.0]
@@ -1547,7 +1550,18 @@ parameters/looping = true
 
 [node name="TactilControls1" parent="." instance=ExtResource("26_ha8re")]
 
+[node name="death_zone" type="Area2D" parent="."]
+position = Vector2(645.977, 348.151)
+collision_layer = 0
+collision_mask = 37
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="death_zone"]
+position = Vector2(2065.52, -11.1514)
+shape = SubResource("RectangleShape2D_kini5")
+debug_color = Color(0.956863, 0, 0, 0.419608)
+
 [connection signal="body_entered" from="enemies/poison ivy/Area2D" to="enemies/poison ivy/Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="enemies/poison ivy/Area2D2" to="enemies/poison ivy/Area2D2" method="_on_body_entered"]
 [connection signal="body_entered" from="win_area" to="." method="_on_win_area_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="death_zone" to="." method="_on_death_zone_body_entered"]
