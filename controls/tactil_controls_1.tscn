@@ -18,9 +18,9 @@ grow_vertical = 2
 [node name="right_btn" type="TouchScreenButton" parent="CanvasLayer"]
 process_mode = 3
 modulate = Color(1, 1, 1, 0.392157)
-position = Vector2(209.954, 325.161)
+position = Vector2(163, 320)
 rotation = -3.14159
-scale = Vector2(0.34, 0.347)
+scale = Vector2(0.25, 0.255)
 texture_normal = ExtResource("1_2mc5f")
 passby_press = true
 action = "right"
@@ -28,8 +28,8 @@ action = "right"
 [node name="left_btn" type="TouchScreenButton" parent="CanvasLayer"]
 process_mode = 3
 modulate = Color(1, 1, 1, 0.392157)
-position = Vector2(4, 216)
-scale = Vector2(0.326667, 0.346667)
+position = Vector2(5, 237)
+scale = Vector2(0.25, 0.265)
 texture_normal = ExtResource("1_2mc5f")
 passby_press = true
 action = "left"
