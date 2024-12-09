@@ -25,6 +25,8 @@ func _ready() -> void:
 	
 
 func _process(delta: float) -> void:
+	if delta:
+		pass
 	if idle:
 		anim.play("idle")
 		

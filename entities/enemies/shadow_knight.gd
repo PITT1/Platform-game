@@ -21,6 +21,9 @@ func _ready() -> void:
 	set_modulate(Color(1, 1, 1, 0.7))
 	
 func _process(delta: float) -> void:
+	if delta:
+		pass
+	
 	if idle:
 		anim.play("idle")
 		
@@ -109,7 +112,8 @@ func attackMode():
 
 
 func _on_vision_area_body_exited(body: Node2D) -> void:
-	pass
+	if body:
+		pass
 
 
 func _on_animated_sprite_2d_frame_changed() -> void:
