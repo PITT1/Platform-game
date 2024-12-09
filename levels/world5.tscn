@@ -5719,24 +5719,6 @@ tile_set = SubResource("TileSet_bclre")
 
 [node name="enemies" type="Node2D" parent="."]
 
-[node name="BlueSlime" parent="enemies" instance=ExtResource("15_jkbp2")]
-modulate = Color(0, 0.739715, 1.92523e-07, 1)
-position = Vector2(918, 352)
-move_to_the_right = false
-
-[node name="BlueSlime2" parent="enemies" instance=ExtResource("15_jkbp2")]
-modulate = Color(0, 0.714382, 0.555996, 1)
-position = Vector2(1067, 355)
-
-[node name="BlueSlime3" parent="enemies" instance=ExtResource("15_jkbp2")]
-modulate = Color(1, 0.346981, 0.187316, 1)
-position = Vector2(1201, 353)
-move_to_the_right = false
-
-[node name="BlueSlime4" parent="enemies" instance=ExtResource("15_jkbp2")]
-modulate = Color(1, 0.20009, 0.516547, 1)
-position = Vector2(1004, 348)
-
 [node name="BlueSlime5" parent="enemies" instance=ExtResource("15_jkbp2")]
 position = Vector2(1262, 358)
 
