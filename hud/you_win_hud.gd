@@ -13,6 +13,7 @@ func _ready() -> void:
 func showHud(show: bool):
 	if show == true and is_show == false:
 		animation_player.play("victory_in")
+		get_tree().paused = true
 		is_show = true
 	elif show == false and is_show == true:
 		animation_player.play("victory_out")
@@ -20,14 +21,15 @@ func showHud(show: bool):
 
 
 func _on_quit_btn_button_up() -> void:
+	get_tree().paused = false
 	get_tree().quit()
 
 
 func _on_go_to_menu_levels_btn_button_up() -> void:
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://hud/menu_levels.tscn")
 
 
 func _on_try_again_btn_button_up() -> void:
-	var levelName = get_parent().name
-	var scene_path = "res://levels/" +levelName+ ".tscn"
-	get_tree().change_scene_to_file(scene_path)
+	get_tree().paused = false
+	get_tree().reload_current_scene()
