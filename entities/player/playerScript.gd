@@ -426,7 +426,7 @@ func _physics_process(delta):
 		if is_on_floor() and velocity.x != 0 and count_leaf > 0.05:
 			var instantiated_run_particles = run_particles.instantiate()
 			add_child(instantiated_run_particles)
-			instantiated_run_particles.global_position = global_position + Vector2(0, 30)
+			instantiated_run_particles.global_position = global_position + Vector2(0, 20)
 			instantiated_run_particles.emitting = true
 			count_leaf = 0
 		else:

@@ -1,23 +1,23 @@
 [gd_scene load_steps=4 format=3 uid="uid://cyofqjywx8a6c"]
 
-[ext_resource type="Texture2D" uid="uid://d3uutqg1g0tgj" path="res://images/leaf2.png" id="1_unwkg"]
+[ext_resource type="Texture2D" uid="uid://bkho4qqed7r4" path="res://particles/smoke-particle2.png" id="1_ruui0"]
 [ext_resource type="Script" path="res://particles/leaf_particles_run_player.gd" id="2_sad7q"]
 
 [sub_resource type="Curve" id="Curve_sl7xj"]
-_data = [Vector2(0, 0.290566), 0.0, 0.0, 0, 0, Vector2(0.838235, 0.0339622), -0.615849, -0.615849, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
+_data = [Vector2(0, 0.290566), 0.0, 0.0, 0, 0, Vector2(0.4125, 0.773585), 0.0, 0.0, 0, 0, Vector2(0.6375, 0.381132), -0.615849, -0.615849, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
 
 [node name="LeafParticlesRunPlayer" type="CPUParticles2D"]
 z_index = -1
 emitting = false
-amount = 2
-lifetime = 0.7
+amount = 3
+lifetime = 0.3
 one_shot = true
-speed_scale = 0.4
+speed_scale = 0.5
 explosiveness = 1.0
 randomness = 1.0
 lifetime_randomness = 0.38
-texture = ExtResource("1_unwkg")
+texture = ExtResource("1_ruui0")
 direction = Vector2(0, -1000)
 spread = 20.0
 gravity = Vector2(0, 800)
@@ -26,6 +26,7 @@ initial_velocity_max = 236.56
 angular_velocity_min = -539.29
 angular_velocity_max = 426.43
 scale_amount_curve = SubResource("Curve_sl7xj")
+color = Color(1, 1, 1, 0.898039)
 script = ExtResource("2_sad7q")
 
 [connection signal="finished" from="." to="." method="_on_finished"]

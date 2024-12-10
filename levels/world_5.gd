@@ -24,7 +24,7 @@ func set_has_executed_once():
 
 func _on_camera_move_1_body_entered(body: CharacterBody2D) -> void:
 	var pcamPlayer = body.get_child(5).get_child(0)
-	pcamPlayer.set_limit_bottom(400)
+	pcamPlayer.set_limit_bottom(600)
 	pcamPlayer.set_follow_offset(Vector2(0, 0))
 
 
