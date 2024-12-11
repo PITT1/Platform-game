@@ -1,0 +1,32 @@
+{
+	"tutorial": {
+		"path": "res://levels/tutorial.tscn",
+		"is_level_pass": false,
+		"is_level_bloqued": true
+	},
+	"level_1": {
+		"path": "res://levels/world.tscn",
+		"is_level_pass": false,
+		"is_level_bloqued": true
+	},
+	"level_2": {
+		"path": "res://levels/world2.tscn",
+		"is_level_pass": false,
+		"is_level_bloqued": true
+	},
+	"level_3": {
+		"path": "res://levels/world4.tscn",
+		"is_level_pass": false,
+		"is_level_bloqued": true
+	},
+	"level_4": {
+		"path": "res://levels/world5.tscn",
+		"is_level_pass": false,
+		"is_level_bloqued": true
+	},
+	"level_5": {
+		"path": "res://levels/world6.tscn",
+		"is_level_pass": false,
+		"is_level_bloqued": true
+	}
+}
