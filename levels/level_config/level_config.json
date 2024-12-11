@@ -1,0 +1,26 @@
+{
+  "tutorial": {
+	"is_level_pass": false,
+	"is_level_bloqued": false
+  },
+  "level_1": {
+	"is_level_pass": false,
+	"is_level_bloqued": true
+  },
+  "level_2": {
+	"is_level_pass": false,
+	"is_level_bloqued": true
+  },
+  "level_3": {
+	"is_level_pass": false,
+	"is_level_bloqued": true
+  },
+  "level_4": {
+	"is_level_pass": false,
+	"is_level_bloqued": true
+  },
+  "level_5": {
+	"is_level_pass": false,
+	"is_level_bloqued": true
+  }
+}

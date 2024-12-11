@@ -1,5 +1,15 @@
 extends Control
 
+@export var level_tutorial: PackedScene
+@export var level_1: PackedScene
+@export var level_2: PackedScene
+@export var level_3: PackedScene
+@export var level_4: PackedScene
+@export var level_5: PackedScene
+
+func _ready() -> void:
+	var tutorial = preload("res://levels/tutorial.tscn")
+	print(tutorial)
 
 
 func _on_tutorial_btn_button_up() -> void:

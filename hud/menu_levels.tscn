@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://lecjcny2coda"]
+[gd_scene load_steps=8 format=3 uid="uid://lecjcny2coda"]
 
 [ext_resource type="Script" path="res://hud/menu_levels.gd" id="1_aouwd"]
+[ext_resource type="PackedScene" uid="uid://dw07e2nhkt8p4" path="res://levels/tutorial.tscn" id="2_uenjb"]
+[ext_resource type="PackedScene" uid="uid://b83a6tf2x1e8d" path="res://levels/world.tscn" id="3_khpk5"]
+[ext_resource type="PackedScene" uid="uid://o01kysyplujt" path="res://levels/world2.tscn" id="4_2xto8"]
+[ext_resource type="PackedScene" uid="uid://xh710pugk17t" path="res://levels/world4.tscn" id="5_v0u4r"]
+[ext_resource type="PackedScene" uid="uid://cxn2542y8eo" path="res://levels/world5.tscn" id="6_ku783"]
+[ext_resource type="PackedScene" uid="uid://cy6jyffqtsnap" path="res://levels/world6.tscn" id="7_swn83"]
 
 [node name="MenuLevels" type="Control"]
 layout_mode = 3
@@ -10,6 +16,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_aouwd")
+level_tutorial = ExtResource("2_uenjb")
+level_1 = ExtResource("3_khpk5")
+level_2 = ExtResource("4_2xto8")
+level_3 = ExtResource("5_v0u4r")
+level_4 = ExtResource("6_ku783")
+level_5 = ExtResource("7_swn83")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
