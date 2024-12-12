@@ -1,7 +1,5 @@
 extends Node2D
 
-@export var is_level_pass: bool = false 
-@export var is_level_bloqued: bool = false
 @onready var player: Node2D = $player
 
 var scene_game_over = preload("res://hud/game_over.tscn")
@@ -25,7 +23,7 @@ func set_has_executed_once():
 
 func _on_win_area_body_entered(body: Node2D) -> void:
 	if body:
-		is_level_pass = true
+		SaveGameProcesor.save_data_last_level("level_5")
 		var instantia = scene_you_win.instantiate()
 		add_child(instantia)
 		instantia.showHud(true)

@@ -41,19 +41,23 @@ func _ready() -> void:
 
 
 func _on_tutorial_btn_button_up() -> void:
-	get_tree().change_scene_to_file("res://levels/tutorial.tscn")
+	var level = data_json.tutorial.level_path
+	get_tree().change_scene_to_file(level)
 
 
 func _on_nivel_1_btn_button_up() -> void:
-	get_tree().change_scene_to_file("res://levels/world.tscn")
+	var level = data_json.level_1.level_path
+	get_tree().change_scene_to_file(level)
 
 
 func _on_nivel_2_btn_button_up() -> void:
-	get_tree().change_scene_to_file("res://levels/world4.tscn")
+	var level = data_json.level_2.level_path
+	get_tree().change_scene_to_file(level)
 
 
 func _on_nivel_3_btn_button_up() -> void:
-	get_tree().change_scene_to_file("res://levels/world2.tscn")
+	var level = data_json.level_3.level_path
+	get_tree().change_scene_to_file(level)
 
 
 func _on_back_button_up() -> void:
@@ -61,8 +65,10 @@ func _on_back_button_up() -> void:
 
 
 func _on_nivel_4_btn_button_up() -> void:
-	get_tree().change_scene_to_file("res://levels/world5.tscn")
+	var level = data_json.level_4.level_path
+	get_tree().change_scene_to_file(level)
 
 
 func _on_nivel_5_btn_button_up() -> void:
-	get_tree().change_scene_to_file("res://levels/world6.tscn")
+	var level = data_json.level_5.level_path
+	get_tree().change_scene_to_file(level)
