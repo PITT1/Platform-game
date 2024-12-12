@@ -24,14 +24,7 @@ func set_has_executed_once():
 
 func _on_win_area_body_entered(body: CharacterBody2D) -> void:
 	if body:
-		var data = SaveGameProcesor.load_game()
-		var data_dict: Dictionary = JSON.parse_string(data)
-		var new_data = data_dict.duplicate()
-		new_data["level_1"]["is_level_blocked"] = false
-		new_data["tutorial"]["is_level_pass"] = true
-		SaveGameProcesor.save_game(JSON.stringify(new_data))
-		
-		
+		SaveGameProcesor.save_data_levels("tutorial", "level_1")
 		var instantia = scene_you_win.instantiate()
 		add_child(instantia)
 		instantia.showHud(true)

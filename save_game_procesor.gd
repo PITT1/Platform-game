@@ -56,3 +56,11 @@ func load_game():
 	var content = file.get_as_text()
 	file.close()
 	return content
+
+func save_data_levels(current_level: String, next_level: String):
+	var data = load_game()
+	var data_dict: Dictionary = JSON.parse_string(data)
+	var new_data = data_dict.duplicate()
+	new_data[next_level]["is_level_blocked"] = false
+	new_data[current_level]["is_level_pass"] = true
+	save_game(JSON.stringify(new_data))
