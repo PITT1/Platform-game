@@ -10,12 +10,12 @@ func _ready() -> void:
 
 
 
-func showHud(show: bool):
-	if show == true and is_show == false:
+func showHud(show_hud: bool):
+	if show_hud == true and is_show == false:
 		animation_player.play("victory_in")
 		get_tree().paused = true
 		is_show = true
-	elif show == false and is_show == true:
+	elif show_hud == false and is_show == true:
 		animation_player.play("victory_out")
 		is_show = false
 
@@ -33,3 +33,7 @@ func _on_go_to_menu_levels_btn_button_up() -> void:
 func _on_try_again_btn_button_up() -> void:
 	get_tree().paused = false
 	get_tree().reload_current_scene()
+
+
+func _on_next_level_btn_button_up() -> void:
+	pass # Replace with function body.

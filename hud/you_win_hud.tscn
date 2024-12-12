@@ -167,6 +167,7 @@ process_mode = 3
 stream = ExtResource("2_uqrgv")
 autoplay = true
 
+[connection signal="button_up" from="CanvasLayer/ColorRect/VBoxContainer/next_level_btn" to="." method="_on_next_level_btn_button_up"]
 [connection signal="button_up" from="CanvasLayer/ColorRect/VBoxContainer/try_again_btn" to="." method="_on_try_again_btn_button_up"]
 [connection signal="button_up" from="CanvasLayer/ColorRect/VBoxContainer/go_to_menu_levels_btn" to="." method="_on_go_to_menu_levels_btn_button_up"]
 [connection signal="button_up" from="CanvasLayer/ColorRect/VBoxContainer/quit_btn" to="." method="_on_quit_btn_button_up"]
