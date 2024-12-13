@@ -3,6 +3,7 @@ extends Node2D
 @onready var player: Node2D = $player
 var scene_game_over = preload("res://hud/game_over.tscn")
 var scene_you_win = preload("res://hud/you_win_hud.tscn")
+@onready var tutorial: Node2D = $"."
 
 
 var has_executed_once = false
