@@ -8,27 +8,27 @@ const LEVEL_INIT_CANVAS: Dictionary = {
 		is_level_blocked = false
 	},
 	level_1 = {
-		level_path = "res://levels/world.tscn",
+		level_path = "res://levels/world_1.tscn",
 		is_level_pass = false,
 		is_level_blocked = true
 	},
 	level_2 = {
-		level_path = "res://levels/world2.tscn",
+		level_path = "res://levels/world_2.tscn",
 		is_level_pass = false,
 		is_level_blocked = true
 	},
 	level_3 = {
-		level_path = "res://levels/world4.tscn",
+		level_path = "res://levels/world_3.tscn",
 		is_level_pass = false,
 		is_level_blocked = true
 	},
 	level_4 = {
-		level_path = "res://levels/world5.tscn",
+		level_path = "res://levels/world_4.tscn",
 		is_level_pass = false,
 		is_level_blocked = true
 	},
 	level_5 = {
-		level_path = "res://levels/world6.tscn",
+		level_path = "res://levels/world_5.tscn",
 		is_level_pass = false,
 		is_level_blocked = true
 	},
