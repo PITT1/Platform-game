@@ -1,35 +1,35 @@
 [gd_scene load_steps=37 format=4 uid="uid://b83a6tf2x1e8d"]
 
-[ext_resource type="Script" path="res://levels/world.gd" id="1_1yrse"]
-[ext_resource type="Texture2D" uid="uid://cqy4dbwtshnub" path="res://images/tilemap/main_lev_build_1.png" id="1_x4f6d"]
-[ext_resource type="Texture2D" uid="uid://ca70ef0w8ha0j" path="res://images/tilemap/rocks.png" id="2_gqmac"]
-[ext_resource type="PackedScene" uid="uid://o8autm5pdnbr" path="res://entities/player/player.tscn" id="3_aej4a"]
-[ext_resource type="Texture2D" uid="uid://bg8weivuatkhu" path="res://images/forestBackground/Layer_0011_0.png" id="4_7n838"]
-[ext_resource type="Texture2D" uid="uid://didcklr78knar" path="res://images/tilemap/main_lev_build_2.png" id="4_lw7cc"]
-[ext_resource type="Texture2D" uid="uid://cmboo27ugv0n" path="res://images/forestBackground/Layer_0010_1.png" id="5_cl0vx"]
-[ext_resource type="Texture2D" uid="uid://c7feujk0c0a6e" path="res://images/forestBackground/Layer_0009_2.png" id="6_ickae"]
-[ext_resource type="PackedScene" uid="uid://efyda2cw57qk" path="res://entities/enemies/fly_eye.tscn" id="7_pu52v"]
-[ext_resource type="Texture2D" uid="uid://cql1l2yebgyff" path="res://images/forestBackground/Layer_0008_3.png" id="7_yucw4"]
-[ext_resource type="Texture2D" uid="uid://fvhf8nnbw83n" path="res://images/forestBackground/Layer_0006_4.png" id="8_dd1km"]
-[ext_resource type="PackedScene" uid="uid://dsbr2hrptjhy7" path="res://entities/enemies/skeletons_2.tscn" id="8_led2h"]
-[ext_resource type="PackedScene" uid="uid://bsg8qjsqu632m" path="res://entities/enemies/mutant_mushrom.tscn" id="9_i7mba"]
-[ext_resource type="Texture2D" uid="uid://d2mw7oyi7fhe0" path="res://images/forestBackground/Layer_0005_5.png" id="9_ox3em"]
-[ext_resource type="Texture2D" uid="uid://vwl0thjbhoim" path="res://images/forestBackground/Layer_0003_6.png" id="10_12pd3"]
-[ext_resource type="Script" path="res://obstacles/poison_ivy_zone1.gd" id="10_vqg2f"]
-[ext_resource type="Texture2D" uid="uid://b7ehv6fpfs7tq" path="res://images/forestBackground/Layer_0002_7.png" id="11_drt5s"]
-[ext_resource type="Script" path="res://obstacles/poizon_ivi2.gd" id="11_erqeb"]
-[ext_resource type="PackedScene" uid="uid://dxftx0pehgckf" path="res://hud/lives_hud.tscn" id="12_7egg4"]
-[ext_resource type="Texture2D" uid="uid://cw0vd3e7i3458" path="res://images/forestBackground/Layer_0001_8.png" id="12_d1of2"]
-[ext_resource type="PackedScene" uid="uid://bgjihptpibjv8" path="res://entities/enemies/goblin.tscn" id="13_eau1x"]
-[ext_resource type="Texture2D" uid="uid://cmeod7kijpg53" path="res://images/forestBackground/Layer_0000_9.png" id="13_x4wsm"]
-[ext_resource type="PackedScene" uid="uid://bgurafal77rsb" path="res://particles/ambient_particles.tscn" id="14_scdfk"]
-[ext_resource type="PackedScene" uid="uid://vaeiu1j1eq7t" path="res://hud/pause_button.tscn" id="23_8nbue"]
-[ext_resource type="AudioStream" uid="uid://ctrrlmwdh26ww" path="res://sounds/ambient/Forest Day.ogg" id="24_yi3gg"]
-[ext_resource type="AudioStream" uid="uid://be56c3p3tn8cy" path="res://sounds/ambient/Action 3 (Loop).ogg" id="25_ghwpp"]
-[ext_resource type="PackedScene" uid="uid://dcsf554wvrgne" path="res://controls/tactil_controls_1.tscn" id="26_ha8re"]
+[ext_resource type="Script" path="res://levels/world.gd" id="1_8r8q4"]
+[ext_resource type="Texture2D" uid="uid://cqy4dbwtshnub" path="res://images/tilemap/main_lev_build_1.png" id="2_plftp"]
+[ext_resource type="Texture2D" uid="uid://ca70ef0w8ha0j" path="res://images/tilemap/rocks.png" id="3_4tmwc"]
+[ext_resource type="Texture2D" uid="uid://didcklr78knar" path="res://images/tilemap/main_lev_build_2.png" id="4_pubqv"]
+[ext_resource type="Texture2D" uid="uid://bg8weivuatkhu" path="res://images/forestBackground/Layer_0011_0.png" id="5_evvoe"]
+[ext_resource type="Texture2D" uid="uid://cmboo27ugv0n" path="res://images/forestBackground/Layer_0010_1.png" id="6_idixo"]
+[ext_resource type="Texture2D" uid="uid://c7feujk0c0a6e" path="res://images/forestBackground/Layer_0009_2.png" id="7_ovi8w"]
+[ext_resource type="Texture2D" uid="uid://cql1l2yebgyff" path="res://images/forestBackground/Layer_0008_3.png" id="8_lmbjm"]
+[ext_resource type="Texture2D" uid="uid://fvhf8nnbw83n" path="res://images/forestBackground/Layer_0006_4.png" id="9_l56ur"]
+[ext_resource type="Texture2D" uid="uid://d2mw7oyi7fhe0" path="res://images/forestBackground/Layer_0005_5.png" id="10_0b3is"]
+[ext_resource type="Texture2D" uid="uid://vwl0thjbhoim" path="res://images/forestBackground/Layer_0003_6.png" id="11_m6waq"]
+[ext_resource type="Texture2D" uid="uid://b7ehv6fpfs7tq" path="res://images/forestBackground/Layer_0002_7.png" id="12_do2x8"]
+[ext_resource type="Texture2D" uid="uid://cw0vd3e7i3458" path="res://images/forestBackground/Layer_0001_8.png" id="13_h6q2h"]
+[ext_resource type="Texture2D" uid="uid://cmeod7kijpg53" path="res://images/forestBackground/Layer_0000_9.png" id="14_q2a44"]
+[ext_resource type="PackedScene" uid="uid://efyda2cw57qk" path="res://entities/enemies/fly_eye.tscn" id="15_dhbav"]
+[ext_resource type="PackedScene" uid="uid://dsbr2hrptjhy7" path="res://entities/enemies/skeletons_2.tscn" id="16_4vlbo"]
+[ext_resource type="PackedScene" uid="uid://bsg8qjsqu632m" path="res://entities/enemies/mutant_mushrom.tscn" id="17_8lo0w"]
+[ext_resource type="Script" path="res://obstacles/poison_ivy_zone1.gd" id="18_mjr0x"]
+[ext_resource type="Script" path="res://obstacles/poizon_ivi2.gd" id="19_f8xke"]
+[ext_resource type="PackedScene" uid="uid://bgjihptpibjv8" path="res://entities/enemies/goblin.tscn" id="20_r2qy7"]
+[ext_resource type="PackedScene" uid="uid://o8autm5pdnbr" path="res://entities/player/player.tscn" id="21_4n5uq"]
+[ext_resource type="PackedScene" uid="uid://dxftx0pehgckf" path="res://hud/lives_hud.tscn" id="22_nof7u"]
+[ext_resource type="PackedScene" uid="uid://bgurafal77rsb" path="res://particles/ambient_particles.tscn" id="23_namxc"]
+[ext_resource type="PackedScene" uid="uid://vaeiu1j1eq7t" path="res://hud/pause_button.tscn" id="24_vv14t"]
+[ext_resource type="AudioStream" uid="uid://ctrrlmwdh26ww" path="res://sounds/ambient/Forest Day.ogg" id="25_x1y52"]
+[ext_resource type="AudioStream" uid="uid://be56c3p3tn8cy" path="res://sounds/ambient/Action 3 (Loop).ogg" id="26_cjbx8"]
+[ext_resource type="PackedScene" uid="uid://dcsf554wvrgne" path="res://controls/tactil_controls_1.tscn" id="27_djinx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nfyan"]
-texture = ExtResource("1_x4f6d")
+texture = ExtResource("2_plftp")
 14:18/0 = 0
 14:18/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:18/0 = 0
@@ -599,7 +599,7 @@ texture = ExtResource("1_x4f6d")
 10:47/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3xnb5"]
-texture = ExtResource("2_gqmac")
+texture = ExtResource("3_4tmwc")
 22:2/0 = 0
 23:2/0 = 0
 24:2/0 = 0
@@ -1288,7 +1288,7 @@ texture = ExtResource("2_gqmac")
 52:12/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vxq7i"]
-texture = ExtResource("4_lw7cc")
+texture = ExtResource("4_pubqv")
 9:1/0 = 0
 10:1/0 = 0
 12:1/0 = 0
@@ -2441,7 +2441,7 @@ size = Vector2(81, 145)
 size = Vector2(4971, 82)
 
 [node name="world" type="Node2D"]
-script = ExtResource("1_1yrse")
+script = ExtResource("1_8r8q4")
 metadata/_edit_vertical_guides_ = [823.0]
 
 [node name="TileMap2" type="Node2D" parent="."]
@@ -2479,122 +2479,122 @@ motion_scale = Vector2(0.1, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-texture = ExtResource("4_7n838")
+texture = ExtResource("5_evvoe")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.2, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-texture = ExtResource("5_cl0vx")
+texture = ExtResource("6_idixo")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.3, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-texture = ExtResource("6_ickae")
+texture = ExtResource("7_ovi8w")
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.4, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
-texture = ExtResource("7_yucw4")
+texture = ExtResource("8_lmbjm")
 
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.5, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
-texture = ExtResource("8_dd1km")
+texture = ExtResource("9_l56ur")
 
 [node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.6, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
-texture = ExtResource("9_ox3em")
+texture = ExtResource("10_0b3is")
 
 [node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.7, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer7"]
-texture = ExtResource("10_12pd3")
+texture = ExtResource("11_m6waq")
 
 [node name="ParallaxLayer8" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.8, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer8"]
-texture = ExtResource("11_drt5s")
+texture = ExtResource("12_do2x8")
 
 [node name="ParallaxLayer9" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.9, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer9"]
-texture = ExtResource("12_d1of2")
+texture = ExtResource("13_h6q2h")
 
 [node name="ParallaxLayer10" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer10"]
-texture = ExtResource("13_x4wsm")
+texture = ExtResource("14_q2a44")
 
 [node name="enemies" type="Node2D" parent="."]
 
 [node name="flyEyes" type="Node" parent="enemies"]
 
-[node name="flyEye" parent="enemies/flyEyes" instance=ExtResource("7_pu52v")]
+[node name="flyEye" parent="enemies/flyEyes" instance=ExtResource("15_dhbav")]
 position = Vector2(813, 66)
 
-[node name="flyEye2" parent="enemies/flyEyes" instance=ExtResource("7_pu52v")]
+[node name="flyEye2" parent="enemies/flyEyes" instance=ExtResource("15_dhbav")]
 position = Vector2(769, 25)
 
-[node name="flyEye3" parent="enemies/flyEyes" instance=ExtResource("7_pu52v")]
+[node name="flyEye3" parent="enemies/flyEyes" instance=ExtResource("15_dhbav")]
 position = Vector2(882, 29)
 
-[node name="flyEye4" parent="enemies/flyEyes" instance=ExtResource("7_pu52v")]
+[node name="flyEye4" parent="enemies/flyEyes" instance=ExtResource("15_dhbav")]
 position = Vector2(1476, 297)
 
-[node name="flyEye5" parent="enemies/flyEyes" instance=ExtResource("7_pu52v")]
+[node name="flyEye5" parent="enemies/flyEyes" instance=ExtResource("15_dhbav")]
 position = Vector2(1342, 297)
 
-[node name="flyEye7" parent="enemies/flyEyes" instance=ExtResource("7_pu52v")]
+[node name="flyEye7" parent="enemies/flyEyes" instance=ExtResource("15_dhbav")]
 position = Vector2(3363, -54)
 
 [node name="skeletons" type="Node" parent="enemies"]
 
-[node name="skeletons2" parent="enemies/skeletons" instance=ExtResource("8_led2h")]
+[node name="skeletons2" parent="enemies/skeletons" instance=ExtResource("16_4vlbo")]
 position = Vector2(511, 119)
 
-[node name="skeletons3" parent="enemies/skeletons" instance=ExtResource("8_led2h")]
+[node name="skeletons3" parent="enemies/skeletons" instance=ExtResource("16_4vlbo")]
 position = Vector2(2777, 44)
 
-[node name="skeletons4" parent="enemies/skeletons" instance=ExtResource("8_led2h")]
+[node name="skeletons4" parent="enemies/skeletons" instance=ExtResource("16_4vlbo")]
 position = Vector2(1244, 132)
 
-[node name="CharacterBody2D" parent="enemies/skeletons" instance=ExtResource("8_led2h")]
+[node name="CharacterBody2D" parent="enemies/skeletons" instance=ExtResource("16_4vlbo")]
 position = Vector2(4421.47, 135.092)
 
 [node name="mutantMushrooms" type="Node" parent="enemies"]
 
-[node name="mutant mushrom" parent="enemies/mutantMushrooms" instance=ExtResource("9_i7mba")]
+[node name="mutant mushrom" parent="enemies/mutantMushrooms" instance=ExtResource("17_8lo0w")]
 position = Vector2(1939, 80)
 
-[node name="mutant mushrom2" parent="enemies/mutantMushrooms" instance=ExtResource("9_i7mba")]
+[node name="mutant mushrom2" parent="enemies/mutantMushrooms" instance=ExtResource("17_8lo0w")]
 position = Vector2(2509, 140)
 
-[node name="mutant mushrom3" parent="enemies/mutantMushrooms" instance=ExtResource("9_i7mba")]
+[node name="mutant mushrom3" parent="enemies/mutantMushrooms" instance=ExtResource("17_8lo0w")]
 position = Vector2(4310, 127)
 
 [node name="poison ivy" type="Node" parent="enemies"]
 
 [node name="Area2D" type="Area2D" parent="enemies/poison ivy"]
 collision_layer = 0
-script = ExtResource("10_vqg2f")
+script = ExtResource("18_mjr0x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/poison ivy/Area2D"]
 position = Vector2(2494.5, 189.5)
@@ -2604,7 +2604,7 @@ debug_color = Color(0.890022, 0.0524677, 0.777374, 0.42)
 [node name="Area2D2" type="Area2D" parent="enemies/poison ivy"]
 position = Vector2(3374, 165)
 collision_layer = 0
-script = ExtResource("11_erqeb")
+script = ExtResource("19_f8xke")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/poison ivy/Area2D2"]
 position = Vector2(1, 19.5)
@@ -2613,41 +2613,41 @@ debug_color = Color(0.901714, 0.12666, 0.599443, 0.419608)
 
 [node name="goblins" type="Node" parent="enemies"]
 
-[node name="Goblin" parent="enemies/goblins" instance=ExtResource("13_eau1x")]
+[node name="Goblin" parent="enemies/goblins" instance=ExtResource("20_r2qy7")]
 position = Vector2(3679, 159)
 
-[node name="Goblin2" parent="enemies/goblins" instance=ExtResource("13_eau1x")]
+[node name="Goblin2" parent="enemies/goblins" instance=ExtResource("20_r2qy7")]
 position = Vector2(4055, 222)
 
-[node name="player" parent="." instance=ExtResource("3_aej4a")]
+[node name="player" parent="." instance=ExtResource("21_4n5uq")]
 position = Vector2(171, 114)
 
-[node name="lives-HUD" parent="." instance=ExtResource("12_7egg4")]
+[node name="lives-HUD" parent="." instance=ExtResource("22_nof7u")]
 offset_top = -1.0
 offset_right = 111.0
 offset_bottom = 36.0
 
 [node name="particles" type="Node" parent="."]
 
-[node name="AmbientParticles" parent="particles" instance=ExtResource("14_scdfk")]
+[node name="AmbientParticles" parent="particles" instance=ExtResource("23_namxc")]
 position = Vector2(490, 129)
 
-[node name="AmbientParticles2" parent="particles" instance=ExtResource("14_scdfk")]
+[node name="AmbientParticles2" parent="particles" instance=ExtResource("23_namxc")]
 position = Vector2(1068, 117)
 
-[node name="AmbientParticles3" parent="particles" instance=ExtResource("14_scdfk")]
+[node name="AmbientParticles3" parent="particles" instance=ExtResource("23_namxc")]
 position = Vector2(1485, 137)
 
-[node name="AmbientParticles4" parent="particles" instance=ExtResource("14_scdfk")]
+[node name="AmbientParticles4" parent="particles" instance=ExtResource("23_namxc")]
 position = Vector2(2303, 157)
 
-[node name="AmbientParticles5" parent="particles" instance=ExtResource("14_scdfk")]
+[node name="AmbientParticles5" parent="particles" instance=ExtResource("23_namxc")]
 position = Vector2(3306, 151)
 
-[node name="AmbientParticles6" parent="particles" instance=ExtResource("14_scdfk")]
+[node name="AmbientParticles6" parent="particles" instance=ExtResource("23_namxc")]
 position = Vector2(4085, 152)
 
-[node name="AmbientParticles7" parent="particles" instance=ExtResource("14_scdfk")]
+[node name="AmbientParticles7" parent="particles" instance=ExtResource("23_namxc")]
 position = Vector2(4758, 168)
 
 [node name="win_area" type="Area2D" parent="."]
@@ -2658,7 +2658,7 @@ collision_layer = 0
 position = Vector2(7.35449, -11.9997)
 shape = SubResource("RectangleShape2D_s3g6j")
 
-[node name="PauseButton" parent="." instance=ExtResource("23_8nbue")]
+[node name="PauseButton" parent="." instance=ExtResource("24_vv14t")]
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(288.522, 100.391)
@@ -2671,18 +2671,18 @@ debug_color = Color(0.819608, 0, 0.964706, 0.309804)
 
 [node name="ambient_music" type="AudioStreamPlayer" parent="."]
 process_mode = 3
-stream = ExtResource("24_yi3gg")
+stream = ExtResource("25_x1y52")
 volume_db = -5.0
 autoplay = true
 parameters/looping = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 process_mode = 3
-stream = ExtResource("25_ghwpp")
+stream = ExtResource("26_cjbx8")
 autoplay = true
 parameters/looping = true
 
-[node name="TactilControls1" parent="." instance=ExtResource("26_ha8re")]
+[node name="TactilControls1" parent="." instance=ExtResource("27_djinx")]
 
 [node name="death_zone" type="Area2D" parent="."]
 position = Vector2(645.977, 348.151)

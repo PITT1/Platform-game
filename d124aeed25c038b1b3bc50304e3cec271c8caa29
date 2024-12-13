@@ -1,0 +1,275 @@
+[33mcommit d124aeed25c038b1b3bc50304e3cec271c8caa29[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Thu Dec 12 20:47:18 2024 -0400
+
+    haciendo que el boton de next level funcione
+
+[33mcommit 83c1157990f94ef61b630b80095874e47e749f93[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Thu Dec 12 18:54:35 2024 -0400
+
+    arreglando errores
+
+[33mcommit 0cc043685041aa1e74b22cf11a55212b448523a1[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Thu Dec 12 18:34:37 2024 -0400
+
+    terminando el sistema de guardado
+
+[33mcommit ec70c53cfbe5ff54a422811483bda6afa4197cbd[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Thu Dec 12 15:01:05 2024 -0400
+
+    refactorizando la funcion de guardado de niveles
+
+[33mcommit eb90a981d64026f11016f2f55d56d9bef5e98030[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Thu Dec 12 14:38:50 2024 -0400
+
+    haciendo funcionar el sistema de guardado de partida
+
+[33mcommit fb35d2588ceb682b5baffa8f6f5015aa02529120[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Wed Dec 11 00:37:10 2024 -0400
+
+    lectura listo, pero escritura no, en json
+
+[33mcommit 9b93566a74714bb778e2b8bb3a46b5055ccd3ccc[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Tue Dec 10 22:12:49 2024 -0400
+
+    creando el sistema de bloqueo de niveles
+
+[33mcommit 12bb93c2457c8996d065531b5287f9d385c3d5aa[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Mon Dec 9 23:49:42 2024 -0400
+
+    modificando algunas cosas
+
+[33mcommit c6757b2ca56b17078fbdb3822f32402875eba9aa[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Mon Dec 9 16:50:44 2024 -0400
+
+    agregando icono nuevo
+
+[33mcommit e4e9a82e340c2374f6e356146ba3472f59cf0604[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Mon Dec 9 16:43:17 2024 -0400
+
+    mejorando salto diagonal
+
+[33mcommit bf780c5cd26fac02481e10180769f7613af642fb[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Sun Dec 8 23:49:56 2024 -0400
+
+    haciendo que al ganar se pause la partida
+
+[33mcommit 9094ec51883d3ef739c779b8bbf2c99a873b4252[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Sun Dec 8 23:36:03 2024 -0400
+
+    corrigiendo bugs
+
+[33mcommit 886da681be1fddbcac8da7f90765de9f93b022a9[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Sun Dec 8 23:03:02 2024 -0400
+
+    arreglando el reinicio de nivel desde game over
+
+[33mcommit adfb27cda242f3caf922bf994a877ea9d2db2f74[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Sun Dec 8 21:15:32 2024 -0400
+
+    arreglando algunos errores
+
+[33mcommit 81f6debfed47b6d63687b259c5853010e9fa1e77[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Sun Dec 8 20:49:56 2024 -0400
+
+    mejorando la resolucion de la ventana
+
+[33mcommit 22f7714b41fa2513120585b6937d66afaee73d2d[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Sun Dec 8 19:05:23 2024 -0400
+
+    terminando el nivel facil 6
+
+[33mcommit c10e5ee54c11a0d240b24d21bafba4ed8d96d3ae[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Sun Dec 8 18:12:33 2024 -0400
+
+    creando un mundo facil (world 6)
+
+[33mcommit 1f02a21c3dd110570d0b777878f91bd8874c0cbd[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Sun Dec 8 16:21:21 2024 -0400
+
+    agregando death zone en world1
+
+[33mcommit 1b165419cd3a5a7fc78baccbdda7e075432b5f02[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Sat Dec 7 20:26:21 2024 -0400
+
+    mejorando controles tactiles
+
+[33mcommit 3ade846a0b570cbd210ed89a31119518fdab6521[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Sat Dec 7 15:27:46 2024 -0400
+
+    creando el apk
+
+[33mcommit d60546961ab92766ddbee84cdd78335d5b878cad[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Fri Dec 6 19:11:33 2024 -0400
+
+    sonidos para los fly eyes corrupted
+
+[33mcommit 0d66187a6bdea89f1ff06256639dcf0e84a95ae6[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Fri Dec 6 02:06:43 2024 -0400
+
+    mejorando el hud de corazones
+
+[33mcommit 0d45745e7220fa2b43844620c353ecb4d174e98a[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Wed Dec 4 22:57:22 2024 -0400
+
+    cargando sonidos para fly eyes y fly eyes corrupted
+
+[33mcommit d066b7938bbd92f1b1b45b4d35ae20bceabab00a[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Wed Dec 4 22:28:21 2024 -0400
+
+    terminando el nivel 5
+
+[33mcommit 0f058b75631e9463e34421c67c9998d4f75badb4[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Wed Dec 4 19:56:35 2024 -0400
+
+    todavia con el nivel 5
+
+[33mcommit ca1da13016e29b8d5eb87044a04ca1c135689b1a[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Wed Dec 4 15:05:55 2024 -0400
+
+    avanzando con el nivel 5
+
+[33mcommit b291d602ceacee92c40f837cea4c7bdb950e9de3[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Tue Dec 3 16:47:11 2024 -0400
+
+    terminando con el nivel 5
+
+[33mcommit f8dcad9f4f2ffe9d45873d13e3e0be11a3e1652a[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Mon Dec 2 23:26:30 2024 -0400
+
+    creando el 5to nivel
+
+[33mcommit 3b2fcaf46c62ebb865e591e73f453aa97f74910d[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Sun Dec 1 23:14:24 2024 -0400
+
+    mejorando a la camara en alguno niveles
+
+[33mcommit 09e00376977894f172db94cb748803acaca5e20f[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Sun Dec 1 22:38:20 2024 -0400
+
+    montando sonidos de goblin
+
+[33mcommit ef6a844e087c49c1c4f92544324060fdc817f8f1[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Sun Dec 1 19:41:21 2024 -0400
+
+    mas sonidos para los fly eyes
+
+[33mcommit b3194f7fe422200115c6ce9adc3eb8da17a32ea2[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Sun Dec 1 19:09:52 2024 -0400
+
+    sonidos de impacto del jugador
+
+[33mcommit 2dd0552d40197039fed7ee137c2ae338d1019281[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Sun Dec 1 17:45:07 2024 -0400
+
+    mas sonidos para los skeletons
+
+[33mcommit 71783f125abd334b00bb0924a8fdb52df2b42f8b[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Sun Dec 1 17:10:08 2024 -0400
+
+    sonidos de skeletons y slimes
+
+[33mcommit d2526546aeb6095f9c33dd6b9c4bea845e48cfdd[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Sun Dec 1 15:54:18 2024 -0400
+
+    mas sonidos de ambiente y sonido para los slimes
+
+[33mcommit 79ead65888a80d27da19b0ce437990cf8a862e3f[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Sun Dec 1 02:11:46 2024 -0400
+
+    cargando sonidos del jugador
+
+[33mcommit 23644f9b22ca3962a1f6aa465be2e226717e5c5e[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Sat Nov 30 22:30:49 2024 -0400
+
+    buscando sonidos
+
+[33mcommit 5ee9750f1ab37f9794770f53d72b82aadb7792ad[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Sat Nov 30 00:08:26 2024 -0400
+
+    refactorizando + aparece error de carga
+
+[33mcommit f688af9c8da37bc3daec39543806b79b2f1b5edd[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Fri Nov 29 14:43:58 2024 -0400
+
+    funcion de pausa implementado
+
+[33mcommit 32e35d7a9c36bcba549f2b6fc32af263b5c338d6[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Fri Nov 29 13:24:49 2024 -0400
+
+    creando el hud de pausa
+
+[33mcommit fa02e413cbee19af1f214eac1b015f763d897799[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Thu Nov 28 23:28:42 2024 -0400
+
+    poniendo zonas de victoria en los demas mundos
+
+[33mcommit 5c5fd691be5680d46b9869b24ec994623453edc6[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Thu Nov 28 22:55:24 2024 -0400
+
+    terminando menu de niveles
+
+[33mcommit ab3b51e69759896ce1ab6833e0c05e3aadb5c269[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Wed Nov 27 22:50:17 2024 -0400
+
+    pantalla de victoria y derrota casi listo
+
+[33mcommit ba78a3019633096711d0af8f95990e78a44b04dc[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Wed Nov 27 19:02:16 2024 -0400
+
+    creando pantalla de victoria
+
+[33mcommit aefcb9aa088f5d0799610d40510bdb16e6dbe9de[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Wed Nov 27 00:14:13 2024 -0400
+
+    game over hud listo :D
+
+[33mcommit b996eeea706ad629645021ad91a2833c3264e449[m
+Author: PITT1 <petroleo.plta.97@gmail.com>
+Date:   Tue Nov 26 23:59:16 2024 -0400
+
+    casi terminando el game over hud

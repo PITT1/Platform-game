@@ -1,34 +1,34 @@
 [gd_scene load_steps=32 format=4 uid="uid://o01kysyplujt"]
 
-[ext_resource type="Texture2D" uid="uid://didcklr78knar" path="res://images/tilemap/main_lev_build_2.png" id="1_brmwm"]
-[ext_resource type="Script" path="res://levels/world_2.gd" id="1_rwupv"]
-[ext_resource type="Texture2D" uid="uid://bg8weivuatkhu" path="res://images/forestBackground/Layer_0011_0.png" id="2_6cri1"]
-[ext_resource type="PackedScene" uid="uid://o8autm5pdnbr" path="res://entities/player/player.tscn" id="2_arqvn"]
-[ext_resource type="Texture2D" uid="uid://cmboo27ugv0n" path="res://images/forestBackground/Layer_0010_1.png" id="3_3fxty"]
-[ext_resource type="Texture2D" uid="uid://c7feujk0c0a6e" path="res://images/forestBackground/Layer_0009_2.png" id="4_jq7y4"]
-[ext_resource type="Texture2D" uid="uid://cql1l2yebgyff" path="res://images/forestBackground/Layer_0008_3.png" id="5_qgq5d"]
-[ext_resource type="Texture2D" uid="uid://fvhf8nnbw83n" path="res://images/forestBackground/Layer_0006_4.png" id="6_f1tmx"]
-[ext_resource type="Texture2D" uid="uid://d2mw7oyi7fhe0" path="res://images/forestBackground/Layer_0005_5.png" id="7_bhmu3"]
-[ext_resource type="Texture2D" uid="uid://vwl0thjbhoim" path="res://images/forestBackground/Layer_0003_6.png" id="8_hgq1v"]
-[ext_resource type="Texture2D" uid="uid://b7ehv6fpfs7tq" path="res://images/forestBackground/Layer_0002_7.png" id="9_ctj6g"]
-[ext_resource type="Texture2D" uid="uid://cw0vd3e7i3458" path="res://images/forestBackground/Layer_0001_8.png" id="10_g3smi"]
-[ext_resource type="Texture2D" uid="uid://cmeod7kijpg53" path="res://images/forestBackground/Layer_0000_9.png" id="11_5x03o"]
-[ext_resource type="PackedScene" uid="uid://dimbgqtdp63fu" path="res://entities/enemies/shadow_knight.tscn" id="13_fibvo"]
-[ext_resource type="PackedScene" uid="uid://efyda2cw57qk" path="res://entities/enemies/fly_eye.tscn" id="13_tw2ch"]
-[ext_resource type="PackedScene" uid="uid://dxftx0pehgckf" path="res://hud/lives_hud.tscn" id="14_i5l6s"]
-[ext_resource type="PackedScene" uid="uid://bb75lpghpiuue" path="res://entities/enemies/forrest_mage.tscn" id="15_rrfoq"]
-[ext_resource type="PackedScene" uid="uid://dsbr2hrptjhy7" path="res://entities/enemies/skeletons_2.tscn" id="17_lxcyv"]
-[ext_resource type="PackedScene" uid="uid://bgjihptpibjv8" path="res://entities/enemies/goblin.tscn" id="18_22qif"]
-[ext_resource type="PackedScene" uid="uid://bar58vx48kjox" path="res://entities/enemies/blueSlime.tscn" id="18_leg05"]
-[ext_resource type="PackedScene" uid="uid://bgurafal77rsb" path="res://particles/ambient_particles.tscn" id="20_jshjv"]
-[ext_resource type="PackedScene" uid="uid://54u88oswgal8" path="res://obstacles/trap1.tscn" id="21_l6r0o"]
-[ext_resource type="PackedScene" uid="uid://vaeiu1j1eq7t" path="res://hud/pause_button.tscn" id="23_nlaul"]
-[ext_resource type="AudioStream" uid="uid://ctrrlmwdh26ww" path="res://sounds/ambient/Forest Day.ogg" id="24_v6crl"]
-[ext_resource type="AudioStream" uid="uid://be56c3p3tn8cy" path="res://sounds/ambient/Action 3 (Loop).ogg" id="25_t4tkq"]
-[ext_resource type="PackedScene" uid="uid://dcsf554wvrgne" path="res://controls/tactil_controls_1.tscn" id="26_8ulkj"]
+[ext_resource type="Script" path="res://levels/world_2.gd" id="1_ew0xa"]
+[ext_resource type="Texture2D" uid="uid://didcklr78knar" path="res://images/tilemap/main_lev_build_2.png" id="2_ltel6"]
+[ext_resource type="Texture2D" uid="uid://bg8weivuatkhu" path="res://images/forestBackground/Layer_0011_0.png" id="3_qk8oh"]
+[ext_resource type="Texture2D" uid="uid://cmboo27ugv0n" path="res://images/forestBackground/Layer_0010_1.png" id="4_gsdb2"]
+[ext_resource type="Texture2D" uid="uid://c7feujk0c0a6e" path="res://images/forestBackground/Layer_0009_2.png" id="5_aahf6"]
+[ext_resource type="Texture2D" uid="uid://cql1l2yebgyff" path="res://images/forestBackground/Layer_0008_3.png" id="6_8ywsc"]
+[ext_resource type="Texture2D" uid="uid://fvhf8nnbw83n" path="res://images/forestBackground/Layer_0006_4.png" id="7_h0l33"]
+[ext_resource type="Texture2D" uid="uid://d2mw7oyi7fhe0" path="res://images/forestBackground/Layer_0005_5.png" id="8_3t1r6"]
+[ext_resource type="Texture2D" uid="uid://vwl0thjbhoim" path="res://images/forestBackground/Layer_0003_6.png" id="9_ikq4v"]
+[ext_resource type="Texture2D" uid="uid://b7ehv6fpfs7tq" path="res://images/forestBackground/Layer_0002_7.png" id="10_ygr6l"]
+[ext_resource type="Texture2D" uid="uid://cw0vd3e7i3458" path="res://images/forestBackground/Layer_0001_8.png" id="11_j8du3"]
+[ext_resource type="Texture2D" uid="uid://cmeod7kijpg53" path="res://images/forestBackground/Layer_0000_9.png" id="12_eoxk0"]
+[ext_resource type="PackedScene" uid="uid://dimbgqtdp63fu" path="res://entities/enemies/shadow_knight.tscn" id="13_hkq7h"]
+[ext_resource type="PackedScene" uid="uid://efyda2cw57qk" path="res://entities/enemies/fly_eye.tscn" id="14_mhsw4"]
+[ext_resource type="PackedScene" uid="uid://dxftx0pehgckf" path="res://hud/lives_hud.tscn" id="15_oppfb"]
+[ext_resource type="PackedScene" uid="uid://bb75lpghpiuue" path="res://entities/enemies/forrest_mage.tscn" id="16_mx6ws"]
+[ext_resource type="PackedScene" uid="uid://dsbr2hrptjhy7" path="res://entities/enemies/skeletons_2.tscn" id="17_b5bry"]
+[ext_resource type="PackedScene" uid="uid://bgjihptpibjv8" path="res://entities/enemies/goblin.tscn" id="18_adh8q"]
+[ext_resource type="PackedScene" uid="uid://bar58vx48kjox" path="res://entities/enemies/blueSlime.tscn" id="19_pbrpt"]
+[ext_resource type="PackedScene" uid="uid://o8autm5pdnbr" path="res://entities/player/player.tscn" id="20_xn184"]
+[ext_resource type="PackedScene" uid="uid://bgurafal77rsb" path="res://particles/ambient_particles.tscn" id="21_b2g4f"]
+[ext_resource type="PackedScene" uid="uid://54u88oswgal8" path="res://obstacles/trap1.tscn" id="22_f80i1"]
+[ext_resource type="PackedScene" uid="uid://vaeiu1j1eq7t" path="res://hud/pause_button.tscn" id="23_6avrr"]
+[ext_resource type="AudioStream" uid="uid://ctrrlmwdh26ww" path="res://sounds/ambient/Forest Day.ogg" id="24_d6d7n"]
+[ext_resource type="AudioStream" uid="uid://be56c3p3tn8cy" path="res://sounds/ambient/Action 3 (Loop).ogg" id="25_2pyyt"]
+[ext_resource type="PackedScene" uid="uid://dcsf554wvrgne" path="res://controls/tactil_controls_1.tscn" id="26_3t3hq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f6eew"]
-texture = ExtResource("1_brmwm")
+texture = ExtResource("2_ltel6")
 9:1/0 = 0
 10:1/0 = 0
 12:1/0 = 0
@@ -1309,7 +1309,7 @@ size = Vector2(3825, 138)
 size = Vector2(94.9999, 198)
 
 [node name="World2" type="Node2D"]
-script = ExtResource("1_rwupv")
+script = ExtResource("1_ew0xa")
 
 [node name="TileMap" type="Node" parent="."]
 
@@ -1326,224 +1326,224 @@ motion_scale = Vector2(0.1, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-texture = ExtResource("2_6cri1")
+texture = ExtResource("3_qk8oh")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.2, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-texture = ExtResource("3_3fxty")
+texture = ExtResource("4_gsdb2")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.3, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-texture = ExtResource("4_jq7y4")
+texture = ExtResource("5_aahf6")
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.4, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
-texture = ExtResource("5_qgq5d")
+texture = ExtResource("6_8ywsc")
 
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.5, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
-texture = ExtResource("6_f1tmx")
+texture = ExtResource("7_h0l33")
 
 [node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.6, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
-texture = ExtResource("7_bhmu3")
+texture = ExtResource("8_3t1r6")
 
 [node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.7, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer7"]
-texture = ExtResource("8_hgq1v")
+texture = ExtResource("9_ikq4v")
 
 [node name="ParallaxLayer8" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.8, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer8"]
-texture = ExtResource("9_ctj6g")
+texture = ExtResource("10_ygr6l")
 
 [node name="ParallaxLayer9" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.9, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer9"]
-texture = ExtResource("10_g3smi")
+texture = ExtResource("11_j8du3")
 
 [node name="ParallaxLayer10" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer10"]
-texture = ExtResource("11_5x03o")
+texture = ExtResource("12_eoxk0")
 
-[node name="ShadowKnight" parent="." instance=ExtResource("13_fibvo")]
+[node name="ShadowKnight" parent="." instance=ExtResource("13_hkq7h")]
 position = Vector2(659, 369)
 
 [node name="flyEyes" type="Node" parent="."]
 
-[node name="flyEye" parent="flyEyes" instance=ExtResource("13_tw2ch")]
+[node name="flyEye" parent="flyEyes" instance=ExtResource("14_mhsw4")]
 position = Vector2(1825, 43)
 
-[node name="flyEye2" parent="flyEyes" instance=ExtResource("13_tw2ch")]
+[node name="flyEye2" parent="flyEyes" instance=ExtResource("14_mhsw4")]
 position = Vector2(2092, -137)
 
-[node name="flyEye3" parent="flyEyes" instance=ExtResource("13_tw2ch")]
+[node name="flyEye3" parent="flyEyes" instance=ExtResource("14_mhsw4")]
 position = Vector2(2266, 102)
 
-[node name="flyEye4" parent="flyEyes" instance=ExtResource("13_tw2ch")]
+[node name="flyEye4" parent="flyEyes" instance=ExtResource("14_mhsw4")]
 position = Vector2(2030, 78)
 
-[node name="flyEye5" parent="flyEyes" instance=ExtResource("13_tw2ch")]
+[node name="flyEye5" parent="flyEyes" instance=ExtResource("14_mhsw4")]
 position = Vector2(977, 53)
 
-[node name="flyEye6" parent="flyEyes" instance=ExtResource("13_tw2ch")]
+[node name="flyEye6" parent="flyEyes" instance=ExtResource("14_mhsw4")]
 position = Vector2(1214.96, 30.5229)
 
-[node name="flyEye7" parent="flyEyes" instance=ExtResource("13_tw2ch")]
+[node name="flyEye7" parent="flyEyes" instance=ExtResource("14_mhsw4")]
 position = Vector2(849, -127)
 
-[node name="flyEye8" parent="flyEyes" instance=ExtResource("13_tw2ch")]
+[node name="flyEye8" parent="flyEyes" instance=ExtResource("14_mhsw4")]
 position = Vector2(410, 212)
 
-[node name="lives-HUD" parent="." instance=ExtResource("14_i5l6s")]
+[node name="lives-HUD" parent="." instance=ExtResource("15_oppfb")]
 
-[node name="forrest_mage" parent="." instance=ExtResource("15_rrfoq")]
+[node name="forrest_mage" parent="." instance=ExtResource("16_mx6ws")]
 position = Vector2(1925, 315)
 
-[node name="ShadowKnight2" parent="." instance=ExtResource("13_fibvo")]
+[node name="ShadowKnight2" parent="." instance=ExtResource("13_hkq7h")]
 position = Vector2(1160, 366)
 
 [node name="skeletons" type="Node" parent="."]
 
-[node name="skeletons2" parent="skeletons" instance=ExtResource("17_lxcyv")]
+[node name="skeletons2" parent="skeletons" instance=ExtResource("17_b5bry")]
 position = Vector2(1164, 169)
 
-[node name="CharacterBody2D2" parent="skeletons" instance=ExtResource("17_lxcyv")]
+[node name="CharacterBody2D2" parent="skeletons" instance=ExtResource("17_b5bry")]
 position = Vector2(1323, 177)
 
-[node name="CharacterBody2D3" parent="skeletons" instance=ExtResource("17_lxcyv")]
+[node name="CharacterBody2D3" parent="skeletons" instance=ExtResource("17_b5bry")]
 position = Vector2(1017, 358)
 
-[node name="CharacterBody2D4" parent="skeletons" instance=ExtResource("17_lxcyv")]
+[node name="CharacterBody2D4" parent="skeletons" instance=ExtResource("17_b5bry")]
 position = Vector2(2653, 356)
 
-[node name="CharacterBody2D5" parent="skeletons" instance=ExtResource("17_lxcyv")]
+[node name="CharacterBody2D5" parent="skeletons" instance=ExtResource("17_b5bry")]
 position = Vector2(2721, 32)
 
-[node name="CharacterBody2D6" parent="skeletons" instance=ExtResource("17_lxcyv")]
+[node name="CharacterBody2D6" parent="skeletons" instance=ExtResource("17_b5bry")]
 position = Vector2(2670, 34)
 
-[node name="CharacterBody2D7" parent="skeletons" instance=ExtResource("17_lxcyv")]
+[node name="CharacterBody2D7" parent="skeletons" instance=ExtResource("17_b5bry")]
 position = Vector2(2966, 202)
 
-[node name="CharacterBody2D8" parent="skeletons" instance=ExtResource("17_lxcyv")]
+[node name="CharacterBody2D8" parent="skeletons" instance=ExtResource("17_b5bry")]
 position = Vector2(3085, 195)
 
-[node name="ShadowKnight4" parent="." instance=ExtResource("13_fibvo")]
+[node name="ShadowKnight4" parent="." instance=ExtResource("13_hkq7h")]
 position = Vector2(2330, 361)
 
 [node name="goblins" type="Node" parent="."]
 
-[node name="Goblin" parent="goblins" instance=ExtResource("18_22qif")]
+[node name="Goblin" parent="goblins" instance=ExtResource("18_adh8q")]
 position = Vector2(2981, 364)
 
-[node name="Goblin2" parent="goblins" instance=ExtResource("18_22qif")]
+[node name="Goblin2" parent="goblins" instance=ExtResource("18_adh8q")]
 position = Vector2(2045, 24)
 
-[node name="Goblin3" parent="goblins" instance=ExtResource("18_22qif")]
+[node name="Goblin3" parent="goblins" instance=ExtResource("18_adh8q")]
 position = Vector2(3169, 45)
 
-[node name="Goblin4" parent="goblins" instance=ExtResource("18_22qif")]
+[node name="Goblin4" parent="goblins" instance=ExtResource("18_adh8q")]
 position = Vector2(2911, 46)
 
-[node name="forrest_mage2" parent="." instance=ExtResource("15_rrfoq")]
+[node name="forrest_mage2" parent="." instance=ExtResource("16_mx6ws")]
 position = Vector2(3489, 351)
 
 [node name="blue slime" type="Node" parent="."]
 
-[node name="BlueSlime" parent="blue slime" instance=ExtResource("18_leg05")]
+[node name="BlueSlime" parent="blue slime" instance=ExtResource("19_pbrpt")]
 position = Vector2(971, 201)
 
-[node name="BlueSlime2" parent="blue slime" instance=ExtResource("18_leg05")]
+[node name="BlueSlime2" parent="blue slime" instance=ExtResource("19_pbrpt")]
 position = Vector2(798, 148)
 
-[node name="BlueSlime3" parent="blue slime" instance=ExtResource("18_leg05")]
+[node name="BlueSlime3" parent="blue slime" instance=ExtResource("19_pbrpt")]
 position = Vector2(911, 18)
 
-[node name="BlueSlime4" parent="blue slime" instance=ExtResource("18_leg05")]
+[node name="BlueSlime4" parent="blue slime" instance=ExtResource("19_pbrpt")]
 position = Vector2(3684, 345)
 
-[node name="BlueSlime5" parent="blue slime" instance=ExtResource("18_leg05")]
+[node name="BlueSlime5" parent="blue slime" instance=ExtResource("19_pbrpt")]
 position = Vector2(3164, 364)
 move_to_the_right = false
 
-[node name="BlueSlime6" parent="blue slime" instance=ExtResource("18_leg05")]
+[node name="BlueSlime6" parent="blue slime" instance=ExtResource("19_pbrpt")]
 position = Vector2(3556, 296)
 move_to_the_right = false
 
-[node name="BlueSlime7" parent="blue slime" instance=ExtResource("18_leg05")]
+[node name="BlueSlime7" parent="blue slime" instance=ExtResource("19_pbrpt")]
 position = Vector2(2183, 358)
 
-[node name="BlueSlime8" parent="blue slime" instance=ExtResource("18_leg05")]
+[node name="BlueSlime8" parent="blue slime" instance=ExtResource("19_pbrpt")]
 position = Vector2(2536, 342)
 move_to_the_right = false
 
-[node name="BlueSlime9" parent="blue slime" instance=ExtResource("18_leg05")]
+[node name="BlueSlime9" parent="blue slime" instance=ExtResource("19_pbrpt")]
 position = Vector2(1793, 354)
 
-[node name="player" parent="." instance=ExtResource("2_arqvn")]
+[node name="player" parent="." instance=ExtResource("20_xn184")]
 position = Vector2(153, 373)
 
 [node name="ambient_particles" type="Node" parent="."]
 
-[node name="AmbientParticles" parent="ambient_particles" instance=ExtResource("20_jshjv")]
+[node name="AmbientParticles" parent="ambient_particles" instance=ExtResource("21_b2g4f")]
 position = Vector2(394, 326)
 
-[node name="AmbientParticles2" parent="ambient_particles" instance=ExtResource("20_jshjv")]
+[node name="AmbientParticles2" parent="ambient_particles" instance=ExtResource("21_b2g4f")]
 position = Vector2(1053, 289)
 
-[node name="AmbientParticles3" parent="ambient_particles" instance=ExtResource("20_jshjv")]
+[node name="AmbientParticles3" parent="ambient_particles" instance=ExtResource("21_b2g4f")]
 position = Vector2(1649, 246)
 
-[node name="AmbientParticles4" parent="ambient_particles" instance=ExtResource("20_jshjv")]
+[node name="AmbientParticles4" parent="ambient_particles" instance=ExtResource("21_b2g4f")]
 position = Vector2(2183, 220)
 
-[node name="AmbientParticles5" parent="ambient_particles" instance=ExtResource("20_jshjv")]
+[node name="AmbientParticles5" parent="ambient_particles" instance=ExtResource("21_b2g4f")]
 position = Vector2(2745.41, 221.119)
 
-[node name="AmbientParticles6" parent="ambient_particles" instance=ExtResource("20_jshjv")]
+[node name="AmbientParticles6" parent="ambient_particles" instance=ExtResource("21_b2g4f")]
 position = Vector2(3450.07, 212.009)
 
 [node name="traps" type="Node2D" parent="."]
 
-[node name="Trap1" parent="traps" instance=ExtResource("21_l6r0o")]
+[node name="Trap1" parent="traps" instance=ExtResource("22_f80i1")]
 position = Vector2(782, -10)
 scale = Vector2(0.34, 0.4)
 
-[node name="Trap2" parent="traps" instance=ExtResource("21_l6r0o")]
+[node name="Trap2" parent="traps" instance=ExtResource("22_f80i1")]
 position = Vector2(2185, 372)
 
-[node name="Trap3" parent="traps" instance=ExtResource("21_l6r0o")]
+[node name="Trap3" parent="traps" instance=ExtResource("22_f80i1")]
 position = Vector2(2447, 376)
 
-[node name="Trap4" parent="traps" instance=ExtResource("21_l6r0o")]
+[node name="Trap4" parent="traps" instance=ExtResource("22_f80i1")]
 position = Vector2(3044, 53)
 
-[node name="Trap5" parent="traps" instance=ExtResource("21_l6r0o")]
+[node name="Trap5" parent="traps" instance=ExtResource("22_f80i1")]
 position = Vector2(2598, 52)
 
 [node name="win_area" type="Area2D" parent="."]
@@ -1555,7 +1555,7 @@ position = Vector2(-1.37109, -49.2775)
 shape = SubResource("RectangleShape2D_4k1ai")
 debug_color = Color(5.53504e-07, 0.648218, 0.18792, 0.42)
 
-[node name="PauseButton" parent="." instance=ExtResource("23_nlaul")]
+[node name="PauseButton" parent="." instance=ExtResource("23_6avrr")]
 
 [node name="move_cameras" type="Node2D" parent="."]
 
@@ -1579,18 +1579,18 @@ debug_color = Color(0.65098, 0.32549, 1, 0.321569)
 
 [node name="ambient_music" type="AudioStreamPlayer" parent="."]
 process_mode = 3
-stream = ExtResource("24_v6crl")
+stream = ExtResource("24_d6d7n")
 volume_db = -5.0
 autoplay = true
 parameters/looping = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 process_mode = 3
-stream = ExtResource("25_t4tkq")
+stream = ExtResource("25_2pyyt")
 autoplay = true
 parameters/looping = true
 
-[node name="TactilControls1" parent="." instance=ExtResource("26_8ulkj")]
+[node name="TactilControls1" parent="." instance=ExtResource("26_3t3hq")]
 
 [connection signal="body_entered" from="win_area" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="move_cameras/Area2D2" to="." method="_on_area_2d_2_body_entered"]
