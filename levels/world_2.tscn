@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://o01kysyplujt"]
+[gd_scene load_steps=32 format=4 uid="uid://g3o55bb8f8p1"]
 
 [ext_resource type="Script" path="res://levels/world_2.gd" id="1_ew0xa"]
 [ext_resource type="Texture2D" uid="uid://didcklr78knar" path="res://images/tilemap/main_lev_build_2.png" id="2_ltel6"]

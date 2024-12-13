@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://xh710pugk17t"]
+[gd_scene load_steps=40 format=4 uid="uid://qgtvevmmuiwu"]
 
 [ext_resource type="Script" path="res://levels/world_3.gd" id="1_jpi4c"]
 [ext_resource type="Texture2D" uid="uid://bg8weivuatkhu" path="res://images/forestBackground/Layer_0011_0.png" id="2_mrgq8"]
