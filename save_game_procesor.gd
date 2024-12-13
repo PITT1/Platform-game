@@ -8,27 +8,27 @@ const LEVEL_INIT_CANVAS: Dictionary = {
 		is_level_blocked = false
 	},
 	level_1 = {
-		level_path = "res://levels/world_1.tscn",
+		level_path = "res://levels/world.tscn",
 		is_level_pass = false,
 		is_level_blocked = true
 	},
 	level_2 = {
-		level_path = "res://levels/world_2.tscn",
+		level_path = "res://levels/world2.tscn",
 		is_level_pass = false,
 		is_level_blocked = true
 	},
 	level_3 = {
-		level_path = "res://levels/world_3.tscn",
+		level_path = "res://levels/world4.tscn",
 		is_level_pass = false,
 		is_level_blocked = true
 	},
 	level_4 = {
-		level_path = "res://levels/world_4.tscn",
+		level_path = "res://levels/world5.tscn",
 		is_level_pass = false,
 		is_level_blocked = true
 	},
 	level_5 = {
-		level_path = "res://levels/world_5.tscn",
+		level_path = "res://levels/world6.tscn",
 		is_level_pass = false,
 		is_level_blocked = true
 	},
@@ -51,7 +51,6 @@ func save_game(content: String):
 
 
 func load_game():
-	print("quiero cargar")
 	var file = FileAccess.open(save_game_path, FileAccess.READ)
 	var content = file.get_as_text()
 	file.close()
