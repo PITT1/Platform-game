@@ -43,4 +43,6 @@ func _on_next_level_btn_button_up() -> void:
 	else:
 		get_tree().paused = false
 		var current_level = get_parent().name
+		var num_level = current_level.split("_")
+		print(num_level)
 		print("res://levels/" + current_level + ".tscn")
