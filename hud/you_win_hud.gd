@@ -43,6 +43,7 @@ func _on_next_level_btn_button_up() -> void:
 	else:
 		get_tree().paused = false
 		var current_level = get_parent().name
-		var num_level = current_level.split("_")
-		print(num_level)
-		print("res://levels/" + current_level + ".tscn")
+		var num_current_level = current_level.split("_")
+		var num_next_level = int(num_current_level[1]) + 1
+		var next_level_path = "res://levels/world_" + String.num(num_next_level) + ".tscn"
+		get_tree().change_scene_to_file(next_level_path)
