@@ -1,32 +1,32 @@
 [gd_scene load_steps=32 format=4 uid="uid://dw07e2nhkt8p4"]
 
-[ext_resource type="Script" path="res://levels/tutorial.gd" id="1_pnmuv"]
-[ext_resource type="Texture2D" uid="uid://bg8weivuatkhu" path="res://images/forestBackground/Layer_0011_0.png" id="1_qwo5n"]
-[ext_resource type="Texture2D" uid="uid://cmboo27ugv0n" path="res://images/forestBackground/Layer_0010_1.png" id="2_368hr"]
-[ext_resource type="Texture2D" uid="uid://c7feujk0c0a6e" path="res://images/forestBackground/Layer_0009_2.png" id="3_1r5u1"]
-[ext_resource type="Texture2D" uid="uid://cql1l2yebgyff" path="res://images/forestBackground/Layer_0008_3.png" id="4_rg8jd"]
-[ext_resource type="Texture2D" uid="uid://fvhf8nnbw83n" path="res://images/forestBackground/Layer_0006_4.png" id="5_u45dc"]
-[ext_resource type="Texture2D" uid="uid://d2mw7oyi7fhe0" path="res://images/forestBackground/Layer_0005_5.png" id="6_uk35t"]
-[ext_resource type="Texture2D" uid="uid://vwl0thjbhoim" path="res://images/forestBackground/Layer_0003_6.png" id="7_3qk5t"]
-[ext_resource type="Texture2D" uid="uid://b7ehv6fpfs7tq" path="res://images/forestBackground/Layer_0002_7.png" id="8_abmc4"]
-[ext_resource type="Texture2D" uid="uid://cw0vd3e7i3458" path="res://images/forestBackground/Layer_0001_8.png" id="9_b8ia5"]
-[ext_resource type="Texture2D" uid="uid://cmeod7kijpg53" path="res://images/forestBackground/Layer_0000_9.png" id="10_826hu"]
-[ext_resource type="Texture2D" uid="uid://didcklr78knar" path="res://images/tilemap/main_lev_build_2.png" id="11_bwms1"]
-[ext_resource type="Texture2D" uid="uid://cqy4dbwtshnub" path="res://images/tilemap/main_lev_build_1.png" id="12_1f1uk"]
-[ext_resource type="PackedScene" uid="uid://o8autm5pdnbr" path="res://entities/player/player.tscn" id="13_cpd2s"]
-[ext_resource type="Script" path="res://obstacles/poizon_ivi2.gd" id="14_wkjtj"]
-[ext_resource type="PackedScene" uid="uid://dxftx0pehgckf" path="res://hud/lives_hud.tscn" id="15_3peqv"]
-[ext_resource type="PackedScene" uid="uid://bar58vx48kjox" path="res://entities/enemies/blueSlime.tscn" id="16_8odww"]
-[ext_resource type="PackedScene" uid="uid://bgurafal77rsb" path="res://particles/ambient_particles.tscn" id="17_mmrjp"]
-[ext_resource type="PackedScene" uid="uid://d2g0fw6xmbt60" path="res://signs/sign1.tscn" id="18_55dre"]
-[ext_resource type="PackedScene" uid="uid://dtq4ilw7ldcce" path="res://obstacles/invisible_wall_enemy.tscn" id="19_sw2a5"]
-[ext_resource type="PackedScene" uid="uid://vaeiu1j1eq7t" path="res://hud/pause_button.tscn" id="21_58w7v"]
-[ext_resource type="AudioStream" uid="uid://ctrrlmwdh26ww" path="res://sounds/ambient/Forest Day.ogg" id="22_7q3rk"]
-[ext_resource type="AudioStream" uid="uid://be56c3p3tn8cy" path="res://sounds/ambient/Action 3 (Loop).ogg" id="23_jickv"]
-[ext_resource type="PackedScene" uid="uid://dcsf554wvrgne" path="res://controls/tactil_controls_1.tscn" id="24_phqps"]
+[ext_resource type="Script" path="res://levels/scripts_levels/tutorial.gd" id="1_xc6iy"]
+[ext_resource type="Texture2D" uid="uid://bg8weivuatkhu" path="res://images/forestBackground/Layer_0011_0.png" id="2_gbfg8"]
+[ext_resource type="Texture2D" uid="uid://cmboo27ugv0n" path="res://images/forestBackground/Layer_0010_1.png" id="3_f34m2"]
+[ext_resource type="Texture2D" uid="uid://c7feujk0c0a6e" path="res://images/forestBackground/Layer_0009_2.png" id="4_nqiqd"]
+[ext_resource type="Texture2D" uid="uid://cql1l2yebgyff" path="res://images/forestBackground/Layer_0008_3.png" id="5_vgkqw"]
+[ext_resource type="Texture2D" uid="uid://fvhf8nnbw83n" path="res://images/forestBackground/Layer_0006_4.png" id="6_aq1wk"]
+[ext_resource type="Texture2D" uid="uid://d2mw7oyi7fhe0" path="res://images/forestBackground/Layer_0005_5.png" id="7_oba61"]
+[ext_resource type="Texture2D" uid="uid://vwl0thjbhoim" path="res://images/forestBackground/Layer_0003_6.png" id="8_a6xvb"]
+[ext_resource type="Texture2D" uid="uid://b7ehv6fpfs7tq" path="res://images/forestBackground/Layer_0002_7.png" id="9_kgh3o"]
+[ext_resource type="Texture2D" uid="uid://cw0vd3e7i3458" path="res://images/forestBackground/Layer_0001_8.png" id="10_6vps4"]
+[ext_resource type="Texture2D" uid="uid://cmeod7kijpg53" path="res://images/forestBackground/Layer_0000_9.png" id="11_gwj8x"]
+[ext_resource type="Texture2D" uid="uid://didcklr78knar" path="res://images/tilemap/main_lev_build_2.png" id="12_5hchk"]
+[ext_resource type="Texture2D" uid="uid://cqy4dbwtshnub" path="res://images/tilemap/main_lev_build_1.png" id="13_pq6xb"]
+[ext_resource type="PackedScene" uid="uid://d2g0fw6xmbt60" path="res://signs/sign1.tscn" id="14_jl187"]
+[ext_resource type="PackedScene" uid="uid://o8autm5pdnbr" path="res://entities/player/player.tscn" id="15_h6kia"]
+[ext_resource type="Script" path="res://obstacles/poizon_ivi2.gd" id="16_t88gs"]
+[ext_resource type="PackedScene" uid="uid://dxftx0pehgckf" path="res://hud/lives_hud.tscn" id="17_r7oie"]
+[ext_resource type="PackedScene" uid="uid://bar58vx48kjox" path="res://entities/enemies/blueSlime.tscn" id="18_gik14"]
+[ext_resource type="PackedScene" uid="uid://bgurafal77rsb" path="res://particles/ambient_particles.tscn" id="19_ufmbb"]
+[ext_resource type="PackedScene" uid="uid://dtq4ilw7ldcce" path="res://obstacles/invisible_wall_enemy.tscn" id="20_k8aqe"]
+[ext_resource type="PackedScene" uid="uid://vaeiu1j1eq7t" path="res://hud/pause_button.tscn" id="21_7jmt3"]
+[ext_resource type="AudioStream" uid="uid://ctrrlmwdh26ww" path="res://sounds/ambient/Forest Day.ogg" id="22_2qn10"]
+[ext_resource type="AudioStream" uid="uid://be56c3p3tn8cy" path="res://sounds/ambient/Action 3 (Loop).ogg" id="23_ok5iq"]
+[ext_resource type="PackedScene" uid="uid://dcsf554wvrgne" path="res://controls/tactil_controls_1.tscn" id="24_bpvip"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ahmk"]
-texture = ExtResource("11_bwms1")
+texture = ExtResource("12_5hchk")
 9:1/0 = 0
 10:1/0 = 0
 12:1/0 = 0
@@ -1490,7 +1490,7 @@ texture = ExtResource("11_bwms1")
 60:62/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fu1y1"]
-texture = ExtResource("12_1f1uk")
+texture = ExtResource("13_pq6xb")
 4:1/0 = 0
 5:1/0 = 0
 41:1/0 = 0
@@ -2119,7 +2119,7 @@ sources/0 = SubResource("TileSetAtlasSource_1ahmk")
 sources/1 = SubResource("TileSetAtlasSource_fu1y1")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_va6rw"]
-texture = ExtResource("11_bwms1")
+texture = ExtResource("12_5hchk")
 9:1/0 = 0
 9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 10:1/0 = 0
@@ -3541,7 +3541,7 @@ size = Vector2(94, 11)
 size = Vector2(100, 86)
 
 [node name="tutorial" type="Node2D"]
-script = ExtResource("1_pnmuv")
+script = ExtResource("1_xc6iy")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 offset = Vector2(200, 50)
@@ -3552,69 +3552,69 @@ motion_scale = Vector2(0.1, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-texture = ExtResource("1_qwo5n")
+texture = ExtResource("2_gbfg8")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.2, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-texture = ExtResource("2_368hr")
+texture = ExtResource("3_f34m2")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.3, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-texture = ExtResource("3_1r5u1")
+texture = ExtResource("4_nqiqd")
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.4, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
-texture = ExtResource("4_rg8jd")
+texture = ExtResource("5_vgkqw")
 
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.5, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
-texture = ExtResource("5_u45dc")
+texture = ExtResource("6_aq1wk")
 
 [node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.6, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
-texture = ExtResource("6_uk35t")
+texture = ExtResource("7_oba61")
 
 [node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.7, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer7"]
-texture = ExtResource("7_3qk5t")
+texture = ExtResource("8_a6xvb")
 
 [node name="ParallaxLayer8" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.8, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer8"]
-texture = ExtResource("8_abmc4")
+texture = ExtResource("9_kgh3o")
 
 [node name="ParallaxLayer9" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.9, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer9"]
-texture = ExtResource("9_b8ia5")
+texture = ExtResource("10_6vps4")
 
 [node name="ParallaxLayer10" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer10"]
-texture = ExtResource("10_826hu")
+texture = ExtResource("11_gwj8x")
 
 [node name="TileMap" type="Node" parent="."]
 
@@ -3629,31 +3629,31 @@ tile_set = SubResource("TileSet_7atai")
 
 [node name="signs" type="Node2D" parent="."]
 
-[node name="Sign1" parent="signs" instance=ExtResource("18_55dre")]
+[node name="Sign1" parent="signs" instance=ExtResource("14_jl187")]
 position = Vector2(350, 373)
 text = "intenta saltar los obstaculos con el boton de salto"
 
-[node name="Sign2" parent="signs" instance=ExtResource("18_55dre")]
+[node name="Sign2" parent="signs" instance=ExtResource("14_jl187")]
 position = Vector2(988, 374)
 text = "intenta saltar y avanzar rapidamente en el aire para superar este obstaculo"
 
-[node name="Sign3" parent="signs" instance=ExtResource("18_55dre")]
+[node name="Sign3" parent="signs" instance=ExtResource("14_jl187")]
 position = Vector2(1531, 375)
 text = "cuando estes en el aire y estes tocando una pared, puedes pulsar el boton de salto para hacer un salto diagonal"
 
-[node name="Sign4" parent="signs" instance=ExtResource("18_55dre")]
+[node name="Sign4" parent="signs" instance=ExtResource("14_jl187")]
 position = Vector2(1645, 119)
 text = "si estas en el aire y tocas una pared, podras dislizarte lentamente"
 
-[node name="Sign5" parent="signs" instance=ExtResource("18_55dre")]
+[node name="Sign5" parent="signs" instance=ExtResource("14_jl187")]
 position = Vector2(1896, 374)
 text = "supera este obstaculo usando saltos diagonales "
 
-[node name="Sign6" parent="signs" instance=ExtResource("18_55dre")]
+[node name="Sign6" parent="signs" instance=ExtResource("14_jl187")]
 position = Vector2(1995, -9)
 text = "por cierto, no hay daño por caida, puedes caer de la altura que quieras y no te pasara nada"
 
-[node name="player" parent="." instance=ExtResource("13_cpd2s")]
+[node name="player" parent="." instance=ExtResource("15_h6kia")]
 position = Vector2(194, 360)
 
 [node name="pinchos" type="Node2D" parent="."]
@@ -3662,7 +3662,7 @@ position = Vector2(194, 360)
 position = Vector2(815, 547)
 scale = Vector2(1.4, 1.2)
 collision_layer = 0
-script = ExtResource("14_wkjtj")
+script = ExtResource("16_t88gs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pinchos/Area2D2"]
 position = Vector2(1, 19.5)
@@ -3673,41 +3673,41 @@ debug_color = Color(0.901714, 0.12666, 0.599443, 0.419608)
 position = Vector2(1159, 552)
 scale = Vector2(2, 1.2)
 collision_layer = 0
-script = ExtResource("14_wkjtj")
+script = ExtResource("16_t88gs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pinchos/Area2D3"]
 position = Vector2(1, 19.5)
 shape = SubResource("RectangleShape2D_yclpb")
 debug_color = Color(0.901714, 0.12666, 0.599443, 0.419608)
 
-[node name="lives-HUD" parent="." instance=ExtResource("15_3peqv")]
+[node name="lives-HUD" parent="." instance=ExtResource("17_r7oie")]
 
 [node name="slimes" type="Node2D" parent="."]
 
-[node name="BlueSlime" parent="slimes" instance=ExtResource("16_8odww")]
+[node name="BlueSlime" parent="slimes" instance=ExtResource("18_gik14")]
 position = Vector2(2434, 374)
 
-[node name="BlueSlime2" parent="slimes" instance=ExtResource("16_8odww")]
+[node name="BlueSlime2" parent="slimes" instance=ExtResource("18_gik14")]
 position = Vector2(2879, 366)
 
 [node name="ambient_particles" type="Node" parent="."]
 
-[node name="AmbientParticles" parent="ambient_particles" instance=ExtResource("17_mmrjp")]
+[node name="AmbientParticles" parent="ambient_particles" instance=ExtResource("19_ufmbb")]
 position = Vector2(394, 326)
 
-[node name="AmbientParticles2" parent="ambient_particles" instance=ExtResource("17_mmrjp")]
+[node name="AmbientParticles2" parent="ambient_particles" instance=ExtResource("19_ufmbb")]
 position = Vector2(1053, 289)
 
-[node name="AmbientParticles3" parent="ambient_particles" instance=ExtResource("17_mmrjp")]
+[node name="AmbientParticles3" parent="ambient_particles" instance=ExtResource("19_ufmbb")]
 position = Vector2(1649, 246)
 
-[node name="AmbientParticles4" parent="ambient_particles" instance=ExtResource("17_mmrjp")]
+[node name="AmbientParticles4" parent="ambient_particles" instance=ExtResource("19_ufmbb")]
 position = Vector2(2183, 220)
 
-[node name="AmbientParticles5" parent="ambient_particles" instance=ExtResource("17_mmrjp")]
+[node name="AmbientParticles5" parent="ambient_particles" instance=ExtResource("19_ufmbb")]
 position = Vector2(2754, 200)
 
-[node name="InvisibleWallEnemy" parent="." instance=ExtResource("19_sw2a5")]
+[node name="InvisibleWallEnemy" parent="." instance=ExtResource("20_k8aqe")]
 position = Vector2(2982, 380)
 
 [node name="win_area" type="Area2D" parent="."]
@@ -3718,22 +3718,22 @@ collision_layer = 0
 position = Vector2(16.4436, 3.43872)
 shape = SubResource("RectangleShape2D_8atx2")
 
-[node name="PauseButton" parent="." instance=ExtResource("21_58w7v")]
+[node name="PauseButton" parent="." instance=ExtResource("21_7jmt3")]
 
 [node name="ambient_music" type="AudioStreamPlayer" parent="."]
 process_mode = 3
-stream = ExtResource("22_7q3rk")
+stream = ExtResource("22_2qn10")
 volume_db = -5.0
 autoplay = true
 parameters/looping = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 process_mode = 3
-stream = ExtResource("23_jickv")
+stream = ExtResource("23_ok5iq")
 autoplay = true
 parameters/looping = true
 
-[node name="TactilControls1" parent="." instance=ExtResource("24_phqps")]
+[node name="TactilControls1" parent="." instance=ExtResource("24_bpvip")]
 
 [connection signal="body_entered" from="pinchos/Area2D2" to="pinchos/Area2D2" method="_on_body_entered"]
 [connection signal="body_entered" from="pinchos/Area2D3" to="pinchos/Area2D3" method="_on_body_entered"]

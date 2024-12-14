@@ -1,33 +1,33 @@
-[gd_scene load_steps=36 format=4 uid="uid://no3yti5mpqns"]
+[gd_scene load_steps=37 format=4 uid="uid://no3yti5mpqns"]
 
-[ext_resource type="Script" path="res://levels/world_5.gd" id="1_aiv61"]
-[ext_resource type="Texture2D" uid="uid://bg8weivuatkhu" path="res://images/forestBackground/Layer_0011_0.png" id="2_fdfey"]
-[ext_resource type="Texture2D" uid="uid://cmboo27ugv0n" path="res://images/forestBackground/Layer_0010_1.png" id="3_8pfl8"]
-[ext_resource type="Texture2D" uid="uid://c7feujk0c0a6e" path="res://images/forestBackground/Layer_0009_2.png" id="4_j6clj"]
-[ext_resource type="Texture2D" uid="uid://cql1l2yebgyff" path="res://images/forestBackground/Layer_0008_3.png" id="5_uc1pt"]
-[ext_resource type="Texture2D" uid="uid://fvhf8nnbw83n" path="res://images/forestBackground/Layer_0006_4.png" id="6_wborl"]
-[ext_resource type="Texture2D" uid="uid://d2mw7oyi7fhe0" path="res://images/forestBackground/Layer_0005_5.png" id="7_fg5yw"]
-[ext_resource type="Texture2D" uid="uid://vwl0thjbhoim" path="res://images/forestBackground/Layer_0003_6.png" id="8_lxgja"]
-[ext_resource type="Texture2D" uid="uid://b7ehv6fpfs7tq" path="res://images/forestBackground/Layer_0002_7.png" id="9_m1twy"]
-[ext_resource type="Texture2D" uid="uid://cw0vd3e7i3458" path="res://images/forestBackground/Layer_0001_8.png" id="10_uakl3"]
-[ext_resource type="Texture2D" uid="uid://cmeod7kijpg53" path="res://images/forestBackground/Layer_0000_9.png" id="11_jmiwv"]
-[ext_resource type="Texture2D" uid="uid://cqy4dbwtshnub" path="res://images/tilemap/main_lev_build_1.png" id="12_i1n3n"]
-[ext_resource type="Texture2D" uid="uid://didcklr78knar" path="res://images/tilemap/main_lev_build_2.png" id="13_sus2j"]
-[ext_resource type="Texture2D" uid="uid://ca70ef0w8ha0j" path="res://images/tilemap/rocks.png" id="14_u5pjf"]
-[ext_resource type="PackedScene" uid="uid://bgurafal77rsb" path="res://particles/ambient_particles.tscn" id="15_bk6si"]
-[ext_resource type="PackedScene" uid="uid://o8autm5pdnbr" path="res://entities/player/player.tscn" id="16_kfa0b"]
-[ext_resource type="AudioStream" uid="uid://ctrrlmwdh26ww" path="res://sounds/ambient/Forest Day.ogg" id="17_gl76q"]
-[ext_resource type="AudioStream" uid="uid://be56c3p3tn8cy" path="res://sounds/ambient/Action 3 (Loop).ogg" id="18_1u8ak"]
-[ext_resource type="PackedScene" uid="uid://dxftx0pehgckf" path="res://hud/lives_hud.tscn" id="19_adxgp"]
-[ext_resource type="PackedScene" uid="uid://vaeiu1j1eq7t" path="res://hud/pause_button.tscn" id="20_lh6l4"]
-[ext_resource type="PackedScene" uid="uid://bar58vx48kjox" path="res://entities/enemies/blueSlime.tscn" id="21_6qb8b"]
-[ext_resource type="PackedScene" uid="uid://bsg8qjsqu632m" path="res://entities/enemies/mutant_mushrom.tscn" id="22_pqs7h"]
-[ext_resource type="PackedScene" uid="uid://dsbr2hrptjhy7" path="res://entities/enemies/skeletons_2.tscn" id="23_bqbnt"]
-[ext_resource type="PackedScene" uid="uid://dtq4ilw7ldcce" path="res://obstacles/invisible_wall_enemy.tscn" id="24_78mwh"]
-[ext_resource type="PackedScene" uid="uid://dcsf554wvrgne" path="res://controls/tactil_controls_1.tscn" id="25_rm52t"]
+[ext_resource type="Script" path="res://levels/scripts_levels/world_5.gd" id="1_cscah"]
+[ext_resource type="Texture2D" uid="uid://bg8weivuatkhu" path="res://images/forestBackground/Layer_0011_0.png" id="2_8iv4w"]
+[ext_resource type="Texture2D" uid="uid://cmboo27ugv0n" path="res://images/forestBackground/Layer_0010_1.png" id="3_na5eo"]
+[ext_resource type="Texture2D" uid="uid://c7feujk0c0a6e" path="res://images/forestBackground/Layer_0009_2.png" id="4_0q151"]
+[ext_resource type="Texture2D" uid="uid://cql1l2yebgyff" path="res://images/forestBackground/Layer_0008_3.png" id="5_wn7p0"]
+[ext_resource type="Texture2D" uid="uid://fvhf8nnbw83n" path="res://images/forestBackground/Layer_0006_4.png" id="6_faddp"]
+[ext_resource type="Texture2D" uid="uid://d2mw7oyi7fhe0" path="res://images/forestBackground/Layer_0005_5.png" id="7_27a2q"]
+[ext_resource type="Texture2D" uid="uid://vwl0thjbhoim" path="res://images/forestBackground/Layer_0003_6.png" id="8_5561c"]
+[ext_resource type="Texture2D" uid="uid://b7ehv6fpfs7tq" path="res://images/forestBackground/Layer_0002_7.png" id="9_x7wsa"]
+[ext_resource type="Texture2D" uid="uid://cw0vd3e7i3458" path="res://images/forestBackground/Layer_0001_8.png" id="10_f80pt"]
+[ext_resource type="Texture2D" uid="uid://cmeod7kijpg53" path="res://images/forestBackground/Layer_0000_9.png" id="11_cqud4"]
+[ext_resource type="Texture2D" uid="uid://cqy4dbwtshnub" path="res://images/tilemap/main_lev_build_1.png" id="12_sa3ms"]
+[ext_resource type="Texture2D" uid="uid://didcklr78knar" path="res://images/tilemap/main_lev_build_2.png" id="13_wkmnb"]
+[ext_resource type="Texture2D" uid="uid://ca70ef0w8ha0j" path="res://images/tilemap/rocks.png" id="14_v04qe"]
+[ext_resource type="PackedScene" uid="uid://bgurafal77rsb" path="res://particles/ambient_particles.tscn" id="15_tr55l"]
+[ext_resource type="PackedScene" uid="uid://o8autm5pdnbr" path="res://entities/player/player.tscn" id="16_nnw2x"]
+[ext_resource type="AudioStream" uid="uid://ctrrlmwdh26ww" path="res://sounds/ambient/Forest Day.ogg" id="17_y4sc4"]
+[ext_resource type="AudioStream" uid="uid://be56c3p3tn8cy" path="res://sounds/ambient/Action 3 (Loop).ogg" id="18_wy3fh"]
+[ext_resource type="PackedScene" uid="uid://dxftx0pehgckf" path="res://hud/lives_hud.tscn" id="19_032ug"]
+[ext_resource type="PackedScene" uid="uid://vaeiu1j1eq7t" path="res://hud/pause_button.tscn" id="20_qa5lj"]
+[ext_resource type="PackedScene" uid="uid://bar58vx48kjox" path="res://entities/enemies/blueSlime.tscn" id="21_for3y"]
+[ext_resource type="PackedScene" uid="uid://bsg8qjsqu632m" path="res://entities/enemies/mutant_mushrom.tscn" id="22_xlmy6"]
+[ext_resource type="PackedScene" uid="uid://dsbr2hrptjhy7" path="res://entities/enemies/skeletons_2.tscn" id="23_yif23"]
+[ext_resource type="PackedScene" uid="uid://dtq4ilw7ldcce" path="res://obstacles/invisible_wall_enemy.tscn" id="24_lkalr"]
+[ext_resource type="PackedScene" uid="uid://dcsf554wvrgne" path="res://controls/tactil_controls_1.tscn" id="25_54d7g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aiimx"]
-texture = ExtResource("12_i1n3n")
+texture = ExtResource("12_sa3ms")
 4:1/0 = 0
 5:1/0 = 0
 41:1/0 = 0
@@ -651,7 +651,7 @@ texture = ExtResource("12_i1n3n")
 47:60/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o81at"]
-texture = ExtResource("13_sus2j")
+texture = ExtResource("13_wkmnb")
 9:1/0 = 0
 10:1/0 = 0
 12:1/0 = 0
@@ -1783,7 +1783,7 @@ texture = ExtResource("13_sus2j")
 60:62/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tyclg"]
-texture = ExtResource("14_u5pjf")
+texture = ExtResource("14_v04qe")
 10:1/0 = 0
 11:1/0 = 0
 12:1/0 = 0
@@ -3195,7 +3195,7 @@ sources/1 = SubResource("TileSetAtlasSource_o81at")
 sources/2 = SubResource("TileSetAtlasSource_tyclg")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rlhtw"]
-texture = ExtResource("12_i1n3n")
+texture = ExtResource("12_sa3ms")
 14:18/0 = 0
 14:18/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:18/0 = 0
@@ -3765,7 +3765,7 @@ texture = ExtResource("12_i1n3n")
 10:47/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bgaq0"]
-texture = ExtResource("14_u5pjf")
+texture = ExtResource("14_v04qe")
 22:2/0 = 0
 23:2/0 = 0
 24:2/0 = 0
@@ -4454,7 +4454,7 @@ texture = ExtResource("14_u5pjf")
 52:12/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_melsf"]
-texture = ExtResource("13_sus2j")
+texture = ExtResource("13_wkmnb")
 9:1/0 = 0
 10:1/0 = 0
 12:1/0 = 0
@@ -5597,8 +5597,11 @@ size = Vector2(148, 230)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ljpoe"]
 size = Vector2(908, 191)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dpukw"]
+size = Vector2(109, 193)
+
 [node name="world_5" type="Node2D"]
-script = ExtResource("1_aiv61")
+script = ExtResource("1_cscah")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 offset = Vector2(200, 50)
@@ -5609,69 +5612,69 @@ motion_scale = Vector2(0.1, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-texture = ExtResource("2_fdfey")
+texture = ExtResource("2_8iv4w")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.2, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-texture = ExtResource("3_8pfl8")
+texture = ExtResource("3_na5eo")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.3, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-texture = ExtResource("4_j6clj")
+texture = ExtResource("4_0q151")
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.4, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
-texture = ExtResource("5_uc1pt")
+texture = ExtResource("5_wn7p0")
 
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.5, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
-texture = ExtResource("6_wborl")
+texture = ExtResource("6_faddp")
 
 [node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.6, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
-texture = ExtResource("7_fg5yw")
+texture = ExtResource("7_27a2q")
 
 [node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.7, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer7"]
-texture = ExtResource("8_lxgja")
+texture = ExtResource("8_5561c")
 
 [node name="ParallaxLayer8" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.8, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer8"]
-texture = ExtResource("9_m1twy")
+texture = ExtResource("9_x7wsa")
 
 [node name="ParallaxLayer9" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.9, 1)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer9"]
-texture = ExtResource("10_uakl3")
+texture = ExtResource("10_f80pt")
 
 [node name="ParallaxLayer10" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer10"]
-texture = ExtResource("11_jmiwv")
+texture = ExtResource("11_cqud4")
 
 [node name="tilemap" type="Node2D" parent="."]
 position = Vector2(58.75, 98.75)
@@ -5694,75 +5697,75 @@ tile_set = SubResource("TileSet_uql0r")
 
 [node name="particles" type="Node" parent="."]
 
-[node name="AmbientParticles" parent="particles" instance=ExtResource("15_bk6si")]
+[node name="AmbientParticles" parent="particles" instance=ExtResource("15_tr55l")]
 position = Vector2(490, 129)
 
-[node name="AmbientParticles2" parent="particles" instance=ExtResource("15_bk6si")]
+[node name="AmbientParticles2" parent="particles" instance=ExtResource("15_tr55l")]
 position = Vector2(1068, 117)
 
-[node name="AmbientParticles3" parent="particles" instance=ExtResource("15_bk6si")]
+[node name="AmbientParticles3" parent="particles" instance=ExtResource("15_tr55l")]
 position = Vector2(1485, 137)
 
-[node name="AmbientParticles4" parent="particles" instance=ExtResource("15_bk6si")]
+[node name="AmbientParticles4" parent="particles" instance=ExtResource("15_tr55l")]
 position = Vector2(2303, 157)
 
-[node name="AmbientParticles5" parent="particles" instance=ExtResource("15_bk6si")]
+[node name="AmbientParticles5" parent="particles" instance=ExtResource("15_tr55l")]
 position = Vector2(3306, 151)
 
-[node name="player" parent="." instance=ExtResource("16_kfa0b")]
+[node name="player" parent="." instance=ExtResource("16_nnw2x")]
 position = Vector2(174.373, 331.201)
 
 [node name="ambient_music" type="AudioStreamPlayer" parent="."]
 process_mode = 3
-stream = ExtResource("17_gl76q")
+stream = ExtResource("17_y4sc4")
 volume_db = -5.0
 autoplay = true
 parameters/looping = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 process_mode = 3
-stream = ExtResource("18_1u8ak")
+stream = ExtResource("18_wy3fh")
 autoplay = true
 parameters/looping = true
 
-[node name="lives-HUD" parent="." instance=ExtResource("19_adxgp")]
+[node name="lives-HUD" parent="." instance=ExtResource("19_032ug")]
 
-[node name="PauseButton" parent="." instance=ExtResource("20_lh6l4")]
+[node name="PauseButton" parent="." instance=ExtResource("20_qa5lj")]
 
 [node name="enemies" type="Node2D" parent="."]
 
-[node name="BlueSlime" parent="enemies" instance=ExtResource("21_6qb8b")]
+[node name="BlueSlime" parent="enemies" instance=ExtResource("21_for3y")]
 position = Vector2(725, 350)
 move_to_the_right = false
 
-[node name="BlueSlime2" parent="enemies" instance=ExtResource("21_6qb8b")]
+[node name="BlueSlime2" parent="enemies" instance=ExtResource("21_for3y")]
 position = Vector2(969, 356)
 
-[node name="BlueSlime3" parent="enemies" instance=ExtResource("21_6qb8b")]
+[node name="BlueSlime3" parent="enemies" instance=ExtResource("21_for3y")]
 position = Vector2(1124, 358)
 move_to_the_right = false
 
-[node name="mutant mushrom" parent="enemies" instance=ExtResource("22_pqs7h")]
+[node name="mutant mushrom" parent="enemies" instance=ExtResource("22_xlmy6")]
 position = Vector2(1752, 170)
 
-[node name="BlueSlime4" parent="enemies" instance=ExtResource("21_6qb8b")]
+[node name="BlueSlime4" parent="enemies" instance=ExtResource("21_for3y")]
 position = Vector2(1725, 368)
 
-[node name="CharacterBody2D" parent="enemies" instance=ExtResource("23_bqbnt")]
+[node name="CharacterBody2D" parent="enemies" instance=ExtResource("23_yif23")]
 position = Vector2(2417, 341)
 
-[node name="mutant mushrom2" parent="enemies" instance=ExtResource("22_pqs7h")]
+[node name="mutant mushrom2" parent="enemies" instance=ExtResource("22_xlmy6")]
 position = Vector2(2994, 296)
 
-[node name="mutant mushrom3" parent="enemies" instance=ExtResource("22_pqs7h")]
+[node name="mutant mushrom3" parent="enemies" instance=ExtResource("22_xlmy6")]
 position = Vector2(3098, 293)
 
 [node name="obstacles" type="Node2D" parent="."]
 
-[node name="InvisibleWallEnemy" parent="obstacles" instance=ExtResource("24_78mwh")]
+[node name="InvisibleWallEnemy" parent="obstacles" instance=ExtResource("24_lkalr")]
 position = Vector2(1671, 371)
 
-[node name="InvisibleWallEnemy2" parent="obstacles" instance=ExtResource("24_78mwh")]
+[node name="InvisibleWallEnemy2" parent="obstacles" instance=ExtResource("24_lkalr")]
 position = Vector2(1776, 369)
 
 [node name="win_area" type="Area2D" parent="."]
@@ -5783,7 +5786,19 @@ position = Vector2(68.1642, 62.4044)
 shape = SubResource("RectangleShape2D_ljpoe")
 debug_color = Color(0.972549, 0, 0, 0.419608)
 
-[node name="TactilControls1" parent="." instance=ExtResource("25_rm52t")]
+[node name="TactilControls1" parent="." instance=ExtResource("25_54d7g")]
+
+[node name="move_camera" type="Node2D" parent="."]
+
+[node name="camera_move1" type="Area2D" parent="move_camera"]
+position = Vector2(215.352, 300.179)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="move_camera/camera_move1"]
+position = Vector2(-7.85184, -10.6786)
+shape = SubResource("RectangleShape2D_dpukw")
+debug_color = Color(0.764706, 0.168627, 1, 0.380392)
 
 [connection signal="body_entered" from="win_area" to="." method="_on_win_area_body_entered"]
 [connection signal="body_entered" from="death_zone" to="." method="_on_death_zone_body_entered"]
+[connection signal="body_entered" from="move_camera/camera_move1" to="." method="_on_camera_move_1_body_entered"]

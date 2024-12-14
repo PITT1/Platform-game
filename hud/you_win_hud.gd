@@ -45,5 +45,5 @@ func _on_next_level_btn_button_up() -> void:
 		var current_level = get_parent().name
 		var current_level_split = current_level.split("_")
 		var num_next_level = int(current_level_split[1]) + 1
-		var next_level_path = "res://levels/world_" + str(num_next_level) + ".tscn"
+		var next_level_path = "res://levels/escene_levels/world_" + str(num_next_level) + ".tscn"
 		get_tree().change_scene_to_file(next_level_path)
