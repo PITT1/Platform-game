@@ -5981,7 +5981,6 @@ debug_color = Color(0.224124, 0.638541, 1.92523e-07, 0.42)
 [node name="TactilControls1" parent="." instance=ExtResource("30_apl2v")]
 
 [connection signal="body_entered" from="traps/trap_area" to="traps/trap_area" method="_on_body_entered"]
-[connection signal="body_entered" from="traps/trap_area2" to="traps/trap_area2" method="_on_body_entered"]
 [connection signal="body_entered" from="traps/death_zone" to="." method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="traps/trap_area3" to="traps/trap_area3" method="_on_body_entered"]
 [connection signal="body_entered" from="moves_camera/camera_move1" to="." method="_on_camera_move_1_body_entered"]

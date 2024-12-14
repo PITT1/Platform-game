@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://qgtvevmmuiwu"]
+[gd_scene load_steps=41 format=4 uid="uid://qgtvevmmuiwu"]
 
 [ext_resource type="Script" path="res://levels/world_3.gd" id="1_jpi4c"]
 [ext_resource type="Texture2D" uid="uid://bg8weivuatkhu" path="res://images/forestBackground/Layer_0011_0.png" id="2_mrgq8"]
@@ -3554,6 +3554,9 @@ size = Vector2(135, 235.75)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oxk1f"]
 size = Vector2(247, 230)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q3g7f"]
+size = Vector2(5301, 188)
+
 [node name="world_3" type="Node2D"]
 script = ExtResource("1_jpi4c")
 
@@ -3933,6 +3936,14 @@ debug_color = Color(0.745098, 0.207843, 1, 0.184314)
 
 [node name="TactilControls1" parent="." instance=ExtResource("30_pyqe3")]
 
+[node name="death_zone" type="Area2D" parent="."]
+position = Vector2(1523.75, 608.445)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="death_zone"]
+position = Vector2(2479.75, -0.444885)
+shape = SubResource("RectangleShape2D_q3g7f")
+debug_color = Color(0.886275, 0, 0, 0.45098)
+
 [connection signal="body_entered" from="espinas/Area2D2" to="espinas/Area2D2" method="_on_body_entered"]
 [connection signal="body_entered" from="espinas/Area2D3" to="espinas/Area2D3" method="_on_body_entered"]
 [connection signal="body_entered" from="espinas/Area2D4" to="espinas/Area2D4" method="_on_body_entered"]
@@ -3946,3 +3957,4 @@ debug_color = Color(0.745098, 0.207843, 1, 0.184314)
 [connection signal="body_entered" from="move_cameras/move_camera_area" to="." method="_on_move_camera_area_body_entered"]
 [connection signal="body_entered" from="move_cameras/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="move_cameras/Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="death_zone" to="." method="_on_death_zone_body_entered"]
