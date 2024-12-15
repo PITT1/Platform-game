@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwovlghwi0grr"]
+[gd_scene load_steps=6 format=3 uid="uid://cwovlghwi0grr"]
 
 [ext_resource type="FontFile" uid="uid://bl1to454pytpt" path="res://fonts/Raleway-Regular.ttf" id="1_dpu2b"]
 [ext_resource type="Script" path="res://hud/principal_menu.gd" id="1_q8ljf"]
 [ext_resource type="Texture2D" uid="uid://btqyjpkfm2sd" path="res://images/wallpapers/wallpaper1.png" id="2_jo2de"]
+[ext_resource type="PackedScene" uid="uid://bgurafal77rsb" path="res://particles/ambient_particles.tscn" id="4_wu6ot"]
+[ext_resource type="PackedScene" uid="uid://dgt7q2a8bimo2" path="res://particles/leaf_particles.tscn" id="5_28nyp"]
 
 [node name="PrincipalMenu" type="Control"]
 layout_mode = 3
@@ -55,6 +57,12 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_dpu2b")
 theme_override_font_sizes/font_size = 24
 text = "Salir"
+
+[node name="AmbientParticles" parent="." instance=ExtResource("4_wu6ot")]
+position = Vector2(283, 187)
+
+[node name="leaf_particles" parent="." instance=ExtResource("5_28nyp")]
+position = Vector2(323, -94)
 
 [connection signal="button_up" from="ColorRect/VBoxContainer/Button_jugar" to="." method="_on_button_jugar_button_up"]
 [connection signal="button_up" from="ColorRect/VBoxContainer/Button_salir" to="." method="_on_button_salir_button_up"]
