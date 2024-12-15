@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://lecjcny2coda"]
+[gd_scene load_steps=3 format=3 uid="uid://lecjcny2coda"]
 
 [ext_resource type="Script" path="res://hud/menu_levels.gd" id="1_aouwd"]
+[ext_resource type="FontFile" uid="uid://dl3r6e3kek5om" path="res://fonts/EagleLake-Regular.ttf" id="2_o20op"]
 
 [node name="MenuLevels" type="Control"]
 layout_mode = 3
@@ -39,30 +40,37 @@ horizontal_alignment = 1
 
 [node name="tutorial_btn" type="Button" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_o20op")
 text = "Tutorial"
 
 [node name="nivel_1_btn" type="Button" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_o20op")
 text = "Nivel 1"
 
 [node name="nivel_2_btn" type="Button" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_o20op")
 text = "Nivel 2"
 
 [node name="nivel_3_btn" type="Button" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_o20op")
 text = "nivel 3"
 
 [node name="nivel_4_btn" type="Button" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_o20op")
 text = "Nivel 4"
 
 [node name="nivel_5_btn" type="Button" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_o20op")
 text = "nivel 5"
 
 [node name="nivel_6_btn" type="Button" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_o20op")
 text = "nivel 6"
 
 [node name="back" type="Button" parent="ColorRect"]
@@ -73,6 +81,7 @@ anchor_right = 1.0
 offset_left = -38.0
 offset_bottom = 43.0
 grow_horizontal = 0
+theme_override_fonts/font = ExtResource("2_o20op")
 text = "Atras"
 
 [connection signal="button_up" from="ColorRect/VBoxContainer/tutorial_btn" to="." method="_on_tutorial_btn_button_up"]
