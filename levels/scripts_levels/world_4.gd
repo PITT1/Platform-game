@@ -7,65 +7,46 @@ var scene_you_win = preload("res://hud/you_win_hud.tscn")
 var has_executed_once = false
 
 func _process(delta: float) -> void:
-	var playerChild = player.get_children()
-	if not has_executed_once:
-		if playerChild[0].lives < 1:
-			var instantia = scene_game_over.instantiate()
-			add_child(instantia)
-			instantia.showHud(true)
-			set_has_executed_once()
 	if delta:
 		pass
+		
+	var playerChild = player.get_children()
+	if player:
+		if not has_executed_once:
+			if playerChild[0].lives < 1:
+				var instantia = scene_game_over.instantiate()
+				add_child(instantia)
+				instantia.showHud(true)
+				set_has_executed_once()
 
 func set_has_executed_once():
 	has_executed_once = true
 
-
-
-func _on_death_zone_body_entered(body: CharacterBody2D) -> void:
-	body.lives = 0
-
-
-
-func _on_you_win_area_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 	if body:
-		SaveGameProcesor.save_data_levels("level_4", "level_5")
+		var level_split = name.split("_")
+		var next_level = int(level_split[1]) + 1
+		SaveGameProcesor.save_data_levels("level_" + level_split[1], "level_" + str(next_level))
 		var instantia = scene_you_win.instantiate()
 		add_child(instantia)
 		instantia.showHud(true)
 
 
-func _on_camera_move_1_body_entered(body: Node2D) -> void:
-	var pcamPlayer = body.get_child(5).get_child(0)
-	pcamPlayer.set_follow_offset(Vector2(0, 0))
-	pcamPlayer.set_limit_bottom(450)
-
-
-func _on_camera_move_2_body_entered(body: Node2D) -> void:
-	var pcamPlayer = body.get_child(5).get_child(0)
-	pcamPlayer.set_follow_offset(Vector2(0, 100))
-
-
-func _on_camera_move_3_body_entered(body: Node2D) -> void:
+func _on_area_2d_2_body_entered(body: CharacterBody2D) -> void:
 	var pcamPlayer = body.get_child(5).get_child(0)
 	pcamPlayer.set_follow_offset(Vector2(0, 0))
 
 
-func _on_camera_move_4_body_entered(body: Node2D) -> void:
-	var pcamPlayer = body.get_child(5).get_child(0)
-	pcamPlayer.set_follow_offset(Vector2(0, 100))
-
-
-func _on_camera_move_5_body_entered(body: Node2D) -> void:
+func _on_area_2d_2_body_exited(body: CharacterBody2D) -> void:
 	var pcamPlayer = body.get_child(5).get_child(0)
 	pcamPlayer.set_follow_offset(Vector2(0, 0))
 
 
-func _on_camera_move_6_body_entered(body: Node2D) -> void:
+func _on_move_camera_area_2_body_entered(body: CharacterBody2D) -> void:
 	var pcamPlayer = body.get_child(5).get_child(0)
-	pcamPlayer.set_follow_offset(Vector2(0, 100))
+	pcamPlayer.set_follow_offset(Vector2(0, 130))
 
 
-func _on_camera_move_6_body_exited(body: Node2D) -> void:
+func _on_move_camera_area_2_body_exited(body: CharacterBody2D) -> void:
 	var pcamPlayer = body.get_child(5).get_child(0)
 	pcamPlayer.set_follow_offset(Vector2(0, 0))

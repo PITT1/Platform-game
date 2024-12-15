@@ -7,15 +7,16 @@ var scene_you_win = preload("res://hud/you_win_hud.tscn")
 var has_executed_once = false
 
 func _process(delta: float) -> void:
-	var playerChild = player.get_children()
-	if not has_executed_once:
-		if playerChild[0].lives < 1:
-			var instantia = scene_game_over.instantiate()
-			add_child(instantia)
-			instantia.showHud(true)
-			set_has_executed_once()
-	if delta:
-		pass
+	if player:
+		var playerChild = player.get_children()
+		if not has_executed_once:
+			if playerChild[0].lives < 1:
+				var instantia = scene_game_over.instantiate()
+				add_child(instantia)
+				instantia.showHud(true)
+				set_has_executed_once()
+		if delta:
+			pass
 
 func set_has_executed_once():
 	has_executed_once = true

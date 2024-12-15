@@ -29,7 +29,7 @@
 [ext_resource type="AudioStream" uid="uid://ctrrlmwdh26ww" path="res://sounds/ambient/Forest Day.ogg" id="27_7uekb"]
 [ext_resource type="AudioStream" uid="uid://be56c3p3tn8cy" path="res://sounds/ambient/Action 3 (Loop).ogg" id="28_e53wy"]
 [ext_resource type="PackedScene" uid="uid://dcsf554wvrgne" path="res://controls/tactil_controls_1.tscn" id="29_415t7"]
-[ext_resource type="Script" path="res://levels/scripts_levels/world_3.gd" id="30_5e3o8"]
+[ext_resource type="Script" path="res://levels/scripts_levels/world_3.gd" id="30_fm6p2"]
 
 [sub_resource type="GDScript" id="GDScript_gtwoe"]
 script/source = "extends Node2D
@@ -57,7 +57,9 @@ func set_has_executed_once():
 
 func _on_win_area_body_entered(body: CharacterBody2D) -> void:
 	if body:
-		SaveGameProcesor.save_data_levels(\"level_3\", \"level_4\")
+		var level_split = name.split(\"_\")
+		var next_level = int(level_split[1]) + 1
+		SaveGameProcesor.save_data_levels(\"level_\" + level_split[1], \"level_\" + str(next_level))
 		var instantia = scene_you_win.instantiate()
 		add_child(instantia)
 		instantia.showHud(true)
@@ -3990,7 +3992,7 @@ debug_color = Color(0.745098, 0.207843, 1, 0.184314)
 
 [node name="death_zone" type="Area2D" parent="."]
 position = Vector2(1523.75, 608.445)
-script = ExtResource("30_5e3o8")
+script = ExtResource("30_fm6p2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="death_zone"]
 position = Vector2(2479.75, -0.444885)
