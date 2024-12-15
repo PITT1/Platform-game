@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwovlghwi0grr"]
+[gd_scene load_steps=7 format=3 uid="uid://cwovlghwi0grr"]
 
 [ext_resource type="FontFile" uid="uid://bl1to454pytpt" path="res://fonts/Raleway-Regular.ttf" id="1_dpu2b"]
 [ext_resource type="Script" path="res://hud/principal_menu.gd" id="1_q8ljf"]
 [ext_resource type="Texture2D" uid="uid://btqyjpkfm2sd" path="res://images/wallpapers/wallpaper1.png" id="2_jo2de"]
+[ext_resource type="FontFile" uid="uid://dl3r6e3kek5om" path="res://fonts/EagleLake-Regular.ttf" id="3_rigeq"]
 [ext_resource type="PackedScene" uid="uid://bgurafal77rsb" path="res://particles/ambient_particles.tscn" id="4_wu6ot"]
 [ext_resource type="PackedScene" uid="uid://dgt7q2a8bimo2" path="res://particles/leaf_particles.tscn" id="5_28nyp"]
 
@@ -24,6 +25,27 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_jo2de")
 expand_mode = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = 0.232239
+offset_bottom = 161.0
+grow_horizontal = 2
+
+[node name="title" type="Label" parent="ColorRect/CenterContainer"]
+self_modulate = Color(0.770378, 0.783124, 0.791558, 1)
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("3_rigeq")
+theme_override_font_sizes/font_size = 65
+text = "Tiny Brave"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
 layout_mode = 1
