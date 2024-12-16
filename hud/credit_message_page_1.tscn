@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6qnxkomv2oyu"]
+[gd_scene load_steps=7 format=3 uid="uid://b6qnxkomv2oyu"]
 
+[ext_resource type="Script" path="res://hud/credit_message_page_1.gd" id="1_fkhsu"]
 [ext_resource type="FontFile" uid="uid://dl3r6e3kek5om" path="res://fonts/EagleLake-Regular.ttf" id="1_nebkp"]
 
 [sub_resource type="Animation" id="Animation_bpfv4"]
@@ -64,6 +65,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_fkhsu")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -145,3 +147,6 @@ text = "Continuar"
 libraries = {
 "": SubResource("AnimationLibrary_13bgk")
 }
+
+[connection signal="button_up" from="ColorRect/next" to="." method="_on_next_button_up"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
