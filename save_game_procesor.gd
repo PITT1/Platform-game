@@ -49,8 +49,6 @@ func init_save_game():
 		print("el archivo de guardado ya existe")
 	
 	var saved_content = JSON.parse_string(load_game())
-	print("niveles guardados: " + str(saved_content.size()))
-	print("diccionario de niveles: " + str(LEVEL_INIT_CANVAS.size()))
 	
 	if LEVEL_INIT_CANVAS.size() != saved_content.size():
 		saved_content.merge(LEVEL_INIT_CANVAS)
