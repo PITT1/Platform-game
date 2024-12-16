@@ -1,5 +1,4 @@
 extends Control
-@export var page_2: PackedScene
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
@@ -9,11 +8,9 @@ func _ready() -> void:
 
 
 
-func _on_next_button_up() -> void:
-	var instantia = page_2.instantiate()
-	get_parent().add_child(instantia)
+
+func _on_back_button_up() -> void:
 	animation_player.play("page_out")
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	if anim_name == "page_out":
-		queue_free()
+	pass # Replace with function body.
