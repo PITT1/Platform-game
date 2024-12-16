@@ -72,3 +72,7 @@ func _on_nivel_4_btn_button_up() -> void:
 func _on_nivel_5_btn_button_up() -> void:
 	var level = data_json.level_5.level_path
 	get_tree().change_scene_to_file(level)
+
+
+func _on_nivel_6_btn_button_up() -> void:
+	pass # Replace with function body.
