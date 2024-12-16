@@ -32,6 +32,11 @@ const LEVEL_INIT_CANVAS: Dictionary = {
 		is_level_pass = false,
 		is_level_blocked = true
 	},
+	level_6 = {
+		level_path = "res://levels/escene_levels/world_6.tscn",
+		is_level_pass = false,
+		is_level_blocked = true
+	},
 }
 
 func init_save_game():
@@ -42,7 +47,15 @@ func init_save_game():
 		print("archivo guardado por primera vez")
 	else:
 		print("el archivo de guardado ya existe")
-
+	
+	var saved_content = JSON.parse_string(load_game())
+	print("niveles guardados: " + str(saved_content.size()))
+	print("diccionario de niveles: " + str(LEVEL_INIT_CANVAS.size()))
+	
+	if LEVEL_INIT_CANVAS.size() != saved_content.size():
+		saved_content.merge(LEVEL_INIT_CANVAS)
+		save_game(JSON.stringify(saved_content))
+		print("la cantidad de niveles fue actualizada")
 
 func save_game(content: String):
 	var file = FileAccess.open(save_game_path, FileAccess.WRITE)

@@ -90,4 +90,5 @@ text = "Atras"
 [connection signal="button_up" from="ColorRect/VBoxContainer/nivel_3_btn" to="." method="_on_nivel_3_btn_button_up"]
 [connection signal="button_up" from="ColorRect/VBoxContainer/nivel_4_btn" to="." method="_on_nivel_4_btn_button_up"]
 [connection signal="button_up" from="ColorRect/VBoxContainer/nivel_5_btn" to="." method="_on_nivel_5_btn_button_up"]
+[connection signal="button_up" from="ColorRect/VBoxContainer/nivel_6_btn" to="." method="_on_nivel_6_btn_button_up"]
 [connection signal="button_up" from="ColorRect/back" to="." method="_on_back_button_up"]

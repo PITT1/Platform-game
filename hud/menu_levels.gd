@@ -5,6 +5,7 @@ extends Control
 @onready var nivel_3_btn: Button = $ColorRect/VBoxContainer/nivel_3_btn
 @onready var nivel_4_btn: Button = $ColorRect/VBoxContainer/nivel_4_btn
 @onready var nivel_5_btn: Button = $ColorRect/VBoxContainer/nivel_5_btn
+@onready var nivel_6_btn: Button = $ColorRect/VBoxContainer/nivel_6_btn
 
 var data_load: String
 var data_json
@@ -37,6 +38,11 @@ func _ready() -> void:
 		nivel_5_btn.set_disabled(true)
 	else:
 		nivel_5_btn.set_disabled(false)
+	
+	if data_json.level_6.is_level_blocked:
+		nivel_6_btn.set_disabled(true)
+	else:
+		nivel_6_btn.set_disabled(false)
 
 
 
@@ -75,4 +81,5 @@ func _on_nivel_5_btn_button_up() -> void:
 
 
 func _on_nivel_6_btn_button_up() -> void:
-	pass # Replace with function body.
+	var level = data_json.level_6.level_path
+	get_tree().change_scene_to_file(level)
