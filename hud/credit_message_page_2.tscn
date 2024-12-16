@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dcavq0702pxar"]
+[gd_scene load_steps=6 format=3 uid="uid://dcavq0702pxar"]
+
+[ext_resource type="Script" path="res://hud/credit_message_page_2.gd" id="1_4skpt"]
 
 [sub_resource type="Animation" id="Animation_liodk"]
 resource_name = "page_in"
@@ -62,6 +64,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_4skpt")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -70,7 +73,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.478431)
+color = Color(0, 0, 0, 0.588235)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
 layout_mode = 1
@@ -113,3 +116,6 @@ text = "Menu principal"
 libraries = {
 "": SubResource("AnimationLibrary_n2d65")
 }
+
+[connection signal="button_up" from="ColorRect/back" to="." method="_on_back_button_up"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

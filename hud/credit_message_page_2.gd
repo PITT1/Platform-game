@@ -7,10 +7,10 @@ func _ready() -> void:
 	animation_player.play("page_in")
 
 
-
-
 func _on_back_button_up() -> void:
 	animation_player.play("page_out")
 
+
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	pass # Replace with function body.
+	if anim_name == "page_out":
+		queue_free()

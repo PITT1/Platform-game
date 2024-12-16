@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwovlghwi0grr"]
+[gd_scene load_steps=7 format=3 uid="uid://cwovlghwi0grr"]
 
 [ext_resource type="Script" path="res://hud/principal_menu.gd" id="1_q8ljf"]
+[ext_resource type="PackedScene" uid="uid://b6qnxkomv2oyu" path="res://hud/credit_message_page_1.tscn" id="2_ivh11"]
 [ext_resource type="Texture2D" uid="uid://btqyjpkfm2sd" path="res://images/wallpapers/wallpaper1.png" id="2_jo2de"]
 [ext_resource type="FontFile" uid="uid://dl3r6e3kek5om" path="res://fonts/EagleLake-Regular.ttf" id="3_rigeq"]
 [ext_resource type="PackedScene" uid="uid://bgurafal77rsb" path="res://particles/ambient_particles.tscn" id="4_wu6ot"]
@@ -14,6 +15,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_q8ljf")
+page_1_credits = ExtResource("2_ivh11")
 
 [node name="ColorRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -92,4 +94,5 @@ position = Vector2(283, 187)
 position = Vector2(325, -48)
 
 [connection signal="button_up" from="ColorRect/VBoxContainer/Button_jugar" to="." method="_on_button_jugar_button_up"]
+[connection signal="button_up" from="ColorRect/VBoxContainer/Button" to="." method="_on_button_button_up"]
 [connection signal="button_up" from="ColorRect/VBoxContainer/Button_salir" to="." method="_on_button_salir_button_up"]
