@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwovlghwi0grr"]
+[gd_scene load_steps=9 format=3 uid="uid://cwovlghwi0grr"]
 
 [ext_resource type="Script" path="res://hud/principal_menu.gd" id="1_q8ljf"]
 [ext_resource type="PackedScene" uid="uid://b6qnxkomv2oyu" path="res://hud/credit_message_page_1.tscn" id="2_ivh11"]
 [ext_resource type="Texture2D" uid="uid://btqyjpkfm2sd" path="res://images/wallpapers/wallpaper1.png" id="2_jo2de"]
 [ext_resource type="FontFile" uid="uid://dl3r6e3kek5om" path="res://fonts/EagleLake-Regular.ttf" id="3_rigeq"]
+[ext_resource type="PackedScene" uid="uid://ds7em1as8udg6" path="res://hud/language_selector.tscn" id="3_s4r4j"]
 [ext_resource type="PackedScene" uid="uid://bgurafal77rsb" path="res://particles/ambient_particles.tscn" id="4_wu6ot"]
 [ext_resource type="Texture2D" uid="uid://cddq7fhl2la3g" path="res://images/translate_btn.png" id="5_2urkn"]
 [ext_resource type="PackedScene" uid="uid://dgt7q2a8bimo2" path="res://particles/leaf_particles.tscn" id="5_28nyp"]
@@ -17,6 +18,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_q8ljf")
 page_1_credits = ExtResource("2_ivh11")
+lang_scn = ExtResource("3_s4r4j")
 
 [node name="textureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -105,3 +107,4 @@ position = Vector2(325, -48)
 [connection signal="button_up" from="textureRect/VBoxContainer/Button_jugar" to="." method="_on_button_jugar_button_up"]
 [connection signal="button_up" from="textureRect/VBoxContainer/button_credits" to="." method="_on_button_button_up"]
 [connection signal="button_up" from="textureRect/VBoxContainer/Button_salir" to="." method="_on_button_salir_button_up"]
+[connection signal="button_up" from="textureRect/button_translate" to="." method="_on_button_translate_button_up"]

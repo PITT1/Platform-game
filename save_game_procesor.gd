@@ -118,6 +118,11 @@ func save_data(content: String):
 	var file = FileAccess.open(save_game_path, FileAccess.WRITE)
 	file.store_string(content)
 	file.close()
+	
+func save_language(content: String):
+	var file = FileAccess.open(LANGUAGE_PATH, FileAccess.WRITE)
+	file.store_string(content)
+	file.close()
 
 
 func load_data():
@@ -125,6 +130,14 @@ func load_data():
 	var content = file.get_as_text()
 	file.close()
 	return content
+	
+func load_language():
+	if FileAccess.file_exists(LANGUAGE_PATH):
+		var file = FileAccess.open(LANGUAGE_PATH, FileAccess.READ)
+		var content = file.get_as_text()
+		file.close()
+		return content
+
 
 func save_data_levels(current_level: String, next_level: String):
 	var data = load_data()

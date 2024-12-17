@@ -15,35 +15,36 @@ func _ready() -> void:
 	data_load = SaveGameProcesor.load_data()
 	data_json = JSON.parse_string(data_load)
 	
-	if data_json.level_1.is_level_blocked:
-		nivel_1_btn.set_disabled(all_levels_unlock)
-	else:
-		nivel_1_btn.set_disabled(false)
+	if not all_levels_unlock == true:	
+		if data_json.level_1.is_level_blocked:
+			nivel_1_btn.set_disabled(true)
+		else:
+			nivel_1_btn.set_disabled(false)
 	
-	if data_json.level_2.is_level_blocked:
-		nivel_2_btn.set_disabled(all_levels_unlock)
-	else:
-		nivel_2_btn.set_disabled(false)
+		if data_json.level_2.is_level_blocked:
+			nivel_2_btn.set_disabled(true)
+		else:
+			nivel_2_btn.set_disabled(false)
 	
-	if data_json.level_3.is_level_blocked:
-		nivel_3_btn.set_disabled(all_levels_unlock)
-	else:
-		nivel_3_btn.set_disabled(false)
+		if data_json.level_3.is_level_blocked:
+			nivel_3_btn.set_disabled(true)
+		else:
+			nivel_3_btn.set_disabled(false)
 	
-	if data_json.level_4.is_level_blocked:
-		nivel_4_btn.set_disabled(all_levels_unlock)
-	else:
-		nivel_4_btn.set_disabled(false)
+		if data_json.level_4.is_level_blocked:
+			nivel_4_btn.set_disabled(true)
+		else:
+			nivel_4_btn.set_disabled(false)
 	
-	if data_json.level_5.is_level_blocked:
-		nivel_5_btn.set_disabled(all_levels_unlock)
-	else:
-		nivel_5_btn.set_disabled(false)
+		if data_json.level_5.is_level_blocked:
+			nivel_5_btn.set_disabled(true)
+		else:
+			nivel_5_btn.set_disabled(false)
 	
-	if data_json.level_6.is_level_blocked:
-		nivel_6_btn.set_disabled(all_levels_unlock)
-	else:
-		nivel_6_btn.set_disabled(false)
+		if data_json.level_6.is_level_blocked:
+			nivel_6_btn.set_disabled(true)
+		else:
+			nivel_6_btn.set_disabled(false)
 
 
 
