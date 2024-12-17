@@ -39,6 +39,62 @@ const LEVEL_INIT_CANVAS: Dictionary = {
 	},
 }
 
+var translate: Dictionary = {
+	selected_language = null,
+	principal_menu = {
+		btn_play = {
+			es = "Jugar",
+			en = "Play"
+		},
+		btn_options = {
+			es = "Opciones",
+			en = "Options"
+		},
+		btn_credits = {
+			es = "Creditos",
+			en = "Credits"
+		},
+		btn_quit = {
+			es = "Salir",
+			en = "Quit"
+		}
+	},
+	menu_levels = {
+		label_title = {
+			es = "Niveles",
+			en = "Levels"
+		},
+		level_1 = {
+			es = "Nivel 1",
+			en = "Level 1"
+		},
+		level_2 = {
+			es = "Nivel 2",
+			en = "Level 2"
+		},
+		level_3 = {
+			es = "Nivel 3",
+			en = "Level 3"
+		},
+		level_4 = {
+			es = "Nivel 4",
+			en = "Level 4"
+		},
+		level_5 = {
+			es = "Nivel 5",
+			en = "Level 5"
+		},
+		level_6 = {
+			es = "Nivel 6",
+			en = "Level 6"
+		},
+		btn_back = {
+			es = "Atras",
+			en = "Back"
+		}
+	}
+}
+
 func init_save_game():
 	if not FileAccess.file_exists(save_game_path):
 		var file = FileAccess.open(save_game_path, FileAccess.WRITE)
