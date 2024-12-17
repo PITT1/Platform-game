@@ -1,6 +1,8 @@
 extends Node
 
 const save_game_path: String = "user://save_game.dat"
+const LANGUAGE_PATH: String = "user://lang.dat"
+
 const LEVEL_INIT_CANVAS: Dictionary = {
 	tutorial = {
 		level_path = "res://levels/escene_levels/tutorial.tscn",
@@ -105,36 +107,36 @@ func init_save_game():
 	else:
 		print("el archivo de guardado ya existe")
 	
-	var saved_content = JSON.parse_string(load_game())
+	var saved_content = JSON.parse_string(load_data())
 	
 	if LEVEL_INIT_CANVAS.size() != saved_content.size():
 		saved_content.merge(LEVEL_INIT_CANVAS)
-		save_game(JSON.stringify(saved_content))
+		save_data(JSON.stringify(saved_content))
 		print("la cantidad de niveles fue actualizada")
 
-func save_game(content: String):
+func save_data(content: String):
 	var file = FileAccess.open(save_game_path, FileAccess.WRITE)
 	file.store_string(content)
 	file.close()
 
 
-func load_game():
+func load_data():
 	var file = FileAccess.open(save_game_path, FileAccess.READ)
 	var content = file.get_as_text()
 	file.close()
 	return content
 
 func save_data_levels(current_level: String, next_level: String):
-	var data = load_game()
+	var data = load_data()
 	var data_dict: Dictionary = JSON.parse_string(data)
 	var new_data = data_dict.duplicate()
 	new_data[next_level]["is_level_blocked"] = false
 	new_data[current_level]["is_level_pass"] = true
-	save_game(JSON.stringify(new_data))
+	save_data(JSON.stringify(new_data))
 
 func save_data_last_level(current_level: String):
-	var data = load_game()
+	var data = load_data()
 	var data_dict: Dictionary = JSON.parse_string(data)
 	var new_data = data_dict.duplicate()
 	new_data[current_level]["is_level_pass"] = true
-	save_game(JSON.stringify(new_data))
+	save_data(JSON.stringify(new_data))

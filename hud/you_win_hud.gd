@@ -38,7 +38,7 @@ func _on_try_again_btn_button_up() -> void:
 func _on_next_level_btn_button_up() -> void:
 	if get_parent().name == "tutorial":
 		get_tree().paused = false
-		var data = JSON.parse_string(SaveGameProcesor.load_game())
+		var data = JSON.parse_string(SaveGameProcesor.load_data())
 		get_tree().change_scene_to_file(data["level_1"]["level_path"])
 	else:
 		get_tree().paused = false
