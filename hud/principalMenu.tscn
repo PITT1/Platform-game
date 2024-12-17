@@ -17,7 +17,7 @@ grow_vertical = 2
 script = ExtResource("1_q8ljf")
 page_1_credits = ExtResource("2_ivh11")
 
-[node name="ColorRect" type="TextureRect" parent="."]
+[node name="textureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,7 +27,7 @@ grow_vertical = 2
 texture = ExtResource("2_jo2de")
 expand_mode = 3
 
-[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
+[node name="CenterContainer" type="CenterContainer" parent="textureRect"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -35,7 +35,7 @@ offset_right = 0.232239
 offset_bottom = 116.0
 grow_horizontal = 2
 
-[node name="title" type="Label" parent="ColorRect/CenterContainer"]
+[node name="title" type="Label" parent="textureRect/CenterContainer"]
 self_modulate = Color(0.770378, 0.783124, 0.791558, 1)
 texture_filter = 1
 layout_mode = 2
@@ -48,7 +48,7 @@ theme_override_fonts/font = ExtResource("3_rigeq")
 theme_override_font_sizes/font_size = 65
 text = "Tiny Brave"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="textureRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -63,25 +63,25 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
 
-[node name="Button_jugar" type="Button" parent="ColorRect/VBoxContainer"]
+[node name="Button_jugar" type="Button" parent="textureRect/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_rigeq")
 theme_override_font_sizes/font_size = 22
 text = "Jugar"
 
-[node name="Button_options" type="Button" parent="ColorRect/VBoxContainer"]
+[node name="Button_options" type="Button" parent="textureRect/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_rigeq")
 theme_override_font_sizes/font_size = 22
 text = "Opciones"
 
-[node name="Button" type="Button" parent="ColorRect/VBoxContainer"]
+[node name="Button" type="Button" parent="textureRect/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_rigeq")
 theme_override_font_sizes/font_size = 22
 text = "Creditos"
 
-[node name="Button_salir" type="Button" parent="ColorRect/VBoxContainer"]
+[node name="Button_salir" type="Button" parent="textureRect/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_rigeq")
 theme_override_font_sizes/font_size = 22
@@ -93,6 +93,6 @@ position = Vector2(283, 187)
 [node name="leaf_particles" parent="." instance=ExtResource("5_28nyp")]
 position = Vector2(325, -48)
 
-[connection signal="button_up" from="ColorRect/VBoxContainer/Button_jugar" to="." method="_on_button_jugar_button_up"]
-[connection signal="button_up" from="ColorRect/VBoxContainer/Button" to="." method="_on_button_button_up"]
-[connection signal="button_up" from="ColorRect/VBoxContainer/Button_salir" to="." method="_on_button_salir_button_up"]
+[connection signal="button_up" from="textureRect/VBoxContainer/Button_jugar" to="." method="_on_button_jugar_button_up"]
+[connection signal="button_up" from="textureRect/VBoxContainer/Button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="textureRect/VBoxContainer/Button_salir" to="." method="_on_button_salir_button_up"]

@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://lecjcny2coda"]
+[gd_scene load_steps=6 format=3 uid="uid://lecjcny2coda"]
 
 [ext_resource type="Script" path="res://hud/menu_levels.gd" id="1_aouwd"]
+[ext_resource type="Texture2D" uid="uid://btqyjpkfm2sd" path="res://images/wallpapers/wallpaper1.png" id="2_hb206"]
 [ext_resource type="FontFile" uid="uid://dl3r6e3kek5om" path="res://fonts/EagleLake-Regular.ttf" id="2_o20op"]
+[ext_resource type="PackedScene" uid="uid://bgurafal77rsb" path="res://particles/ambient_particles.tscn" id="4_7mna4"]
+[ext_resource type="PackedScene" uid="uid://dgt7q2a8bimo2" path="res://particles/leaf_particles.tscn" id="5_rncct"]
 
 [node name="MenuLevels" type="Control"]
 layout_mode = 3
@@ -12,14 +15,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_aouwd")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.104669, 0.279751, 0.470112, 1)
+texture = ExtResource("2_hb206")
+expand_mode = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
 layout_mode = 1
@@ -78,11 +82,18 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -38.0
+offset_left = -130.0
+offset_right = -72.0
 offset_bottom = 43.0
 grow_horizontal = 0
 theme_override_fonts/font = ExtResource("2_o20op")
 text = "Atras"
+
+[node name="AmbientParticles" parent="ColorRect" instance=ExtResource("4_7mna4")]
+position = Vector2(362, 181)
+
+[node name="leaf_particles" parent="ColorRect" instance=ExtResource("5_rncct")]
+position = Vector2(394.884, -32)
 
 [connection signal="button_up" from="ColorRect/VBoxContainer/tutorial_btn" to="." method="_on_tutorial_btn_button_up"]
 [connection signal="button_up" from="ColorRect/VBoxContainer/nivel_1_btn" to="." method="_on_nivel_1_btn_button_up"]
