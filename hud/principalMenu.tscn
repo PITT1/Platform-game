@@ -75,7 +75,7 @@ theme_override_fonts/font = ExtResource("3_rigeq")
 theme_override_font_sizes/font_size = 22
 text = "Opciones"
 
-[node name="Button" type="Button" parent="textureRect/VBoxContainer"]
+[node name="button_credits" type="Button" parent="textureRect/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_rigeq")
 theme_override_font_sizes/font_size = 22
@@ -94,5 +94,5 @@ position = Vector2(283, 187)
 position = Vector2(325, -48)
 
 [connection signal="button_up" from="textureRect/VBoxContainer/Button_jugar" to="." method="_on_button_jugar_button_up"]
-[connection signal="button_up" from="textureRect/VBoxContainer/Button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="textureRect/VBoxContainer/button_credits" to="." method="_on_button_button_up"]
 [connection signal="button_up" from="textureRect/VBoxContainer/Button_salir" to="." method="_on_button_salir_button_up"]

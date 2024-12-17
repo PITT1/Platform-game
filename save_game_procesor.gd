@@ -39,8 +39,9 @@ const LEVEL_INIT_CANVAS: Dictionary = {
 	},
 }
 
+var select_language = "default"
+
 var translate: Dictionary = {
-	selected_language = null,
 	principal_menu = {
 		btn_play = {
 			es = "Jugar",
