@@ -134,8 +134,6 @@ var dash_available = true
 @export_category("particles")
 @export var jump_particles: PackedScene
 @export var broken_heart_particles: PackedScene
-@export var rain_particles: PackedScene
-@export var rain_type: int = 1
 @export var run_particles: PackedScene
 @export var hit1_enemy_particles: PackedScene
 var count_leaf: float = 0
@@ -225,12 +223,6 @@ func _ready():
 	col = PlayerCollider
 	collision_shape_2d.disabled = true
 	
-	if rain_type == 1:
-		instantiated_rain = rain_particles.instantiate()
-		add_child(instantiated_rain)
-	elif rain_type == 0:
-		pass
-	
 	_updateData()
 	
 func _updateData():
@@ -297,11 +289,6 @@ func _updateData():
 	
 
 func _process(_delta):
-	
-	if rain_type == 0:
-		pass
-	else:
-		instantiated_rain.set_position(Vector2(100, -200))
 	
 	gettingHitAnimation()
 	

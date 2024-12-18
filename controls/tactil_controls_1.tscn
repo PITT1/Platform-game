@@ -1,9 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://dcsf554wvrgne"]
+[gd_scene load_steps=7 format=3 uid="uid://dcsf554wvrgne"]
 
 [ext_resource type="Texture2D" uid="uid://bxb6u0cvc11kr" path="res://images/tactil_controls/arrow.png" id="1_2mc5f"]
 [ext_resource type="Texture2D" uid="uid://smyempfvthds" path="res://images/tactil_controls/arrow_up.png" id="2_a15c5"]
 [ext_resource type="Texture2D" uid="uid://pkjt8fvhlhc6" path="res://images/tactil_controls/attack_btn.png" id="3_fh7ao"]
 [ext_resource type="Texture2D" uid="uid://di1o77au7yowg" path="res://images/tactil_controls/dash_btn.png" id="4_l00mu"]
+
+[sub_resource type="Animation" id="Animation_81lgj"]
+resource_name = "set_disabled"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mwxcj"]
+_data = {
+"set_disabled": SubResource("Animation_81lgj")
+}
 
 [node name="TactilControls1" type="Control"]
 layout_mode = 3
@@ -57,3 +65,8 @@ scale = Vector2(0.286667, 0.306667)
 texture_normal = ExtResource("4_l00mu")
 passby_press = true
 action = "dash"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mwxcj")
+}

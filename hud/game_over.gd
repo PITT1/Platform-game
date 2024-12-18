@@ -8,11 +8,11 @@ func _ready() -> void:
 
 
 
-func showHud(show: bool):
-	if show == true and is_show == false:
+func showHud(show_hud: bool):
+	if show_hud == true and is_show == false:
 		animation_player.play("game_over_input")
 		is_show = true
-	elif show == false and is_show == true:
+	elif show_hud == false and is_show == true:
 		animation_player.play("game_over_out")
 		is_show = false
 
