@@ -29,3 +29,19 @@ func _on_win_area_body_entered(body: CharacterBody2D) -> void:
 		var instantia = scene_you_win.instantiate()
 		add_child(instantia)
 		instantia.showHud(true)
+
+
+func _on_camera_move_1_body_entered(body: Node2D) -> void:
+	var pcamPlayer = body.get_child(5).get_child(0)
+	pcamPlayer.set_follow_offset(Vector2(0, -100))
+
+
+func _on_camera_move_1_body_exited(body: Node2D) -> void:
+	var pcamPlayer = body.get_child(5).get_child(0)
+	pcamPlayer.set_follow_offset(Vector2(0, 0))
+
+
+func _on_lose_area_body_entered(body: CharacterBody2D) -> void:
+	var player_location = body.global_position
+	player_location = player_location + Vector2(-300, -300)
+	body.global_position = player_location
