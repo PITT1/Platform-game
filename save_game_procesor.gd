@@ -116,8 +116,8 @@ var translate: Dictionary = {
 	},
 	you_win_hud = {
 		title_label = {
-			es = "VICTORIA",
-			en = "VICTORY"
+			es = "¡VICTORIA!",
+			en = "VICTORY!"
 		},
 		next_level = {
 			es = "Siguiente nivel",

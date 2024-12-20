@@ -2,10 +2,24 @@ extends Control
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+@onready var label: Label = $CanvasLayer/ColorRect/VBoxContainer/Label
+@onready var btn_try_again: Button = $CanvasLayer/ColorRect/VBoxContainer/btn_try_again
+@onready var btn_to_init_menu: Button = $CanvasLayer/ColorRect/VBoxContainer/btn_to_init_menu
+@onready var btn_quit: Button = $CanvasLayer/ColorRect/VBoxContainer/btn_quit
+
 var is_show: bool = false
 func _ready() -> void:
-	pass
-
+	var lang = SaveGameProcesor.load_language()
+	if lang == "spanish":
+		label.set_text(SaveGameProcesor.translate.game_over_hud.title_labe.es)
+		btn_try_again.set_text(SaveGameProcesor.translate.game_over_hud.try_agai_btn.es)
+		btn_to_init_menu.set_text(SaveGameProcesor.translate.game_over_hud.go_to_main_menu.es)
+		btn_quit.set_text(SaveGameProcesor.translate.game_over_hud.quit.es)
+	elif lang == "english":
+		label.set_text(SaveGameProcesor.translate.game_over_hud.title_labe.en)
+		btn_try_again.set_text(SaveGameProcesor.translate.game_over_hud.try_agai_btn.en)
+		btn_to_init_menu.set_text(SaveGameProcesor.translate.game_over_hud.go_to_main_menu.en)
+		btn_quit.set_text(SaveGameProcesor.translate.game_over_hud.quit.en)
 
 
 func showHud(show_hud: bool):
