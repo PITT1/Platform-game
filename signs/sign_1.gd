@@ -2,12 +2,17 @@ extends StaticBody2D
 @onready var label: Label = $Label
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-@export var text = ""
+@export var level = ""
+@export var id = ""
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	label.set_text(text)
+	var lang = SaveGameProcesor.load_language()
+	if lang == "spanish":
+		label.set_text(SaveGameProcesor.translate[level][id].es)
+	elif lang == "english":
+		label.set_text(SaveGameProcesor.translate[level][id].en)
 
 
 func _on_letter_area_body_entered(body: Node2D) -> void:

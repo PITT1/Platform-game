@@ -135,6 +135,72 @@ var translate: Dictionary = {
 			es = "Salir",
 			en = "Quit"
 		}
+	},
+	level_1 = {
+		id_0 = {
+			es = "Bienvenido :D, primeramente dejame enseñarte a jugar, puedes empezar con moverte de izquierda a derecha con los botones direccionales",
+			en = "Welcome :D, first let me show you how to play, you can start by moving from left to right with the directional buttons"
+		},
+		id_1 = {
+			es = "Usa el boton de salto para superar los siguientes obstaculos, es el que esta abajo a la derecha de tu pantalla",
+			en = "Use the jump button to overcome the following obstacles, it is the one at the bottom right of your screen"
+		},
+		id_2 = {
+			es = "Si mantienes pulsado el botón de salto, puedes elevarte mucho más alto en el aire",
+			en = "If you hold down the jump button, you can rise much higher in the air"
+		},
+		id_3 = {
+			es = "No hay daño por caida, por lo tanto podras caer desde donde quieras y siempre saldras ileso",
+			en = "There is no fall damage, therefore you can fall from wherever you want and you will always come out unscathed."
+		},
+		id_4 = {
+			es = "Hora de aprender a trepar paredes",
+			en = "Time to learn to climb walls"
+		},
+		id_5 = {
+			es = "Salta hacia una pared y cuando la toques, salta denuevo para realizar un salto diagonal",
+			en = "Jump towards a wall and when you touch it, jump again to perform a diagonal jump"
+		},
+		id_6 = {
+			es = "Para hacer el salto diagonal correctamente tienes que mantener pulsado los botones direccionales en direccion a la pared que estas saltando",
+			en = "To do the diagonal jump correctly you have to hold down the directional buttons in the direction of the wall you are jumping"
+		},
+		id_7 = {
+			es = "Es un poco dificil al principio pero te acostumbraras :D",
+			en = "It's a little difficult at first but you'll get used to it :D"
+		},
+		id_8 = {
+			es = "Intenta practicar saltos diagonales consecutivos con el siguiente obstaculo",
+			en = "Try practicing consecutive diagonal jumps with the following obstacle"
+		},
+		id_9 = {
+			es = "Para los siguientes obstaculos tendras que usar el avance rapido, el boton que esta justo arriba del boton de salto",
+			en = "For the next obstacles you will have to use dash, the button just above the jump button"
+		},
+		id_10 = {
+			es = "Usa el avance rapido mientras estas en el aire y podras recorrer mayores distancias",
+			en = "Use dash while you are in the air and you will be able to travel greater distances"
+		},
+		id_11 = {
+			es = "Usa el avance rapido mientras estas en el suelo y rapidamente deja pulsado el boton de salto para realizar un salto largo",
+			en = "Use dash while on the ground and quickly press and hold the jump button to perform a long jump"
+		},
+		id_12 = {
+			es = "Usa el boton de ataque golpear a tus enemigos, es el que tiene el icono de usa espada",
+			en = "Use the attack button to hit your enemies, it is the one with the sword icon"
+		},
+		id_13 = {
+			es = "Trata de saltar siempre que quieras atacar, los ataques en el aire hacen el doble de daño",
+			en = "Try to jump whenever you want to attack, attacks in the air do double damage"
+		},
+		id_14 = {
+			es = "Usa ataque + salto para realizar un combo de 2 ataques consecutivos",
+			en = "Use attack + jump to perform a combo of 2 consecutive attacks"
+		},
+		id_15 = {
+			es = "Buena suerte :D",
+			en = "Good luck :D"
+		}
 	}
 }
 

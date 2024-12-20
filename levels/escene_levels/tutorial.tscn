@@ -4697,19 +4697,23 @@ texture = ExtResource("4_3rwu1")
 
 [node name="Sign1" parent="signs" instance=ExtResource("14_jl187")]
 position = Vector2(355, 373)
-text = "¡Bienvenido! antes de empezar dejame enseñarte como jugar ;), puedes empezar con usar las flechas de direccion para poder moverte, estan justo abajo a la izquierda."
+level = "level_1"
+id = "id_0"
 
 [node name="Sign2" parent="signs" instance=ExtResource("14_jl187")]
 position = Vector2(913, 375)
-text = "usa el boton que esta abajo a la derecha, con signo de flecha para poder saltar"
+level = "level_1"
+id = "id_1"
 
 [node name="Sign3" parent="signs" instance=ExtResource("14_jl187")]
 position = Vector2(1710, 182)
-text = "si mantiendes pulsado el boton de salto, podras saltar mucho mas alto"
+level = "level_1"
+id = "id_2"
 
 [node name="Sign4" parent="signs" instance=ExtResource("14_jl187")]
 position = Vector2(2447, -75)
-text = "no existe el daño por caida, por lo tanto podras caer desde donde quieras y no te pasara nada"
+level = "level_1"
+id = "id_3"
 
 [node name="ArrowInterfaz" type="Sprite2D" parent="signs"]
 position = Vector2(2519, -150)
@@ -4732,11 +4736,13 @@ texture = ExtResource("4_3rwu1")
 
 [node name="Sign5" parent="signs" instance=ExtResource("14_jl187")]
 position = Vector2(2625, 517)
-text = "hora de aprender a trepar paredes"
+level = "level_1"
+id = "id_4"
 
 [node name="Sign6" parent="signs" instance=ExtResource("14_jl187")]
 position = Vector2(2848, 517)
-text = "salta hacia la pared de enfrente y cuando la toques, salta de nuevo para hacer un salto diagonal"
+level = "level_1"
+id = "id_5"
 
 [node name="ArrowInterfaz4" type="Sprite2D" parent="signs"]
 position = Vector2(3036, 494)
@@ -4766,7 +4772,8 @@ texture = ExtResource("4_3rwu1")
 
 [node name="Sign7" parent="signs" instance=ExtResource("14_jl187")]
 position = Vector2(2898, 422)
-text = "para realizar el salto diagonal de forma correcta, tienes que mantener pulsado los botones de direccion en direccion a la pared que estas tocando."
+level = "level_1"
+id = "id_6"
 
 [node name="ArrowInterfaz8" type="Sprite2D" parent="signs"]
 position = Vector2(3030, 240)
@@ -4819,11 +4826,13 @@ flip_h = true
 
 [node name="Sign8" parent="signs" instance=ExtResource("14_jl187")]
 position = Vector2(3002, -74)
-text = "es un poco dificil pero con la practica se hace facil"
+level = "level_1"
+id = "id_7"
 
 [node name="Sign9" parent="signs" instance=ExtResource("14_jl187")]
 position = Vector2(3285, -75)
-text = "intenta practicar saltos diagonales multiples"
+level = "level_1"
+id = "id_8"
 
 [node name="ArrowInterfaz16" type="Sprite2D" parent="signs"]
 position = Vector2(3366, -95)
@@ -4872,15 +4881,18 @@ flip_h = true
 
 [node name="Sign10" parent="signs" instance=ExtResource("14_jl187")]
 position = Vector2(3679, -75)
-text = "si pulsas el boton que esta arriba del boton de salto, podras hacer un \"avance rapido\". Usa el avance rapido para superar diferentes obstaculos"
+level = "level_1"
+id = "id_9"
 
 [node name="Sign11" parent="signs" instance=ExtResource("14_jl187")]
 position = Vector2(3934, -11)
-text = "usa el \"avance rapido\" mientras estas en el aire para superar estos obstaculos"
+level = "level_1"
+id = "id_10"
 
 [node name="Sign12" parent="signs" instance=ExtResource("14_jl187")]
 position = Vector2(4690, -10)
-text = "usa el avance rapido mientras estes en movimiento y rapidamente desliza tu dedo al boton de salto (manteniendolo pulsado) para realizar un \"salto largo\""
+level = "level_1"
+id = "id_11"
 
 [node name="ArrowInterfaz22" type="Sprite2D" parent="signs"]
 position = Vector2(4822, -58)
@@ -4908,20 +4920,24 @@ position = Vector2(180, 0)
 position = Vector2(225, -2)
 
 [node name="Sign13" parent="signs" instance=ExtResource("14_jl187")]
-position = Vector2(5960, -299)
-text = "los ataques hacen mas daño si estas en el aire, cuando ataques trata de saltar siempre"
+position = Vector2(5406, -299)
+level = "level_1"
+id = "id_12"
 
 [node name="Sign14" parent="signs" instance=ExtResource("14_jl187")]
-position = Vector2(6639, -296)
-text = "si pulsas \"atacar\" y rapidamente saltas, haras un combo de 2 golpes rapidos"
+position = Vector2(5969.71, -294.413)
+level = "level_1"
+id = "id_13"
 
 [node name="Sign15" parent="signs" instance=ExtResource("14_jl187")]
-position = Vector2(7368, -297)
-text = "eso fue todo, ¡buena suerte! ;)"
+position = Vector2(6629, -297)
+level = "level_1"
+id = "id_14"
 
 [node name="Sign16" parent="signs" instance=ExtResource("14_jl187")]
-position = Vector2(5403, -298)
-text = "¡al frente hay enemigos! usa el boton de \"atacar\" cuando estes cerca de ellos, si ellos te tocan perderas un corazon, si pierdes todos tus corazones, perderas la partida"
+position = Vector2(7365.11, -297.33)
+level = "level_1"
+id = "id_15"
 
 [node name="message" type="Node2D" parent="."]
 
@@ -5120,7 +5136,7 @@ position = Vector2(5955.88, -298.888)
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="camera_move/camera_move_13"]
-position = Vector2(1.27518, 2.92609)
+position = Vector2(-547.88, -5.112)
 shape = SubResource("RectangleShape2D_vxyh8")
 debug_color = Color(0.688101, 0.290202, 1, 0.42)
 
@@ -5129,7 +5145,7 @@ position = Vector2(6638.02, -297.17)
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="camera_move/camera_move_14"]
-position = Vector2(1.27518, 2.92609)
+position = Vector2(-669.02, -5.82998)
 shape = SubResource("RectangleShape2D_vxyh8")
 debug_color = Color(0.688101, 0.290202, 1, 0.42)
 
@@ -5138,7 +5154,7 @@ position = Vector2(7366.07, -302.606)
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="camera_move/camera_move_15"]
-position = Vector2(1.27518, 2.92609)
+position = Vector2(-738.853, -0.563141)
 shape = SubResource("RectangleShape2D_vxyh8")
 debug_color = Color(0.688101, 0.290202, 1, 0.42)
 
@@ -5156,7 +5172,7 @@ position = Vector2(5401.69, -302.317)
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="camera_move/camera_move_16"]
-position = Vector2(1.27518, 2.92609)
+position = Vector2(1964.76, -0.0132141)
 shape = SubResource("RectangleShape2D_vxyh8")
 debug_color = Color(0.688101, 0.290202, 1, 0.42)
 
