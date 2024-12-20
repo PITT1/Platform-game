@@ -95,6 +95,46 @@ var translate: Dictionary = {
 			es = "Atras",
 			en = "Back"
 		}
+	},
+	game_over_hud = {
+		title_labe = {
+			es = "FIN DEL JUEGO",
+			en = "GAME OVER"
+		},
+		try_agai_btn = {
+			es = "Volver a intentar",
+			en = "Try again"
+		},
+		go_to_main_menu = {
+			es = "Menu inicio",
+			en = "Go to main menu"
+		},
+		quit = {
+			es = "Salir",
+			en = "Quit"
+		}
+	},
+	you_win_hud = {
+		title_label = {
+			es = "VICTORIA",
+			en = "VICTORY"
+		},
+		next_level = {
+			es = "Siguiente nivel",
+			en = "Next level"
+		},
+		go_to_menu_levels = {
+			es = "Menu de niveles",
+			en = "Go to menu levels"
+		},
+		try_agai_btn = {
+			es = "Reiniciar",
+			en = "Try again"
+		},
+		quit = {
+			es = "Salir",
+			en = "Quit"
+		}
 	}
 }
 

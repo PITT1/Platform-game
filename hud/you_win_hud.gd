@@ -2,11 +2,30 @@ extends Control
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+@onready var label: Label = $CanvasLayer/ColorRect/VBoxContainer/Label
+@onready var next_level_btn: Button = $CanvasLayer/ColorRect/VBoxContainer/next_level_btn
+@onready var try_again_btn: Button = $CanvasLayer/ColorRect/VBoxContainer/try_again_btn
+@onready var go_to_menu_levels_btn: Button = $CanvasLayer/ColorRect/VBoxContainer/go_to_menu_levels_btn
+@onready var quit_btn: Button = $CanvasLayer/ColorRect/VBoxContainer/quit_btn
+
 var is_show: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	var lang = SaveGameProcesor.load_language()
+	if lang == "spanish":
+		label.set_text(SaveGameProcesor.translate.you_win_hud.title_label.es)
+		next_level_btn.set_text(SaveGameProcesor.translate.you_win_hud.next_level.es)
+		try_again_btn.set_text(SaveGameProcesor.translate.you_win_hud.try_agai_btn.es)
+		go_to_menu_levels_btn.set_text(SaveGameProcesor.translate.you_win_hud.go_to_menu_levels.es)
+		quit_btn.set_text(SaveGameProcesor.translate.you_win_hud.quit.es)
+	elif lang == "english":
+		label.set_text(SaveGameProcesor.translate.you_win_hud.title_label.en)
+		next_level_btn.set_text(SaveGameProcesor.translate.you_win_hud.next_level.en)
+		try_again_btn.set_text(SaveGameProcesor.translate.you_win_hud.try_agai_btn.en)
+		go_to_menu_levels_btn.set_text(SaveGameProcesor.translate.you_win_hud.go_to_menu_levels.en)
+		quit_btn.set_text(SaveGameProcesor.translate.you_win_hud.quit.en)
+	
 
 
 
