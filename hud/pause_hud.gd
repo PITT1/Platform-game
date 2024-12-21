@@ -2,8 +2,27 @@ extends Control
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var resume_sound: AudioStreamPlayer = $resume_sound
 
+@onready var label: Label = $CanvasLayer/ColorRect/VBoxContainer/Label
+@onready var resume_btn: Button = $CanvasLayer/ColorRect/VBoxContainer/resume_btn
+@onready var options: Button = $CanvasLayer/ColorRect/VBoxContainer/options
+@onready var main_menu: Button = $CanvasLayer/ColorRect/VBoxContainer/main_menu
+@onready var quit: Button = $CanvasLayer/ColorRect/VBoxContainer/quit
+
 
 func _ready() -> void:
+	var lang = SaveGameProcesor.load_language()
+	if lang == "spanish":
+		label.set_text(SaveGameProcesor.translate.pause_menu.title.es)
+		resume_btn.set_text(SaveGameProcesor.translate.pause_menu.resume_btn.es)
+		options.set_text(SaveGameProcesor.translate.pause_menu.options_btn.es)
+		main_menu.set_text(SaveGameProcesor.translate.pause_menu.menu_levels_btn.es)
+		quit.set_text(SaveGameProcesor.translate.pause_menu.quit.es)
+	elif lang == "english":
+		label.set_text(SaveGameProcesor.translate.pause_menu.title.en)
+		resume_btn.set_text(SaveGameProcesor.translate.pause_menu.resume_btn.en)
+		options.set_text(SaveGameProcesor.translate.pause_menu.options_btn.en)
+		main_menu.set_text(SaveGameProcesor.translate.pause_menu.menu_levels_btn.en)
+		quit.set_text(SaveGameProcesor.translate.pause_menu.quit.en)
 	animation_player.play("pause_in")
 
 

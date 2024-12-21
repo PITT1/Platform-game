@@ -201,6 +201,56 @@ var translate: Dictionary = {
 			es = "Buena suerte :D",
 			en = "Good luck :D"
 		}
+	},
+	credit_page_1 = {
+		title = {
+			es = "Tiny Brave",
+			en = "Tiny Brave"
+		},
+		label_1 = {
+			es = "Este juego fue creado por: \nPedro Torrez, GitHub: https://github.com/PITT1",
+			en = "This game was created by: \nPedro Torrez, GitHub: https://github.com/PITT1"
+		},
+		label_2 = {
+			es = "Contenido Adicional: \nAssets, Sprites, Sonido y Música: \nTodos los elementos visuales y auditivos\n utilizados en este juego \nprovienen de recursos gratuitos \ny de libre uso encontrados en itch.io y\n YouTube. \nEstoy agradecido por la comunidad que hace \nposible el arte del codigo libre",
+			en = "Additional Content: \nAssets, Sprites, Sound and Music: \nAll visual and auditory elements\n used in this game come \nfrom free resources and free to use \nfound on itch.io and\n YouTube. \nI am grateful for the community that makes possible \nthe art of open source"
+		},
+		next_btn = {
+			es = "Continuar",
+			en = "continue"
+		}
+	},
+	credit_page_2 = {
+		label = {
+			es = "Objetivo del Proyecto: \nEste juego ha sido desarrollado \nprincipalmente con el fin de mejorar las habilidades de programación de su creador. \nGracias por jugar :,)",
+			en = "Project Objective: \nThis game has been developed mainly \nin order to improve the programming skills of its creator. \nThanks for playing :,)"
+		},
+		back_btn = {
+			es = "Menu principal",
+			en = "Main menu"
+		}
+	},
+	pause_menu = {
+		title = {
+			es = "¡PAUSA!",
+			en = "PAUSE!"
+		},
+		resume_btn = {
+			es = "Reanudar",
+			en = "Resume"
+		},
+		options_btn = {
+			es = "Opciones",
+			en = "Options"
+		},
+		menu_levels_btn = {
+			es = "Menu de niveles",
+			en = "go to menu levels"
+		},
+		quit = {
+			es = "Salir",
+			en = "Quit"
+		}
 	}
 }
 
