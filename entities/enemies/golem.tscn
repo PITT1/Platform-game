@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://b5hgoic5yixj"]
+[gd_scene load_steps=72 format=3 uid="uid://b5hgoic5yixj"]
 
 [ext_resource type="Script" path="res://entities/enemies/golem.gd" id="1_b4yap"]
 [ext_resource type="Texture2D" uid="uid://dtebvk4x3w0mx" path="res://images/golems/Golem_1_attack.png" id="1_cvkua"]
@@ -6,6 +6,18 @@
 [ext_resource type="Texture2D" uid="uid://xfd7ij6urhgm" path="res://images/golems/Golem_1_hurt.png" id="3_f4hg5"]
 [ext_resource type="Texture2D" uid="uid://cmrcrpp0huuv6" path="res://images/golems/Golem_1_idle.png" id="4_xx036"]
 [ext_resource type="Texture2D" uid="uid://dlmybm25h4ogr" path="res://images/golems/Golem_1_walk.png" id="5_ikm8i"]
+[ext_resource type="AudioStream" uid="uid://u0mhtmdjdacf" path="res://sounds/sfx/golem/golem_footstep_1.mp3" id="7_nsn0a"]
+[ext_resource type="AudioStream" uid="uid://d1rjjoxr7d4ko" path="res://sounds/sfx/golem/golem_footstep_2.mp3" id="8_34ogi"]
+[ext_resource type="AudioStream" uid="uid://vao7qbxbwep5" path="res://sounds/sfx/golem/golem_footstep_3.mp3" id="9_y8fs1"]
+[ext_resource type="AudioStream" uid="uid://ceit7p4n3je18" path="res://sounds/sfx/golem/golem_footstep_4.mp3" id="10_utm60"]
+[ext_resource type="AudioStream" uid="uid://cu7grkdy47p20" path="res://sounds/sfx/golem/golem_roar_1.mp3" id="11_tnb1u"]
+[ext_resource type="AudioStream" uid="uid://j2wbnim6x1ua" path="res://sounds/sfx/golem/golem_roar_2.mp3" id="12_0qo87"]
+[ext_resource type="AudioStream" uid="uid://cewj0p5gpeb7v" path="res://sounds/sfx/golem/golem_roar_3.mp3" id="13_adt57"]
+[ext_resource type="AudioStream" uid="uid://jbnwacdjmeyu" path="res://sounds/sfx/golem/golem_roar_4.mp3" id="14_8gjvt"]
+[ext_resource type="AudioStream" uid="uid://h5e7vqawfqyj" path="res://sounds/sfx/golem/golem_roar_5.mp3" id="15_a5mvi"]
+[ext_resource type="AudioStream" uid="uid://bgvwra0gw6t4e" path="res://sounds/sfx/golem/golem_attack_1.mp3" id="16_a4vun"]
+[ext_resource type="AudioStream" uid="uid://36ctons0glpb" path="res://sounds/sfx/golem/golem_attack_2.mp3" id="17_pmsur"]
+[ext_resource type="AudioStream" uid="uid://c2whtqo1ocoy7" path="res://sounds/sfx/golem/golem_attack_3.mp3" id="18_keckq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r8sls"]
 atlas = ExtResource("1_cvkua")
@@ -367,6 +379,27 @@ size = Vector2(221.5, 115.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_amw76"]
 size = Vector2(69.5, 42.5)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_xltju"]
+streams_count = 4
+stream_0/stream = ExtResource("7_nsn0a")
+stream_1/stream = ExtResource("8_34ogi")
+stream_2/stream = ExtResource("9_y8fs1")
+stream_3/stream = ExtResource("10_utm60")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6vj31"]
+streams_count = 5
+stream_0/stream = ExtResource("11_tnb1u")
+stream_1/stream = ExtResource("12_0qo87")
+stream_2/stream = ExtResource("13_adt57")
+stream_3/stream = ExtResource("14_8gjvt")
+stream_4/stream = ExtResource("15_a5mvi")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_nvftp"]
+streams_count = 3
+stream_0/stream = ExtResource("16_a4vun")
+stream_1/stream = ExtResource("17_pmsur")
+stream_2/stream = ExtResource("18_keckq")
+
 [node name="Golem" type="CharacterBody2D"]
 scale = Vector2(2, 2)
 collision_layer = 4
@@ -377,7 +410,7 @@ script = ExtResource("1_b4yap")
 sprite_frames = SubResource("SpriteFrames_q1a3e")
 animation = &"attack"
 frame = 10
-frame_progress = 1.0
+frame_progress = 0.367968
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 16)
@@ -401,7 +434,21 @@ position = Vector2(0.25, 11.25)
 shape = SubResource("RectangleShape2D_amw76")
 debug_color = Color(0.929412, 0, 0, 0.286275)
 
+[node name="sounds" type="Node2D" parent="."]
+
+[node name="footsteep_sound" type="AudioStreamPlayer2D" parent="sounds"]
+stream = SubResource("AudioStreamRandomizer_xltju")
+max_distance = 1000.0
+
+[node name="roar_sound" type="AudioStreamPlayer2D" parent="sounds"]
+stream = SubResource("AudioStreamRandomizer_6vj31")
+
+[node name="attack_sound" type="AudioStreamPlayer2D" parent="sounds"]
+stream = SubResource("AudioStreamRandomizer_nvftp")
+max_distance = 1000.0
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="body_entered" from="sensors/vision_area" to="." method="_on_vision_area_body_entered"]
 [connection signal="body_exited" from="sensors/vision_area" to="." method="_on_vision_area_body_exited"]
 [connection signal="body_entered" from="sensors/attack_area" to="." method="_on_attack_area_body_entered"]
