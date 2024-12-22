@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://b5hgoic5yixj"]
+[gd_scene load_steps=57 format=3 uid="uid://b5hgoic5yixj"]
 
 [ext_resource type="Script" path="res://entities/enemies/golem.gd" id="1_b4yap"]
 [ext_resource type="Texture2D" uid="uid://dtebvk4x3w0mx" path="res://images/golems/Golem_1_attack.png" id="1_cvkua"]
@@ -364,14 +364,20 @@ height = 32.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i101o"]
 size = Vector2(221.5, 115.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_amw76"]
+size = Vector2(69.5, 42.5)
+
 [node name="Golem" type="CharacterBody2D"]
 scale = Vector2(2, 2)
+collision_layer = 4
 collision_mask = 7
 script = ExtResource("1_b4yap")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_q1a3e")
-animation = &"idle"
+animation = &"attack"
+frame = 10
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 16)
@@ -387,5 +393,15 @@ position = Vector2(0.25, -3.25)
 shape = SubResource("RectangleShape2D_i101o")
 debug_color = Color(0, 0.6, 0.701961, 0.164706)
 
+[node name="attack_area" type="Area2D" parent="sensors"]
+collision_layer = 0
+
+[node name="attack_area_collision" type="CollisionShape2D" parent="sensors/attack_area"]
+position = Vector2(0.25, 11.25)
+shape = SubResource("RectangleShape2D_amw76")
+debug_color = Color(0.929412, 0, 0, 0.286275)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="sensors/vision_area" to="." method="_on_vision_area_body_entered"]
 [connection signal="body_exited" from="sensors/vision_area" to="." method="_on_vision_area_body_exited"]
+[connection signal="body_entered" from="sensors/attack_area" to="." method="_on_attack_area_body_entered"]
