@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var attack_area_collision: CollisionShape2D = $sensors/attack_area/attack_area_collision
+@onready var damage_area_collision: CollisionShape2D = $sensors/damage_area/damage_area_collision
+@onready var damage_area: Area2D = $sensors/damage_area
 
 var player: Node2D = null
 @export var speed: float = 50
@@ -112,4 +114,17 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 		footsteep_sound.play()
 	
 	if anim.get_animation() == "attack" and anim.get_frame() == 6:
+		if anim.flip_h:
+			damage_area.set_position(Vector2(-12, 12))
+		else:
+			damage_area.set_position(Vector2(12, 12)) 
+		damage_area_collision.set_disabled(false)
+		await get_tree().create_timer(0.2).timeout
+		damage_area_collision.set_disabled(true)
 		attack_sound.play()
+
+
+func _on_damage_area_body_entered(body: Node2D) -> void:
+	body.gettingHit = true
+	body.lives -= 1
+	body.velocity.y = -600

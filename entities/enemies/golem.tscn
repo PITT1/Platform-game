@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://b5hgoic5yixj"]
+[gd_scene load_steps=73 format=3 uid="uid://b5hgoic5yixj"]
 
 [ext_resource type="Script" path="res://entities/enemies/golem.gd" id="1_b4yap"]
 [ext_resource type="Texture2D" uid="uid://dtebvk4x3w0mx" path="res://images/golems/Golem_1_attack.png" id="1_cvkua"]
@@ -379,6 +379,10 @@ size = Vector2(221.5, 115.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_amw76"]
 size = Vector2(69.5, 42.5)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h4ss0"]
+radius = 24.0
+height = 48.0
+
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_xltju"]
 streams_count = 4
 stream_0/stream = ExtResource("7_nsn0a")
@@ -401,7 +405,7 @@ stream_1/stream = ExtResource("17_pmsur")
 stream_2/stream = ExtResource("18_keckq")
 
 [node name="Golem" type="CharacterBody2D"]
-scale = Vector2(2, 2)
+scale = Vector2(2.5, 2.5)
 collision_layer = 4
 collision_mask = 7
 script = ExtResource("1_b4yap")
@@ -409,8 +413,7 @@ script = ExtResource("1_b4yap")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_q1a3e")
 animation = &"attack"
-frame = 10
-frame_progress = 0.367968
+frame = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 16)
@@ -434,6 +437,14 @@ position = Vector2(0.25, 11.25)
 shape = SubResource("RectangleShape2D_amw76")
 debug_color = Color(0.929412, 0, 0, 0.286275)
 
+[node name="damage_area" type="Area2D" parent="sensors"]
+position = Vector2(12, 12)
+
+[node name="damage_area_collision" type="CollisionShape2D" parent="sensors/damage_area"]
+shape = SubResource("CapsuleShape2D_h4ss0")
+disabled = true
+debug_color = Color(0.603922, 0.368627, 1, 0.568627)
+
 [node name="sounds" type="Node2D" parent="."]
 
 [node name="footsteep_sound" type="AudioStreamPlayer2D" parent="sounds"]
@@ -445,6 +456,7 @@ stream = SubResource("AudioStreamRandomizer_6vj31")
 
 [node name="attack_sound" type="AudioStreamPlayer2D" parent="sounds"]
 stream = SubResource("AudioStreamRandomizer_nvftp")
+volume_db = 10.0
 max_distance = 1000.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
@@ -452,3 +464,4 @@ max_distance = 1000.0
 [connection signal="body_entered" from="sensors/vision_area" to="." method="_on_vision_area_body_entered"]
 [connection signal="body_exited" from="sensors/vision_area" to="." method="_on_vision_area_body_exited"]
 [connection signal="body_entered" from="sensors/attack_area" to="." method="_on_attack_area_body_entered"]
+[connection signal="body_entered" from="sensors/damage_area" to="." method="_on_damage_area_body_entered"]
