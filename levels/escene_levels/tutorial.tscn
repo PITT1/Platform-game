@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://dw07e2nhkt8p4"]
+[gd_scene load_steps=27 format=4 uid="uid://dw07e2nhkt8p4"]
 
 [ext_resource type="Script" path="res://levels/scripts_levels/tutorial.gd" id="1_xc6iy"]
 [ext_resource type="Texture2D" uid="uid://b1a0xptuwfuku" path="res://images/arrow_interfaz.png" id="4_3rwu1"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://cqy4dbwtshnub" path="res://images/tilemap/main_lev_build_1.png" id="13_pq6xb"]
 [ext_resource type="PackedScene" uid="uid://d2g0fw6xmbt60" path="res://signs/sign1.tscn" id="14_jl187"]
 [ext_resource type="PackedScene" uid="uid://o8autm5pdnbr" path="res://entities/player/player.tscn" id="15_h6kia"]
+[ext_resource type="AudioStream" uid="uid://bduk53dqjvn5j" path="res://sounds/ambient/6. Embers of Hope (Loop).mp3" id="15_hjxlj"]
+[ext_resource type="PackedScene" uid="uid://b5hgoic5yixj" path="res://entities/enemies/golem.tscn" id="16_wgs71"]
 [ext_resource type="PackedScene" uid="uid://dxftx0pehgckf" path="res://hud/lives_hud.tscn" id="17_r7oie"]
 [ext_resource type="PackedScene" uid="uid://bar58vx48kjox" path="res://entities/enemies/blueSlime.tscn" id="18_gik14"]
 [ext_resource type="PackedScene" uid="uid://bgurafal77rsb" path="res://particles/ambient_particles.tscn" id="19_ufmbb"]
@@ -5193,6 +5195,17 @@ collision_layer = 0
 position = Vector2(19.6907, 50.3725)
 shape = SubResource("RectangleShape2D_lefbp")
 debug_color = Color(0, 0.645214, 0.264903, 0.42)
+
+[node name="music_piano" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("15_hjxlj")
+volume_db = -5.0
+autoplay = true
+mix_target = 1
+parameters/looping = true
+
+[node name="Golem" parent="." instance=ExtResource("16_wgs71")]
+position = Vector2(726, 300)
 
 [connection signal="body_entered" from="win_area" to="." method="_on_win_area_body_entered"]
 [connection signal="body_entered" from="camera_move/camera_move_1" to="." method="_on_camera_move_1_body_entered"]
