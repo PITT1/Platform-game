@@ -1,7 +1,8 @@
-[gd_scene load_steps=73 format=3 uid="uid://b5hgoic5yixj"]
+[gd_scene load_steps=74 format=3 uid="uid://b5hgoic5yixj"]
 
 [ext_resource type="Script" path="res://entities/enemies/golem.gd" id="1_b4yap"]
 [ext_resource type="Texture2D" uid="uid://dtebvk4x3w0mx" path="res://images/golems/Golem_1_attack.png" id="1_cvkua"]
+[ext_resource type="PackedScene" uid="uid://c8ie1b5t80xom" path="res://particles/golem_attack.tscn" id="2_466sk"]
 [ext_resource type="Texture2D" uid="uid://ttfr1j3anopi" path="res://images/golems/Golem_1_die.png" id="2_fmyk4"]
 [ext_resource type="Texture2D" uid="uid://xfd7ij6urhgm" path="res://images/golems/Golem_1_hurt.png" id="3_f4hg5"]
 [ext_resource type="Texture2D" uid="uid://cmrcrpp0huuv6" path="res://images/golems/Golem_1_idle.png" id="4_xx036"]
@@ -409,6 +410,7 @@ scale = Vector2(2.5, 2.5)
 collision_layer = 4
 collision_mask = 7
 script = ExtResource("1_b4yap")
+attack_particles = ExtResource("2_466sk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_q1a3e")

@@ -9,6 +9,7 @@ var player: Node2D = null
 @export var speed: float = 50
 @export var aceleration: float = 50
 @export var lives: float = 15
+@export var attack_particles: PackedScene
 var gettingHit = false
 
 @onready var footsteep_sound: AudioStreamPlayer2D = $sounds/footsteep_sound
@@ -117,7 +118,11 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 		if anim.flip_h:
 			damage_area.set_position(Vector2(-12, 12))
 		else:
-			damage_area.set_position(Vector2(12, 12)) 
+			damage_area.set_position(Vector2(12, 12))
+		
+		var intantia = attack_particles.instantiate()
+		intantia.position =position - Vector2(0, -80)
+		add_sibling(intantia) 
 		damage_area_collision.set_disabled(false)
 		await get_tree().create_timer(0.2).timeout
 		damage_area_collision.set_disabled(true)

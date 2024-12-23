@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8ie1b5t80xom"]
+
+[ext_resource type="Script" path="res://particles/golem_attack.gd" id="1_r88fo"]
+
+[sub_resource type="Curve" id="Curve_mo8gv"]
+max_value = 2.0
+_data = [Vector2(0.191275, 2), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Gradient" id="Gradient_jgsly"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="GolemAttack" type="CPUParticles2D"]
+emitting = false
+amount = 29
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(100, 1)
+direction = Vector2(0, -1)
+initial_velocity_min = 506.33
+initial_velocity_max = 506.33
+linear_accel_min = -57.25
+linear_accel_max = 41.55
+scale_amount_curve = SubResource("Curve_mo8gv")
+color_ramp = SubResource("Gradient_jgsly")
+script = ExtResource("1_r88fo")
+
+[connection signal="finished" from="." to="." method="_on_finished"]
