@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d2g0fw6xmbt60" path="res://signs/sign1.tscn" id="14_jl187"]
 [ext_resource type="PackedScene" uid="uid://o8autm5pdnbr" path="res://entities/player/player.tscn" id="15_h6kia"]
 [ext_resource type="AudioStream" uid="uid://bduk53dqjvn5j" path="res://sounds/ambient/6. Embers of Hope (Loop).mp3" id="15_hjxlj"]
-[ext_resource type="PackedScene" uid="uid://b5hgoic5yixj" path="res://entities/enemies/golem.tscn" id="16_wgs71"]
+[ext_resource type="PackedScene" uid="uid://camhxyhtxp381" path="res://signs/victory_flag.tscn" id="16_ajitb"]
 [ext_resource type="PackedScene" uid="uid://dxftx0pehgckf" path="res://hud/lives_hud.tscn" id="17_r7oie"]
 [ext_resource type="PackedScene" uid="uid://bar58vx48kjox" path="res://entities/enemies/blueSlime.tscn" id="18_gik14"]
 [ext_resource type="PackedScene" uid="uid://bgurafal77rsb" path="res://particles/ambient_particles.tscn" id="19_ufmbb"]
@@ -5204,8 +5204,9 @@ autoplay = true
 mix_target = 1
 parameters/looping = true
 
-[node name="Golem" parent="." instance=ExtResource("16_wgs71")]
-position = Vector2(726, 300)
+[node name="VictoryFlag" parent="." instance=ExtResource("16_ajitb")]
+position = Vector2(7695.51, -312.586)
+scale = Vector2(1.18354, 1.31381)
 
 [connection signal="body_entered" from="win_area" to="." method="_on_win_area_body_entered"]
 [connection signal="body_entered" from="camera_move/camera_move_1" to="." method="_on_camera_move_1_body_entered"]

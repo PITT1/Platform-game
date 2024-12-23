@@ -22,10 +22,10 @@
 [ext_resource type="AudioStream" uid="uid://be56c3p3tn8cy" path="res://sounds/ambient/Action 3 (Loop).ogg" id="18_wy3fh"]
 [ext_resource type="PackedScene" uid="uid://dxftx0pehgckf" path="res://hud/lives_hud.tscn" id="19_032ug"]
 [ext_resource type="PackedScene" uid="uid://cfh5y5myhh4r" path="res://entities/enemies/fly_eye_corrupted.tscn" id="19_h3tuy"]
+[ext_resource type="PackedScene" uid="uid://b5hgoic5yixj" path="res://entities/enemies/golem.tscn" id="20_2svg7"]
 [ext_resource type="PackedScene" uid="uid://vaeiu1j1eq7t" path="res://hud/pause_button.tscn" id="20_qa5lj"]
 [ext_resource type="PackedScene" uid="uid://bar58vx48kjox" path="res://entities/enemies/blueSlime.tscn" id="21_for3y"]
 [ext_resource type="PackedScene" uid="uid://54u88oswgal8" path="res://obstacles/trap1.tscn" id="22_ks2h2"]
-[ext_resource type="PackedScene" uid="uid://bsg8qjsqu632m" path="res://entities/enemies/mutant_mushrom.tscn" id="22_xlmy6"]
 [ext_resource type="Script" path="res://obstacles/poizon_ivi2.gd" id="23_rk0g3"]
 [ext_resource type="PackedScene" uid="uid://dsbr2hrptjhy7" path="res://entities/enemies/skeletons_2.tscn" id="23_yif23"]
 [ext_resource type="PackedScene" uid="uid://dtq4ilw7ldcce" path="res://obstacles/invisible_wall_enemy.tscn" id="24_lkalr"]
@@ -5755,9 +5755,6 @@ position = Vector2(2589, 172)
 [node name="FlyEyeCorrupted" parent="enemies" instance=ExtResource("19_h3tuy")]
 position = Vector2(3186, 153)
 
-[node name="FlyEyeCorrupted2" parent="enemies" instance=ExtResource("19_h3tuy")]
-position = Vector2(3131, -565)
-
 [node name="CharacterBody2D8" parent="enemies" instance=ExtResource("23_yif23")]
 position = Vector2(3337, 28)
 
@@ -5766,12 +5763,6 @@ position = Vector2(3089, 27)
 
 [node name="CharacterBody2D10" parent="enemies" instance=ExtResource("23_yif23")]
 position = Vector2(2787, 27)
-
-[node name="mutant mushrom" parent="enemies" instance=ExtResource("22_xlmy6")]
-position = Vector2(3006, -173)
-
-[node name="mutant mushrom2" parent="enemies" instance=ExtResource("22_xlmy6")]
-position = Vector2(3294, -178)
 
 [node name="BlueSlime8" parent="enemies" instance=ExtResource("21_for3y")]
 position = Vector2(4615, 217)
@@ -5792,8 +5783,8 @@ position = Vector2(3431, 319)
 [node name="CharacterBody2D6" parent="enemies" instance=ExtResource("23_yif23")]
 position = Vector2(3571.96, 320.564)
 
-[node name="FlyEyeCorrupted3" parent="enemies" instance=ExtResource("19_h3tuy")]
-position = Vector2(2836, -568)
+[node name="Golem" parent="enemies" instance=ExtResource("20_2svg7")]
+position = Vector2(3075, -211)
 
 [node name="player" parent="." instance=ExtResource("16_nnw2x")]
 position = Vector2(174.373, 331.201)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://tt76r5tbm7b"]
+[gd_scene load_steps=45 format=4 uid="uid://tt76r5tbm7b"]
 
 [ext_resource type="Texture2D" uid="uid://bg8weivuatkhu" path="res://images/forestBackground/Layer_0011_0.png" id="1_kpy00"]
 [ext_resource type="Script" path="res://levels/scripts_levels/world_6.gd" id="1_tad4s"]
@@ -26,7 +26,6 @@
 [ext_resource type="PackedScene" uid="uid://dcsf554wvrgne" path="res://controls/tactil_controls_1.tscn" id="20_gp8sy"]
 [ext_resource type="PackedScene" uid="uid://dimbgqtdp63fu" path="res://entities/enemies/shadow_knight.tscn" id="21_cukq8"]
 [ext_resource type="PackedScene" uid="uid://cfh5y5myhh4r" path="res://entities/enemies/fly_eye_corrupted.tscn" id="22_1sng7"]
-[ext_resource type="PackedScene" uid="uid://d2g0fw6xmbt60" path="res://signs/sign1.tscn" id="22_uw6x6"]
 [ext_resource type="PackedScene" uid="uid://54u88oswgal8" path="res://obstacles/trap1.tscn" id="23_dgkq4"]
 [ext_resource type="PackedScene" uid="uid://dtq4ilw7ldcce" path="res://obstacles/invisible_wall_enemy.tscn" id="29_h8m24"]
 
@@ -5745,10 +5744,6 @@ autoplay = true
 parameters/looping = true
 
 [node name="signs" type="Node2D" parent="."]
-
-[node name="Sign1" parent="signs" instance=ExtResource("22_uw6x6")]
-position = Vector2(1014, 358)
-text = "Usa el \"avance rapido\" seguido de \"salto\" y manteniendolo pulsado para hacer un salto mas potente\""
 
 [node name="enemies" type="Node2D" parent="."]
 position = Vector2(0, -1)
