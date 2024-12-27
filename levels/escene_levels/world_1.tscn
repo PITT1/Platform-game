@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://no3yti5mpqns"]
+[gd_scene load_steps=41 format=4 uid="uid://no3yti5mpqns"]
 
 [ext_resource type="Script" path="res://levels/scripts_levels/world_1.gd" id="1_ei3lv"]
 [ext_resource type="Texture2D" uid="uid://cqy4dbwtshnub" path="res://images/tilemap/main_lev_build_1.png" id="2_mpw2a"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b7ehv6fpfs7tq" path="res://images/forestBackground/Layer_0002_7.png" id="12_k50iw"]
 [ext_resource type="Texture2D" uid="uid://cw0vd3e7i3458" path="res://images/forestBackground/Layer_0001_8.png" id="13_p7wkp"]
 [ext_resource type="Texture2D" uid="uid://cmeod7kijpg53" path="res://images/forestBackground/Layer_0000_9.png" id="14_imwkm"]
+[ext_resource type="PackedScene" uid="uid://dgt7q2a8bimo2" path="res://particles/leaf_particles.tscn" id="16_owpra"]
 [ext_resource type="PackedScene" uid="uid://dsbr2hrptjhy7" path="res://entities/enemies/skeletons_2.tscn" id="16_oyptu"]
 [ext_resource type="PackedScene" uid="uid://bsg8qjsqu632m" path="res://entities/enemies/mutant_mushrom.tscn" id="17_2ov2n"]
 [ext_resource type="PackedScene" uid="uid://bar58vx48kjox" path="res://entities/enemies/blueSlime.tscn" id="21_5ms1t"]
@@ -5718,6 +5719,45 @@ position = Vector2(3306, 151)
 
 [node name="AmbientParticles6" parent="particles" instance=ExtResource("23_nvffb")]
 position = Vector2(4102, 156)
+
+[node name="AmbientParticles7" parent="particles" instance=ExtResource("23_nvffb")]
+position = Vector2(4757, 190)
+
+[node name="AmbientParticles8" parent="particles" instance=ExtResource("23_nvffb")]
+position = Vector2(5383, 169)
+
+[node name="leaf_particles" parent="particles" instance=ExtResource("16_owpra")]
+position = Vector2(414, 59)
+
+[node name="AmbientParticles9" parent="particles" instance=ExtResource("23_nvffb")]
+position = Vector2(5973, 160)
+
+[node name="leaf_particles2" parent="particles" instance=ExtResource("16_owpra")]
+position = Vector2(892, 63)
+
+[node name="leaf_particles3" parent="particles" instance=ExtResource("16_owpra")]
+position = Vector2(1397, 69)
+
+[node name="leaf_particles4" parent="particles" instance=ExtResource("16_owpra")]
+position = Vector2(1922, 45)
+
+[node name="leaf_particles5" parent="particles" instance=ExtResource("16_owpra")]
+position = Vector2(2521, 48)
+
+[node name="leaf_particles6" parent="particles" instance=ExtResource("16_owpra")]
+position = Vector2(3222, 63)
+
+[node name="leaf_particles7" parent="particles" instance=ExtResource("16_owpra")]
+position = Vector2(4026.06, 61.4907)
+
+[node name="leaf_particles8" parent="particles" instance=ExtResource("16_owpra")]
+position = Vector2(4717, 17)
+
+[node name="leaf_particles9" parent="particles" instance=ExtResource("16_owpra")]
+position = Vector2(5571.74, -0.300903)
+
+[node name="leaf_particles10" parent="particles" instance=ExtResource("16_owpra")]
+position = Vector2(6505.12, -11.6146)
 
 [node name="player" parent="." instance=ExtResource("21_hrk87")]
 position = Vector2(174.373, 331.201)
