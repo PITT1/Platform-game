@@ -1,7 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://54u88oswgal8"]
+[gd_scene load_steps=20 format=3 uid="uid://54u88oswgal8"]
 
 [ext_resource type="Texture2D" uid="uid://cy6eowsxjnake" path="res://images/pinchos.png" id="1_31vo5"]
 [ext_resource type="Script" path="res://obstacles/trap_1.gd" id="1_fetoh"]
+[ext_resource type="AudioStream" uid="uid://c2a4oxp0bfmlm" path="res://sounds/sfx/trap1/trap_1_activation.mp3" id="3_lxiae"]
+[ext_resource type="AudioStream" uid="uid://buurs28bv5516" path="res://sounds/sfx/trap1/trap_1_damage.wav" id="4_5w5ci"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bd0ps"]
 atlas = ExtResource("1_31vo5")
@@ -139,6 +141,14 @@ position = Vector2(6, 37)
 shape = SubResource("RectangleShape2D_r4pg6")
 disabled = true
 debug_color = Color(0.992157, 0, 0, 0.419608)
+
+[node name="activation_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_lxiae")
+volume_db = 10.0
+
+[node name="damage_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_5w5ci")
+volume_db = 5.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

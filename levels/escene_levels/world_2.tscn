@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://ceu6owbybbmsj"]
+[gd_scene load_steps=39 format=4 uid="uid://ceu6owbybbmsj"]
 
 [ext_resource type="Script" path="res://levels/scripts_levels/world_2.gd" id="1_mbeuu"]
 [ext_resource type="Texture2D" uid="uid://cqy4dbwtshnub" path="res://images/tilemap/main_lev_build_1.png" id="2_1xqhj"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://o8autm5pdnbr" path="res://entities/player/player.tscn" id="20_muh5r"]
 [ext_resource type="PackedScene" uid="uid://bgurafal77rsb" path="res://particles/ambient_particles.tscn" id="21_pk825"]
 [ext_resource type="PackedScene" uid="uid://vaeiu1j1eq7t" path="res://hud/pause_button.tscn" id="23_cpsn0"]
+[ext_resource type="PackedScene" uid="uid://dgt7q2a8bimo2" path="res://particles/leaf_particles.tscn" id="24_f3ukx"]
 [ext_resource type="AudioStream" uid="uid://ctrrlmwdh26ww" path="res://sounds/ambient/Forest Day.ogg" id="24_trwvm"]
 [ext_resource type="AudioStream" uid="uid://be56c3p3tn8cy" path="res://sounds/ambient/Action 3 (Loop).ogg" id="25_xut04"]
 [ext_resource type="PackedScene" uid="uid://dcsf554wvrgne" path="res://controls/tactil_controls_1.tscn" id="26_knm8w"]
@@ -2650,6 +2651,30 @@ position = Vector2(4085, 152)
 
 [node name="AmbientParticles7" parent="particles" instance=ExtResource("21_pk825")]
 position = Vector2(4758, 168)
+
+[node name="leaf_particles" parent="particles" instance=ExtResource("24_f3ukx")]
+position = Vector2(436, -17)
+
+[node name="leaf_particles2" parent="particles" instance=ExtResource("24_f3ukx")]
+position = Vector2(950.39, -12.123)
+
+[node name="leaf_particles3" parent="particles" instance=ExtResource("24_f3ukx")]
+position = Vector2(1519, -21)
+
+[node name="leaf_particles4" parent="particles" instance=ExtResource("24_f3ukx")]
+position = Vector2(2113, -17)
+
+[node name="leaf_particles5" parent="particles" instance=ExtResource("24_f3ukx")]
+position = Vector2(2636, -47)
+
+[node name="leaf_particles6" parent="particles" instance=ExtResource("24_f3ukx")]
+position = Vector2(3258, -37)
+
+[node name="leaf_particles7" parent="particles" instance=ExtResource("24_f3ukx")]
+position = Vector2(3792.75, -44.7085)
+
+[node name="leaf_particles8" parent="particles" instance=ExtResource("24_f3ukx")]
+position = Vector2(4411.07, -52.9482)
 
 [node name="win_area" type="Area2D" parent="."]
 position = Vector2(4645.15, 101)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://g3o55bb8f8p1"]
+[gd_scene load_steps=34 format=4 uid="uid://g3o55bb8f8p1"]
 
 [ext_resource type="Script" path="res://levels/scripts_levels/world_4.gd" id="1_ye1y1"]
 [ext_resource type="Texture2D" uid="uid://bg8weivuatkhu" path="res://images/forestBackground/Layer_0011_0.png" id="2_u4lb2"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://efyda2cw57qk" path="res://entities/enemies/fly_eye.tscn" id="18_qepnt"]
 [ext_resource type="PackedScene" uid="uid://o8autm5pdnbr" path="res://entities/player/player.tscn" id="21_mdrnt"]
 [ext_resource type="PackedScene" uid="uid://54u88oswgal8" path="res://obstacles/trap1.tscn" id="22_eh2f3"]
+[ext_resource type="PackedScene" uid="uid://dgt7q2a8bimo2" path="res://particles/leaf_particles.tscn" id="22_t61fv"]
 [ext_resource type="AudioStream" uid="uid://ctrrlmwdh26ww" path="res://sounds/ambient/Forest Day.ogg" id="25_17g46"]
 [ext_resource type="AudioStream" uid="uid://be56c3p3tn8cy" path="res://sounds/ambient/Action 3 (Loop).ogg" id="26_6xbg4"]
 [ext_resource type="PackedScene" uid="uid://bgurafal77rsb" path="res://particles/ambient_particles.tscn" id="27_6ysig"]
@@ -1528,6 +1529,27 @@ position = Vector2(2745.41, 221.119)
 
 [node name="AmbientParticles6" parent="ambient_particles" instance=ExtResource("27_6ysig")]
 position = Vector2(3450.07, 212.009)
+
+[node name="leaf_particles" parent="ambient_particles" instance=ExtResource("22_t61fv")]
+position = Vector2(417, 8)
+
+[node name="leaf_particles2" parent="ambient_particles" instance=ExtResource("22_t61fv")]
+position = Vector2(822, 32)
+
+[node name="leaf_particles3" parent="ambient_particles" instance=ExtResource("22_t61fv")]
+position = Vector2(1445, 38)
+
+[node name="leaf_particles4" parent="ambient_particles" instance=ExtResource("22_t61fv")]
+position = Vector2(1970.26, 40.0822)
+
+[node name="leaf_particles5" parent="ambient_particles" instance=ExtResource("22_t61fv")]
+position = Vector2(2594.04, -1.61172)
+
+[node name="leaf_particles6" parent="ambient_particles" instance=ExtResource("22_t61fv")]
+position = Vector2(3199.65, -0.263489)
+
+[node name="leaf_particles7" parent="ambient_particles" instance=ExtResource("22_t61fv")]
+position = Vector2(3687.74, -3.6322)
 
 [node name="traps" type="Node2D" parent="."]
 

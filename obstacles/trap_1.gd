@@ -4,6 +4,8 @@ extends StaticBody2D
 @onready var collision_sensor: CollisionShape2D = $sensor/Collision_sensor
 @onready var collision_hit_area: CollisionShape2D = $hit_area/Collision_hit_area
 
+@onready var activation_sound: AudioStreamPlayer2D = $activation_sound
+@onready var damage_sound: AudioStreamPlayer2D = $damage_sound
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,8 +14,10 @@ func _ready() -> void:
 
 func _on_sensor_body_entered(body: CharacterBody2D) -> void:
 	if body:
+		activation_sound.play()
 		await get_tree().create_timer(0.5).timeout
 		anim.play("attack")
+		damage_sound.play()
 		await get_tree().create_timer(0.2).timeout
 		anim.play("retract")
 		collision_sensor.set_disabled(true)
