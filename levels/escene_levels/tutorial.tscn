@@ -4837,46 +4837,46 @@ level = "level_1"
 id = "id_8"
 
 [node name="ArrowInterfaz16" type="Sprite2D" parent="signs"]
-position = Vector2(3366, -95)
+position = Vector2(3376.11, -99.7568)
 rotation = 3.15323
-scale = Vector2(0.164174, 0.196297)
+scale = Vector2(0.21164, 0.220828)
 skew = 0.114195
 texture = ExtResource("4_3rwu1")
 
 [node name="ArrowInterfaz17" type="Sprite2D" parent="signs"]
-position = Vector2(3368, -163)
+position = Vector2(3377.36, -168.054)
 rotation = 2.90657
-scale = Vector2(0.164174, 0.196297)
+scale = Vector2(0.214027, 0.182535)
 skew = 0.114195
 texture = ExtResource("4_3rwu1")
 flip_h = true
 
 [node name="ArrowInterfaz18" type="Sprite2D" parent="signs"]
-position = Vector2(3367.76, -229.381)
+position = Vector2(3379.41, -231.235)
 rotation = 3.15323
-scale = Vector2(0.164174, 0.196297)
+scale = Vector2(0.221192, 0.20631)
 skew = 0.114195
 texture = ExtResource("4_3rwu1")
 
 [node name="ArrowInterfaz19" type="Sprite2D" parent="signs"]
-position = Vector2(3369.76, -297.381)
+position = Vector2(3379.69, -299.5)
 rotation = 2.90657
-scale = Vector2(0.164174, 0.196297)
+scale = Vector2(0.215083, 0.197567)
 skew = 0.114195
 texture = ExtResource("4_3rwu1")
 flip_h = true
 
 [node name="ArrowInterfaz20" type="Sprite2D" parent="signs"]
-position = Vector2(3368.76, -367.381)
+position = Vector2(3379.62, -371.689)
 rotation = 3.15323
-scale = Vector2(0.164174, 0.196297)
+scale = Vector2(0.21569, 0.218611)
 skew = 0.114195
 texture = ExtResource("4_3rwu1")
 
 [node name="ArrowInterfaz21" type="Sprite2D" parent="signs"]
-position = Vector2(3370.76, -435.381)
+position = Vector2(3376.94, -443.182)
 rotation = 2.90657
-scale = Vector2(0.164174, 0.196297)
+scale = Vector2(0.230833, 0.194628)
 skew = 0.114195
 texture = ExtResource("4_3rwu1")
 flip_h = true

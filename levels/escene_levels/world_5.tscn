@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://dv8m1iumjky5h"]
+[gd_scene load_steps=49 format=4 uid="uid://dv8m1iumjky5h"]
 
 [ext_resource type="Script" path="res://levels/scripts_levels/world_5.gd" id="1_m6df3"]
 [ext_resource type="Texture2D" uid="uid://bg8weivuatkhu" path="res://images/forestBackground/Layer_0011_0.png" id="2_8iv4w"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://dsbr2hrptjhy7" path="res://entities/enemies/skeletons_2.tscn" id="23_yif23"]
 [ext_resource type="PackedScene" uid="uid://dtq4ilw7ldcce" path="res://obstacles/invisible_wall_enemy.tscn" id="24_lkalr"]
 [ext_resource type="PackedScene" uid="uid://dcsf554wvrgne" path="res://controls/tactil_controls_1.tscn" id="25_54d7g"]
+[ext_resource type="PackedScene" uid="uid://camhxyhtxp381" path="res://signs/victory_flag.tscn" id="31_b7otj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wt4og"]
 texture = ExtResource("12_sa3ms")
@@ -5970,6 +5971,10 @@ shape = SubResource("RectangleShape2D_t1p5t")
 debug_color = Color(0.224124, 0.638541, 1.92523e-07, 0.42)
 
 [node name="TactilControls1" parent="." instance=ExtResource("25_54d7g")]
+
+[node name="VictoryFlag" parent="." instance=ExtResource("31_b7otj")]
+position = Vector2(4849.08, 202.425)
+scale = Vector2(1.13598, 1.2475)
 
 [connection signal="body_entered" from="traps/trap_area" to="traps/trap_area" method="_on_body_entered"]
 [connection signal="body_entered" from="traps/death_zone" to="." method="_on_death_zone_body_entered"]

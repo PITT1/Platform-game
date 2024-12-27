@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://g3o55bb8f8p1"]
+[gd_scene load_steps=33 format=4 uid="uid://g3o55bb8f8p1"]
 
 [ext_resource type="Script" path="res://levels/scripts_levels/world_4.gd" id="1_ye1y1"]
 [ext_resource type="Texture2D" uid="uid://bg8weivuatkhu" path="res://images/forestBackground/Layer_0011_0.png" id="2_u4lb2"]
@@ -23,6 +23,7 @@
 [ext_resource type="AudioStream" uid="uid://ctrrlmwdh26ww" path="res://sounds/ambient/Forest Day.ogg" id="25_17g46"]
 [ext_resource type="AudioStream" uid="uid://be56c3p3tn8cy" path="res://sounds/ambient/Action 3 (Loop).ogg" id="26_6xbg4"]
 [ext_resource type="PackedScene" uid="uid://bgurafal77rsb" path="res://particles/ambient_particles.tscn" id="27_6ysig"]
+[ext_resource type="PackedScene" uid="uid://camhxyhtxp381" path="res://signs/victory_flag.tscn" id="27_itx1r"]
 [ext_resource type="PackedScene" uid="uid://dxftx0pehgckf" path="res://hud/lives_hud.tscn" id="28_74qix"]
 [ext_resource type="PackedScene" uid="uid://vaeiu1j1eq7t" path="res://hud/pause_button.tscn" id="29_ut0ju"]
 [ext_resource type="PackedScene" uid="uid://dcsf554wvrgne" path="res://controls/tactil_controls_1.tscn" id="30_u3cgy"]
@@ -1591,6 +1592,10 @@ autoplay = true
 parameters/looping = true
 
 [node name="TactilControls1" parent="." instance=ExtResource("30_u3cgy")]
+
+[node name="VictoryFlag" parent="." instance=ExtResource("27_itx1r")]
+position = Vector2(3976.64, 362.973)
+scale = Vector2(1.32137, 1.36577)
 
 [connection signal="body_entered" from="win_area" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="move_cameras/Area2D2" to="." method="_on_area_2d_2_body_entered"]
