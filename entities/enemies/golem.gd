@@ -132,4 +132,4 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 func _on_damage_area_body_entered(body: Node2D) -> void:
 	body.gettingHit = true
 	body.lives -= 1
-	body.velocity.y = -600
+	body.velocity.y = -800

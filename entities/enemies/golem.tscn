@@ -381,8 +381,8 @@ size = Vector2(221.5, 115.5)
 size = Vector2(69.5, 42.5)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h4ss0"]
-radius = 24.0
-height = 48.0
+radius = 8.00001
+height = 93.6
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_xltju"]
 streams_count = 4
@@ -443,6 +443,8 @@ debug_color = Color(0.929412, 0, 0, 0.286275)
 position = Vector2(12, 12)
 
 [node name="damage_area_collision" type="CollisionShape2D" parent="sensors/damage_area"]
+position = Vector2(0, 12)
+rotation = 1.5708
 shape = SubResource("CapsuleShape2D_h4ss0")
 disabled = true
 debug_color = Color(0.603922, 0.368627, 1, 0.568627)
