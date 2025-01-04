@@ -56,7 +56,8 @@ func _on_pinchos_trap_body_entered(body: Node2D) -> void:
 func _on_you_win_area_body_entered(body: Node2D) -> void:
 	if body:
 		var level_split = name.split("_")
-		SaveGameProcesor.save_data_last_level("level_" + level_split[1])
+		var next_level = int(level_split[1]) + 1
+		SaveGameProcesor.save_data_levels("level_" + level_split[1], "level_" + str(next_level))
 		var instantia = scene_you_win.instantiate()
 		add_child(instantia)
 		instantia.showHud(true)

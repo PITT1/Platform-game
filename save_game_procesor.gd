@@ -39,6 +39,11 @@ const LEVEL_INIT_CANVAS: Dictionary = {
 		is_level_pass = false,
 		is_level_blocked = true
 	},
+	level_7 = {
+		level_path = "res://levels/escene_levels/world_7.tscn",
+		is_level_pass = false,
+		is_level_blocked = true
+	},
 }
 
 var select_language = "default"
@@ -90,6 +95,10 @@ var translate: Dictionary = {
 		level_6 = {
 			es = "Nivel 6",
 			en = "Level 6"
+		},
+		level_7 = {
+			es = "Nivel 7",
+			en = "Level 7"
 		},
 		btn_back = {
 			es = "Atras",

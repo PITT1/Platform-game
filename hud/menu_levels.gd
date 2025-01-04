@@ -1,12 +1,14 @@
 extends Control
 
-@onready var label: Label = $ColorRect/VBoxContainer/Label
-@onready var nivel_1_btn: Button = $ColorRect/VBoxContainer/nivel_1_btn
-@onready var nivel_2_btn: Button = $ColorRect/VBoxContainer/nivel_2_btn
-@onready var nivel_3_btn: Button = $ColorRect/VBoxContainer/nivel_3_btn
-@onready var nivel_4_btn: Button = $ColorRect/VBoxContainer/nivel_4_btn
-@onready var nivel_5_btn: Button = $ColorRect/VBoxContainer/nivel_5_btn
-@onready var nivel_6_btn: Button = $ColorRect/VBoxContainer/nivel_6_btn
+@onready var label: Label = $ColorRect/ScrollContainer/VBoxContainer/Label
+@onready var tutorial_btn: Button = $ColorRect/ScrollContainer/VBoxContainer/tutorial_btn
+@onready var nivel_1_btn: Button = $ColorRect/ScrollContainer/VBoxContainer/nivel_1_btn
+@onready var nivel_2_btn: Button = $ColorRect/ScrollContainer/VBoxContainer/nivel_2_btn
+@onready var nivel_3_btn: Button = $ColorRect/ScrollContainer/VBoxContainer/nivel_3_btn
+@onready var nivel_4_btn: Button = $ColorRect/ScrollContainer/VBoxContainer/nivel_4_btn
+@onready var nivel_5_btn: Button = $ColorRect/ScrollContainer/VBoxContainer/nivel_5_btn
+@onready var nivel_6_btn: Button = $ColorRect/ScrollContainer/VBoxContainer/nivel_6_btn
+@onready var nivel_7_btn: Button = $ColorRect/ScrollContainer/VBoxContainer/nivel_7_btn
 @onready var back: Button = $ColorRect/back
 
 var data_load: String
@@ -25,6 +27,7 @@ func _ready() -> void:
 		nivel_4_btn.set_text(SaveGameProcesor.translate.menu_levels.level_4.es)
 		nivel_5_btn.set_text(SaveGameProcesor.translate.menu_levels.level_5.es)
 		nivel_6_btn.set_text(SaveGameProcesor.translate.menu_levels.level_6.es)
+		nivel_7_btn.set_text(SaveGameProcesor.translate.menu_levels.level_7.es)
 		back.set_text(SaveGameProcesor.translate.menu_levels.btn_back.es)
 	elif lang == "english":
 		label.set_text(SaveGameProcesor.translate.menu_levels.label_title.en)
@@ -34,6 +37,7 @@ func _ready() -> void:
 		nivel_4_btn.set_text(SaveGameProcesor.translate.menu_levels.level_4.en)
 		nivel_5_btn.set_text(SaveGameProcesor.translate.menu_levels.level_5.en)
 		nivel_6_btn.set_text(SaveGameProcesor.translate.menu_levels.level_6.en)
+		nivel_7_btn.set_text(SaveGameProcesor.translate.menu_levels.level_7.en)
 		back.set_text(SaveGameProcesor.translate.menu_levels.btn_back.en)
 	
 	if not all_levels_unlock == true:	
@@ -66,6 +70,11 @@ func _ready() -> void:
 			nivel_6_btn.set_disabled(true)
 		else:
 			nivel_6_btn.set_disabled(false)
+		
+		if data_json.level_7.is_level_blocked:
+			nivel_7_btn.set_disabled(true)
+		else:
+			nivel_7_btn.set_disabled(false)
 
 
 
@@ -105,4 +114,9 @@ func _on_nivel_5_btn_button_up() -> void:
 
 func _on_nivel_6_btn_button_up() -> void:
 	var level = data_json.level_6.level_path
+	get_tree().change_scene_to_file(level)
+
+
+func _on_nivel_7_btn_button_up() -> void:
+	var level = data_json.level_7.level_path
 	get_tree().change_scene_to_file(level)

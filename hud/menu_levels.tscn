@@ -26,58 +26,6 @@ grow_vertical = 2
 texture = ExtResource("2_hb206")
 expand_mode = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
-layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -28.5
-offset_right = 28.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 33
-text = "Niveles"
-horizontal_alignment = 1
-
-[node name="tutorial_btn" type="Button" parent="ColorRect/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_o20op")
-text = "Tutorial"
-
-[node name="nivel_1_btn" type="Button" parent="ColorRect/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_o20op")
-text = "Nivel 1"
-
-[node name="nivel_2_btn" type="Button" parent="ColorRect/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_o20op")
-text = "Nivel 2"
-
-[node name="nivel_3_btn" type="Button" parent="ColorRect/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_o20op")
-text = "nivel 3"
-
-[node name="nivel_4_btn" type="Button" parent="ColorRect/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_o20op")
-text = "Nivel 4"
-
-[node name="nivel_5_btn" type="Button" parent="ColorRect/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_o20op")
-text = "nivel 5"
-
-[node name="nivel_6_btn" type="Button" parent="ColorRect/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_o20op")
-text = "nivel 6"
-
 [node name="back" type="Button" parent="ColorRect"]
 layout_mode = 1
 anchors_preset = 1
@@ -96,11 +44,74 @@ position = Vector2(362, 181)
 [node name="leaf_particles" parent="ColorRect" instance=ExtResource("5_rncct")]
 position = Vector2(394.884, -32)
 
-[connection signal="button_up" from="ColorRect/VBoxContainer/tutorial_btn" to="." method="_on_tutorial_btn_button_up"]
-[connection signal="button_up" from="ColorRect/VBoxContainer/nivel_1_btn" to="." method="_on_nivel_1_btn_button_up"]
-[connection signal="button_up" from="ColorRect/VBoxContainer/nivel_2_btn" to="." method="_on_nivel_2_btn_button_up"]
-[connection signal="button_up" from="ColorRect/VBoxContainer/nivel_3_btn" to="." method="_on_nivel_3_btn_button_up"]
-[connection signal="button_up" from="ColorRect/VBoxContainer/nivel_4_btn" to="." method="_on_nivel_4_btn_button_up"]
-[connection signal="button_up" from="ColorRect/VBoxContainer/nivel_5_btn" to="." method="_on_nivel_5_btn_button_up"]
-[connection signal="button_up" from="ColorRect/VBoxContainer/nivel_6_btn" to="." method="_on_nivel_6_btn_button_up"]
+[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 41.0
+offset_right = 0.232239
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="ColorRect/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+text = "Niveles"
+horizontal_alignment = 1
+
+[node name="tutorial_btn" type="Button" parent="ColorRect/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_o20op")
+text = "Tutorial"
+
+[node name="nivel_1_btn" type="Button" parent="ColorRect/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_o20op")
+text = "Nivel 1"
+
+[node name="nivel_2_btn" type="Button" parent="ColorRect/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_o20op")
+text = "Nivel 2"
+
+[node name="nivel_3_btn" type="Button" parent="ColorRect/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_o20op")
+text = "nivel 3"
+
+[node name="nivel_4_btn" type="Button" parent="ColorRect/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_o20op")
+text = "Nivel 4"
+
+[node name="nivel_5_btn" type="Button" parent="ColorRect/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_o20op")
+text = "nivel 5"
+
+[node name="nivel_6_btn" type="Button" parent="ColorRect/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_o20op")
+text = "nivel 6"
+
+[node name="nivel_7_btn" type="Button" parent="ColorRect/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_o20op")
+text = "nivel_7"
+
 [connection signal="button_up" from="ColorRect/back" to="." method="_on_back_button_up"]
+[connection signal="button_up" from="ColorRect/ScrollContainer/VBoxContainer/tutorial_btn" to="." method="_on_tutorial_btn_button_up"]
+[connection signal="button_up" from="ColorRect/ScrollContainer/VBoxContainer/nivel_1_btn" to="." method="_on_nivel_1_btn_button_up"]
+[connection signal="button_up" from="ColorRect/ScrollContainer/VBoxContainer/nivel_2_btn" to="." method="_on_nivel_2_btn_button_up"]
+[connection signal="button_up" from="ColorRect/ScrollContainer/VBoxContainer/nivel_3_btn" to="." method="_on_nivel_3_btn_button_up"]
+[connection signal="button_up" from="ColorRect/ScrollContainer/VBoxContainer/nivel_4_btn" to="." method="_on_nivel_4_btn_button_up"]
+[connection signal="button_up" from="ColorRect/ScrollContainer/VBoxContainer/nivel_5_btn" to="." method="_on_nivel_5_btn_button_up"]
+[connection signal="button_up" from="ColorRect/ScrollContainer/VBoxContainer/nivel_6_btn" to="." method="_on_nivel_6_btn_button_up"]
+[connection signal="button_up" from="ColorRect/ScrollContainer/VBoxContainer/nivel_7_btn" to="." method="_on_nivel_7_btn_button_up"]
