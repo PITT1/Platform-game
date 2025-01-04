@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://cs2j0tk0vtyyp"]
+
+[ext_resource type="Texture2D" uid="uid://d1dmgjythqi5w" path="res://images/MonedaD.png" id="1_dfead"]
+[ext_resource type="Script" path="res://collects/coins/coin_1.gd" id="1_kd2kj"]
+[ext_resource type="AudioStream" uid="uid://jpa7i3a82gyk" path="res://sounds/sfx/coins/coin_sound.wav" id="3_gvxqy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4khh"]
+atlas = ExtResource("1_dfead")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abnip"]
+atlas = ExtResource("1_dfead")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ty05i"]
+atlas = ExtResource("1_dfead")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ea51e"]
+atlas = ExtResource("1_dfead")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cuoea"]
+atlas = ExtResource("1_dfead")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xkqcv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4khh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abnip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ty05i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ea51e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cuoea")
+}],
+"loop": true,
+"name": &"coin",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3mrn3"]
+radius = 6.08276
+
+[node name="Coin1" type="Node2D"]
+scale = Vector2(1.6, 1.6)
+script = ExtResource("1_kd2kj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_xkqcv")
+animation = &"coin"
+frame_progress = 0.407574
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_3mrn3")
+debug_color = Color(0.776471, 0.52549, 0, 0.647059)
+
+[node name="coin_drop_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_gvxqy")
+max_distance = 500.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

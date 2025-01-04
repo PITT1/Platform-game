@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://dw07e2nhkt8p4"]
+[gd_scene load_steps=28 format=4 uid="uid://dw07e2nhkt8p4"]
 
 [ext_resource type="Script" path="res://levels/scripts_levels/tutorial.gd" id="1_xc6iy"]
 [ext_resource type="Texture2D" uid="uid://b1a0xptuwfuku" path="res://images/arrow_interfaz.png" id="4_3rwu1"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://o8autm5pdnbr" path="res://entities/player/player.tscn" id="15_h6kia"]
 [ext_resource type="AudioStream" uid="uid://bduk53dqjvn5j" path="res://sounds/ambient/6. Embers of Hope (Loop).mp3" id="15_hjxlj"]
 [ext_resource type="PackedScene" uid="uid://camhxyhtxp381" path="res://signs/victory_flag.tscn" id="16_ajitb"]
+[ext_resource type="PackedScene" uid="uid://cs2j0tk0vtyyp" path="res://collects/coins/coin_1.tscn" id="17_m5yik"]
 [ext_resource type="PackedScene" uid="uid://dxftx0pehgckf" path="res://hud/lives_hud.tscn" id="17_r7oie"]
 [ext_resource type="PackedScene" uid="uid://bar58vx48kjox" path="res://entities/enemies/blueSlime.tscn" id="18_gik14"]
 [ext_resource type="PackedScene" uid="uid://bgurafal77rsb" path="res://particles/ambient_particles.tscn" id="19_ufmbb"]
@@ -5207,6 +5208,38 @@ parameters/looping = true
 [node name="VictoryFlag" parent="." instance=ExtResource("16_ajitb")]
 position = Vector2(7695.51, -312.586)
 scale = Vector2(1.18354, 1.31381)
+
+[node name="coins" type="Node2D" parent="."]
+
+[node name="Coin1" parent="coins" instance=ExtResource("17_m5yik")]
+position = Vector2(806, 293)
+
+[node name="Coin2" parent="coins" instance=ExtResource("17_m5yik")]
+position = Vector2(3375, -546)
+
+[node name="Coin3" parent="coins" instance=ExtResource("17_m5yik")]
+position = Vector2(4059, -74)
+
+[node name="Coin4" parent="coins" instance=ExtResource("17_m5yik")]
+position = Vector2(4482, -70)
+
+[node name="Coin5" parent="coins" instance=ExtResource("17_m5yik")]
+position = Vector2(5598, -359)
+
+[node name="Coin6" parent="coins" instance=ExtResource("17_m5yik")]
+position = Vector2(5781, -360)
+
+[node name="Coin7" parent="coins" instance=ExtResource("17_m5yik")]
+position = Vector2(6198.02, -362.563)
+
+[node name="Coin8" parent="coins" instance=ExtResource("17_m5yik")]
+position = Vector2(6411.77, -371.204)
+
+[node name="Coin9" parent="coins" instance=ExtResource("17_m5yik")]
+position = Vector2(6980.06, -369.873)
+
+[node name="Coin10" parent="coins" instance=ExtResource("17_m5yik")]
+position = Vector2(7500.35, -380.443)
 
 [connection signal="body_entered" from="win_area" to="." method="_on_win_area_body_entered"]
 [connection signal="body_entered" from="camera_move/camera_move_1" to="." method="_on_camera_move_1_body_entered"]
