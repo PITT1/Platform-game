@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://ceu6owbybbmsj"]
+[gd_scene load_steps=40 format=4 uid="uid://ceu6owbybbmsj"]
 
 [ext_resource type="Script" path="res://levels/scripts_levels/world_2.gd" id="1_mbeuu"]
 [ext_resource type="Texture2D" uid="uid://cqy4dbwtshnub" path="res://images/tilemap/main_lev_build_1.png" id="2_1xqhj"]
@@ -29,6 +29,7 @@
 [ext_resource type="AudioStream" uid="uid://be56c3p3tn8cy" path="res://sounds/ambient/Action 3 (Loop).ogg" id="25_xut04"]
 [ext_resource type="PackedScene" uid="uid://dcsf554wvrgne" path="res://controls/tactil_controls_1.tscn" id="26_knm8w"]
 [ext_resource type="PackedScene" uid="uid://camhxyhtxp381" path="res://signs/victory_flag.tscn" id="28_mqpaf"]
+[ext_resource type="PackedScene" uid="uid://cs2j0tk0vtyyp" path="res://collects/coins/coin_1.tscn" id="30_yib2o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nfyan"]
 texture = ExtResource("2_1xqhj")
@@ -2434,7 +2435,7 @@ size = Vector2(311, 19)
 size = Vector2(94, 11)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s3g6j"]
-size = Vector2(121, 104)
+size = Vector2(72.0002, 29.0003)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5x84y"]
 size = Vector2(81, 145)
@@ -2681,7 +2682,7 @@ position = Vector2(4645.15, 101)
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="win_area"]
-position = Vector2(7.35449, -11.9997)
+position = Vector2(12.8501, 25.5002)
 shape = SubResource("RectangleShape2D_s3g6j")
 
 [node name="PauseButton" parent="." instance=ExtResource("23_cpsn0")]
@@ -2723,6 +2724,56 @@ debug_color = Color(0.956863, 0, 0, 0.419608)
 [node name="VictoryFlag" parent="." instance=ExtResource("28_mqpaf")]
 position = Vector2(4672.03, 108.12)
 scale = Vector2(1.20096, 1.23733)
+
+[node name="coins" type="Node2D" parent="."]
+
+[node name="Coin1" parent="coins" instance=ExtResource("30_yib2o")]
+position = Vector2(671, 74)
+
+[node name="Coin2" parent="coins" instance=ExtResource("30_yib2o")]
+position = Vector2(1130, 99)
+
+[node name="Coin3" parent="coins" instance=ExtResource("30_yib2o")]
+position = Vector2(1402, 43)
+
+[node name="Coin4" parent="coins" instance=ExtResource("30_yib2o")]
+position = Vector2(1774, 20)
+
+[node name="Coin5" parent="coins" instance=ExtResource("30_yib2o")]
+position = Vector2(1926, -19)
+
+[node name="Coin6" parent="coins" instance=ExtResource("30_yib2o")]
+position = Vector2(2042, 51)
+
+[node name="Coin7" parent="coins" instance=ExtResource("30_yib2o")]
+position = Vector2(2416, 49)
+
+[node name="Coin8" parent="coins" instance=ExtResource("30_yib2o")]
+position = Vector2(2504, 47)
+
+[node name="Coin9" parent="coins" instance=ExtResource("30_yib2o")]
+position = Vector2(2590, 47)
+
+[node name="Coin10" parent="coins" instance=ExtResource("30_yib2o")]
+position = Vector2(2687, 43)
+
+[node name="Coin11" parent="coins" instance=ExtResource("30_yib2o")]
+position = Vector2(3374, 146)
+
+[node name="Coin12" parent="coins" instance=ExtResource("30_yib2o")]
+position = Vector2(3373, 100)
+
+[node name="Coin13" parent="coins" instance=ExtResource("30_yib2o")]
+position = Vector2(3373, 53)
+
+[node name="Coin14" parent="coins" instance=ExtResource("30_yib2o")]
+position = Vector2(3679, 118)
+
+[node name="Coin15" parent="coins" instance=ExtResource("30_yib2o")]
+position = Vector2(3972, 168)
+
+[node name="Coin16" parent="coins" instance=ExtResource("30_yib2o")]
+position = Vector2(4271.53, 71.9827)
 
 [connection signal="body_entered" from="enemies/poison ivy/Area2D" to="enemies/poison ivy/Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="enemies/poison ivy/Area2D2" to="enemies/poison ivy/Area2D2" method="_on_body_entered"]

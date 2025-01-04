@@ -58,7 +58,7 @@ script = ExtResource("1_kd2kj")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_xkqcv")
 animation = &"coin"
-frame_progress = 0.407574
+frame_progress = 0.365474
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0

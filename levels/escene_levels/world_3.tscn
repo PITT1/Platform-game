@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://qgtvevmmuiwu"]
+[gd_scene load_steps=45 format=4 uid="uid://qgtvevmmuiwu"]
 
 [ext_resource type="Texture2D" uid="uid://bg8weivuatkhu" path="res://images/forestBackground/Layer_0011_0.png" id="1_qri0g"]
 [ext_resource type="Texture2D" uid="uid://cmboo27ugv0n" path="res://images/forestBackground/Layer_0010_1.png" id="2_6nfu2"]
@@ -32,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://dcsf554wvrgne" path="res://controls/tactil_controls_1.tscn" id="29_415t7"]
 [ext_resource type="Script" path="res://levels/scripts_levels/world_3.gd" id="30_fm6p2"]
 [ext_resource type="PackedScene" uid="uid://camhxyhtxp381" path="res://signs/victory_flag.tscn" id="31_obneq"]
+[ext_resource type="PackedScene" uid="uid://cs2j0tk0vtyyp" path="res://collects/coins/coin_1.tscn" id="33_f05vu"]
 
 [sub_resource type="GDScript" id="GDScript_gtwoe"]
 script/source = "extends Node2D
@@ -4034,6 +4035,80 @@ debug_color = Color(0.886275, 0, 0, 0.45098)
 [node name="VictoryFlag" parent="." instance=ExtResource("31_obneq")]
 position = Vector2(6348.95, 342.488)
 scale = Vector2(1.3983, 1.48294)
+
+[node name="coins" type="Node2D" parent="."]
+
+[node name="Coin1" parent="coins" instance=ExtResource("33_f05vu")]
+position = Vector2(828, 133)
+
+[node name="Coin2" parent="coins" instance=ExtResource("33_f05vu")]
+position = Vector2(650, 297)
+
+[node name="Coin3" parent="coins" instance=ExtResource("33_f05vu")]
+position = Vector2(879, 291)
+
+[node name="Coin4" parent="coins" instance=ExtResource("33_f05vu")]
+position = Vector2(1073, 288)
+
+[node name="Coin5" parent="coins" instance=ExtResource("33_f05vu")]
+position = Vector2(1309, 230)
+
+[node name="Coin6" parent="coins" instance=ExtResource("33_f05vu")]
+position = Vector2(1549, 259)
+
+[node name="Coin7" parent="coins" instance=ExtResource("33_f05vu")]
+position = Vector2(1828, 189)
+
+[node name="Coin8" parent="coins" instance=ExtResource("33_f05vu")]
+position = Vector2(1952, 184)
+
+[node name="Coin9" parent="coins" instance=ExtResource("33_f05vu")]
+position = Vector2(2400, 70)
+
+[node name="Coin10" parent="coins" instance=ExtResource("33_f05vu")]
+position = Vector2(2282, 110)
+
+[node name="Coin11" parent="coins" instance=ExtResource("33_f05vu")]
+position = Vector2(2468, 147)
+
+[node name="Coin12" parent="coins" instance=ExtResource("33_f05vu")]
+position = Vector2(2469, 245)
+
+[node name="Coin13" parent="coins" instance=ExtResource("33_f05vu")]
+position = Vector2(2615, -46)
+
+[node name="Coin14" parent="coins" instance=ExtResource("33_f05vu")]
+position = Vector2(2838, 77)
+
+[node name="Coin15" parent="coins" instance=ExtResource("33_f05vu")]
+position = Vector2(3249, 278)
+
+[node name="Coin16" parent="coins" instance=ExtResource("33_f05vu")]
+position = Vector2(3406.39, 273.314)
+
+[node name="Coin17" parent="coins" instance=ExtResource("33_f05vu")]
+position = Vector2(3580, 273)
+
+[node name="Coin18" parent="coins" instance=ExtResource("33_f05vu")]
+position = Vector2(3746, 274)
+
+[node name="Coin19" parent="coins" instance=ExtResource("33_f05vu")]
+position = Vector2(4035, 56)
+
+[node name="Coin20" parent="coins" instance=ExtResource("33_f05vu")]
+position = Vector2(4347, 114)
+
+[node name="Coin21" parent="coins" instance=ExtResource("33_f05vu")]
+position = Vector2(4967, 318)
+
+[node name="Coin22" parent="coins" instance=ExtResource("33_f05vu")]
+position = Vector2(5163, 318)
+
+[node name="Coin23" parent="coins" instance=ExtResource("33_f05vu")]
+position = Vector2(5353, 327)
+
+[node name="Coin24" parent="coins" instance=ExtResource("33_f05vu")]
+position = Vector2(5480, 304)
 
 [connection signal="body_entered" from="espinas/Area2D2" to="espinas/Area2D2" method="_on_body_entered"]
 [connection signal="body_entered" from="espinas/Area2D3" to="espinas/Area2D3" method="_on_body_entered"]

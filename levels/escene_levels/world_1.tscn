@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://no3yti5mpqns"]
+[gd_scene load_steps=42 format=4 uid="uid://no3yti5mpqns"]
 
 [ext_resource type="Script" path="res://levels/scripts_levels/world_1.gd" id="1_ei3lv"]
 [ext_resource type="Texture2D" uid="uid://cqy4dbwtshnub" path="res://images/tilemap/main_lev_build_1.png" id="2_mpw2a"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://camhxyhtxp381" path="res://signs/victory_flag.tscn" id="26_8rvot"]
 [ext_resource type="PackedScene" uid="uid://54u88oswgal8" path="res://obstacles/trap1.tscn" id="27_b6lni"]
 [ext_resource type="PackedScene" uid="uid://dcsf554wvrgne" path="res://controls/tactil_controls_1.tscn" id="27_xsdax"]
+[ext_resource type="PackedScene" uid="uid://cs2j0tk0vtyyp" path="res://collects/coins/coin_1.tscn" id="30_txhmk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aiimx"]
 texture = ExtResource("2_mpw2a")
@@ -5897,6 +5898,68 @@ position = Vector2(6117.42, 85.0356)
 
 [node name="InvisibleWallEnemy2" parent="traps" instance=ExtResource("24_1nid7")]
 position = Vector2(6251.46, 83.4182)
+
+[node name="coins" type="Node2D" parent="."]
+
+[node name="Coin1" parent="coins" instance=ExtResource("30_txhmk")]
+position = Vector2(962, 265)
+
+[node name="Coin2" parent="coins" instance=ExtResource("30_txhmk")]
+position = Vector2(1139, 265)
+
+[node name="Coin3" parent="coins" instance=ExtResource("30_txhmk")]
+position = Vector2(1546, 349)
+
+[node name="Coin4" parent="coins" instance=ExtResource("30_txhmk")]
+position = Vector2(1721, 316)
+
+[node name="Coin5" parent="coins" instance=ExtResource("30_txhmk")]
+position = Vector2(1901, 349)
+
+[node name="Coin6" parent="coins" instance=ExtResource("30_txhmk")]
+position = Vector2(1557, 96)
+
+[node name="Coin7" parent="coins" instance=ExtResource("30_txhmk")]
+position = Vector2(1844, 102)
+
+[node name="Coin8" parent="coins" instance=ExtResource("30_txhmk")]
+position = Vector2(2471, 337)
+
+[node name="Coin9" parent="coins" instance=ExtResource("30_txhmk")]
+position = Vector2(2162, 91)
+
+[node name="Coin10" parent="coins" instance=ExtResource("30_txhmk")]
+position = Vector2(2442, 25)
+
+[node name="Coin11" parent="coins" instance=ExtResource("30_txhmk")]
+position = Vector2(2843, 73)
+
+[node name="Coin12" parent="coins" instance=ExtResource("30_txhmk")]
+position = Vector2(3624, 314)
+
+[node name="Coin13" parent="coins" instance=ExtResource("30_txhmk")]
+position = Vector2(3817, 313)
+
+[node name="Coin14" parent="coins" instance=ExtResource("30_txhmk")]
+position = Vector2(4007, 310)
+
+[node name="Coin15" parent="coins" instance=ExtResource("30_txhmk")]
+position = Vector2(4200.13, 314.526)
+
+[node name="Coin16" parent="coins" instance=ExtResource("30_txhmk")]
+position = Vector2(5136, 324)
+
+[node name="Coin17" parent="coins" instance=ExtResource("30_txhmk")]
+position = Vector2(5400, 344)
+
+[node name="Coin18" parent="coins" instance=ExtResource("30_txhmk")]
+position = Vector2(6187, 36)
+
+[node name="Coin19" parent="coins" instance=ExtResource("30_txhmk")]
+position = Vector2(6145, 311)
+
+[node name="Coin20" parent="coins" instance=ExtResource("30_txhmk")]
+position = Vector2(6469, 140)
 
 [connection signal="body_entered" from="win_area" to="." method="_on_win_area_body_entered"]
 [connection signal="body_entered" from="death_zone" to="." method="_on_death_zone_body_entered"]

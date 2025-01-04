@@ -5241,6 +5241,12 @@ position = Vector2(6980.06, -369.873)
 [node name="Coin10" parent="coins" instance=ExtResource("17_m5yik")]
 position = Vector2(7500.35, -380.443)
 
+[node name="Coin11" parent="coins" instance=ExtResource("17_m5yik")]
+position = Vector2(2624, 12)
+
+[node name="Coin12" parent="coins" instance=ExtResource("17_m5yik")]
+position = Vector2(2624, 313)
+
 [connection signal="body_entered" from="win_area" to="." method="_on_win_area_body_entered"]
 [connection signal="body_entered" from="camera_move/camera_move_1" to="." method="_on_camera_move_1_body_entered"]
 [connection signal="body_exited" from="camera_move/camera_move_1" to="." method="_on_camera_move_1_body_exited"]
