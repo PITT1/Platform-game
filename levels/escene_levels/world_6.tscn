@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://tt76r5tbm7b"]
+[gd_scene load_steps=47 format=4 uid="uid://tt76r5tbm7b"]
 
 [ext_resource type="Texture2D" uid="uid://bg8weivuatkhu" path="res://images/forestBackground/Layer_0011_0.png" id="1_kpy00"]
 [ext_resource type="Script" path="res://levels/scripts_levels/world_6.gd" id="1_tad4s"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://54u88oswgal8" path="res://obstacles/trap1.tscn" id="23_dgkq4"]
 [ext_resource type="PackedScene" uid="uid://camhxyhtxp381" path="res://signs/victory_flag.tscn" id="29_bywus"]
 [ext_resource type="PackedScene" uid="uid://dtq4ilw7ldcce" path="res://obstacles/invisible_wall_enemy.tscn" id="29_h8m24"]
+[ext_resource type="PackedScene" uid="uid://cs2j0tk0vtyyp" path="res://collects/coins/coin_1.tscn" id="30_hf51y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ix5f6"]
 texture = ExtResource("11_aedh1")
@@ -5937,6 +5938,17 @@ position = Vector2(294.528, 36.1595)
 shape = SubResource("RectangleShape2D_k4w3o")
 debug_color = Color(0.980392, 0, 0, 0.286275)
 
+[node name="pinchos_trap2" type="Area2D" parent="death_zone"]
+position = Vector2(1635.26, 395.848)
+scale = Vector2(3, 1)
+collision_layer = 0
+collision_mask = 37
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="death_zone/pinchos_trap2"]
+position = Vector2(294.528, 36.1595)
+shape = SubResource("RectangleShape2D_k4w3o")
+debug_color = Color(0.980392, 0, 0, 0.286275)
+
 [node name="you_win_area" type="Area2D" parent="."]
 position = Vector2(5192.44, 319.455)
 collision_layer = 0
@@ -5950,10 +5962,82 @@ debug_color = Color(0, 0.643533, 0.298262, 0.42)
 position = Vector2(5224, 361)
 scale = Vector2(1.33333, 1.33333)
 
+[node name="coins" type="Node2D" parent="."]
+
+[node name="Coin1" parent="coins" instance=ExtResource("30_hf51y")]
+position = Vector2(531, 114)
+
+[node name="Coin2" parent="coins" instance=ExtResource("30_hf51y")]
+position = Vector2(773, 208)
+
+[node name="Coin3" parent="coins" instance=ExtResource("30_hf51y")]
+position = Vector2(1008, 309)
+
+[node name="Coin4" parent="coins" instance=ExtResource("30_hf51y")]
+position = Vector2(1159, 173)
+
+[node name="Coin5" parent="coins" instance=ExtResource("30_hf51y")]
+position = Vector2(1159, 83)
+
+[node name="Coin6" parent="coins" instance=ExtResource("30_hf51y")]
+position = Vector2(1286, 230)
+
+[node name="Coin7" parent="coins" instance=ExtResource("30_hf51y")]
+position = Vector2(1762, 76)
+
+[node name="Coin8" parent="coins" instance=ExtResource("30_hf51y")]
+position = Vector2(1526, 77)
+
+[node name="Coin9" parent="coins" instance=ExtResource("30_hf51y")]
+position = Vector2(1384, 80)
+
+[node name="Coin10" parent="coins" instance=ExtResource("30_hf51y")]
+position = Vector2(2043, 22)
+
+[node name="Coin11" parent="coins" instance=ExtResource("30_hf51y")]
+position = Vector2(2326, 63)
+
+[node name="Coin12" parent="coins" instance=ExtResource("30_hf51y")]
+position = Vector2(2322, -193)
+
+[node name="Coin13" parent="coins" instance=ExtResource("30_hf51y")]
+position = Vector2(2319, -59)
+
+[node name="Coin14" parent="coins" instance=ExtResource("30_hf51y")]
+position = Vector2(2553, -294)
+
+[node name="Coin15" parent="coins" instance=ExtResource("30_hf51y")]
+position = Vector2(2688, -227)
+
+[node name="Coin16" parent="coins" instance=ExtResource("30_hf51y")]
+position = Vector2(2959, -192)
+
+[node name="Coin17" parent="coins" instance=ExtResource("30_hf51y")]
+position = Vector2(3247, -96)
+
+[node name="Coin18" parent="coins" instance=ExtResource("30_hf51y")]
+position = Vector2(3523, 74)
+
+[node name="Coin19" parent="coins" instance=ExtResource("30_hf51y")]
+position = Vector2(3733, 85)
+
+[node name="Coin20" parent="coins" instance=ExtResource("30_hf51y")]
+position = Vector2(4307, 174)
+
+[node name="Coin21" parent="coins" instance=ExtResource("30_hf51y")]
+position = Vector2(4592, 179)
+
+[node name="Coin22" parent="coins" instance=ExtResource("30_hf51y")]
+position = Vector2(4303, 359)
+
+[node name="Coin23" parent="coins" instance=ExtResource("30_hf51y")]
+position = Vector2(4600, 363)
+
 [connection signal="body_entered" from="camera_move_area/move_camera_0" to="." method="_on_move_camera_0_body_entered"]
 [connection signal="body_entered" from="camera_move_area/move_camera_1" to="." method="_on_move_camera_1_body_entered"]
 [connection signal="body_exited" from="camera_move_area/move_camera_1" to="." method="_on_move_camera_1_body_exited"]
 [connection signal="body_entered" from="camera_move_area/move_camera_2" to="." method="_on_move_camera_2_body_entered"]
 [connection signal="body_exited" from="camera_move_area/move_camera_2" to="." method="_on_move_camera_2_body_exited"]
 [connection signal="body_entered" from="death_zone/pinchos_trap" to="." method="_on_pinchos_trap_body_entered"]
+[connection signal="body_entered" from="death_zone/pinchos_trap2" to="." method="_on_pinchos_trap_body_entered"]
 [connection signal="body_entered" from="you_win_area" to="." method="_on_you_win_area_body_entered"]
