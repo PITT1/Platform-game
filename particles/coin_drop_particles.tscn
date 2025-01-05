@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1b386ojfi5hd"]
+
+[ext_resource type="Script" path="res://particles/coin_drop_particles.gd" id="1_555nw"]
+[ext_resource type="AudioStream" uid="uid://jpa7i3a82gyk" path="res://sounds/sfx/coins/coin_sound.wav" id="2_vfskt"]
+
+[sub_resource type="Curve" id="Curve_yu0oo"]
+max_value = 20.0
+_data = [Vector2(0, 20), 0.0, 0.0, 0, 0, Vector2(0.54698, 12.1509), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="CoinDropParticles" type="CPUParticles2D"]
+emitting = false
+amount = 30
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 10)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+angular_velocity_min = 1000.0
+angular_velocity_max = 1000.0
+orbit_velocity_max = 2.0
+linear_accel_min = 10.0
+linear_accel_max = 10.0
+scale_amount_curve = SubResource("Curve_yu0oo")
+color = Color(1, 1, 0, 0.580392)
+script = ExtResource("1_555nw")
+
+[node name="coin_drop_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_vfskt")
+volume_db = 5.0
+
+[connection signal="finished" from="." to="." method="_on_finished"]
