@@ -6,6 +6,7 @@ func _ready() -> void:
 	anim.play("coin")
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	SaveGameProcesor.coins_count += 1
 	var instantia = drop_particles.instantiate()
 	add_sibling(instantia)
 	instantia.global_position = global_position

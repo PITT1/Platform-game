@@ -3,6 +3,8 @@ extends Node
 const save_game_path: String = "user://save_game.dat"
 const LANGUAGE_PATH: String = "user://lang.dat"
 
+var coins_count: int
+
 const LEVEL_INIT_CANVAS: Dictionary = {
 	tutorial = {
 		level_path = "res://levels/escene_levels/tutorial.tscn",

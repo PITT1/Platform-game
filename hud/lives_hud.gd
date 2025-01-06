@@ -21,10 +21,9 @@ func _ready() -> void:
 	
 	anim.play("coin")
 	
-	for i in get_parent().get_child_count():
-		if get_parent().get_child(i).name == "coins":
-			total_coins = get_parent().get_child(i).get_child_count()
-			coin_label.set_text("0/" + str(total_coins))
+	get_total_coins()
+	
+	SaveGameProcesor.coins_count = 0
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -36,3 +35,11 @@ func _process(delta: float) -> void:
 	if heartChange > lives:
 		heartContainer.remove_child(heartContainer.get_child(lives))
 		heartChange = lives
+	
+	coin_label.set_text(str(SaveGameProcesor.coins_count) + "/" + str(total_coins))
+
+func get_total_coins():
+	for i in get_parent().get_child_count():
+		if get_parent().get_child(i).name == "coins":
+			total_coins = get_parent().get_child(i).get_child_count()
+			coin_label.set_text("0/" + str(total_coins))
