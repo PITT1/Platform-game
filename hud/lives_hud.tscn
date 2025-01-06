@@ -1,7 +1,52 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxftx0pehgckf"]
+[gd_scene load_steps=11 format=3 uid="uid://dxftx0pehgckf"]
 
 [ext_resource type="Texture2D" uid="uid://b4trce0xijr7d" path="res://images/live.png" id="1_3fu7o"]
 [ext_resource type="Script" path="res://hud/lives_hud.gd" id="1_fr78x"]
+[ext_resource type="Texture2D" uid="uid://d1dmgjythqi5w" path="res://images/MonedaD.png" id="3_i6l0l"]
+[ext_resource type="FontFile" uid="uid://bl1to454pytpt" path="res://fonts/Raleway-Regular.ttf" id="4_odiav"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvpyl"]
+atlas = ExtResource("3_i6l0l")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vyyx8"]
+atlas = ExtResource("3_i6l0l")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fymfp"]
+atlas = ExtResource("3_i6l0l")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkn8l"]
+atlas = ExtResource("3_i6l0l")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bod4j"]
+atlas = ExtResource("3_i6l0l")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_knj5l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tvpyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vyyx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fymfp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkn8l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bod4j")
+}],
+"loop": true,
+"name": &"coin",
+"speed": 12.0
+}]
 
 [node name="lives-HUD" type="Control"]
 layout_mode = 3
@@ -22,3 +67,25 @@ offset_bottom = 18.0
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("1_3fu7o")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 22.0
+offset_bottom = -279.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/HBoxContainer2"]
+position = Vector2(-9, 11)
+sprite_frames = SubResource("SpriteFrames_knj5l")
+animation = &"coin"
+frame_progress = 0.955631
+
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_odiav")
+text = "1/12"
