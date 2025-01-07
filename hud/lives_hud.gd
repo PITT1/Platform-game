@@ -31,12 +31,16 @@ func _process(delta: float) -> void:
 		pass
 	
 	var lives = get_parent().get_node("player/CharacterBody2D").lives
-	
 	if heartChange > lives:
 		heartContainer.remove_child(heartContainer.get_child(lives))
 		heartChange = lives
 	
-	coin_label.set_text(str(SaveGameProcesor.coins_count) + "/" + str(total_coins))
+	if SaveGameProcesor.coins_count != last_coins_count:
+		print("hola")
+		coin_label.set_text(str(SaveGameProcesor.coins_count) + "/" + str(total_coins))
+		last_coins_count = SaveGameProcesor.coins_count
+
+var last_coins_count: int = SaveGameProcesor.coins_count
 
 func get_total_coins():
 	for i in get_parent().get_child_count():
