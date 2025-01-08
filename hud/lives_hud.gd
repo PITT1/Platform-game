@@ -36,7 +36,6 @@ func _process(delta: float) -> void:
 		heartChange = lives
 	
 	if SaveGameProcesor.coins_count != last_coins_count:
-		print("hola")
 		coin_label.set_text(str(SaveGameProcesor.coins_count) + "/" + str(total_coins))
 		last_coins_count = SaveGameProcesor.coins_count
 
