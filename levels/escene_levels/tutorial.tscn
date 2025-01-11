@@ -5247,6 +5247,11 @@ position = Vector2(2624, 12)
 [node name="Coin12" parent="coins" instance=ExtResource("17_m5yik")]
 position = Vector2(2624, 313)
 
+[node name="Timer" type="Timer" parent="."]
+process_mode = 1
+wait_time = 999999.0
+autostart = true
+
 [connection signal="body_entered" from="win_area" to="." method="_on_win_area_body_entered"]
 [connection signal="body_entered" from="camera_move/camera_move_1" to="." method="_on_camera_move_1_body_entered"]
 [connection signal="body_exited" from="camera_move/camera_move_1" to="." method="_on_camera_move_1_body_exited"]

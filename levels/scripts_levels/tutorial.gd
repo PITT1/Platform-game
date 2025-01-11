@@ -4,6 +4,7 @@ extends Node2D
 var scene_game_over = preload("res://hud/game_over.tscn")
 var scene_you_win = preload("res://hud/you_win_hud.tscn")
 @onready var tutorial: Node2D = $"."
+@onready var timer: Timer = $Timer
 
 
 var has_executed_once = false
@@ -29,6 +30,8 @@ func _on_win_area_body_entered(body: CharacterBody2D) -> void:
 		var instantia = scene_you_win.instantiate()
 		add_child(instantia)
 		instantia.showHud(true)
+		print(timer.wait_time - timer.get_time_left())
+		timer.stop()
 
 
 func _on_camera_move_1_body_entered(body: Node2D) -> void:
