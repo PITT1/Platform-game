@@ -9,42 +9,58 @@ const LEVEL_INIT_CANVAS: Dictionary = {
 	tutorial = {
 		level_path = "res://levels/escene_levels/tutorial.tscn",
 		is_level_pass = false,
-		is_level_blocked = false
+		is_level_blocked = false,
+		best_time = 0.00,
+		is_all_coins_collected = false
 	},
 	level_1 = {
 		level_path = "res://levels/escene_levels/world_1.tscn",
 		is_level_pass = false,
-		is_level_blocked = true
+		is_level_blocked = true,
+		best_time = 0.00,
+		is_all_coins_collected = false
 	},
 	level_2 = {
 		level_path = "res://levels/escene_levels/world_2.tscn",
 		is_level_pass = false,
-		is_level_blocked = true
+		is_level_blocked = true,
+		best_time = 0.00,
+		is_all_coins_collected = false
 	},
 	level_3 = {
 		level_path = "res://levels/escene_levels/world_3.tscn",
 		is_level_pass = false,
-		is_level_blocked = true
+		is_level_blocked = true,
+		best_time = 0.00,
+		is_all_coins_collected = false
 	},
 	level_4 = {
 		level_path = "res://levels/escene_levels/world_4.tscn",
 		is_level_pass = false,
-		is_level_blocked = true
+		is_level_blocked = true,
+		best_time = 0.00,
+		is_all_coins_collected = false
 	},
 	level_5 = {
 		level_path = "res://levels/escene_levels/world_5.tscn",
 		is_level_pass = false,
-		is_level_blocked = true
+		is_level_blocked = true,
+		best_time = 0.00,
+		is_all_coins_collected = false
 	},
 	level_6 = {
 		level_path = "res://levels/escene_levels/world_6.tscn",
 		is_level_pass = false,
-		is_level_blocked = true
+		is_level_blocked = true,
+		best_time = 0.00,
+		is_all_coins_collected = false
 	},
 	level_7 = {
 		level_path = "res://levels/escene_levels/world_7.tscn",
 		is_level_pass = false,
-		is_level_blocked = true
+		is_level_blocked = true,
+		best_time = 0.00,
+		is_all_coins_collected = false
 	},
 }
 
@@ -276,10 +292,10 @@ func init_save_game():
 	
 	var saved_content = JSON.parse_string(load_data())
 	
-	if LEVEL_INIT_CANVAS.size() != saved_content.size():
-		saved_content.merge(LEVEL_INIT_CANVAS)
-		save_data(JSON.stringify(saved_content))
-		print("la cantidad de niveles fue actualizada")
+	#if LEVEL_INIT_CANVAS.size() != saved_content.size():
+	saved_content.merge(LEVEL_INIT_CANVAS, false)
+	save_data(JSON.stringify(saved_content))
+	print("se hizo merge en el save_game_path")
 
 func save_data(content: String):
 	var file = FileAccess.open(save_game_path, FileAccess.WRITE)
