@@ -7,12 +7,13 @@ extends Control
 @onready var try_again_btn: Button = $CanvasLayer/ColorRect/VBoxContainer/try_again_btn
 @onready var go_to_menu_levels_btn: Button = $CanvasLayer/ColorRect/VBoxContainer/go_to_menu_levels_btn
 @onready var quit_btn: Button = $CanvasLayer/ColorRect/VBoxContainer/quit_btn
+@onready var timer_left: Label = $CanvasLayer/ColorRect/VBoxContainer/timer_left
 
 var is_show: bool = false
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var lang = SaveGameProcesor.load_language()
+	timer_left.set_text(str(SaveGameProcesor.timer_level) + " S")
 	if lang == "spanish":
 		label.set_text(SaveGameProcesor.translate.you_win_hud.title_label.es)
 		next_level_btn.set_text(SaveGameProcesor.translate.you_win_hud.next_level.es)
@@ -25,9 +26,6 @@ func _ready() -> void:
 		try_again_btn.set_text(SaveGameProcesor.translate.you_win_hud.try_agai_btn.en)
 		go_to_menu_levels_btn.set_text(SaveGameProcesor.translate.you_win_hud.go_to_menu_levels.en)
 		quit_btn.set_text(SaveGameProcesor.translate.you_win_hud.quit.en)
-	
-
-
 
 func showHud(show_hud: bool):
 	if show_hud == true and is_show == false:

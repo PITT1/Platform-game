@@ -137,6 +137,10 @@ theme_override_font_sizes/font_size = 37
 text = "¡VICTORIA!"
 horizontal_alignment = 1
 
+[node name="timer_left" type="Label" parent="CanvasLayer/ColorRect/VBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+
 [node name="next_level_btn" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 22

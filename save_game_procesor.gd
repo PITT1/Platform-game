@@ -4,6 +4,7 @@ const save_game_path: String = "user://save_game.dat"
 const LANGUAGE_PATH: String = "user://lang.dat"
 
 var coins_count: int
+var timer_level: float = 0.0
 
 const LEVEL_INIT_CANVAS: Dictionary = {
 	tutorial = {
@@ -11,56 +12,64 @@ const LEVEL_INIT_CANVAS: Dictionary = {
 		is_level_pass = false,
 		is_level_blocked = false,
 		best_time = 0.00,
-		is_all_coins_collected = false
+		is_all_coins_collected = false,
+		is_no_hit = false
 	},
 	level_1 = {
 		level_path = "res://levels/escene_levels/world_1.tscn",
 		is_level_pass = false,
 		is_level_blocked = true,
 		best_time = 0.00,
-		is_all_coins_collected = false
+		is_all_coins_collected = false,
+		is_no_hit = false
 	},
 	level_2 = {
 		level_path = "res://levels/escene_levels/world_2.tscn",
 		is_level_pass = false,
 		is_level_blocked = true,
 		best_time = 0.00,
-		is_all_coins_collected = false
+		is_all_coins_collected = false,
+		is_no_hit = false
 	},
 	level_3 = {
 		level_path = "res://levels/escene_levels/world_3.tscn",
 		is_level_pass = false,
 		is_level_blocked = true,
 		best_time = 0.00,
-		is_all_coins_collected = false
+		is_all_coins_collected = false,
+		is_no_hit = false
 	},
 	level_4 = {
 		level_path = "res://levels/escene_levels/world_4.tscn",
 		is_level_pass = false,
 		is_level_blocked = true,
 		best_time = 0.00,
-		is_all_coins_collected = false
+		is_all_coins_collected = false,
+		is_no_hit = false
 	},
 	level_5 = {
 		level_path = "res://levels/escene_levels/world_5.tscn",
 		is_level_pass = false,
 		is_level_blocked = true,
 		best_time = 0.00,
-		is_all_coins_collected = false
+		is_all_coins_collected = false,
+		is_no_hit = false
 	},
 	level_6 = {
 		level_path = "res://levels/escene_levels/world_6.tscn",
 		is_level_pass = false,
 		is_level_blocked = true,
 		best_time = 0.00,
-		is_all_coins_collected = false
+		is_all_coins_collected = false,
+		is_no_hit = false
 	},
 	level_7 = {
 		level_path = "res://levels/escene_levels/world_7.tscn",
 		is_level_pass = false,
 		is_level_blocked = true,
 		best_time = 0.00,
-		is_all_coins_collected = false
+		is_all_coins_collected = false,
+		is_no_hit = false
 	},
 }
 
