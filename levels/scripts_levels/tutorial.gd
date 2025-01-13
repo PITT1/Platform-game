@@ -26,14 +26,14 @@ func set_has_executed_once():
 
 func _on_win_area_body_entered(body: CharacterBody2D) -> void:
 	if body:
-		print(timer.wait_time - timer.get_time_left())
 		var time_left = timer.wait_time - timer.get_time_left()
 		SaveGameProcesor.timer_level = round(time_left * 100) / 100
+		timer.stop()
 		SaveGameProcesor.save_data_levels("tutorial", "level_1")
 		var instantia = scene_you_win.instantiate()
 		add_child(instantia)
 		instantia.showHud(true)
-		timer.stop()
+		
 
 func _on_camera_move_1_body_entered(body: Node2D) -> void:
 	if body.name == "player":

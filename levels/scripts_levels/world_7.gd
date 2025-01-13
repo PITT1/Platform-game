@@ -5,6 +5,7 @@ var scene_game_over = preload("res://hud/game_over.tscn")
 var scene_you_win = preload("res://hud/you_win_hud.tscn")
 
 var has_executed_once = false
+@onready var timer: Timer = $Timer
 
 func _process(delta: float) -> void:
 	var playerChild = player.get_children()
@@ -23,6 +24,9 @@ func set_has_executed_once():
 
 func _on_win_area_body_entered(body: Node2D) -> void:
 	if body:
+		var time_left = timer.wait_time - timer.get_time_left()
+		SaveGameProcesor.timer_level = round(time_left * 100) / 100
+		timer.stop()
 		var level_split = name.split("_")
 		SaveGameProcesor.save_data_last_level("level_" + level_split[1])
 		var instantia = scene_you_win.instantiate()

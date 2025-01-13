@@ -2775,6 +2775,11 @@ position = Vector2(3972, 168)
 [node name="Coin16" parent="coins" instance=ExtResource("30_yib2o")]
 position = Vector2(4271.53, 71.9827)
 
+[node name="Timer" type="Timer" parent="."]
+process_mode = 1
+wait_time = 999999.0
+autostart = true
+
 [connection signal="body_entered" from="enemies/poison ivy/Area2D" to="enemies/poison ivy/Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="enemies/poison ivy/Area2D2" to="enemies/poison ivy/Area2D2" method="_on_body_entered"]
 [connection signal="body_entered" from="win_area" to="." method="_on_win_area_body_entered"]

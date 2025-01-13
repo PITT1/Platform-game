@@ -6451,6 +6451,11 @@ position = Vector2(5133.81, 108.931)
 [node name="Coin42" parent="coins" instance=ExtResource("32_4hdek")]
 position = Vector2(5331, 107)
 
+[node name="Timer" type="Timer" parent="."]
+process_mode = 1
+wait_time = 999999.0
+autostart = true
+
 [connection signal="body_entered" from="traps/danger_area" to="." method="_on_danger_area_body_entered"]
 [connection signal="body_entered" from="traps/danger_area/danger_area" to="." method="_on_danger_area_body_entered"]
 [connection signal="body_entered" from="traps/danger_area/danger_area2" to="." method="_on_danger_area_body_entered"]

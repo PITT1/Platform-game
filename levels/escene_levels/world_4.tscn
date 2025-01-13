@@ -1709,6 +1709,11 @@ position = Vector2(3183.54, 320.417)
 [node name="Coin29" parent="coins" instance=ExtResource("29_rtog7")]
 position = Vector2(3739, 308)
 
+[node name="Timer" type="Timer" parent="."]
+process_mode = 1
+wait_time = 999999.0
+autostart = true
+
 [connection signal="body_entered" from="win_area" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="move_cameras/Area2D2" to="." method="_on_area_2d_2_body_entered"]
 [connection signal="body_exited" from="move_cameras/Area2D2" to="." method="_on_area_2d_2_body_exited"]

@@ -5961,6 +5961,11 @@ position = Vector2(6145, 311)
 [node name="Coin20" parent="coins" instance=ExtResource("30_txhmk")]
 position = Vector2(6469, 140)
 
+[node name="Timer" type="Timer" parent="."]
+process_mode = 1
+wait_time = 999999.0
+autostart = true
+
 [connection signal="body_entered" from="win_area" to="." method="_on_win_area_body_entered"]
 [connection signal="body_entered" from="death_zone" to="." method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="move_camera/camera_move1" to="." method="_on_camera_move_1_body_entered"]
