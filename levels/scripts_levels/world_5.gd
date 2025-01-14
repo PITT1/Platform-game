@@ -34,6 +34,7 @@ func _on_you_win_area_body_entered(body: Node2D) -> void:
 		var time_left = timer.wait_time - timer.get_time_left()
 		SaveGameProcesor.timer_level = round(time_left * 100) / 100
 		timer.stop()
+		SaveGameProcesor.save_best_time("level_5")
 		var level_split = name.split("_")
 		var next_level = int(level_split[1]) + 1
 		SaveGameProcesor.save_data_levels("level_" + level_split[1], "level_" + str(next_level))

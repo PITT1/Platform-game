@@ -301,10 +301,10 @@ func init_save_game():
 	
 	var saved_content = JSON.parse_string(load_data())
 	
-	#if LEVEL_INIT_CANVAS.size() != saved_content.size():
-	saved_content.merge(LEVEL_INIT_CANVAS, false)
-	save_data(JSON.stringify(saved_content))
-	print("se hizo merge en el save_game_path")
+	if LEVEL_INIT_CANVAS.size() != saved_content.size():
+		saved_content.merge(LEVEL_INIT_CANVAS, false)
+		save_data(JSON.stringify(saved_content))
+		print("se hizo merge en el save_game_path")
 
 func save_data(content: String):
 	var file = FileAccess.open(save_game_path, FileAccess.WRITE)
@@ -345,3 +345,10 @@ func save_data_last_level(current_level: String):
 	var new_data = data_dict.duplicate()
 	new_data[current_level]["is_level_pass"] = true
 	save_data(JSON.stringify(new_data))
+
+func save_best_time(level_name: String):
+	var data = load_data()
+	var data_dict: Dictionary = JSON.parse_string(data)
+	data_dict[level_name]["best_time"] = timer_level
+	save_data(JSON.stringify(data_dict))
+	

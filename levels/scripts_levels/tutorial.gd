@@ -29,6 +29,7 @@ func _on_win_area_body_entered(body: CharacterBody2D) -> void:
 		var time_left = timer.wait_time - timer.get_time_left()
 		SaveGameProcesor.timer_level = round(time_left * 100) / 100
 		timer.stop()
+		SaveGameProcesor.save_best_time("tutorial")
 		SaveGameProcesor.save_data_levels("tutorial", "level_1")
 		var instantia = scene_you_win.instantiate()
 		add_child(instantia)
