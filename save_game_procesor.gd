@@ -346,10 +346,11 @@ func save_data_last_level(current_level: String):
 	new_data[current_level]["is_level_pass"] = true
 	save_data(JSON.stringify(new_data))
 
-func save_best_time(level_name: String, is_all_coins: bool):
+func save_best_time(level_name: String, is_all_coins: bool, is_no_hit_play: bool):
 	var data = load_data()
 	var data_dict: Dictionary = JSON.parse_string(data)
 	data_dict[level_name]["best_time"] = timer_level
 	data_dict[level_name]["is_all_coins_collected"] = is_all_coins
+	data_dict[level_name]["is_no_hit"] = is_no_hit_play
 	save_data(JSON.stringify(data_dict))
 	

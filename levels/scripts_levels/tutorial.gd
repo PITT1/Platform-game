@@ -30,8 +30,9 @@ func _on_win_area_body_entered(body: CharacterBody2D) -> void:
 		var time_left = timer.wait_time - timer.get_time_left()
 		SaveGameProcesor.timer_level = round(time_left * 100) / 100
 		timer.stop()
+		no_hit()
 		var all_coins_obtained = missing_coins(coins.get_child_count())
-		SaveGameProcesor.save_best_time("tutorial", all_coins_obtained)
+		SaveGameProcesor.save_best_time("tutorial", all_coins_obtained, no_hit())
 		SaveGameProcesor.save_data_levels("tutorial", "level_1")
 		var instantia = scene_you_win.instantiate()
 		add_child(instantia)
@@ -60,4 +61,13 @@ func missing_coins(coin: int):
 		return true
 	else:
 		return false
-	
+
+func no_hit():
+	var chilldrens = get_children()
+	for i in chilldrens:
+		if i.name == "player":
+			var player_chillds = i.get_children()
+			if player_chillds[0].lives == 5:
+				return true
+			else:
+				return false
