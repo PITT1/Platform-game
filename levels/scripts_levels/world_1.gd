@@ -7,6 +7,8 @@ var scene_you_win = preload("res://hud/you_win_hud.tscn")
 
 var has_executed_once = false
 @onready var timer: Timer = $Timer
+@onready var coins: Node2D = $coins
+
 
 func _process(delta: float) -> void:
 	if player:
@@ -39,10 +41,19 @@ func _on_win_area_body_entered(body: Node2D) -> void:
 		var time_left = timer.wait_time - timer.get_time_left()
 		SaveGameProcesor.timer_level = round(time_left * 100) / 100
 		timer.stop()
-		SaveGameProcesor.save_best_time("level_1")
+		var all_coins_obtained = missing_coin(coins.get_child_count())
+		print(all_coins_obtained)
+		print(coins.get_child_count())
+		SaveGameProcesor.save_best_time("level_1", all_coins_obtained)
 		var level_split = name.split("_")
 		var next_level = int(level_split[1]) + 1
 		SaveGameProcesor.save_data_levels("level_" + level_split[1], "level_" + str(next_level))
 		var instantia = scene_you_win.instantiate()
 		add_child(instantia)
 		instantia.showHud(true)
+
+func missing_coin(coin: int):
+	if coin <= 1:
+		return true
+	else:
+		return false

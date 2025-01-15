@@ -5,6 +5,7 @@ var scene_game_over = preload("res://hud/game_over.tscn")
 var scene_you_win = preload("res://hud/you_win_hud.tscn")
 @onready var tutorial: Node2D = $"."
 @onready var timer: Timer = $Timer
+@onready var coins: Node2D = $coins
 
 
 var has_executed_once = false
@@ -29,7 +30,8 @@ func _on_win_area_body_entered(body: CharacterBody2D) -> void:
 		var time_left = timer.wait_time - timer.get_time_left()
 		SaveGameProcesor.timer_level = round(time_left * 100) / 100
 		timer.stop()
-		SaveGameProcesor.save_best_time("tutorial")
+		var all_coins_obtained = missing_coins(coins.get_child_count())
+		SaveGameProcesor.save_best_time("tutorial", all_coins_obtained)
 		SaveGameProcesor.save_data_levels("tutorial", "level_1")
 		var instantia = scene_you_win.instantiate()
 		add_child(instantia)
@@ -52,3 +54,10 @@ func _on_lose_area_body_entered(body: CharacterBody2D) -> void:
 	var player_location = body.global_position
 	player_location = player_location + Vector2(-300, -300)
 	body.global_position = player_location
+
+func missing_coins(coin: int):
+	if coin == 0:
+		return true
+	else:
+		return false
+	
