@@ -1,7 +1,27 @@
-[gd_scene load_steps=7 format=3 uid="uid://g8654f4q3e3u"]
+[gd_scene load_steps=13 format=3 uid="uid://g8654f4q3e3u"]
 
 [ext_resource type="Script" path="res://hud/you_win_hud.gd" id="1_2y7qc"]
+[ext_resource type="FontFile" uid="uid://dl3r6e3kek5om" path="res://fonts/EagleLake-Regular.ttf" id="2_sq6yp"]
 [ext_resource type="AudioStream" uid="uid://cj5bi8lixsdn1" path="res://sounds/ambient/Victory.ogg" id="2_uqrgv"]
+[ext_resource type="Texture2D" uid="uid://uwfwo1nuhysw" path="res://images/btn_boxes/btn_box.png" id="3_rcamv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_38a4d"]
+texture = ExtResource("3_rcamv")
+modulate_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o7u76"]
+texture = ExtResource("3_rcamv")
+modulate_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q0ccu"]
+texture = ExtResource("3_rcamv")
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+modulate_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mhs5v"]
+texture = ExtResource("3_rcamv")
+modulate_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_g08ck"]
 length = 0.001
@@ -130,9 +150,11 @@ offset_right = 36.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 9
 
 [node name="Label" type="Label" parent="CanvasLayer/ColorRect/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_sq6yp")
 theme_override_font_sizes/font_size = 37
 text = "¡VICTORIA!"
 horizontal_alignment = 1
@@ -143,22 +165,30 @@ horizontal_alignment = 1
 
 [node name="next_level_btn" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_sq6yp")
 theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxTexture_38a4d")
 text = "Siguiente nivel"
 
 [node name="try_again_btn" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_sq6yp")
 theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxTexture_o7u76")
 text = "Reiniciar"
 
 [node name="go_to_menu_levels_btn" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_sq6yp")
 theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxTexture_q0ccu")
 text = "menu de niveles"
 
 [node name="quit_btn" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_sq6yp")
 theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxTexture_mhs5v")
 text = "salir"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

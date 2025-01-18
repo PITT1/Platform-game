@@ -334,7 +334,7 @@ func _process(_delta):
 			anim.speed_scale = 1
 			anim.play("idle")
 	elif run and idle and walk and !dashing and !crouching:
-		if abs(velocity.x) > 0.1 and is_on_floor() and !is_on_wall():
+		if abs(velocity.x) > 0.1 and is_on_floor() and !is_on_wall() and not on_Attack:
 			anim.speed_scale = abs(velocity.x / 150)
 			if abs(velocity.x) < (maxSpeedLock):
 				anim.play("walk")
@@ -422,7 +422,7 @@ func _physics_process(delta):
 		pass
 	#INFO Left and Right Movement
 	
-	if rightHold and leftHold and movementInputMonitoring and not death and not on_Attack:
+	if rightHold and leftHold and movementInputMonitoring and not death:
 		if !instantStop:
 			_decelerate(delta, false)
 		else:
@@ -705,6 +705,8 @@ func _wallJump():
 		var instance = jump_particles.instantiate()
 		add_sibling(instance)
 		instance.global_position = global_position + Vector2(0, 10)
+
+
 func _setLatch(delay, setBool):
 	await get_tree().create_timer(delay).timeout
 	wasLatched = setBool

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cwovlghwi0grr"]
+[gd_scene load_steps=14 format=3 uid="uid://cwovlghwi0grr"]
 
 [ext_resource type="Script" path="res://hud/principal_menu.gd" id="1_q8ljf"]
 [ext_resource type="PackedScene" uid="uid://b6qnxkomv2oyu" path="res://hud/credit_message_page_1.tscn" id="2_ivh11"]
@@ -8,6 +8,23 @@
 [ext_resource type="PackedScene" uid="uid://bgurafal77rsb" path="res://particles/ambient_particles.tscn" id="4_wu6ot"]
 [ext_resource type="Texture2D" uid="uid://cddq7fhl2la3g" path="res://images/translate_btn.png" id="5_2urkn"]
 [ext_resource type="PackedScene" uid="uid://dgt7q2a8bimo2" path="res://particles/leaf_particles.tscn" id="5_28nyp"]
+[ext_resource type="Texture2D" uid="uid://uwfwo1nuhysw" path="res://images/btn_boxes/btn_box.png" id="6_4mf27"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tlx41"]
+texture = ExtResource("6_4mf27")
+modulate_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dfoq5"]
+texture = ExtResource("6_4mf27")
+modulate_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hnkib"]
+texture = ExtResource("6_4mf27")
+modulate_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ipcwe"]
+texture = ExtResource("6_4mf27")
+modulate_color = Color(0, 0, 0, 1)
 
 [node name="PrincipalMenu" type="Control"]
 layout_mode = 3
@@ -70,24 +87,28 @@ theme_override_constants/separation = 10
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_rigeq")
 theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxTexture_tlx41")
 text = "Jugar"
 
 [node name="Button_options" type="Button" parent="textureRect/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_rigeq")
 theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxTexture_dfoq5")
 text = "Opciones"
 
 [node name="button_credits" type="Button" parent="textureRect/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_rigeq")
 theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxTexture_hnkib")
 text = "Creditos"
 
 [node name="Button_salir" type="Button" parent="textureRect/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_rigeq")
 theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxTexture_ipcwe")
 text = "Salir"
 
 [node name="button_translate" type="Button" parent="textureRect"]
@@ -97,6 +118,7 @@ offset_top = 253.0
 offset_right = 646.884
 offset_bottom = 322.0
 icon = ExtResource("5_2urkn")
+flat = true
 
 [node name="AmbientParticles" parent="." instance=ExtResource("4_wu6ot")]
 position = Vector2(283, 187)

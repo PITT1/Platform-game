@@ -1,7 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://pkpm18ovyq64"]
+[gd_scene load_steps=11 format=3 uid="uid://pkpm18ovyq64"]
 
 [ext_resource type="Script" path="res://hud/game_over.gd" id="1_jlk7p"]
-[ext_resource type="FontFile" uid="uid://bl1to454pytpt" path="res://fonts/Raleway-Regular.ttf" id="2_16qfb"]
+[ext_resource type="FontFile" uid="uid://dl3r6e3kek5om" path="res://fonts/EagleLake-Regular.ttf" id="2_wr6kr"]
+[ext_resource type="Texture2D" uid="uid://uwfwo1nuhysw" path="res://images/btn_boxes/btn_box.png" id="3_jhlrx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dydd0"]
+texture = ExtResource("3_jhlrx")
+modulate_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dw1vq"]
+texture = ExtResource("3_jhlrx")
+modulate_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7b0ob"]
+texture = ExtResource("3_jhlrx")
+modulate_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_wi7va"]
 length = 0.001
@@ -165,30 +178,34 @@ offset_right = 69.0
 offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 17
 
 [node name="Label" type="Label" parent="CanvasLayer/ColorRect/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("2_16qfb")
+theme_override_fonts/font = ExtResource("2_wr6kr")
 theme_override_font_sizes/font_size = 37
 text = "FIN DEL JUEGO"
 
 [node name="btn_try_again" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_16qfb")
+theme_override_fonts/font = ExtResource("2_wr6kr")
 theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxTexture_dydd0")
 text = "Volver a intentar"
 
 [node name="btn_to_init_menu" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_16qfb")
+theme_override_fonts/font = ExtResource("2_wr6kr")
 theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxTexture_dw1vq")
 text = "Menu inicio"
 
 [node name="btn_quit" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_16qfb")
+theme_override_fonts/font = ExtResource("2_wr6kr")
 theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxTexture_7b0ob")
 text = "Salir"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
