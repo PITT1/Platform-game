@@ -1,4 +1,4 @@
-[gd_scene load_steps=133 format=3 uid="uid://o8autm5pdnbr"]
+[gd_scene load_steps=137 format=3 uid="uid://o8autm5pdnbr"]
 
 [ext_resource type="Script" path="res://entities/player/playerScript.gd" id="1_jfgvy"]
 [ext_resource type="Texture2D" uid="uid://dkinx5w12ek0u" path="res://images/player_sprites/DEATH.png" id="1_tsc5q"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://dcyfdlub0dsta" path="res://particles/explode_hit_enemy_particles.tscn" id="8_wi63o"]
 [ext_resource type="PackedScene" uid="uid://laeucpl41508" path="res://particles/hit_enemy_particles2.tscn" id="9_hv5ha"]
 [ext_resource type="Texture2D" uid="uid://b3rnq2b2mwjcj" path="res://images/player_sprites/WALK.png" id="11_pgmug"]
+[ext_resource type="Texture2D" uid="uid://bmgbfeib07ftq" path="res://images/player_sprites/DEFENSE_ON.png" id="14_mq2hw"]
 [ext_resource type="Texture2D" uid="uid://dye7pmxlqr05t" path="res://images/player_sprites/SLIDE.png" id="14_x2mgy"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="22_wfewf"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="23_axxb4"]
@@ -187,27 +188,39 @@ region = Rect2(960, 0, 96, 84)
 atlas = ExtResource("1_tsc5q")
 region = Rect2(1056, 0, 96, 84)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oj1ji"]
-atlas = ExtResource("6_7jrbu")
-region = Rect2(0, 0, 96, 84)
+[sub_resource type="AtlasTexture" id="AtlasTexture_yf706"]
+atlas = ExtResource("14_mq2hw")
+region = Rect2(0, 0, 84, 84)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n8m2e"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fiyp4"]
+atlas = ExtResource("14_mq2hw")
+region = Rect2(84, 0, 84, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xq625"]
+atlas = ExtResource("14_mq2hw")
+region = Rect2(168, 0, 84, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qi5nq"]
+atlas = ExtResource("14_mq2hw")
+region = Rect2(252, 0, 84, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k885r"]
 atlas = ExtResource("6_7jrbu")
 region = Rect2(96, 0, 96, 84)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ddy4p"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtu12"]
 atlas = ExtResource("6_7jrbu")
 region = Rect2(192, 0, 96, 84)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pgmt5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_apmi8"]
 atlas = ExtResource("6_7jrbu")
 region = Rect2(288, 0, 96, 84)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cqj3c"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7u2t"]
 atlas = ExtResource("6_7jrbu")
 region = Rect2(384, 0, 96, 84)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_03vnu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xefg8"]
 atlas = ExtResource("6_7jrbu")
 region = Rect2(480, 0, 96, 84)
 
@@ -482,25 +495,39 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oj1ji")
+"texture": SubResource("AtlasTexture_yf706")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_n8m2e")
+"texture": SubResource("AtlasTexture_fiyp4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ddy4p")
+"texture": SubResource("AtlasTexture_xq625")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pgmt5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cqj3c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_03vnu")
+"texture": SubResource("AtlasTexture_qi5nq")
 }],
-"loop": false,
+"loop": true,
 "name": &"defend",
+"speed": 11.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k885r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtu12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apmi8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7u2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xefg8")
+}],
+"loop": true,
+"name": &"defend_hit",
 "speed": 15.0
 }, {
 "frames": [{
@@ -737,9 +764,8 @@ shape = SubResource("CapsuleShape2D_f6il3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_qlfpc")
-animation = &"idle"
-frame = 1
-frame_progress = 0.191575
+animation = &"defend"
+frame_progress = 0.794236
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 physics_interpolation_mode = 1

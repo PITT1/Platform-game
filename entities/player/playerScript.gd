@@ -207,12 +207,18 @@ var dashTap
 var rollTap
 var downTap
 var twirlTap
+var shieldHold
+var shieldRelease
 
 #attack variable
 var attackBuss = 0
 var on_Attack = false
 
 var death = false
+
+#defense variable
+
+var on_defense: bool = false
 
 #camara
 @onready var cam = $Camera2D
@@ -327,10 +333,10 @@ func _process(_delta):
 	
 	#run
 	if run and idle and !dashing and !crouching and not death and not on_Attack:
-		if abs(velocity.x) > 0.1 and is_on_floor() and !is_on_wall():
+		if abs(velocity.x) > 0.1 and is_on_floor() and !is_on_wall() and not on_defense:
 			anim.speed_scale = abs(velocity.x / 150)
 			anim.play("run")
-		elif abs(velocity.x) < 0.1 and is_on_floor() and not on_Attack:
+		elif abs(velocity.x) < 0.1 and is_on_floor() and not on_Attack and not on_defense:
 			anim.speed_scale = 1
 			anim.play("idle")
 	elif run and idle and walk and !dashing and !crouching:
@@ -352,7 +358,16 @@ func _process(_delta):
 	if velocity.y > 40 and falling and !dashing and !crouching and not death and not on_Attack:
 		anim.speed_scale = 1
 		anim.play("falling")
-		
+	
+	
+	if shieldHold and not death and not on_Attack and velocity.y == 0:
+		on_defense = true
+		anim.speed_scale = 1
+		anim.play("defend")
+	
+	if shieldRelease:
+		on_defense = false
+	
 		
 	if slide and not on_Attack:
 		#wall slide and latch
@@ -382,7 +397,6 @@ func _process(_delta):
 			anim.play("roll")
 		
 		
-		
 
 func _physics_process(delta):
 	if !dset:
@@ -405,6 +419,8 @@ func _physics_process(delta):
 	rollTap = Input.is_action_just_pressed("roll")
 	downTap = Input.is_action_just_pressed("down")
 	twirlTap = Input.is_action_just_pressed("twirl")
+	shieldHold = Input.is_action_just_pressed("shield")
+	shieldRelease = Input.is_action_just_released("shield")
 	
 	
 	#INFO run particles
@@ -427,7 +443,7 @@ func _physics_process(delta):
 			_decelerate(delta, false)
 		else:
 			velocity.x = -0.1
-	elif rightHold and movementInputMonitoring.x:
+	elif rightHold and movementInputMonitoring.x and not on_defense:
 		if velocity.x > maxSpeed or instantAccel:
 			velocity.x = maxSpeed
 		else:
@@ -437,7 +453,7 @@ func _physics_process(delta):
 				_decelerate(delta, false)
 			else:
 				velocity.x = -0.1
-	elif leftHold and movementInputMonitoring.y:
+	elif leftHold and movementInputMonitoring.y and not on_defense:
 		if velocity.x < -maxSpeed or instantAccel:
 			velocity.x = -maxSpeed
 		else:
@@ -462,7 +478,7 @@ func _physics_process(delta):
 	elif is_on_floor(): 
 		maxSpeed = maxSpeedLock
 	
-	if !(leftHold or rightHold):
+	if !(leftHold or rightHold) or on_defense:
 		if !instantStop:
 			_decelerate(delta, false)
 		else:
