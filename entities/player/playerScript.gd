@@ -359,7 +359,7 @@ func _process(_delta):
 		anim.speed_scale = 1
 		anim.play("falling")
 	
-	
+	#shield
 	if shieldHold and not death and not on_Attack and velocity.y == 0:
 		on_defense = true
 		anim.speed_scale = 1

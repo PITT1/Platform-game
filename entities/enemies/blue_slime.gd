@@ -49,10 +49,13 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_hit_area_body_entered(body: CharacterBody2D) -> void:
-	if not body.death:
+	if not body.death and not body.on_defense:
 		body.lives -= 1
 		body.gettingHit = true
 		body.velocity = global_position.direction_to(body.global_position) * 500
+	elif not body.death and body.on_defense:
+		velocity = body.global_position.direction_to(global_position) * 100
+		velocity.y = -100
 
 
 func _on_animated_sprite_2d_frame_changed() -> void:
