@@ -159,12 +159,20 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 
 
 func _on_hit_area_body_entered(body: CharacterBody2D) -> void:
-	body.lives -= 1
-	body.gettingHit = true
-	if body.global_position > global_position:
-		body.velocity = Vector2(400, -300)
+	if not body.death and not body.on_defense:
+		body.lives -= 1
+		body.gettingHit = true
+		if body.global_position > global_position:
+			body.velocity = Vector2(400, -300)
+		else:
+			body.velocity = Vector2(-400, -300)
+	elif not body.death and body.on_defense:
+		if body.global_position > global_position:
+			body.velocity = Vector2(200, -150)
+		else:
+			body.velocity = Vector2(-200, -150)
 	else:
-		body.velocity = Vector2(-400, -300)
+		pass
 
 func on_attack():
 	attack = true

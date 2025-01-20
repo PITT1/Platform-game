@@ -35,9 +35,13 @@ func _on_timer_timeout() -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == "CharacterBody2D":
+	if body.name == "CharacterBody2D" and not body.on_defense:
 		body.lives -= 1
 		body.gettingHit = true
+		body.velocity = global_position.direction_to(body.global_position) * 500
+		anim.play("destroy")
+	elif body.name == "CharacterBody2D" and body.on_defense:
+		body.velocity = global_position.direction_to(body.global_position) * 300
 		anim.play("destroy")
 	else:
 		anim.play("destroy")

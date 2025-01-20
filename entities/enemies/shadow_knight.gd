@@ -142,8 +142,14 @@ func activateHitShape():
 
 
 func _on_hit_area_body_entered(body: Node2D) -> void:
-	body.lives -= 1
-	body.gettingHit = true
+	if not body.death and not body.on_defense:
+		body.lives -= 1
+		body.gettingHit = true
+		body.velocity = global_position.direction_to(body.global_position) * 300
+	elif not body.death and body.on_defense:
+		body.velocity = global_position.direction_to(body.global_position) * 200
+	else:
+		pass
 	
 func gettingHitAnimation():
 	if gettingHit:

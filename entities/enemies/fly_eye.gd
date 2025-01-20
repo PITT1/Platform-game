@@ -77,10 +77,15 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 
 
 func _on_hit_area_body_entered(body: Node2D) -> void:
-	body.gettingHit = true
-	roar_sound.play()
-	body.lives -= 1
-	velocity = body.global_position.direction_to(global_position) * 200
+	if not body.death and not body.on_defense:
+		body.gettingHit = true
+		roar_sound.play()
+		body.lives -= 1
+		velocity = body.global_position.direction_to(global_position) * 200
+	elif not body.death and body.on_defense:
+		velocity = body.global_position.direction_to(global_position) * 200
+		body.velocity = global_position.direction_to(body.global_position) * 200
+		body.velocity.y = -200
 
 
 func _on_animated_sprite_2d_frame_changed() -> void:

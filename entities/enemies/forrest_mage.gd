@@ -198,9 +198,9 @@ func on_seePlayer():
 
 
 func _on_hit_area_body_entered(body: CharacterBody2D) -> void:
-	body.lives -= 1
-	body.velocity.y = -200
-	body.gettingHit = true
+		body.lives -= 1
+		body.velocity.y = -200
+		body.gettingHit = true
 
 func gettingHitAnimation():
 	set_modulate(Color(100, 100, 100))
