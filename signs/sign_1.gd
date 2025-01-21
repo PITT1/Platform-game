@@ -13,7 +13,8 @@ func _ready() -> void:
 		label.set_text(SaveGameProcesor.translate[level][id].es)
 	elif lang == "english":
 		label.set_text(SaveGameProcesor.translate[level][id].en)
-
+	elif lang == "default":
+		label.set_text(SaveGameProcesor.translate[level][id].es)
 
 func _on_letter_area_body_entered(body: Node2D) -> void:
 	if body:

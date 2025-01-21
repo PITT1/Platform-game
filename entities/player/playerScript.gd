@@ -140,6 +140,7 @@ var count_leaf: float = 0
 @export var getting_hit_particles: PackedScene
 @export var hit_explode_particles: PackedScene
 @export var hit_enemy_explode2: PackedScene
+
 var gettingHit = false
 var instantiated_rain
 

@@ -1,6 +1,6 @@
 extends Node
 
-const save_game_path: String = "user://save_game.dat"
+const save_game_path: String = "user://save_game1.dat"
 const LANGUAGE_PATH: String = "user://lang.dat"
 
 var coins_count: int

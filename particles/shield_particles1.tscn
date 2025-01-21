@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dot2b5xyf73bg"]
+
+[ext_resource type="Script" path="res://particles/shield_particles_1.gd" id="1_76j3g"]
+
+[sub_resource type="Gradient" id="Gradient_y65v7"]
+offsets = PackedFloat32Array(0.737226, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="ShieldParticles1" type="CPUParticles2D"]
+emitting = false
+amount = 30
+lifetime = 0.8
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+direction = Vector2(1, -1)
+spread = 60.0
+gravity = Vector2(0, 400)
+initial_velocity_min = 50.0
+initial_velocity_max = 300.0
+angular_velocity_min = -300.0
+angular_velocity_max = 300.0
+color_ramp = SubResource("Gradient_y65v7")
+script = ExtResource("1_76j3g")
+
+[connection signal="finished" from="." to="." method="_on_finished"]
