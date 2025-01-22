@@ -427,7 +427,7 @@ func _physics_process(delta):
 	#INFO run particles
 	if run_particles:
 		count_leaf += 1 * delta
-		if is_on_floor() and velocity.x != 0 and count_leaf > 0.05:
+		if is_on_floor() and (velocity.x > 10 or velocity.x < -10) and count_leaf > 0.05 and not is_on_wall():
 			var instantiated_run_particles = run_particles.instantiate()
 			add_child(instantiated_run_particles)
 			instantiated_run_particles.global_position = global_position + Vector2(0, 20)
