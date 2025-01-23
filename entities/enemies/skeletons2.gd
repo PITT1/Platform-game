@@ -22,8 +22,21 @@ var walk = false
 var gettingHit = false
 var player: CharacterBody2D
 
+enum state {
+	attack,
+	contraAttack,
+	death,
+	idle,
+	shield,
+	takeHit,
+	walk
+}
+
+var current_state: state = state.idle
+
 func _ready() -> void:
 	on_idle()
+	print(current_state)
 	
 
 
