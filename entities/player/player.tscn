@@ -734,7 +734,6 @@ platform_wall_layers = 2
 script = ExtResource("1_jfgvy")
 PlayerSprite = NodePath("AnimatedSprite2D")
 PlayerCollider = NodePath("CollisionShape2D")
-runningModifier = true
 jumpHeight = 2.1
 coyoteTime = 0.05
 wallJump = true

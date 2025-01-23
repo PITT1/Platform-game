@@ -334,20 +334,20 @@ func _process(_delta):
 	
 	#run
 	if run and idle and !dashing and !crouching and not death and not on_Attack:
-		if abs(velocity.x) > 0.1 and is_on_floor() and !is_on_wall() and not on_defense:
+		if abs(velocity.x) > 13 and is_on_floor() and !is_on_wall() and not on_defense:
 			anim.speed_scale = abs(velocity.x / 150)
 			anim.play("run")
-		elif abs(velocity.x) < 0.1 and is_on_floor() and not on_Attack and not on_defense:
+		elif abs(velocity.x) < 13 and is_on_floor() and not on_Attack and not on_defense:
 			anim.speed_scale = 1
 			anim.play("idle")
 	elif run and idle and walk and !dashing and !crouching:
-		if abs(velocity.x) > 0.1 and is_on_floor() and !is_on_wall() and not on_Attack:
+		if abs(velocity.x) > 13 and is_on_floor() and !is_on_wall() and not on_Attack:
 			anim.speed_scale = abs(velocity.x / 150)
 			if abs(velocity.x) < (maxSpeedLock):
 				anim.play("walk")
 			else:
 				anim.play("run")
-		elif abs(velocity.x) < 0.1 and is_on_floor():
+		elif abs(velocity.x) < 13 and is_on_floor():
 			anim.speed_scale = 1
 			anim.play("idle")
 		
@@ -427,7 +427,7 @@ func _physics_process(delta):
 	#INFO run particles
 	if run_particles:
 		count_leaf += 1 * delta
-		if is_on_floor() and (velocity.x > 10 or velocity.x < -10) and count_leaf > 0.05 and not is_on_wall():
+		if is_on_floor() and (velocity.x > 13 or velocity.x < -13) and count_leaf > 0.05 and not is_on_wall():
 			var instantiated_run_particles = run_particles.instantiate()
 			add_child(instantiated_run_particles)
 			instantiated_run_particles.global_position = global_position + Vector2(0, 20)
@@ -732,13 +732,16 @@ func _inputPauseReset(time):
 	await get_tree().create_timer(time).timeout
 	movementInputMonitoring = Vector2(true, true)
 	
-
 func _decelerate(delta, vertical):
 	if !vertical:
-		if velocity.x > 0:
+		if velocity.x > 13:
 			velocity.x += deceleration * delta
-		elif velocity.x < 0:
+			if velocity.x < 13:
+				velocity.x = 0
+		elif velocity.x < -13:
 			velocity.x -= deceleration * delta
+			if velocity.x > -13:
+				velocity.x = 0
 	elif vertical and velocity.y > 0:
 		velocity.y += deceleration * delta
 
