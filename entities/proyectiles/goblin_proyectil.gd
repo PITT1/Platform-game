@@ -23,6 +23,7 @@ func _on_collision_area_body_entered(body: Node2D) -> void:
 		body.gettingHit = true
 		body.velocity = global_position.direction_to(body.global_position) * 200
 	elif body.name == "CharacterBody2D" and body.on_defense:
+		body.shield_block = true
 		body.velocity = global_position.direction_to(body.global_position) * 100
 	else:
 		pass

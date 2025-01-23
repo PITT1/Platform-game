@@ -23,6 +23,7 @@ class_name PlatformerController2D
 @onready var wall_jump_sound: AudioStreamPlayer = $"../sounds_effect/wallJump_sound"
 @onready var land_sound: AudioStreamPlayer = $"../sounds_effect/land_sound"
 @onready var getting_hit_sound: AudioStreamPlayer = $"../sounds_effect/gettingHit_sound"
+@onready var shield_block_sound: AudioStreamPlayer = $"../sounds_effect/shieldBlock_sound"
 
 
 
@@ -140,8 +141,10 @@ var count_leaf: float = 0
 @export var getting_hit_particles: PackedScene
 @export var hit_explode_particles: PackedScene
 @export var hit_enemy_explode2: PackedScene
+@export var shield_particles: PackedScene
 
-var gettingHit = false
+var gettingHit: bool = false
+var shield_block: bool = false
 var instantiated_rain
 
 
@@ -298,6 +301,8 @@ func _updateData():
 func _process(_delta):
 	
 	gettingHitAnimation()
+	
+	shieldBlockParticles()
 	
 	deathFunction()
 	#INFO animations
@@ -856,6 +861,7 @@ func attack_procesor():
 	if Input.is_action_just_pressed("atack") and not on_Attack and not death:
 		jump = false
 		idle = false
+		run = false
 		on_Attack = true
 		if attackBuss == 0 and is_on_floor():
 			anim.play("attack1")
@@ -897,6 +903,7 @@ func attack_procesor():
 		on_Attack = false
 		idle = true
 		jump = true
+		run = true
 
 
 func _on_time_between_dash_timeout() -> void:
@@ -908,3 +915,12 @@ func _on_ground_sensor_body_entered(body: Node2D) -> void:
 	
 	if body:
 		pass
+
+func shieldBlockParticles():
+	if shield_block:
+		shield_block_sound.play()
+		var instantia = shield_particles.instantiate()
+		add_sibling(instantia)
+		instantia.global_position = global_position
+		shield_block = false
+		

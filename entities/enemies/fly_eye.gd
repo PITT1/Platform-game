@@ -83,6 +83,7 @@ func _on_hit_area_body_entered(body: Node2D) -> void:
 		body.lives -= 1
 		velocity = body.global_position.direction_to(global_position) * 200
 	elif not body.death and body.on_defense:
+		body.shield_block = true
 		velocity = body.global_position.direction_to(global_position) * 200
 		body.velocity = global_position.direction_to(body.global_position) * 200
 		body.velocity.y = -200

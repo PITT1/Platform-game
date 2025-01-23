@@ -54,6 +54,7 @@ func _on_hit_area_body_entered(body: CharacterBody2D) -> void:
 		body.gettingHit = true
 		body.velocity = global_position.direction_to(body.global_position) * 500
 	elif not body.death and body.on_defense:
+		body.shield_block = true
 		velocity = body.global_position.direction_to(global_position) * 100
 		velocity.y = -100
 		body.velocity = global_position.direction_to(body.global_position) * 200

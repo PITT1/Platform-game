@@ -31,6 +31,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		body.lives -= 1
 		body.gettingHit = true
 	elif body.name == "CharacterBody2D" and body.on_defense:
+		body.shield_block = true
 		body.velocity = global_position.direction_to(body.global_position) * 300
 	else:
 		anim.play("out")

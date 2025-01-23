@@ -171,6 +171,7 @@ func _on_hit_area_body_entered(body: CharacterBody2D) -> void:
 		else:
 			body.velocity = Vector2(-500, -300)
 	elif not body.death and body.on_defense:
+		body.shield_block = true
 		if body.global_position > global_position:
 			body.velocity = Vector2(300, -200)
 		else:

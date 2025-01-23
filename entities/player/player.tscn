@@ -1,4 +1,4 @@
-[gd_scene load_steps=137 format=3 uid="uid://o8autm5pdnbr"]
+[gd_scene load_steps=142 format=3 uid="uid://o8autm5pdnbr"]
 
 [ext_resource type="Script" path="res://entities/player/playerScript.gd" id="1_jfgvy"]
 [ext_resource type="Texture2D" uid="uid://dkinx5w12ek0u" path="res://images/player_sprites/DEATH.png" id="1_tsc5q"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://e6l4jnvvj0c3" path="res://images/player_sprites/DASH.png" id="8_vf3r3"]
 [ext_resource type="PackedScene" uid="uid://dcyfdlub0dsta" path="res://particles/explode_hit_enemy_particles.tscn" id="8_wi63o"]
 [ext_resource type="PackedScene" uid="uid://laeucpl41508" path="res://particles/hit_enemy_particles2.tscn" id="9_hv5ha"]
+[ext_resource type="PackedScene" uid="uid://dot2b5xyf73bg" path="res://particles/shield_particles1.tscn" id="9_wr2co"]
 [ext_resource type="Texture2D" uid="uid://b3rnq2b2mwjcj" path="res://images/player_sprites/WALK.png" id="11_pgmug"]
 [ext_resource type="Texture2D" uid="uid://bmgbfeib07ftq" path="res://images/player_sprites/DEFENSE_ON.png" id="14_mq2hw"]
 [ext_resource type="Texture2D" uid="uid://dye7pmxlqr05t" path="res://images/player_sprites/SLIDE.png" id="14_x2mgy"]
@@ -48,6 +49,9 @@
 [ext_resource type="AudioStream" uid="uid://d3qh4srvm307y" path="res://sounds/sfx/player/impact_player1.mp3" id="46_8at4o"]
 [ext_resource type="AudioStream" uid="uid://bj4t0py5mehni" path="res://sounds/sfx/player/impact_player2.mp3" id="47_n6fpr"]
 [ext_resource type="AudioStream" uid="uid://tk7p485wcjmy" path="res://sounds/sfx/player/impact_player3.mp3" id="48_5bamw"]
+[ext_resource type="AudioStream" uid="uid://f3su0oibwpix" path="res://sounds/sfx/player/Shield_Block_sound1.mp3" id="50_4rko0"]
+[ext_resource type="AudioStream" uid="uid://dhet3nxkcvtp5" path="res://sounds/sfx/player/Shield_Block_sound2.mp3" id="51_ub7ca"]
+[ext_resource type="AudioStream" uid="uid://jbs3okn4b66l" path="res://sounds/sfx/player/Shield_Block_sound3.mp3" id="52_86l3b"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f6il3"]
 height = 33.0
@@ -725,6 +729,12 @@ stream_0/stream = ExtResource("46_8at4o")
 stream_1/stream = ExtResource("47_n6fpr")
 stream_2/stream = ExtResource("48_5bamw")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5723j"]
+streams_count = 3
+stream_0/stream = ExtResource("50_4rko0")
+stream_1/stream = ExtResource("51_ub7ca")
+stream_2/stream = ExtResource("52_86l3b")
+
 [node name="player" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." node_paths=PackedStringArray("PlayerSprite", "PlayerCollider")]
@@ -756,6 +766,7 @@ hit1_enemy_particles = ExtResource("6_xyeun")
 getting_hit_particles = ExtResource("7_v0exb")
 hit_explode_particles = ExtResource("8_wi63o")
 hit_enemy_explode2 = ExtResource("9_hv5ha")
+shield_particles = ExtResource("9_wr2co")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(1, 2.5)
@@ -763,7 +774,9 @@ shape = SubResource("CapsuleShape2D_f6il3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_qlfpc")
-animation = &"defend"
+animation = &"attack3"
+frame = 5
+frame_progress = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 physics_interpolation_mode = 1
@@ -847,6 +860,9 @@ stream = SubResource("AudioStreamRandomizer_jeooy")
 [node name="gettingHit_sound" type="AudioStreamPlayer" parent="sounds_effect"]
 stream = SubResource("AudioStreamRandomizer_wb56j")
 volume_db = 5.0
+
+[node name="shieldBlock_sound" type="AudioStreamPlayer" parent="sounds_effect"]
+stream = SubResource("AudioStreamRandomizer_5723j")
 
 [connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="frame_changed" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_frame_changed"]
