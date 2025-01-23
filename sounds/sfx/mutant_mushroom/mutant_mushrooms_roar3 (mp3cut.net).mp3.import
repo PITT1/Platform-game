@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://yuk8lnuc4t2u"
+path="res://.godot/imported/mutant_mushrooms_roar3 (mp3cut.net).mp3-52e73028e4025fa2370442794fe5ee6d.mp3str"
+
+[deps]
+
+source_file="res://sounds/sfx/mutant_mushroom/mutant_mushrooms_roar3 (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/mutant_mushrooms_roar3 (mp3cut.net).mp3-52e73028e4025fa2370442794fe5ee6d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

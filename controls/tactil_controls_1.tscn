@@ -55,7 +55,7 @@ action = "jump"
 
 [node name="attack_btn" type="TouchScreenButton" parent="CanvasLayer"]
 modulate = Color(1, 1, 1, 0.392157)
-position = Vector2(404, 241)
+position = Vector2(405, 239)
 scale = Vector2(0.276667, 0.283333)
 texture_normal = ExtResource("3_fh7ao")
 passby_press = true
@@ -63,7 +63,7 @@ action = "atack"
 
 [node name="dash_btn" type="TouchScreenButton" parent="CanvasLayer"]
 modulate = Color(1, 1, 1, 0.392157)
-position = Vector2(421, 156)
+position = Vector2(487, 146)
 scale = Vector2(0.286667, 0.306667)
 texture_normal = ExtResource("4_l00mu")
 passby_press = true
@@ -71,7 +71,7 @@ action = "dash"
 
 [node name="shield_btn" type="TouchScreenButton" parent="CanvasLayer"]
 modulate = Color(1, 1, 1, 0.392157)
-position = Vector2(487, 131)
+position = Vector2(402, 152)
 scale = Vector2(0.339, 0.307)
 texture_normal = ExtResource("6_25hqa")
 passby_press = true

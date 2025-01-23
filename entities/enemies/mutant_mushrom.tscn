@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bsg8qjsqu632m"]
+[gd_scene load_steps=59 format=3 uid="uid://bsg8qjsqu632m"]
 
 [ext_resource type="Texture2D" uid="uid://btbax2x7a8x66" path="res://images/Monsters_Creatures_Fantasy/Mushroom/Death.png" id="1_mye8o"]
 [ext_resource type="Script" path="res://entities/enemies/mutantMushrom.gd" id="1_n5b0x"]
@@ -7,6 +7,20 @@
 [ext_resource type="Texture2D" uid="uid://dpk86a2d0d6uq" path="res://images/Monsters_Creatures_Fantasy/Mushroom/Run.png" id="3_e0f02"]
 [ext_resource type="Texture2D" uid="uid://dijaikd4cnks0" path="res://images/Monsters_Creatures_Fantasy/Mushroom/Take Hit.png" id="4_2gblg"]
 [ext_resource type="Texture2D" uid="uid://bsosuuj3pnc15" path="res://images/Monsters_Creatures_Fantasy/Mushroom/Attack.png" id="5_r7go4"]
+[ext_resource type="AudioStream" uid="uid://cbj0g0kijoag6" path="res://sounds/sfx/mutant_mushroom/mutant_mushrooms_roar1 (mp3cut.net).mp3" id="8_ubk6g"]
+[ext_resource type="AudioStream" uid="uid://b7b0l0lkvjwm5" path="res://sounds/sfx/mutant_mushroom/mutant_mushrooms_roar2 (mp3cut.net).mp3" id="9_u2lvm"]
+[ext_resource type="AudioStream" uid="uid://yuk8lnuc4t2u" path="res://sounds/sfx/mutant_mushroom/mutant_mushrooms_roar3 (mp3cut.net).mp3" id="10_j6vho"]
+[ext_resource type="AudioStream" uid="uid://7n6g8pyomkpn" path="res://sounds/sfx/mutant_mushroom/mutant_mushroom_steps1.mp3" id="11_2yue1"]
+[ext_resource type="AudioStream" uid="uid://d4ieuv4q40tar" path="res://sounds/sfx/mutant_mushroom/mutant_mushroom_steps2.mp3" id="12_opw1c"]
+[ext_resource type="AudioStream" uid="uid://c46rdbdxf84lp" path="res://sounds/sfx/mutant_mushroom/mutant_mushroom_steps3.mp3" id="13_ragks"]
+[ext_resource type="AudioStream" uid="uid://b6fjomb7gs65t" path="res://sounds/sfx/mutant_mushroom/mutant_mushroom_steps4.mp3" id="14_unb3t"]
+[ext_resource type="AudioStream" uid="uid://1jrxm8yk7ea" path="res://sounds/sfx/mutant_mushroom/mutant_mushroom_steps5.mp3" id="15_7sy6l"]
+[ext_resource type="AudioStream" uid="uid://bc37nxi1thubf" path="res://sounds/sfx/mutant_mushroom/mutant_mushroom_steps6.mp3" id="16_1rbkd"]
+[ext_resource type="AudioStream" uid="uid://bfcwyth2ymdxq" path="res://sounds/sfx/mutant_mushroom/mutant_mushroom_steps7.mp3" id="17_x1i4r"]
+[ext_resource type="AudioStream" uid="uid://cx28l22fxkl3c" path="res://sounds/sfx/mutant_mushroom/mutant_mushroom_takeHit1.mp3" id="18_e3qgh"]
+[ext_resource type="AudioStream" uid="uid://k2e2ca1bqpgq" path="res://sounds/sfx/mutant_mushroom/mutant_mushroom_takeHit2.mp3" id="19_yx6ud"]
+[ext_resource type="AudioStream" uid="uid://3jso7c5jl8vh" path="res://sounds/sfx/mutant_mushroom/mutant_mushroom_takeHit3.mp3" id="20_ck08n"]
+[ext_resource type="AudioStream" uid="uid://vpidlfoa31x5" path="res://sounds/sfx/mutant_mushroom/mutant_mushroom_takeHit4.mp3" id="21_6c8g1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8inh6"]
 atlas = ExtResource("5_r7go4")
@@ -247,6 +261,29 @@ radius = 16.6667
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qugua"]
 size = Vector2(23.75, 4.0625)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_0vfp3"]
+streams_count = 3
+stream_0/stream = ExtResource("8_ubk6g")
+stream_1/stream = ExtResource("9_u2lvm")
+stream_2/stream = ExtResource("10_j6vho")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_uoaq3"]
+streams_count = 7
+stream_0/stream = ExtResource("11_2yue1")
+stream_1/stream = ExtResource("12_opw1c")
+stream_2/stream = ExtResource("13_ragks")
+stream_3/stream = ExtResource("14_unb3t")
+stream_4/stream = ExtResource("15_7sy6l")
+stream_5/stream = ExtResource("16_1rbkd")
+stream_6/stream = ExtResource("17_x1i4r")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ndhjf"]
+streams_count = 4
+stream_0/stream = ExtResource("18_e3qgh")
+stream_1/stream = ExtResource("19_yx6ud")
+stream_2/stream = ExtResource("20_ck08n")
+stream_3/stream = ExtResource("21_6c8g1")
+
 [node name="mutant mushrom" type="CharacterBody2D"]
 scale = Vector2(1.6, 1.6)
 collision_layer = 4
@@ -257,7 +294,8 @@ death_particles = ExtResource("2_0lw5l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_h1k7e")
-animation = &"attack"
+animation = &"run"
+frame = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 11.6667)
@@ -292,6 +330,20 @@ position = Vector2(0.625001, -5.625)
 shape = SubResource("RectangleShape2D_qugua")
 one_way_collision = true
 one_way_collision_margin = 10.0
+
+[node name="sound_effect" type="Node2D" parent="."]
+
+[node name="roar" type="AudioStreamPlayer2D" parent="sound_effect"]
+stream = SubResource("AudioStreamRandomizer_0vfp3")
+volume_db = 3.0
+max_distance = 600.0
+
+[node name="steps" type="AudioStreamPlayer2D" parent="sound_effect"]
+stream = SubResource("AudioStreamRandomizer_uoaq3")
+max_distance = 500.0
+
+[node name="take_hit" type="AudioStreamPlayer2D" parent="sound_effect"]
+stream = SubResource("AudioStreamRandomizer_ndhjf")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

@@ -18,6 +18,10 @@ var player: CharacterBody2D = null
 @export var death_particles: PackedScene
 var gettingHit = false
 
+@onready var roar: AudioStreamPlayer2D = $sound_effect/roar
+@onready var steps: AudioStreamPlayer2D = $sound_effect/steps
+@onready var take_hit: AudioStreamPlayer2D = $sound_effect/take_hit
+
 func _ready() -> void:
 	on_idle()
 
@@ -72,6 +76,7 @@ func _physics_process(delta: float) -> void:
 	
 	if gettingHit and not death:
 		on_takeHit()
+		take_hit.play()
 	
 	if attack and not death:
 		velocity.x = 0
@@ -117,10 +122,12 @@ func on_takeHit():
 
 func _on_vision_area_body_entered(body: CharacterBody2D) -> void:
 	player = body
+	roar.play()
 
 
 func _on_vision_area_body_exited() -> void:
 	player = null
+	roar.play()
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:
@@ -159,6 +166,12 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 		hit_area_collision.set_disabled(false)
 		await get_tree().create_timer(0.1).timeout
 		hit_area_collision.set_disabled(true)
+	
+	if anim.get_animation() == "run" and anim.get_frame() == 2:
+		steps.play()
+	
+	if anim.get_animation() == "run" and anim.get_frame() == 5:
+		steps.play()
 		
 
 
