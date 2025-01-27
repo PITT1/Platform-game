@@ -36,7 +36,6 @@ var current_state: state = state.idle
 
 func _ready() -> void:
 	on_idle()
-	print(current_state)
 	
 
 
