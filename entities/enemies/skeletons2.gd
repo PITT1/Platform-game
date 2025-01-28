@@ -8,12 +8,7 @@ extends CharacterBody2D
 @onready var walk_sound: AudioStreamPlayer2D = $sounds/walk_sound
 @onready var sombie_sound: AudioStreamPlayer2D = $sounds/sombie_sound
 @onready var attack_sound: AudioStreamPlayer2D = $sounds/attack_sound
-
-var attack = false
-var death = false
-var idle = false
-var shield = false
-var walk = false
+@onready var collision_shape_2d: CollisionShape2D = $attackArea/CollisionShape2D
 
 @export var lives: float = 5
 @export var lives_limit: float = 5 
@@ -29,62 +24,36 @@ enum state {
 	idle,
 	shield,
 	takeHit,
-	walk
+	walk,
+	wait
 }
 
 var current_state: state = state.idle
-
-func _ready() -> void:
-	on_idle()
-	
-
-
-func _process(delta: float) -> void:
-	if delta:
-		pass
-	
-	if attack:
-		anim.play("attack")
-		
-	if death:
-		anim.play("death")
-		
-	if idle:
-		anim.play("idle")
-		
-	if shield:
-		anim.play("shield")
-		
-	if walk:
-		anim.play("walk")
-		
 	
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+	
+	match current_state:
+		state.attack:
+			anim.play("attack")
+		state.contraAttack:
+			pass
+		state.death:
+			anim.play("death")
+		state.idle:
+			anim.play("idle")
+		state.shield:
+			pass
+		state.takeHit:
+			pass
+		state.walk:
+			anim.play("walk")
+			move_to_player(delta)
+		state.wait:
+			anim.play("idle")
 		
-	if player != null and not attack and not gettingHit and not death:
-		on_walk()
-		if player.global_position.x > global_position.x:
-			anim.flip_h = false
-			character_collision.position = Vector2(2, 4)
-			velocity.x += acceleration * delta
-			if velocity.x > speed:
-				velocity.x = speed
-				
-		if player.global_position.x < global_position.x:
-			anim.flip_h = true
-			character_collision.position = Vector2(-2, 4)
-			velocity.x -= acceleration * delta
-			if velocity.x < -speed:
-				velocity.x = -speed
-				
-	if attack and not gettingHit and not death:
-		vision_area.scale = Vector2(5, 5)
-	else:
-		vision_area.scale = Vector2(1, 1)
-		
-	if gettingHit and not death:
+	if gettingHit:
 		velocity.x = 0
 		set_modulate(Color(100, 100, 100))
 		await get_tree().create_timer(0.1).timeout
@@ -92,7 +61,7 @@ func _physics_process(delta: float) -> void:
 		gettingHit = false
 		
 	if lives < 1:
-		on_death()
+		current_state = state.death
 	
 	
 	move_and_slide()
@@ -101,11 +70,13 @@ func _physics_process(delta: float) -> void:
 func _on_vision_area_body_entered(body: CharacterBody2D) -> void:
 	if body:
 		player = body
+		current_state = state.walk
 		sombie_sound.play()
 
 
 func _on_vision_area_body_exited(body: Node2D) -> void:
 	if body:
+		current_state = state.idle
 		player = null
 		if not sombie_sound.is_playing():
 			sombie_sound.play()
@@ -113,12 +84,12 @@ func _on_vision_area_body_exited(body: Node2D) -> void:
 
 func _on_attack_area_body_entered(body: CharacterBody2D) -> void:
 	if player:
+		current_state = state.attack
 		if player.global_position.x > global_position.x:
 			anim.flip_h = false 
 		else:
 			anim.flip_h = true
 	velocity.x = 0
-	on_attack()
 	if not sombie_sound.is_playing():
 		sombie_sound.play()
 	if body:
@@ -126,29 +97,16 @@ func _on_attack_area_body_entered(body: CharacterBody2D) -> void:
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if anim.get_animation() == "attack":
-		attack = false
-		attack_area.set_monitoring(false)
-		vision_area.set_monitoring(false)
-		attack_area.set_monitoring(true)
-		vision_area.set_monitoring(true)
+		current_state = state.walk
+		collision_shape_2d.set_disabled(true)
+		await get_tree().create_timer(1).timeout
+		collision_shape_2d.set_disabled(false)
 		
 	if anim.get_animation() == "takeHit":
 		gettingHit = false
-		attack_area.set_monitoring(false)
-		vision_area.set_monitoring(false)
-		attack_area.set_monitoring(true)
-		vision_area.set_monitoring(true)
 		
 	if anim.get_animation() == "death":
 		queue_free()
-	
-	if anim.get_animation() == "contra_attack":
-		on_idle()
-		gettingHit = false
-		attack_area.set_monitoring(false)
-		vision_area.set_monitoring(false)
-		attack_area.set_monitoring(true)
-		vision_area.set_monitoring(true)
 
 
 func _on_animated_sprite_2d_frame_changed() -> void:
@@ -187,37 +145,17 @@ func _on_hit_area_body_entered(body: CharacterBody2D) -> void:
 	else:
 		pass
 
-func on_attack():
-	attack = true
-	death = false
-	idle = false
-	shield = false
-	walk = false
-	
-func on_death():
-	attack = false
-	death = true
-	idle = false
-	shield = false
-	walk = false
-	
-func on_idle():
-	attack = false
-	death = false
-	idle = true
-	shield = false
-	walk = false
-	
-func on_shield():
-	attack = false
-	death = false
-	idle = false
-	shield = true
-	walk = false
-	
-func on_walk():
-	attack = false
-	death = false
-	idle = false
-	shield = false
-	walk = true
+func move_to_player(delta):
+	if player.global_position.x > global_position.x:
+		anim.flip_h = false
+		character_collision.position = Vector2(2, 4)
+		velocity.x += acceleration * delta
+		if velocity.x > speed:
+			velocity.x = speed
+				
+	if player.global_position.x < global_position.x:
+		anim.flip_h = true
+		character_collision.position = Vector2(-2, 4)
+		velocity.x -= acceleration * delta
+		if velocity.x < -speed:
+			velocity.x = -speed
