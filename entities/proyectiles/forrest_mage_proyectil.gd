@@ -33,6 +33,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	elif body.name == "CharacterBody2D" and body.on_defense:
 		body.shield_block = true
 		body.velocity = global_position.direction_to(body.global_position) * 300
+		anim.play("out")
+		collision_area.set_disabled(true)
 	else:
 		anim.play("out")
 		collision_area.set_disabled(true)
