@@ -1,6 +1,6 @@
 [gd_scene load_steps=54 format=3 uid="uid://bgjihptpibjv8"]
 
-[ext_resource type="Script" path="res://entities/enemies/goblin.gd" id="1_87mtr"]
+[ext_resource type="Script" uid="uid://dk2wmt6inkj51" path="res://entities/enemies/goblin.gd" id="1_87mtr"]
 [ext_resource type="Texture2D" uid="uid://d2ejm5jdox7hh" path="res://images/Monsters_Creatures_Fantasy/Goblin/Attack.png" id="1_ps8wt"]
 [ext_resource type="Texture2D" uid="uid://bmlik7ifv8lis" path="res://images/Monsters_Creatures_Fantasy/Goblin/Death.png" id="2_2gkcv"]
 [ext_resource type="PackedScene" uid="uid://ywkdi4s2dbs8" path="res://entities/proyectiles/goblin_proyectil.tscn" id="2_75o8m"]

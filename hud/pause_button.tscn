@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://vaeiu1j1eq7t"]
 
-[ext_resource type="Script" path="res://hud/pause_button.gd" id="1_ro2fc"]
+[ext_resource type="Script" uid="uid://gj0uv66pf5jb" path="res://hud/pause_button.gd" id="1_ro2fc"]
 [ext_resource type="Texture2D" uid="uid://bjy0068qrnmj2" path="res://images/pause_btn.png" id="2_gtpim"]
 
 [node name="PauseButton" type="Control"]

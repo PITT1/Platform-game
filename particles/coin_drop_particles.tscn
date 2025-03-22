@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://c1b386ojfi5hd"]
 
-[ext_resource type="Script" path="res://particles/coin_drop_particles.gd" id="1_555nw"]
+[ext_resource type="Script" uid="uid://c6hryshgxoku6" path="res://particles/coin_drop_particles.gd" id="1_555nw"]
 [ext_resource type="AudioStream" uid="uid://jpa7i3a82gyk" path="res://sounds/sfx/coins/coin_sound.wav" id="2_vfskt"]
 
 [sub_resource type="Curve" id="Curve_yu0oo"]
-max_value = 20.0
+_limits = [0.0, 20.0, 0.0, 1.0]
 _data = [Vector2(0, 20), 0.0, 0.0, 0, 0, Vector2(0.54698, 12.1509), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c36pnjfbed1xx"]
 
 [ext_resource type="Texture2D" uid="uid://dmfnpcw017uxl" path="res://images/livebroken.png" id="1_jajwa"]
-[ext_resource type="Script" path="res://particles/live_destroy_particle.gd" id="2_mndaf"]
+[ext_resource type="Script" uid="uid://bu8b87udmkwgk" path="res://particles/live_destroy_particle.gd" id="2_mndaf"]
 
 [sub_resource type="Curve" id="Curve_mppyq"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.114035, 0.818868), 0.0, 0.0, 0, 0, Vector2(0.289474, 0.758491), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]

@@ -235,7 +235,7 @@ resource_name = "attack"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1dgag"]
 _data = {
-"attack": SubResource("Animation_qcdlp")
+&"attack": SubResource("Animation_qcdlp")
 }
 
 [node name="Sickle" type="CharacterBody2D"]

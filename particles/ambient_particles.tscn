@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b47x5xwbtewuk" path="res://images/ambient_effect.png" id="1_jgj71"]
 
 [sub_resource type="Curve" id="Curve_k3uov"]
-max_value = 0.1
+_limits = [0.0, 0.1, 0.0, 1.0]
 _data = [Vector2(0.0497076, 0), 0.0, 0.0, 0, 0, Vector2(0.21345, 0.0154717), 0.0, 0.0, 0, 0, Vector2(0.517544, 0.0169811), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 4
 

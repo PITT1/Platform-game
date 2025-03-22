@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://ds7em1as8udg6"]
 
-[ext_resource type="Script" path="res://hud/language_selector.gd" id="1_jy6p1"]
+[ext_resource type="Script" uid="uid://dr4rm0eckpfee" path="res://hud/language_selector.gd" id="1_jy6p1"]
 [ext_resource type="FontFile" uid="uid://dl3r6e3kek5om" path="res://fonts/EagleLake-Regular.ttf" id="2_48xoo"]
 
 [sub_resource type="Animation" id="Animation_8vdw1"]
@@ -52,9 +52,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4pcxy"]
 _data = {
-"RESET": SubResource("Animation_8vdw1"),
-"hud_in": SubResource("Animation_dgj7p"),
-"hud_out": SubResource("Animation_uq60y")
+&"RESET": SubResource("Animation_8vdw1"),
+&"hud_in": SubResource("Animation_dgj7p"),
+&"hud_out": SubResource("Animation_uq60y")
 }
 
 [node name="LanguageSelector" type="Control"]

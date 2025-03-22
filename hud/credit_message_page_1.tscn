@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://b6qnxkomv2oyu"]
 
-[ext_resource type="Script" path="res://hud/credit_message_page_1.gd" id="1_fkhsu"]
+[ext_resource type="Script" uid="uid://bkyxb6ixtmnkr" path="res://hud/credit_message_page_1.gd" id="1_fkhsu"]
 [ext_resource type="FontFile" uid="uid://dl3r6e3kek5om" path="res://fonts/EagleLake-Regular.ttf" id="1_nebkp"]
 [ext_resource type="PackedScene" uid="uid://dcavq0702pxar" path="res://hud/credit_message_page_2.tscn" id="2_m7yx0"]
 
@@ -53,9 +53,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_13bgk"]
 _data = {
-"RESET": SubResource("Animation_apblu"),
-"page_in": SubResource("Animation_bpfv4"),
-"page_out": SubResource("Animation_hnruf")
+&"RESET": SubResource("Animation_apblu"),
+&"page_in": SubResource("Animation_bpfv4"),
+&"page_out": SubResource("Animation_hnruf")
 }
 
 [node name="CreditMessage_page_1" type="Control"]

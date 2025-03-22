@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://laeucpl41508"]
 
-[ext_resource type="Script" path="res://particles/hit_enemy_particles_2.gd" id="1_i4q07"]
+[ext_resource type="Script" uid="uid://bk84f32eadh16" path="res://particles/hit_enemy_particles_2.gd" id="1_i4q07"]
 
 [sub_resource type="Gradient" id="Gradient_arfc5"]
 offsets = PackedFloat32Array(0, 0.256579, 0.769737, 0.980263)

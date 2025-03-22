@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://cwovlghwi0grr"]
 
-[ext_resource type="Script" path="res://hud/principal_menu.gd" id="1_q8ljf"]
+[ext_resource type="Script" uid="uid://k20wrsfnicop" path="res://hud/principal_menu.gd" id="1_q8ljf"]
 [ext_resource type="PackedScene" uid="uid://b6qnxkomv2oyu" path="res://hud/credit_message_page_1.tscn" id="2_ivh11"]
 [ext_resource type="Texture2D" uid="uid://btqyjpkfm2sd" path="res://images/wallpapers/wallpaper1.png" id="2_jo2de"]
 [ext_resource type="FontFile" uid="uid://dl3r6e3kek5om" path="res://fonts/EagleLake-Regular.ttf" id="3_rigeq"]

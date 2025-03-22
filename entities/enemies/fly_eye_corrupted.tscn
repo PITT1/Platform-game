@@ -1,6 +1,6 @@
 [gd_scene load_steps=41 format=3 uid="uid://cfh5y5myhh4r"]
 
-[ext_resource type="Script" path="res://entities/enemies/fly_eye_corrupted.gd" id="1_fs0av"]
+[ext_resource type="Script" uid="uid://ct8hffhc5l1hi" path="res://entities/enemies/fly_eye_corrupted.gd" id="1_fs0av"]
 [ext_resource type="Texture2D" uid="uid://b6yym4v2nihjh" path="res://images/Monsters_Creatures_Fantasy/Flying eye/Attack.png" id="1_t0603"]
 [ext_resource type="PackedScene" uid="uid://b758c4wqmswy8" path="res://particles/fly_eyes_corrupted_death_particles.tscn" id="2_0dsw6"]
 [ext_resource type="PackedScene" uid="uid://f3dbskfgovd2" path="res://entities/proyectiles/flyEyes_corrupted_proyectile.tscn" id="2_5q0jv"]

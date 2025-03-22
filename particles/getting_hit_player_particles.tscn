@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://cg2eng63kdi36"]
 
 [ext_resource type="Texture2D" uid="uid://bms64gkcycack" path="res://images/getting_hit_player-particle.png" id="1_83afv"]
-[ext_resource type="Script" path="res://particles/getting_hit_player_particles.gd" id="2_gk6sr"]
+[ext_resource type="Script" uid="uid://b7tocw20e5p8" path="res://particles/getting_hit_player_particles.gd" id="2_gk6sr"]
 
 [sub_resource type="Curve" id="Curve_ppjib"]
-max_value = 2.0
+_limits = [0.0, 2.0, 0.0, 1.0]
 _data = [Vector2(0.166667, 2), 0.0, 0.0, 0, 0]
 point_count = 1
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://dov1o15cl0suk"]
 
-[ext_resource type="Script" path="res://entities/proyectiles/forrest_mage_proyectil.gd" id="1_86fxq"]
+[ext_resource type="Script" uid="uid://b0ayubjqct8pf" path="res://entities/proyectiles/forrest_mage_proyectil.gd" id="1_86fxq"]
 [ext_resource type="Texture2D" uid="uid://d3xn4tshfhf2v" path="res://images/forrest_mage/forrest_mage_proyectil.png" id="2_ynbg3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s2w8h"]

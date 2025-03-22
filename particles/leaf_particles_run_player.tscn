@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cyofqjywx8a6c"]
 
 [ext_resource type="Texture2D" uid="uid://bkho4qqed7r4" path="res://particles/smoke-particle2.png" id="1_ruui0"]
-[ext_resource type="Script" path="res://particles/leaf_particles_run_player.gd" id="2_sad7q"]
+[ext_resource type="Script" uid="uid://b1tntl4a65d5u" path="res://particles/leaf_particles_run_player.gd" id="2_sad7q"]
 
 [sub_resource type="Curve" id="Curve_sl7xj"]
 _data = [Vector2(0, 0.290566), 0.0, 0.0, 0, 0, Vector2(0.4125, 0.773585), 0.0, 0.0, 0, 0, Vector2(0.6375, 0.381132), -0.615849, -0.615849, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]

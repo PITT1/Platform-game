@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://camhxyhtxp381"]
 
 [ext_resource type="Texture2D" uid="uid://78cbn31ehj4l" path="res://images/flag animation.png" id="1_y0tuu"]
-[ext_resource type="Script" path="res://signs/victory_flag.gd" id="2_sa1h5"]
+[ext_resource type="Script" uid="uid://c2k2dl1tf3vws" path="res://signs/victory_flag.gd" id="2_sa1h5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o3n1u"]
 atlas = ExtResource("1_y0tuu")

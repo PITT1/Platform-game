@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://ywkdi4s2dbs8"]
 
-[ext_resource type="Script" path="res://entities/proyectiles/goblin_proyectil.gd" id="1_0abht"]
+[ext_resource type="Script" uid="uid://bl37bbdvh7x82" path="res://entities/proyectiles/goblin_proyectil.gd" id="1_0abht"]
 [ext_resource type="Texture2D" uid="uid://bu4lddpo0dgls" path="res://images/Monsters_Creatures_Fantasy/Goblin/goblin_proyectile.png" id="1_naehh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yq8ab"]
@@ -93,9 +93,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_g6j6n"]
 _data = {
-"RESET": SubResource("Animation_5qpgd"),
-"rotate_Left": SubResource("Animation_qkeib"),
-"rotate_Right": SubResource("Animation_xf7bk")
+&"RESET": SubResource("Animation_5qpgd"),
+&"rotate_Left": SubResource("Animation_qkeib"),
+&"rotate_Right": SubResource("Animation_xf7bk")
 }
 
 [node name="GoblinProyectil" type="Node2D"]

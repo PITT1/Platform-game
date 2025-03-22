@@ -3,8 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bocax5gco2e4m" path="res://images/leaf.png" id="1_bfxo5"]
 
 [sub_resource type="Curve" id="Curve_gw3r8"]
-min_value = -360.0
-max_value = 360.0
+_limits = [-360.0, 360.0, 0.0, 1.0]
 _data = [Vector2(0, 19.7802), 0.0, 0.0, 0, 0, Vector2(0.432099, 59.3406), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 3
 

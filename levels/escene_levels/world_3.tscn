@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cqy4dbwtshnub" path="res://images/tilemap/main_lev_build_1.png" id="12_ghc4a"]
 [ext_resource type="PackedScene" uid="uid://dxftx0pehgckf" path="res://hud/lives_hud.tscn" id="13_08chk"]
 [ext_resource type="PackedScene" uid="uid://o8autm5pdnbr" path="res://entities/player/player.tscn" id="14_dyjid"]
-[ext_resource type="Script" path="res://obstacles/poizon_ivi2.gd" id="15_qlcjf"]
+[ext_resource type="Script" uid="uid://d1bbvosx1fns4" path="res://obstacles/poizon_ivi2.gd" id="15_qlcjf"]
 [ext_resource type="PackedScene" uid="uid://bsg8qjsqu632m" path="res://entities/enemies/mutant_mushrom.tscn" id="16_3otb5"]
 [ext_resource type="PackedScene" uid="uid://efyda2cw57qk" path="res://entities/enemies/fly_eye.tscn" id="17_ysl4r"]
 [ext_resource type="PackedScene" uid="uid://bar58vx48kjox" path="res://entities/enemies/blueSlime.tscn" id="18_e5u8r"]
@@ -30,7 +30,7 @@
 [ext_resource type="AudioStream" uid="uid://ctrrlmwdh26ww" path="res://sounds/ambient/Forest Day.ogg" id="27_7uekb"]
 [ext_resource type="AudioStream" uid="uid://be56c3p3tn8cy" path="res://sounds/ambient/Action 3 (Loop).ogg" id="28_e53wy"]
 [ext_resource type="PackedScene" uid="uid://dcsf554wvrgne" path="res://controls/tactil_controls_1.tscn" id="29_415t7"]
-[ext_resource type="Script" path="res://levels/scripts_levels/world_3.gd" id="30_fm6p2"]
+[ext_resource type="Script" uid="uid://cg0nt55j0g08r" path="res://levels/scripts_levels/world_3.gd" id="30_fm6p2"]
 [ext_resource type="PackedScene" uid="uid://camhxyhtxp381" path="res://signs/victory_flag.tscn" id="31_obneq"]
 [ext_resource type="PackedScene" uid="uid://cs2j0tk0vtyyp" path="res://collects/coins/coin_1.tscn" id="33_f05vu"]
 

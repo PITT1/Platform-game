@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://bar58vx48kjox"]
 
-[ext_resource type="Script" path="res://entities/enemies/blue_slime.gd" id="1_802oi"]
+[ext_resource type="Script" uid="uid://v4luqpswxuic" path="res://entities/enemies/blue_slime.gd" id="1_802oi"]
 [ext_resource type="PackedScene" uid="uid://c6c4vbpxml1xx" path="res://particles/slime_death.tscn" id="2_csfn6"]
 [ext_resource type="Texture2D" uid="uid://bc4vdmnb6n68y" path="res://images/slime/slime_idle.png" id="2_cwhck"]
 [ext_resource type="Texture2D" uid="uid://cspe33nm0sfe2" path="res://images/slime/slime_run.png" id="3_j7pk1"]
