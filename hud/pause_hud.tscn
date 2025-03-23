@@ -151,7 +151,7 @@ text = "Salir"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_xwy8r")
+&"": SubResource("AnimationLibrary_xwy8r")
 }
 
 [node name="pause_sound" type="AudioStreamPlayer" parent="."]

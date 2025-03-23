@@ -116,7 +116,7 @@ debug_color = Color(0.956863, 0.0784314, 0, 0.231373)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_g6j6n")
+&"": SubResource("AnimationLibrary_g6j6n")
 }
 
 [connection signal="body_entered" from="collisionArea" to="." method="_on_collision_area_body_entered"]

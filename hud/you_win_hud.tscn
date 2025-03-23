@@ -193,7 +193,7 @@ text = "salir"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_t4k5w")
+&"": SubResource("AnimationLibrary_t4k5w")
 }
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

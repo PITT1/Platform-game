@@ -147,7 +147,7 @@ text = "Continuar"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_13bgk")
+&"": SubResource("AnimationLibrary_13bgk")
 }
 
 [connection signal="button_up" from="ColorRect/next" to="." method="_on_next_button_up"]

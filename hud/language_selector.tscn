@@ -106,7 +106,7 @@ text = "English/Ingles"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_4pcxy")
+&"": SubResource("AnimationLibrary_4pcxy")
 }
 
 [connection signal="button_up" from="ColorRect/VBoxContainer/btn_spanish" to="." method="_on_btn_spanish_button_up"]

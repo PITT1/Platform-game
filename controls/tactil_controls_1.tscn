@@ -79,7 +79,7 @@ action = "shield"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_mwxcj")
+&"": SubResource("AnimationLibrary_mwxcj")
 }
 
 [connection signal="pressed" from="CanvasLayer/right_btn" to="." method="_on_right_btn_pressed"]

@@ -173,7 +173,7 @@ autowrap_mode = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_64s6d")
+&"": SubResource("AnimationLibrary_64s6d")
 }
 
 [connection signal="body_entered" from="letter_area" to="." method="_on_letter_area_body_entered"]

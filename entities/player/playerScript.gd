@@ -792,17 +792,17 @@ func _on_hit_area_body_entered(body: Node2D) -> void:
 	body.velocity = global_position.direction_to(body.global_position) * Vector2(100, 100)
 	if hit1_enemy_particles:
 		var instantiated_particles1 = hit1_enemy_particles.instantiate()
-		add_sibling(instantiated_particles1)
+		add_child(instantiated_particles1)
 		instantiated_particles1.global_position = body.global_position
 	
 	if hit_explode_particles:
 		var instantiated_hit_explode_particles = hit_explode_particles.instantiate()
-		add_sibling(instantiated_hit_explode_particles)
+		add_child(instantiated_hit_explode_particles)
 		instantiated_hit_explode_particles.global_position = body.global_position
 	
 	if hit_enemy_explode2:
 		var instantiated_particles_explode2 = hit_enemy_explode2.instantiate()
-		add_sibling(instantiated_particles_explode2)
+		add_child(instantiated_particles_explode2)
 		instantiated_particles_explode2.direction = global_position.direction_to(body.global_position)
 		instantiated_particles_explode2.global_position = body.global_position
 	
@@ -810,8 +810,8 @@ func gettingHitAnimation():
 	if gettingHit:
 		getting_hit_sound.play()
 		var brokenHeartsInstantiated = broken_heart_particles.instantiate()
-		add_sibling(brokenHeartsInstantiated)
-		brokenHeartsInstantiated.global_position = global_position + Vector2(0, 0)
+		add_child(brokenHeartsInstantiated)
+		brokenHeartsInstantiated.global_position = global_position
 		gettingHit = false
 		if not death:
 			get_tree().paused = true
@@ -920,7 +920,7 @@ func shieldBlockParticles():
 	if shield_block:
 		shield_block_sound.play()
 		var instantia = shield_particles.instantiate()
-		add_sibling(instantia)
+		add_child(instantia)
 		instantia.global_position = global_position
 		shield_block = false
 		
