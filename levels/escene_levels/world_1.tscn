@@ -1,6 +1,6 @@
 [gd_scene load_steps=42 format=4 uid="uid://no3yti5mpqns"]
 
-[ext_resource type="Script" uid="uid://db0tcricdu7qf" path="res://levels/scripts_levels/world_1.gd" id="1_ei3lv"]
+[ext_resource type="Script" path="res://levels/scripts_levels/world_1.gd" id="1_ei3lv"]
 [ext_resource type="Texture2D" uid="uid://cqy4dbwtshnub" path="res://images/tilemap/main_lev_build_1.png" id="2_mpw2a"]
 [ext_resource type="Texture2D" uid="uid://ca70ef0w8ha0j" path="res://images/tilemap/rocks.png" id="3_pn7r8"]
 [ext_resource type="Texture2D" uid="uid://didcklr78knar" path="res://images/tilemap/main_lev_build_2.png" id="4_x8ouu"]

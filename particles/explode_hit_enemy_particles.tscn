@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dcyfdlub0dsta"]
 
 [ext_resource type="Texture2D" uid="uid://chi30qkq7ik3" path="res://images/explode_texture.png" id="1_nd8bm"]
-[ext_resource type="Script" uid="uid://dqv33nlhfxuyw" path="res://particles/explode_hit_enemy_particles.gd" id="2_acfeh"]
+[ext_resource type="Script" path="res://particles/explode_hit_enemy_particles.gd" id="2_acfeh"]
 
 [sub_resource type="Curve" id="Curve_nsm3j"]
 _data = [Vector2(0, 0.184906), 0.0, 0.0, 0, 0, Vector2(0.184211, 0.169811), 0.0, 0.0, 0, 0, Vector2(0.412281, 0.215094), 0.0, 0.0, 0, 0, Vector2(0.798246, 0.215094), -0.999148, -0.999148, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -10,13 +10,13 @@ point_count = 5
 [node name="ExplodeHitEnemyParticles" type="CPUParticles2D"]
 emitting = false
 amount = 54
-texture = ExtResource("1_nd8bm")
 lifetime = 3.0
 one_shot = true
 speed_scale = 5.7
 explosiveness = 1.0
 randomness = 1.0
 lifetime_randomness = 1.0
+texture = ExtResource("1_nd8bm")
 direction = Vector2(0, 0)
 spread = 180.0
 gravity = Vector2(0, 0)

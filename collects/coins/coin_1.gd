@@ -9,7 +9,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	SaveGameProcesor.coins_count += 1
 	var instantia = drop_particles.instantiate()
 	add_sibling(instantia)
-	instantia.global_position = global_position
+	instantia.set_global_position(get_global_position())
+	print(instantia.global_position)
 	queue_free()
 	
 	if body:

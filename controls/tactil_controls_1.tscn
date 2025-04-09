@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dcsf554wvrgne"]
 
 [ext_resource type="Texture2D" uid="uid://bxb6u0cvc11kr" path="res://images/tactil_controls/arrow.png" id="1_2mc5f"]
-[ext_resource type="Script" uid="uid://cnn1gl1u5e56h" path="res://controls/tactil_controls_1.gd" id="1_o55m8"]
+[ext_resource type="Script" path="res://controls/tactil_controls_1.gd" id="1_o55m8"]
 [ext_resource type="Texture2D" uid="uid://smyempfvthds" path="res://images/tactil_controls/arrow_up.png" id="2_a15c5"]
 [ext_resource type="Texture2D" uid="uid://pkjt8fvhlhc6" path="res://images/tactil_controls/attack_btn.png" id="3_fh7ao"]
 [ext_resource type="Texture2D" uid="uid://di1o77au7yowg" path="res://images/tactil_controls/dash_btn.png" id="4_l00mu"]
@@ -12,7 +12,7 @@ resource_name = "set_disabled"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mwxcj"]
 _data = {
-&"set_disabled": SubResource("Animation_81lgj")
+"set_disabled": SubResource("Animation_81lgj")
 }
 
 [node name="TactilControls1" type="Control"]
@@ -79,7 +79,7 @@ action = "shield"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_mwxcj")
+"": SubResource("AnimationLibrary_mwxcj")
 }
 
 [connection signal="pressed" from="CanvasLayer/right_btn" to="." method="_on_right_btn_pressed"]

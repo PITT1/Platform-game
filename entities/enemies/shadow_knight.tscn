@@ -1,6 +1,6 @@
 [gd_scene load_steps=37 format=3 uid="uid://dimbgqtdp63fu"]
 
-[ext_resource type="Script" uid="uid://cbea2tid05uij" path="res://entities/enemies/shadow_knight.gd" id="1_oyayd"]
+[ext_resource type="Script" path="res://entities/enemies/shadow_knight.gd" id="1_oyayd"]
 [ext_resource type="Texture2D" uid="uid://bghic2ojmy85w" path="res://images/shadow_Knight/knight.png" id="1_we3ad"]
 [ext_resource type="PackedScene" uid="uid://dmwqd0ntbk8b4" path="res://particles/shadow_knight_kill.tscn" id="2_nj25e"]
 [ext_resource type="AudioStream" uid="uid://cig6cjhupo1xv" path="res://sounds/sfx/shadow_knight/shadow_knight_sword1.mp3" id="4_whq4s"]

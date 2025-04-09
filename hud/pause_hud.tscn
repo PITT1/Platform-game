@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://d37iqxkanf2a3"]
 
-[ext_resource type="Script" uid="uid://b8b6xtenqedgc" path="res://hud/pause_hud.gd" id="1_g725i"]
+[ext_resource type="Script" path="res://hud/pause_hud.gd" id="1_g725i"]
 [ext_resource type="AudioStream" uid="uid://dybnnv8v3v78l" path="res://sounds/ambient/Sword Unsheath 1.ogg" id="2_bodm0"]
 [ext_resource type="FontFile" uid="uid://dl3r6e3kek5om" path="res://fonts/EagleLake-Regular.ttf" id="2_i1o3f"]
 [ext_resource type="AudioStream" uid="uid://de0k4bvwhst0w" path="res://sounds/ambient/Sword Unsheath 2.ogg" id="3_cm3tq"]
@@ -73,9 +73,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xwy8r"]
 _data = {
-&"RESET": SubResource("Animation_3xhud"),
-&"pause_in": SubResource("Animation_2p2uh"),
-&"pause_out": SubResource("Animation_ewbw6")
+"RESET": SubResource("Animation_3xhud"),
+"pause_in": SubResource("Animation_2p2uh"),
+"pause_out": SubResource("Animation_ewbw6")
 }
 
 [node name="PauseHud" type="Control"]
@@ -151,7 +151,7 @@ text = "Salir"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_xwy8r")
+"": SubResource("AnimationLibrary_xwy8r")
 }
 
 [node name="pause_sound" type="AudioStreamPlayer" parent="."]

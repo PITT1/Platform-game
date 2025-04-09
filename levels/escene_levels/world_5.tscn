@@ -1,6 +1,6 @@
 [gd_scene load_steps=50 format=4 uid="uid://dv8m1iumjky5h"]
 
-[ext_resource type="Script" uid="uid://ceyv4y4cyr5ql" path="res://levels/scripts_levels/world_5.gd" id="1_m6df3"]
+[ext_resource type="Script" path="res://levels/scripts_levels/world_5.gd" id="1_m6df3"]
 [ext_resource type="Texture2D" uid="uid://bg8weivuatkhu" path="res://images/forestBackground/Layer_0011_0.png" id="2_8iv4w"]
 [ext_resource type="Texture2D" uid="uid://cmboo27ugv0n" path="res://images/forestBackground/Layer_0010_1.png" id="3_na5eo"]
 [ext_resource type="Texture2D" uid="uid://c7feujk0c0a6e" path="res://images/forestBackground/Layer_0009_2.png" id="4_0q151"]
@@ -26,7 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://vaeiu1j1eq7t" path="res://hud/pause_button.tscn" id="20_qa5lj"]
 [ext_resource type="PackedScene" uid="uid://bar58vx48kjox" path="res://entities/enemies/blueSlime.tscn" id="21_for3y"]
 [ext_resource type="PackedScene" uid="uid://54u88oswgal8" path="res://obstacles/trap1.tscn" id="22_ks2h2"]
-[ext_resource type="Script" uid="uid://d1bbvosx1fns4" path="res://obstacles/poizon_ivi2.gd" id="23_rk0g3"]
+[ext_resource type="Script" path="res://obstacles/poizon_ivi2.gd" id="23_rk0g3"]
 [ext_resource type="PackedScene" uid="uid://dsbr2hrptjhy7" path="res://entities/enemies/skeletons_2.tscn" id="23_yif23"]
 [ext_resource type="PackedScene" uid="uid://dtq4ilw7ldcce" path="res://obstacles/invisible_wall_enemy.tscn" id="24_lkalr"]
 [ext_resource type="PackedScene" uid="uid://dcsf554wvrgne" path="res://controls/tactil_controls_1.tscn" id="25_54d7g"]

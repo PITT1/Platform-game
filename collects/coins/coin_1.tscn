@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://cs2j0tk0vtyyp"]
 
 [ext_resource type="Texture2D" uid="uid://d1dmgjythqi5w" path="res://images/MonedaD.png" id="1_dfead"]
-[ext_resource type="Script" uid="uid://ifes5ce4cyfp" path="res://collects/coins/coin_1.gd" id="1_kd2kj"]
+[ext_resource type="Script" path="res://collects/coins/coin_1.gd" id="1_kd2kj"]
 [ext_resource type="PackedScene" uid="uid://c1b386ojfi5hd" path="res://particles/coin_drop_particles.tscn" id="2_fhei6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f4khh"]

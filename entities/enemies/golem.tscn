@@ -1,6 +1,6 @@
 [gd_scene load_steps=74 format=3 uid="uid://b5hgoic5yixj"]
 
-[ext_resource type="Script" uid="uid://ds1kppd5vfjsq" path="res://entities/enemies/golem.gd" id="1_b4yap"]
+[ext_resource type="Script" path="res://entities/enemies/golem.gd" id="1_b4yap"]
 [ext_resource type="Texture2D" uid="uid://dtebvk4x3w0mx" path="res://images/golems/Golem_1_attack.png" id="1_cvkua"]
 [ext_resource type="PackedScene" uid="uid://c8ie1b5t80xom" path="res://particles/golem_attack.tscn" id="2_466sk"]
 [ext_resource type="Texture2D" uid="uid://ttfr1j3anopi" path="res://images/golems/Golem_1_die.png" id="2_fmyk4"]

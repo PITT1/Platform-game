@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=4 uid="uid://dw07e2nhkt8p4"]
 
-[ext_resource type="Script" uid="uid://dpd32pmjvtg4k" path="res://levels/scripts_levels/tutorial.gd" id="1_xc6iy"]
+[ext_resource type="Script" path="res://levels/scripts_levels/tutorial.gd" id="1_xc6iy"]
 [ext_resource type="Texture2D" uid="uid://b1a0xptuwfuku" path="res://images/arrow_interfaz.png" id="4_3rwu1"]
 [ext_resource type="PackedScene" uid="uid://bsg8qjsqu632m" path="res://entities/enemies/mutant_mushrom.tscn" id="8_2462b"]
 [ext_resource type="Texture2D" uid="uid://didcklr78knar" path="res://images/tilemap/main_lev_build_2.png" id="12_5hchk"]
